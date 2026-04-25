@@ -422,18 +422,22 @@
 
   @media (min-width: 768px) {
     .bq-hero__inner {
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-      grid-template-rows: 1fr;
-      column-gap: 70px;
-      align-items: stretch;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 70px;
       padding: 80px 40px;
     }
-    .bq-hero__media { grid-column: 2; grid-row: 1; }
-    .bq-hero__media-frame { aspect-ratio: auto; height: 100%; }
+    .bq-hero__media {
+      flex: 1 1 0;
+      min-width: 0;
+      order: 2;
+    }
 
     .bq-hero__content {
-      grid-column: 1;
-      grid-row: 1;
+      flex: 1 1 0;
+      min-width: 0;
+      order: 1;
       padding-top: 0;
       justify-content: center;
     }

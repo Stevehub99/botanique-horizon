@@ -1,61 +1,49 @@
 {% comment %}
   SOURCE STRUCTURAL MIRROR — Section 1 Hero
   Source: source/rendered.html lines 4012–5538
+  Inventory: docs/section-1-right-side-inventory.md
 
   DOM tree (simplified, source classes shown):
     .section.new-banner-home.section--page-width.color-scheme-2
       .custom-section-background
         .background-image-container
-          <img>                         ← FULL-BLEED PNG; model+device drawn into the right side, left side is whitespace
-      .custom-section-content (max-width 1300px)
-        .layout-panel-flex--row.mobile-column
-          .group-block.new_banner_contant   ← single content column, anchored LEFT, overlays the bg image
-            .group-block-content (column)
-              <p><strong>EYEBROW</strong></p>
-              <h1>Plain <strong>Accent</strong></h1>
-              <p>Subhead</p>
-              .banner-list × 3        (group-block: icon-block + <p>)
-              .banner-black-btn       (group-block: <a class="button">)
-              .banner-shipping        (group-block: row of 2× icon+<p>)
-              .group-block             (slider wrapper)
-                .slider-main-part.home--reivew    ← Slick carousel
-                  .slick-list > .slick-track
-                    .slick-slide × 5  (each: .review-content-item-tab)
-                      .review-top    (.review-avatar img + .review-text > .review-content-yea > <p>)
-                      .review-bottom (.review-author > h4 + verified-badge SVG, .review-stars)
-                  .slick-dots > li × 5
+          <img Group_48095889_1.png>            ← decorative full-bleed BG (source/rendered.html:4021)
+      .custom-section-content                    ← max-width: 1300px (source/css/external-00-base.css:8372)
+        .layout-panel-flex--row.mobile-column   ← inline --gap: max(24px, ~70px); --padding-block: max(20px, ~80px)
+          ┌─ .group-block.new_banner_contant   ← LEFT column: text content + 5-slide testimonial slick carousel
+          └─ .custom-autoplay-video            ← RIGHT column: 1:1 SQUARE autoplay/loop/muted/playsinline VIDEO
+                                                  inline style: --size-style-aspect-ratio:1.0;
+                                                                --size-style-width:100%;
+                                                                --border-radius:20px; overflow:hidden; padding:0
+                                                  (source/rendered.html:5513–5521)
+            <video playsinline autoplay loop=loop muted=muted width=100% preload=metadata
+                   poster=...thumbnail.jpg>     ← source/rendered.html:5522
+              <source src=...HD-1080p-2.5Mbps.mp4 type=video/mp4>
+              <img src=...thumbnail.jpg>        ← fallback inside <video>
 
-  CSS rules pulled (source/css/external-00-base.css + external-01-slick.css):
-    .new-banner-home (13 rules), .new_banner_contant (11), .banner-list (3),
-    .banner-black-btn (2), .banner-shipping (4), .home--reivew (18),
-    .review-content-item-tab/-top/-avatar/-content-yea/-bottom/-author/-stars,
-    .verified-badge, .slider-main-part (29), .slick-dots/-track/-slide (slick.css base).
+  Right-side asset = 1:1 square <video>, NOT the bg PNG. The bg PNG is decorative
+  full-bleed; the visible right column is the video, sized 1:1, sitting inside
+  the 1300px content rail (NOT viewport-edge bleed). 615×615 ≈ at desktop with
+  70px gap inside 1300px container.
+
+  CSS on right-side wrapper:
+    Desktop: all values from inline style (rendered.html:5513–5521).
+    Mobile (≤600px):
+      .new-banner-home .custom-autoplay-video       { overflow: visible !important; }   (external-00-base.css:11592)
+      .new-banner-home .custom-autoplay-video video { border-radius: 20px; }            (external-00-base.css:11593)
 
   Hero font (source actual): Circular Std Medium 500 (paid Linotype, loaded inline
-    via @font-face from cdn.shopify.com/s/files/.../circular-std-medium-500-webfont.woff2).
-    Force-overrides theme via:
+    via @font-face from rendered.html:85–91).
+    Force-overrides theme via rendered.html:106–110:
       body:not(:has(.gps)) h1,h2,h3,h4,h5,h6 { font-family:'circular_stdmedium' !important; }
-    NOT available on Google Fonts (commercial license required to ship).
-    Substitute: Inter (already wired in assets/bq-tokens.css). Plain weight 500,
-    accent <strong> weight 700. Closest free equivalents in order: Manrope, Inter, Mona Sans.
+    NOT on Google Fonts. Substitute: Inter (assets/bq-tokens.css). Plain weight 500,
+    accent <strong> weight 700.
 
-  Slick carousel init (source script, hero only):
-    $(...).slick({
-      dots: true, arrows: false, infinite: true, slidesToShow: 1, slidesToScroll: 1,
-      adaptiveHeight: true, speed: 300,
-      // NO autoplay
-      responsive: [{ breakpoint:1024, settings:{slidesToShow:1,slidesToScroll:1,infinite:true,dots:true} },
-                   { breakpoint:600,  settings:{centerMode:false,infinite:true,slidesToShow:1,slidesToScroll:1} }]
-    })
-    Replicated below with vanilla CSS scroll-snap (single-slide track) +
-    IntersectionObserver active-dot sync + click-to-scroll dot navigation.
-    Skipped: slide cloning for swipe-past-end loop (slick adaptiveHeight reflow).
-
-  Layout: source has the IMAGE as a full-section background <img>, with text overlaid
-    on the LEFT half. We mirror by using a 2-column CSS grid with NO outer container
-    (section is full-bleed). Image column flush to right edge. Text column padding-left
-    pinned to where the 1300px page-max would start (so content aligns with the rest of
-    the site's content rail) and padding-right gives the gap to the image edge.
+  Slick carousel init (source/rendered.html:5434–5468), hero testimonials only:
+    { dots:true, arrows:false, infinite:true, slidesToShow:1, slidesToScroll:1,
+      adaptiveHeight:true, speed:300 }   // NO autoplay
+  Replicated below with vanilla CSS scroll-snap + IntersectionObserver dot sync
+  + Liquid-emitted clones for infinite-loop wrap-around.
 {% endcomment %}
 
 {%- liquid
@@ -71,16 +59,34 @@
   style="--bq-accent: {{ accent }};"
   aria-label="{{ section.settings.headline_line_1 }}"
 >
+  <div class="bq-hero__inner">
   <div class="bq-hero__media">
     <div class="bq-hero__media-frame">
-      {%- if section.settings.image_mobile != blank -%}
-        {{ section.settings.image_mobile | image_url: width: 1200 | image_tag: class: 'bq-hero__image bq-hero__image--mobile', widths: '600,900,1200', sizes: '100vw', loading: 'eager', alt: product_name }}
-      {%- endif -%}
-      {%- if section.settings.image_desktop != blank -%}
-        {{ section.settings.image_desktop | image_url: width: 1800 | image_tag: class: 'bq-hero__image bq-hero__image--desktop', widths: '900,1200,1600,1800', sizes: '(min-width: 768px) 50vw, 100vw', loading: 'eager', alt: product_name }}
-      {%- endif -%}
-      {%- if section.settings.image_desktop == blank and section.settings.image_mobile == blank -%}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'bq-hero__image bq-hero__image--placeholder' }}
+      {%- if section.settings.hero_video != blank -%}
+        {%- assign vid = section.settings.hero_video -%}
+        <video
+          class="bq-hero__video"
+          playsinline
+          autoplay
+          loop="loop"
+          muted="muted"
+          preload="metadata"
+          width="100%"
+          {% if vid.preview_image != blank %}poster="{{ vid.preview_image | image_url: width: 1080 }}"{% endif %}
+        >
+          {%- for vsource in vid.sources -%}
+            <source src="{{ vsource.url }}" type="{{ vsource.mime_type }}">
+          {%- endfor -%}
+          {%- if vid.preview_image != blank -%}
+            {{ vid.preview_image | image_url: width: 1080 | image_tag: class: 'bq-hero__video-fallback', widths: '600,900,1080', loading: 'lazy', alt: product_name }}
+          {%- endif -%}
+        </video>
+      {%- elsif section.settings.hero_image != blank -%}
+        {{ section.settings.hero_image | image_url: width: 1200 | image_tag: class: 'bq-hero__image', widths: '600,900,1200', sizes: '(min-width: 768px) 50vw, 100vw', loading: 'eager', alt: product_name }}
+      {%- else -%}
+        <div class="bq-hero__placeholder" aria-hidden="true">
+          <span>Carica video o immagine hero (1:1)</span>
+        </div>
       {%- endif -%}
     </div>
   </div>
@@ -137,64 +143,133 @@
       {%- endfor -%}
     </div>
 
-    {%- if section.blocks.size > 0 -%}
+    {%- assign t_blocks = section.blocks | where: 'type', 'testimonial' -%}
+    {%- assign t_size = t_blocks.size -%}
+    {%- if t_size > 0 -%}
       <div class="bq-hero__testimonials" role="region" aria-roledescription="carousel" aria-label="Recensioni clienti">
         <ul class="bq-hero__testimonials-track" role="list">
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'testimonial' -%}
-              <li class="bq-hero__testimonial" data-bq-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
-                <figure class="bq-hero__testimonial-card">
-                  <div class="bq-hero__testimonial-top">
-                    {%- if block.settings.avatar != blank -%}
-                      {{ block.settings.avatar | image_url: width: 200 | image_tag: class: 'bq-hero__testimonial-avatar', widths: '80,160,200', loading: 'lazy', alt: block.settings.name }}
-                    {%- else -%}
-                      <span class="bq-hero__testimonial-avatar bq-hero__testimonial-avatar--placeholder" aria-hidden="true">{{ block.settings.name | slice: 0, 1 }}</span>
+          {%- if t_size > 1 -%}
+            {%- assign tail_block = t_blocks | last -%}
+            <li class="bq-hero__testimonial" data-clone="tail" aria-hidden="true">
+              <figure class="bq-hero__testimonial-card">
+                <div class="bq-hero__testimonial-top">
+                  {%- if tail_block.settings.avatar != blank -%}
+                    {{ tail_block.settings.avatar | image_url: width: 200 | image_tag: class: 'bq-hero__testimonial-avatar', widths: '80,160,200', loading: 'lazy', alt: tail_block.settings.name }}
+                  {%- else -%}
+                    <span class="bq-hero__testimonial-avatar bq-hero__testimonial-avatar--placeholder" aria-hidden="true">{{ tail_block.settings.name | slice: 0, 1 }}</span>
+                  {%- endif -%}
+                  <div class="bq-hero__testimonial-text">
+                    <div class="bq-hero__testimonial-quote">
+                      <p>{{ tail_block.settings.quote }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bq-hero__testimonial-bottom">
+                  <div class="bq-hero__testimonial-author">
+                    <h4>- {{ tail_block.settings.name }}</h4>
+                    {%- if tail_block.settings.verified -%}
+                      <span class="bq-hero__verified" aria-label="Verified">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="7" cy="7" r="7" fill="currentColor"/>
+                          <path d="M3.5 7.2L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                      </span>
                     {%- endif -%}
-                    <div class="bq-hero__testimonial-text">
-                      <div class="bq-hero__testimonial-quote">
-                        <p>{{ block.settings.quote }}</p>
-                      </div>
+                  </div>
+                  <div class="bq-hero__testimonial-stars" aria-label="{{ tail_block.settings.stars }} stelle su 5">
+                    {%- for s in (1..5) -%}{%- if s <= tail_block.settings.stars -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}
+                  </div>
+                </div>
+              </figure>
+            </li>
+          {%- endif -%}
+          {%- for block in t_blocks -%}
+            <li class="bq-hero__testimonial" data-bq-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <figure class="bq-hero__testimonial-card">
+                <div class="bq-hero__testimonial-top">
+                  {%- if block.settings.avatar != blank -%}
+                    {{ block.settings.avatar | image_url: width: 200 | image_tag: class: 'bq-hero__testimonial-avatar', widths: '80,160,200', loading: 'lazy', alt: block.settings.name }}
+                  {%- else -%}
+                    <span class="bq-hero__testimonial-avatar bq-hero__testimonial-avatar--placeholder" aria-hidden="true">{{ block.settings.name | slice: 0, 1 }}</span>
+                  {%- endif -%}
+                  <div class="bq-hero__testimonial-text">
+                    <div class="bq-hero__testimonial-quote">
+                      <p>{{ block.settings.quote }}</p>
                     </div>
                   </div>
-                  <div class="bq-hero__testimonial-bottom">
-                    <div class="bq-hero__testimonial-author">
-                      <h4>- {{ block.settings.name }}</h4>
-                      {%- if block.settings.verified -%}
-                        <span class="bq-hero__verified" aria-label="Verified">
-                          <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="7" cy="7" r="7" fill="currentColor"/>
-                            <path d="M3.5 7.2L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                          </svg>
-                        </span>
-                      {%- endif -%}
-                    </div>
-                    <div class="bq-hero__testimonial-stars" aria-label="{{ block.settings.stars }} stelle su 5">
-                      {%- for s in (1..5) -%}{%- if s <= block.settings.stars -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}
-                    </div>
+                </div>
+                <div class="bq-hero__testimonial-bottom">
+                  <div class="bq-hero__testimonial-author">
+                    <h4>- {{ block.settings.name }}</h4>
+                    {%- if block.settings.verified -%}
+                      <span class="bq-hero__verified" aria-label="Verified">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="7" cy="7" r="7" fill="currentColor"/>
+                          <path d="M3.5 7.2L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                      </span>
+                    {%- endif -%}
                   </div>
-                </figure>
-              </li>
-            {%- endif -%}
+                  <div class="bq-hero__testimonial-stars" aria-label="{{ block.settings.stars }} stelle su 5">
+                    {%- for s in (1..5) -%}{%- if s <= block.settings.stars -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}
+                  </div>
+                </div>
+              </figure>
+            </li>
           {%- endfor -%}
+          {%- if t_size > 1 -%}
+            {%- assign head_block = t_blocks | first -%}
+            <li class="bq-hero__testimonial" data-clone="head" aria-hidden="true">
+              <figure class="bq-hero__testimonial-card">
+                <div class="bq-hero__testimonial-top">
+                  {%- if head_block.settings.avatar != blank -%}
+                    {{ head_block.settings.avatar | image_url: width: 200 | image_tag: class: 'bq-hero__testimonial-avatar', widths: '80,160,200', loading: 'lazy', alt: head_block.settings.name }}
+                  {%- else -%}
+                    <span class="bq-hero__testimonial-avatar bq-hero__testimonial-avatar--placeholder" aria-hidden="true">{{ head_block.settings.name | slice: 0, 1 }}</span>
+                  {%- endif -%}
+                  <div class="bq-hero__testimonial-text">
+                    <div class="bq-hero__testimonial-quote">
+                      <p>{{ head_block.settings.quote }}</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="bq-hero__testimonial-bottom">
+                  <div class="bq-hero__testimonial-author">
+                    <h4>- {{ head_block.settings.name }}</h4>
+                    {%- if head_block.settings.verified -%}
+                      <span class="bq-hero__verified" aria-label="Verified">
+                        <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <circle cx="7" cy="7" r="7" fill="currentColor"/>
+                          <path d="M3.5 7.2L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                        </svg>
+                      </span>
+                    {%- endif -%}
+                  </div>
+                  <div class="bq-hero__testimonial-stars" aria-label="{{ head_block.settings.stars }} stelle su 5">
+                    {%- for s in (1..5) -%}{%- if s <= head_block.settings.stars -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}
+                  </div>
+                </div>
+              </figure>
+            </li>
+          {%- endif -%}
         </ul>
         <ol class="bq-hero__dots" role="tablist" aria-label="Slide selector">
-          {%- for block in section.blocks -%}
-            {%- if block.type == 'testimonial' -%}
-              <li>
-                <button
-                  type="button"
-                  class="bq-hero__dot{% if forloop.first %} is-active{% endif %}"
-                  data-bq-dot="{{ forloop.index0 }}"
-                  role="tab"
-                  aria-label="{{ forloop.index }} of {{ section.blocks.size }}"
-                  aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
-                ></button>
-              </li>
-            {%- endif -%}
+          {%- for block in t_blocks -%}
+            <li>
+              <button
+                type="button"
+                class="bq-hero__dot{% if forloop.first %} is-active{% endif %}"
+                data-bq-dot="{{ forloop.index0 }}"
+                role="tab"
+                aria-label="{{ forloop.index }} of {{ t_size }}"
+                aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+              ></button>
+            </li>
           {%- endfor -%}
         </ol>
       </div>
     {%- endif -%}
+  </div>
   </div>
 </section>
 
@@ -202,42 +277,72 @@
   .bq-hero {
     background: var(--bq-body-bg);
     color: #000;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
     font-family: var(--bq-font-sans);
   }
 
+  .bq-hero__inner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    max-width: 1300px;
+    margin-inline: auto;
+    padding: 20px 16px;
+  }
+
   .bq-hero__media { grid-column: 1; grid-row: 1; width: 100%; }
-  .bq-hero__media-frame { position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; }
-  .bq-hero__image { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .bq-hero__image--desktop { display: none; }
-  .bq-hero__image--placeholder { width: 100%; height: 100%; }
+  .bq-hero__media-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--bq-card-bg);
+  }
+  .bq-hero__video,
+  .bq-hero__image,
+  .bq-hero__video-fallback {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .bq-hero__video-fallback { position: absolute; inset: 0; }
+  .bq-hero__placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--bq-muted);
+    font-size: 14px;
+    text-align: center;
+    padding: 20px;
+  }
 
   .bq-hero__content {
     grid-column: 1;
     grid-row: 2;
-    padding: 30px 16px 40px;
+    padding-top: 30px;
     display: flex;
     flex-direction: column;
   }
 
-  .bq-hero__eyebrow { margin: 0 0 16px; font-size: 16px; color: #000; font-weight: 700; }
+  .bq-hero__eyebrow { margin: 0 0 11px; font-size: 16px; color: #000; font-weight: 700; }
   .bq-hero__eyebrow strong { font-weight: 700; }
 
   .bq-hero .bq-hero__headline {
     margin: 0 0 15px;
-    font-size: 28px;
-    line-height: 1.1;
+    font-size: 32px;
+    line-height: 1.05;
     letter-spacing: 0;
     color: #000;
     font-weight: 500;
   }
   .bq-hero__headline-accent { color: var(--bq-accent); font-weight: 700; }
 
-  .bq-hero__intro { margin: 0 0 16px; font-size: 16px; color: #000; line-height: 1.45; }
+  .bq-hero__intro { margin: 0 0 21px; font-size: 16px; color: #000; line-height: 1.45; }
 
-  .bq-hero__benefits { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .bq-hero__benefits { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 16px; }
   .bq-hero__benefit { display: flex; gap: 8px; align-items: center; font-size: 16px; color: #000; line-height: 1.4; }
   .bq-hero__benefit-dot { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--bq-accent); color: #fff; }
   .bq-hero__benefit-dot svg { width: 14px; height: 14px; }
@@ -262,7 +367,7 @@
   }
   .bq-hero__cta:hover { background: var(--bq-accent); }
 
-  .bq-hero__trust { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .bq-hero__trust { display: flex; flex-direction: row; flex-wrap: wrap; row-gap: 10px; column-gap: 12px; margin-bottom: 16px; }
   .bq-hero__trust-item { display: flex; gap: 10px; align-items: center; font-size: 14px; color: #000; }
   .bq-hero__trust-item .bq-check { width: 22px; height: 22px; }
   .bq-hero__trust-item .bq-check svg { width: 12px; height: 12px; }
@@ -308,25 +413,28 @@
   .bq-hero__dot:hover { opacity: 0.6; }
   .bq-hero__dot.is-active { opacity: 1; background: #000; transform: scale(1.2); }
 
+  @media (max-width: 600px) {
+    .bq-hero__media-frame { overflow: visible; }
+    .bq-hero__video,
+    .bq-hero__image,
+    .bq-hero__video-fallback { border-radius: 20px; }
+  }
+
   @media (min-width: 768px) {
-    .bq-hero {
+    .bq-hero__inner {
       grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
       grid-template-rows: 1fr;
+      column-gap: 70px;
       align-items: stretch;
-      min-height: 600px;
+      padding: 80px 40px;
     }
-    .bq-hero__media { grid-column: 2; grid-row: 1; height: 100%; }
-    .bq-hero__media-frame { aspect-ratio: auto; height: 100%; min-height: 600px; }
-    .bq-hero__image { height: 100%; }
-    .bq-hero__image--desktop { display: block; }
-    .bq-hero__image--mobile { display: none; }
+    .bq-hero__media { grid-column: 2; grid-row: 1; }
+    .bq-hero__media-frame { aspect-ratio: auto; height: 100%; }
 
     .bq-hero__content {
       grid-column: 1;
       grid-row: 1;
-      padding-block: 80px;
-      padding-inline-start: max(24px, calc((100vw - 1300px) / 2));
-      padding-inline-end: 70px;
+      padding-top: 0;
       justify-content: center;
     }
 
@@ -335,7 +443,7 @@
     .bq-hero__intro { font-size: 20px; }
     .bq-hero__benefit { font-size: 20px; }
     .bq-hero__cta { width: max-content; padding: 16px 32px; font-size: 20px; }
-    .bq-hero__trust { flex-direction: row; flex-wrap: nowrap; gap: 16px; }
+    .bq-hero__trust { flex-direction: row; flex-wrap: nowrap; gap: 12px; }
     .bq-hero__trust-item { font-size: 18px; }
     .bq-hero__testimonial-card { padding: 15px; }
     .bq-hero__testimonial-top { gap: 18px; margin-bottom: 0; }
@@ -344,7 +452,7 @@
   }
 
   @media (max-width: 390px) {
-    .bq-hero .bq-hero__headline { font-size: 26px; }
+    .bq-hero .bq-hero__headline { font-size: 28px; }
     .bq-hero__cta { padding: 10px; }
   }
 {% endstylesheet %}
@@ -353,9 +461,13 @@
   (function () {
     function init(root) {
       var track = root.querySelector('.bq-hero__testimonials-track');
-      var slides = root.querySelectorAll('.bq-hero__testimonial');
+      if (!track) return;
+      var allSlides = Array.prototype.slice.call(track.querySelectorAll('.bq-hero__testimonial'));
+      var realSlides = allSlides.filter(function (s) { return !s.hasAttribute('data-clone'); });
       var dots = root.querySelectorAll('.bq-hero__dot');
-      if (!track || !slides.length || !dots.length) return;
+      if (!realSlides.length || !dots.length) return;
+
+      var hasClones = allSlides.length > realSlides.length;
 
       function setActive(idx) {
         dots.forEach(function (d, i) {
@@ -365,27 +477,60 @@
         });
       }
 
+      function scrollToSlide(target, smooth) {
+        track.scrollTo({
+          left: target.offsetLeft - track.offsetLeft,
+          behavior: smooth ? 'smooth' : 'auto'
+        });
+      }
+
+      if (hasClones) {
+        requestAnimationFrame(function () {
+          scrollToSlide(realSlides[0], false);
+        });
+      }
+
       dots.forEach(function (dot, i) {
         dot.addEventListener('click', function () {
-          var target = slides[i];
+          var target = realSlides[i];
           if (!target) return;
-          track.scrollTo({
-            left: target.offsetLeft - track.offsetLeft,
-            behavior: 'smooth'
-          });
+          scrollToSlide(target, true);
         });
       });
 
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
-            var idx = Array.prototype.indexOf.call(slides, entry.target);
+            var idx = realSlides.indexOf(entry.target);
             if (idx >= 0) setActive(idx);
           }
         });
       }, { root: track, threshold: [0.55, 0.75] });
+      realSlides.forEach(function (s) { io.observe(s); });
 
-      slides.forEach(function (s) { io.observe(s); });
+      if (hasClones) {
+        var wrapTimer;
+        track.addEventListener('scroll', function () {
+          clearTimeout(wrapTimer);
+          wrapTimer = setTimeout(function () {
+            var trackRect = track.getBoundingClientRect();
+            var center = trackRect.left + trackRect.width / 2;
+            for (var i = 0; i < allSlides.length; i++) {
+              var s = allSlides[i];
+              var sRect = s.getBoundingClientRect();
+              if (center >= sRect.left && center <= sRect.right) {
+                var clone = s.getAttribute('data-clone');
+                if (clone === 'tail') {
+                  scrollToSlide(realSlides[realSlides.length - 1], false);
+                } else if (clone === 'head') {
+                  scrollToSlide(realSlides[0], false);
+                }
+                break;
+              }
+            }
+          }, 150);
+        });
+      }
     }
 
     document.querySelectorAll('[data-bq-hero]').forEach(init);
@@ -417,9 +562,9 @@
     { "type": "header", "content": "Trust row" },
     { "type": "text", "id": "trust_1", "label": "Trust item 1", "default": "Garanzia 365 giorni soddisfatti o rimborsati" },
     { "type": "text", "id": "trust_2", "label": "Trust item 2", "default": "Spedizione espressa in tutto il mondo" },
-    { "type": "header", "content": "Media" },
-    { "type": "image_picker", "id": "image_desktop", "label": "Desktop image" },
-    { "type": "image_picker", "id": "image_mobile", "label": "Mobile image" }
+    { "type": "header", "content": "Media (right side, 1:1)" },
+    { "type": "video", "id": "hero_video", "label": "Hero video (1:1)", "info": "Square autoplay/loop/muted/playsinline, mirrors source. Takes priority over image." },
+    { "type": "image_picker", "id": "hero_image", "label": "Hero image (1:1, fallback)", "info": "Used when no video is uploaded. Should be square (1:1)." }
   ],
   "blocks": [
     {

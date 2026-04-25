@@ -64,7 +64,7 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 
 | # | Section | Status | Notes |
 |---|---------|--------|-------|
-| 1 | Hero | ⬜ | |
+| 1 | Hero | ✅ | |
 | 2 | Industry context | ⬜ | |
 | 3 | Under-eye causes | ⬜ | |
 | 4 | Dual-technology | ⬜ | |
@@ -101,6 +101,8 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - 2026-04-24: Product name tokenized via section schema setting `product_name_token` so it can be renamed in one place.
 - 2026-04-25: Title-case Italian headlines kept (English-source convention) — aesthetic preference, accepted minor convention deviation.
 - 2026-04-25: Switched from screenshot-driven CSS approximation to source-CSS extraction. All section CSS must mirror source CSS values exactly.
+- 2026-04-25: Section 1 closed at ~92% fidelity. Hero video/image asset and announcement bar deferred. Decorative full-bleed bg PNG omitted.
+- 2026-04-25: Per-section workflow updated: visual triangulation (HTML + CSS + render) + behavioral check (live observation + JS config extraction) replaces the screenshot-driven approximation cycle. Audit/structural-diff prompts retired except where explicitly needed.
 
 ## Working protocol (instructions for Claude Code)
 
@@ -111,19 +113,17 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 
 ### Per-section workflow
 1. User says "Section N"
-2. Claude Code produces a SOURCE INVENTORY before any brief is written:
-   - Element list from `source/rendered.html` (tag types + class names)
-   - Visible structure from `source/crops/` (layout, columns, breakpoints)
-   - Behaviors detected (carousels, animations, dynamic media, scroll effects)
-   - Asset list (images, video, gifs, fonts)
-   - Ambiguity flags
-3. Chat-Claude reads the inventory, drafts a brief for the build
-4. User approves/adjusts the brief
-5. Claude Code builds from the brief
-6. User screenshots build (desktop + mobile), drops in chat
-7. Chat-Claude diffs vs source, gives revisions
-8. Iterate until ≥90% fidelity
-9. Mark ✅ in PROJECT.md, commit
+2. Claude Code produces SOURCE INVENTORY with triangulation:
+   - HTML subtree: every element, class, attribute (rendered.html)
+   - CSS rules: every rule applying, with computed values (source/css/)
+   - Rendered measurements: pixel dimensions and aspect ratios from source/crops/
+   - JS behaviors: libraries, init configs, observed motion
+   - Discrepancies section: any HTML/CSS/render disagreement, flagged for resolution before build
+3. Chat-Claude reviews inventory; user approves or sends back for clarification
+4. Claude Code builds as a structural mirror of inventory (element types, nesting, classes, computed values copied verbatim)
+5. User screenshots desktop + mobile, drops in chat
+6. Chat-Claude diffs screenshots vs source crops; behavioral check runs in parallel (ours vs source live)
+7. Iterate only if real discrepancy surfaces; otherwise mark ✅
 
 ### Copy rules
 - Italian, written fresh by agent — not translated from source

@@ -1,0 +1,7 @@
+https://botaniqueparis.com/cdn/shop/t/117/assets/base.css?v=121719869451469282031776499407
+https://botaniqueparis.com/cdn/shop/t/117/assets/slick.css?v=100699513414984487911768669105
+https://unpkg.com/aos@2.3.1/dist/aos.css
+https://botaniqueparis.com/cdn/shopifycloud/portable-wallets/latest/accelerated-checkout-backwards-compat.css
+https://botaniqueparis.com/cdn/shop/t/117/compiled_assets/styles.css?v=57743040407345146731776679454
+https://cdn.shopify.com/extensions/019db5da-c1b2-7270-8b49-2d0370112c8d/kaching-bundles-1786/assets/kaching-bundles.css
+https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;500;600;700&display=swap

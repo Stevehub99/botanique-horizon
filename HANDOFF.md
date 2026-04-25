@@ -13,12 +13,7 @@ This file captures context from the prior chat session that isn't already in PRO
 - 5 testimonial blocks seeded as defaults in the section preset
 - Source-extraction pass complete: CTA square corners, testimonial card black border, stars pink, avatar 80px, font swapped to Inter 500/700
 
-### Section 1 OPEN items (work to finish)
-1. **Carousel doesn't autoplay or infinite-loop.** Drag/swipe + dots work, but JS doesn't auto-advance and doesn't wrap last→first. Fix: read source's Slick init config from source/rendered.html (search for "slick(" in inline scripts), match config exactly (infinite, autoplay, autoplaySpeed, speed, dots).
-2. **Right column image fills column edge-to-edge.** Source has padding/margin around the image — visible whitespace between image and section right edge. Read source/css/ for image container's actual margin/padding/max-width and apply.
-3. **Headline still has too much vertical gap between line 1 and line 2.** Source line-height ≈ 1.05; ours has more breathing room. Verify computed line-height vs source.
-4. **Section vertical padding still feels excessive on desktop** (eyebrow has too much air above it). Confirm computed padding-top matches source.
-5. **Structural diff not yet produced.** Per the new rule, Claude Code must produce a structural diff (HTML tree, CSS rules, JS behaviors — source vs ours) before declaring Section 1 done.
+Section 1 closed 2026-04-25. Hero video/image asset and theme announcement bar deferred to next phase.
 
 ### Workflow correction (CRITICAL — apply going forward)
 Earlier rounds were screenshot-driven, which produced approximations and missed JS behavior. New rule (now in PROJECT.md):
@@ -69,6 +64,11 @@ All custom sections prefixed `bq-` to avoid collision with Horizon's stock secti
 6. **Structural diff before "done."** See above.
 
 7. **Per-section structural mirror.** Extract HTML tree shape + CSS + JS behavior + font-family in one pass per section. Do not iterate fragment-by-fragment.
+
+## Standing rules — triangulation
+
+Visual triangulation (HTML + CSS + render): every key element verified across all three. Discrepancies are flagged and escalated, not silently resolved.
+Behavioral check: source's section observed live; JS init configs extracted from rendered.html; ours verified to behave identically.
 
 ## Italian copy locked for Section 1 (use verbatim)
 - Eyebrow: `SALDI FESTA DELLA MAMMA 🎉`

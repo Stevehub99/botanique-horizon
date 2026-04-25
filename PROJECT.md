@@ -134,6 +134,15 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - Flag copy that needs to be adapted if user's product differs from source's
 - **User-approved copy is immutable.** Once a string appears in PROJECT.md or in a user message, use it verbatim. No paraphrasing, no rewrites. Any deviation must be flagged before applying, not after.
 
+### Per-section structural mirror
+> Extract HTML tree shape + CSS + JS behavior + font-family in one pass per section. Do not iterate fragment-by-fragment.
+>
+> For each section, before writing code, produce a complete inventory:
+> 1. **HTML tree** — element types, class names, attributes from `source/rendered.html`. Document as a `{% comment %}` block at the top of the section file.
+> 2. **CSS rules** — every rule matching every class in the subtree, from `source/css/`, with media-query context. Apply values verbatim.
+> 3. **JS behavior** — identify libraries (Slick, Swiper, GSAP, AOS, Lottie) by class/script-tag detection; locate init configs; replicate with vanilla JS or import the same library.
+> 4. **Font-family** — read `@font-face` declarations from inline `<style>` and external CSS; identify what the section actually computes to (override rules can mask theme defaults). If the font isn't free, document the source font + use the closest free Google Fonts equivalent with matching weights.
+
 ### CSS fidelity
 > All visual CSS properties (colors, font sizes, weights, padding, gap, border-radius, line-height, etc.) must be extracted directly from `source/rendered.html` and `source/css/` — not approximated from screenshots. When uncertain, read the source CSS files for the matching class names and replicate values exactly. Update `assets/bq-tokens.css` with any new color or measurement constants discovered during extraction.
 

@@ -1,0 +1,358 @@
+{%- liquid
+  assign product_name = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+  assign cta_link = section.settings.cta_link | default: '#'
+  assign accent = section.settings.accent_color | default: '#FF7E97'
+-%}
+
+<section
+  class="bq-section bq-hero"
+  data-bq-hero
+  data-section-id="{{ section.id }}"
+  style="--bq-accent: {{ accent }};"
+  aria-label="{{ section.settings.headline_line_1 }}"
+>
+  <div class="bq-wrap bq-hero__grid">
+    <div class="bq-hero__content">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="bq-hero__eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      <h1 class="bq-hero__headline">
+        {%- if section.settings.headline_line_1 != blank -%}<span class="bq-hero__headline-line">{{ section.settings.headline_line_1 }}</span>{%- endif -%}
+        {%- if section.settings.headline_line_2_accent != blank %} <strong class="bq-hero__headline-accent">{{ section.settings.headline_line_2_accent }}</strong>{% endif -%}
+      </h1>
+
+      {%- if section.settings.intro != blank -%}
+        <p class="bq-hero__intro">{{ section.settings.intro | replace: '%product%', product_name }}</p>
+      {%- endif -%}
+
+      <ul class="bq-hero__benefits" role="list">
+        {%- for i in (1..3) -%}
+          {%- assign key = 'benefit_' | append: i -%}
+          {%- assign txt = section.settings[key] -%}
+          {%- if txt != blank -%}
+            <li class="bq-hero__benefit">
+              <span class="bq-hero__benefit-dot" aria-hidden="true">
+                <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{{ txt }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+
+      {%- if section.settings.cta_label != blank -%}
+        <a href="{{ cta_link }}" class="bq-btn bq-hero__cta">{{ section.settings.cta_label }}</a>
+      {%- endif -%}
+
+      <div class="bq-hero__trust">
+        {%- for i in (1..2) -%}
+          {%- assign key = 'trust_' | append: i -%}
+          {%- assign txt = section.settings[key] -%}
+          {%- if txt != blank -%}
+            <div class="bq-hero__trust-item">
+              <span class="bq-check" aria-hidden="true">
+                <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+              <span>{{ txt }}</span>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="bq-hero__testimonials" role="region" aria-roledescription="carousel" aria-label="Recensioni clienti">
+          <ul class="bq-hero__testimonials-track" role="list">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'testimonial' -%}
+                <li class="bq-hero__testimonial" data-bq-slide="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+                  <figure class="bq-hero__testimonial-card">
+                    <div class="bq-hero__testimonial-top">
+                      {%- if block.settings.avatar != blank -%}
+                        {{ block.settings.avatar | image_url: width: 120 | image_tag: class: 'bq-hero__testimonial-avatar', widths: '60,120', loading: 'lazy', alt: block.settings.name }}
+                      {%- else -%}
+                        <span class="bq-hero__testimonial-avatar bq-hero__testimonial-avatar--placeholder" aria-hidden="true">{{ block.settings.name | slice: 0, 1 }}</span>
+                      {%- endif -%}
+                      <blockquote class="bq-hero__testimonial-quote">{{ block.settings.quote }}</blockquote>
+                    </div>
+                    <figcaption class="bq-hero__testimonial-bottom">
+                      <span class="bq-hero__testimonial-author">
+                        <span class="bq-hero__testimonial-name">- {{ block.settings.name }}</span>
+                        {%- if block.settings.verified -%}
+                          <span class="bq-hero__verified" aria-label="Verified">
+                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="7" cy="7" r="7" fill="currentColor"/>
+                              <path d="M3.5 7.2L6 9.5L10.5 4.5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                            </svg>
+                          </span>
+                        {%- endif -%}
+                      </span>
+                      <span class="bq-hero__testimonial-stars" aria-label="{{ block.settings.stars }} stelle su 5">
+                        {%- for s in (1..5) -%}{%- if s <= block.settings.stars -%}★{%- else -%}☆{%- endif -%}{%- endfor -%}
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+          <ol class="bq-hero__dots" role="tablist" aria-label="Slide selector">
+            {%- for block in section.blocks -%}
+              {%- if block.type == 'testimonial' -%}
+                <li>
+                  <button
+                    type="button"
+                    class="bq-hero__dot{% if forloop.first %} is-active{% endif %}"
+                    data-bq-dot="{{ forloop.index0 }}"
+                    role="tab"
+                    aria-label="{{ forloop.index }} of {{ section.blocks.size }}"
+                    aria-selected="{% if forloop.first %}true{% else %}false{% endif %}"
+                  ></button>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ol>
+        </div>
+      {%- endif -%}
+    </div>
+
+    <div class="bq-hero__media">
+      <div class="bq-hero__media-frame">
+        {%- if section.settings.image_mobile != blank -%}
+          {{ section.settings.image_mobile | image_url: width: 900 | image_tag: class: 'bq-hero__image bq-hero__image--mobile', widths: '400,600,900', sizes: '100vw', loading: 'eager', alt: product_name }}
+        {%- endif -%}
+        {%- if section.settings.image_desktop != blank -%}
+          {{ section.settings.image_desktop | image_url: width: 1400 | image_tag: class: 'bq-hero__image bq-hero__image--desktop', widths: '600,900,1200,1400', sizes: '(min-width: 750px) 50vw, 100vw', loading: 'eager', alt: product_name }}
+        {%- endif -%}
+        {%- if section.settings.image_desktop == blank and section.settings.image_mobile == blank -%}
+          {{ 'lifestyle-1' | placeholder_svg_tag: 'bq-hero__image bq-hero__image--placeholder' }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .bq-hero { padding: 20px 0; }
+  .bq-hero__grid { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: center; }
+  .bq-hero__media { order: -1; }
+  .bq-hero__media-frame { position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 4 / 5; background: #eee; }
+  .bq-hero__image { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .bq-hero__image--desktop { display: none; }
+  .bq-hero__image--placeholder { width: 100%; height: 100%; }
+  .bq-hero__content { display: flex; flex-direction: column; gap: 0; padding-top: 30px; }
+
+  .bq-hero__eyebrow { margin: 0 0 16px; font-weight: 700; font-size: 16px; color: #000; }
+
+  .bq-hero .bq-hero__headline { margin: 0 0 30px; font-size: 32px; line-height: 1.15; color: #000; font-weight: 500; }
+  .bq-hero__headline-line { font-weight: inherit; }
+  .bq-hero__headline-accent { font-weight: 700; color: var(--bq-accent); }
+
+  .bq-hero__intro { margin: 0 0 16px; font-size: 16px; color: #000; line-height: 1.45; }
+
+  .bq-hero__benefits { list-style: none; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  .bq-hero__benefit { display: flex; gap: 8px; align-items: center; font-size: 16px; color: #000; line-height: 1.4; }
+  .bq-hero__benefit-dot { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--bq-accent); color: #fff; }
+  .bq-hero__benefit-dot svg { width: 14px; height: 14px; }
+
+  .bq-hero__cta { display: block; width: 100%; margin: 0 0 22px; padding: 14px 24px; background: #000; color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; text-decoration: none; border: 0; border-radius: 0; cursor: pointer; transition: background 200ms ease; }
+  .bq-hero__cta:hover { background: var(--bq-accent); }
+
+  .bq-hero__trust { display: flex; flex-direction: column; gap: 8px; margin-bottom: 16px; }
+  .bq-hero__trust-item { display: flex; gap: 10px; align-items: center; font-size: 14px; color: #000; }
+  .bq-hero__trust-item .bq-check { width: 22px; height: 22px; }
+  .bq-hero__trust-item .bq-check svg { width: 12px; height: 12px; }
+
+  .bq-hero__testimonials { margin-top: 8px; max-width: 610px; }
+  .bq-hero__testimonials-track {
+    list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column;
+    grid-auto-columns: 100%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory;
+    scrollbar-width: none; -ms-overflow-style: none; overscroll-behavior-x: contain;
+  }
+  .bq-hero__testimonials-track::-webkit-scrollbar { display: none; }
+  .bq-hero__testimonial { scroll-snap-align: center; min-width: 0; }
+  .bq-hero__testimonial-card { margin: 0; padding: 13px; background: #fff; border: 1px solid #000; border-radius: 16px; max-width: 610px; display: flex; flex-direction: column; gap: 0; }
+  .bq-hero__testimonial-top { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .bq-hero__testimonial-avatar { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; flex-shrink: 0; background: var(--bq-card-bg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 28px; color: var(--bq-muted); text-transform: uppercase; }
+  .bq-hero__testimonial-quote { margin: 0; font-style: italic; font-size: 14px; line-height: 1.6; color: #333; }
+  .bq-hero__testimonial-bottom { display: flex; align-items: center; justify-content: space-between; padding-left: 98px; }
+  .bq-hero__testimonial-author { display: flex; align-items: center; gap: 5px; }
+  .bq-hero__testimonial-name { color: var(--bq-accent); font-size: 16px; font-weight: 600; margin: 0; }
+  .bq-hero__verified { display: inline-flex; width: 14px; height: 14px; color: #1DA1F2; }
+  .bq-hero__verified svg { width: 100%; height: 100%; }
+  .bq-hero__testimonial-stars { color: var(--bq-accent); font-size: 16px; letter-spacing: 0; }
+
+  .bq-hero__dots { list-style: none; margin: 16px 0 0; padding: 0; display: flex; gap: 6px; justify-content: center; }
+  .bq-hero__dot { width: 10px; height: 10px; padding: 0; border: 0; border-radius: 50%; background: #DDD; cursor: pointer; transition: background 200ms ease, transform 200ms ease; }
+  .bq-hero__dot:hover { transform: scale(1.15); }
+  .bq-hero__dot.is-active { background: var(--bq-accent); }
+
+  @media (min-width: 768px) {
+    .bq-hero { padding: 80px 0; }
+    .bq-hero__grid { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 70px; }
+    .bq-hero__media { order: 0; }
+    .bq-hero__media-frame { aspect-ratio: 1 / 1; border-radius: 16px; }
+    .bq-hero__content { gap: 0; padding-top: 0; }
+    .bq-hero__intro { font-size: 20px; }
+    .bq-hero__benefit { font-size: 20px; }
+    .bq-hero__eyebrow { font-size: 20px; }
+    .bq-hero__cta { width: max-content; align-self: flex-start; padding: 16px 32px; font-size: 20px; }
+    .bq-hero__trust { flex-direction: row; flex-wrap: nowrap; gap: 16px; }
+    .bq-hero__trust-item { font-size: 18px; }
+    .bq-hero__image--desktop { display: block; }
+    .bq-hero__image--mobile { display: none; }
+    .bq-hero__testimonial-card { padding: 15px; }
+    .bq-hero__testimonial-top { gap: 18px; margin-bottom: 0; }
+    .bq-hero__testimonial-stars { font-size: 18px; letter-spacing: 2px; }
+  }
+
+  @media (max-width: 390px) {
+    .bq-hero .bq-hero__headline { font-size: 28px; }
+    .bq-hero__cta { padding: 10px; }
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  (function () {
+    function init(root) {
+      var track = root.querySelector('.bq-hero__testimonials-track');
+      var slides = root.querySelectorAll('.bq-hero__testimonial');
+      var dots = root.querySelectorAll('.bq-hero__dot');
+      if (!track || !slides.length || !dots.length) return;
+
+      dots.forEach(function (dot, i) {
+        dot.addEventListener('click', function () {
+          var target = slides[i];
+          if (!target) return;
+          track.scrollTo({
+            left: target.offsetLeft - track.offsetLeft,
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      function setActive(idx) {
+        dots.forEach(function (d, i) {
+          var on = i === idx;
+          d.classList.toggle('is-active', on);
+          d.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+      }
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+            var idx = Array.prototype.indexOf.call(slides, entry.target);
+            if (idx >= 0) setActive(idx);
+          }
+        });
+      }, { root: track, threshold: [0.55, 0.75] });
+
+      slides.forEach(function (s) { io.observe(s); });
+    }
+
+    document.querySelectorAll('[data-bq-hero]').forEach(init);
+  })();
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "Botanique Hero",
+  "tag": "section",
+  "class": "bq-section-hero",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text", "id": "product_name_token", "label": "Product name (token)", "default": "Il Nostro Dispositivo", "info": "Replaces %product% wherever it appears in copy." },
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow (promo)", "default": "SALDI FESTA DELLA MAMMA 🎉" },
+    { "type": "text", "id": "headline_line_1", "label": "Headline — line 1", "default": "Ringiovanisci il Tuo Sguardo" },
+    { "type": "text", "id": "headline_line_2_accent", "label": "Headline — line 2 (accent)", "default": "Senza Chirurgia" },
+    { "type": "color", "id": "accent_color", "label": "Accent color", "default": "#FF7E97" },
+    { "type": "text", "id": "intro", "label": "Subhead / intro line", "default": "In uno studio clinico di 12 settimane, le donne che hanno usato %product% hanno dichiarato:" },
+    { "type": "text", "id": "benefit_1", "label": "Bullet 1", "default": "93% di riduzione visibile del gonfiore" },
+    { "type": "text", "id": "benefit_2", "label": "Bullet 2", "default": "86% sguardo più luminoso, meno incavato" },
+    { "type": "text", "id": "benefit_3", "label": "Bullet 3", "default": "89% di miglioramento su rughe e linee sottili" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_label", "label": "CTA label", "default": "RINGIOVANISCI LO SGUARDO" },
+    { "type": "url", "id": "cta_link", "label": "CTA link" },
+    { "type": "header", "content": "Trust row" },
+    { "type": "text", "id": "trust_1", "label": "Trust item 1", "default": "Garanzia 365 giorni soddisfatti o rimborsati" },
+    { "type": "text", "id": "trust_2", "label": "Trust item 2", "default": "Spedizione espressa in tutto il mondo" },
+    { "type": "header", "content": "Media" },
+    { "type": "image_picker", "id": "image_desktop", "label": "Desktop image" },
+    { "type": "image_picker", "id": "image_mobile", "label": "Mobile image" }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        { "type": "image_picker", "id": "avatar", "label": "Avatar" },
+        { "type": "textarea", "id": "quote", "label": "Quote" },
+        { "type": "text", "id": "name", "label": "Name" },
+        { "type": "checkbox", "id": "verified", "label": "Verified", "default": true },
+        { "type": "range", "id": "stars", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Botanique Hero",
+      "category": "Botanique",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Giulia M.",
+            "quote": "La combinazione di luce rossa ed EMS si sente davvero al lavoro sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Aurora B.",
+            "quote": "Non credevo ai risultati nelle foto prima/dopo, poi l'ho provato. Ora le occhiaie che avevo da anni sono davvero meno visibili.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Chiara V.",
+            "quote": "Dopo 3 settimane di uso quotidiano lo sguardo è decisamente più fresco. Mi fa risparmiare i filler, valeva ogni centesimo.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Martina D.",
+            "quote": "Non avevo grandi aspettative, invece funziona. Lo uso la mattina mentre bevo il caffè.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "name": "Sofia R.",
+            "quote": "Palpebre più tese e borse ridotte. Mia sorella mi ha chiesto subito dove l'avevo comprato.",
+            "verified": true,
+            "stars": 5
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

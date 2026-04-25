@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --bq-pink: #FF7E97;
+  --bq-pink-tint: #FFE4EA;
+  --bq-pink-strip: #FFE4EA;
+  --bq-green: #2ED215;
+  --bq-ink: #0A0A0A;
+  --bq-body-bg: #FAF8F6;
+  --bq-card-bg: #F6EFE8;
+  --bq-card-bg-alt: #FFFFFF;
+  --bq-dark-bg: #0A0A0A;
+  --bq-dark-bg-soft: #111111;
+  --bq-muted: #5A5A5A;
+  --bq-rule: rgba(10, 10, 10, 0.08);
+
+  --bq-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  --bq-fs-eyebrow: 13px;
+  --bq-fs-body: 16px;
+  --bq-fs-small: 14px;
+  --bq-fs-h1-mobile: 32px;
+  --bq-fs-h1: 48px;
+  --bq-fs-h2-mobile: 28px;
+  --bq-fs-h2: 40px;
+
+  --bq-radius-sm: 8px;
+  --bq-radius-md: 12px;
+  --bq-radius-lg: 20px;
+  --bq-radius-pill: 999px;
+
+  --bq-page-max: 1300px;
+  --bq-gutter: clamp(16px, 4vw, 40px);
+}
+
+.bq-section {
+  background: var(--bq-body-bg);
+  color: var(--bq-ink);
+  font-family: var(--bq-font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bq-wrap {
+  max-width: var(--bq-page-max);
+  margin-inline: auto;
+  padding-inline: var(--bq-gutter);
+}
+
+.bq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 28px;
+  background: var(--bq-ink);
+  color: #fff;
+  font-family: var(--bq-font-sans);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--bq-radius-sm);
+  cursor: pointer;
+  transition: transform 150ms ease, background 200ms ease;
+}
+
+.bq-btn:hover { background: #1a1a1a; transform: translateY(-1px); }
+.bq-btn:active { transform: translateY(0); }
+.bq-btn--pink { background: var(--bq-pink); }
+.bq-btn--pink:hover { background: #ff6e8b; }
+.bq-btn--full { width: 100%; }
+
+.bq-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bq-green);
+  color: #fff;
+}
+
+.bq-check svg { width: 12px; height: 12px; }
+
+.bq-pink-dot {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bq-pink);
+  color: #fff;
+}
+
+.bq-pink-dot svg { width: 11px; height: 11px; }

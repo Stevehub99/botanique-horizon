@@ -1,0 +1,28 @@
+{
+  "name": "botanique-horizon",
+  "version": "1.0.0",
+  "description": "[Getting started](#getting-started) | [Staying up to date with Horizon changes](#staying-up-to-date-with-horizon-changes) | [Developer tools](#developer-tools) | [Contributing](#contributing) | [License](#license)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stevehub99/botanique-horizon.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Stevehub99/botanique-horizon/issues"
+  },
+  "homepage": "https://github.com/Stevehub99/botanique-horizon#readme",
+  "devDependencies": {
+    "puppeteer": "^24.42.0",
+    "sharp": "^0.34.5"
+  }
+}

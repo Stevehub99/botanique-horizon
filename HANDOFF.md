@@ -65,10 +65,13 @@ All custom sections prefixed `bq-` to avoid collision with Horizon's stock secti
 
 7. **Per-section structural mirror.** Extract HTML tree shape + CSS + JS behavior + font-family in one pass per section. Do not iterate fragment-by-fragment.
 
-## Standing rules — triangulation
+## Standing rules — triangulation (added 2026-04-25 after Section 1)
 
-Visual triangulation (HTML + CSS + render): every key element verified across all three. Discrepancies are flagged and escalated, not silently resolved.
-Behavioral check: source's section observed live; JS init configs extracted from rendered.html; ours verified to behave identically.
+8. **Triangulation before build.** Three sources must agree before code is written for any section: HTML at source/rendered.html (actual elements, classes, attributes), CSS at source/css/ (rules and computed values), Render at source/crops/ (measured pixel dimensions and aspect ratios). Any disagreement is flagged in the inventory and resolved or escalated to user before any Liquid is written. Static CSS values that don't match rendered output mean source has a runtime override that must be found, not approximated.
+
+9. **Behavioral check separate from visual.** JS init configs extracted from rendered.html. Behavior verified against source's live page for autoplay, transitions, hover effects, scroll triggers. Behavior gets its own verification step, parallel to the visual triangulation.
+
+10. **Computed-style read for unresolvable properties.** When static CSS extraction returns "CANNOT DETERMINE" for a property (theme defaults, custom property cascades), Claude Code reads computed styles from source's live page (via headless browser or curl plus style block parsing) rather than guessing. No "reasonable default" substitutions.
 
 ## Italian copy locked for Section 1 (use verbatim)
 - Eyebrow: `SALDI FESTA DELLA MAMMA 🎉`

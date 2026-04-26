@@ -112,18 +112,13 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - Files > explanations — user reads the code itself
 
 ### Per-section workflow
-1. User says "Section N"
-2. Claude Code produces SOURCE INVENTORY with triangulation:
-   - HTML subtree: every element, class, attribute (rendered.html)
-   - CSS rules: every rule applying, with computed values (source/css/)
-   - Rendered measurements: pixel dimensions and aspect ratios from source/crops/
-   - JS behaviors: libraries, init configs, observed motion
-   - Discrepancies section: any HTML/CSS/render disagreement, flagged for resolution before build
-3. Chat-Claude reviews inventory; user approves or sends back for clarification
-4. Claude Code builds as a structural mirror of inventory (element types, nesting, classes, computed values copied verbatim)
-5. User screenshots desktop + mobile, drops in chat
-6. Chat-Claude diffs screenshots vs source crops; behavioral check runs in parallel (ours vs source live)
-7. Iterate only if real discrepancy surfaces; otherwise mark ✅
+Step 1: User says "Section N"
+Step 2: Claude Code produces SOURCE INVENTORY with triangulation: HTML subtree (every element, class, attribute from rendered.html), CSS rules (every rule applying with computed values from source/css/), Rendered measurements (pixel dimensions and aspect ratios from source/crops/), JS behaviors (libraries, init configs, observed motion), Discrepancies section (any HTML/CSS/render disagreement, flagged for resolution before build)
+Step 3: Chat-Claude reviews inventory; user approves or sends back for clarification
+Step 4: Claude Code builds as a structural mirror of inventory (element types, nesting, classes, computed values copied verbatim)
+Step 5: User screenshots desktop and mobile, drops in chat
+Step 6: Chat-Claude diffs screenshots vs source crops; behavioral check runs in parallel (ours vs source live)
+Step 7: Iterate only if real discrepancy surfaces; otherwise mark done
 
 ### Copy rules
 - Italian, written fresh by agent — not translated from source

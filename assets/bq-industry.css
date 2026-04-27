@@ -73,6 +73,8 @@
 .bq-industry__photo {
   order: 1;
   width: 100%;
+  /* Deliberate deviation from source for mobile readability with longer Italian copy */
+  margin-bottom: 24px;
 }
 
 .bq-industry__image {
@@ -112,6 +114,7 @@
   .bq-industry__photo {
     order: 2;
     width: 40%;
+    margin-bottom: 0;
   }
   .bq-industry__title { font-size: 46px; }
   .bq-industry__subtitle {

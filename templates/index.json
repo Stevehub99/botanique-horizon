@@ -9,83 +9,6 @@
  */
  {
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
-      "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
-          "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground-heading)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-secondary",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
-      "name": "t:names.hero",
-      "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "link": "",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "color_scheme": "scheme-6",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
-      }
-    },
     "bq_image_text_causes_xQzFck": {
       "type": "bq-image-text",
       "settings": {
@@ -101,10 +24,68 @@
     "bq_industry_kP9mTr": {
       "type": "bq-industry",
       "settings": {}
+    },
+    "bq_hero_Hg7vZw": {
+      "type": "bq-hero",
+      "settings": {},
+      "blocks": {
+        "t1": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Giulia M.",
+            "quote": "La combinazione di luce rossa ed EMS si sente davvero al lavoro sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "t2": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Aurora B.",
+            "quote": "Non credevo ai risultati nelle foto prima/dopo, poi l'ho provato. Ora le occhiaie che avevo da anni sono davvero meno visibili.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "t3": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Chiara V.",
+            "quote": "Dopo 3 settimane di uso quotidiano lo sguardo è decisamente più fresco. Mi fa risparmiare i filler, valeva ogni centesimo.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "t4": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Martina D.",
+            "quote": "Non avevo grandi aspettative, invece funziona. Lo uso la mattina mentre bevo il caffè.",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "t5": {
+          "type": "testimonial",
+          "settings": {
+            "name": "Sofia R.",
+            "quote": "Palpebre più tese e borse ridotte. Mia sorella mi ha chiesto subito dove l'avevo comprato.",
+            "verified": true,
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3",
+        "t4",
+        "t5"
+      ]
     }
   },
   "order": [
-    "hero_jVaWmY",
+    "bq_hero_Hg7vZw",
     "bq_industry_kP9mTr",
     "bq_image_text_causes_xQzFck"
   ]

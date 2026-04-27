@@ -25,6 +25,8 @@
 .bq-image-text__photo {
   width: 100%;
   order: 1;
+  /* Deliberate deviation from source for mobile readability with longer Italian copy */
+  margin-bottom: 24px;
 }
 
 .bq-image-text__image {
@@ -101,6 +103,9 @@
     flex-direction: row;
     align-items: center;
   }
+
+  /* Reset mobile-only photo margin on desktop (side-by-side layout doesn't need vertical separation) */
+  .bq-image-text__photo { margin-bottom: 0; }
 
   /* Default layout: image right, text left */
   .bq-image-text--image_right .bq-image-text__photo {

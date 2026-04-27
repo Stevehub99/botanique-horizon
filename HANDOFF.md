@@ -1,3 +1,49 @@
+# HANDOFF — end of session 2026-04-27
+
+## Where we are
+- Section 3 (Under-eye causes) closed. Built as the first instance of the consolidated `bq-image-text` section. Italian copy locked in schema defaults. Mobile spacing fix applied (24px margin-bottom on photo column, deliberate deviation from source for longer Italian copy).
+- Section 2 (bq-industry) and Section 1 (bq-hero) are now both correctly placed in `templates/index.json` (recovered from editor-only state during this session).
+- Build progress: Sections 1, 2, 3 ✅. Section 4 (Dual-technology) is next, second instance of `bq-image-text`.
+
+## Decisions made this session
+
+### Workflow / architecture
+- **Family-clustering audit added to working protocol as Step 0** (mandatory for future projects). See PROJECT.md Working protocol + Decisions log entries 2026-04-27.
+- **Mid-build refactor to consolidated `bq-image-text` section.** Section 3 forward, the image-text family (10 instances total per audit) consolidates into one configurable section. Schema grows by accretion — only fields the current section needs get added. Empty optional fields collapse via Liquid `{% if %}` guards. Section 2 grandfathered as `bq-industry.liquid`, not retrofitted.
+- **Theme editor vs `templates/index.json` sync rule logged** (HANDOFF.md "Theme editor / templates/index.json sync" section). Section placement lives in code; editor-only edits don't count. Run `shopify theme pull` before any code edit to index.json to avoid wiping editor-only settings.
+
+### Process
+- **Screenshot pass dropped as a routine step.** User reviews live preview after each build and reports issues in plain language. Screenshots only on demand when user can't easily describe an issue or wants visual confirmation. No capture script needed for now.
+- **Italian copy decisions locked as durable rules** (in this session's chat, not yet in PROJECT.md): sentence case for h3 and below; article inside `<strong>` when sentence-initial; list structure mirrors source; parallel grammar across list items; register matches what an Italian skincare-aware reader would see on packaging. NOT YET WRITTEN TO PROJECT.md — user wants to verify the rules work in practice before codifying. Re-evaluate after Section 4 or 5.
+- **Cross-project section reuse: explicitly NOT optimizing for it.** Block schema designed only for what we observe in this build. Future funnels are fresh builds that reference this site as a template, not a library.
+- **Goal-check meta-rule (chat-Claude side, applied silently):** when facing X-vs-Y choices, ask "what's the actual goal?" and answer it inline. Lock a single version. Only present alternatives when the goal itself requires user judgment. NOT YET WRITTEN TO PROJECT.md, same reason as above.
+
+### Why we clone (clarified)
+- Clone goal: validate products against a proven funnel. Source is a known-converting reference, not an aesthetic target.
+- Two hard constraints: Italian language/culture (adapt, don't transliterate), and no verbatim copy or source images (IP).
+- When source convention conflicts with Italian-native phrasing, default to whichever preserves *funnel mechanics* (the persuasion structure, the conversion trigger). Ship the Italian-native version unless it weakens the sales argument.
+
+## What's in flight / unresolved
+- **Italian rules and goal-check meta-rule** are operating informally, not yet committed to PROJECT.md. Decide after Section 4 or 5 whether to codify.
+- **Hero image, Section 2 image, Section 3 image** are all placeholder SVGs in the dev preview. Real assets are deferred to Phase 2 asset-replacement pass.
+- **Section 12 (Precision engineering)** is NOT in the image-text family — uses `video-with-text-sec`. Will need its own section file when we get there.
+- **Section 15 (Founder story)** is structurally 5 image-text instances back-to-back (`founder-pt1` through `pt7`, gaps at pt4/pt5). When we hit it, configure 5 instances of bq-image-text consecutively rather than building a wrapper.
+
+## Files touched this session
+- `inventories/section-03-causes.md` (new)
+- `inventories/family-audit-image-text.md` (new — image-text family, 10 instances)
+- `sections/bq-image-text.liquid` (new)
+- `assets/bq-image-text.css` (new)
+- `assets/bq-industry.css` (mobile spacing fix)
+- `templates/index.json` (added bq-hero, bq-industry, bq-image-text-causes; removed stock hero and stock product list)
+- `PROJECT.md` (Step 0 audit policy in Working protocol; 2026-04-27 entries in Decisions log; Build progress notes annotations)
+- `HANDOFF.md` (Theme editor / index.json sync section + this end-of-session block)
+
+## Next session entry point
+Section 4 — Dual-technology. Image-right, text-left, has h2 (likely), h3, ol, CTA, trust-row. Will be second instance of `bq-image-text`, requiring schema additions for CTA + trust-row + maybe h2. Start with: inventory prompt for Claude Code per Standing Rule 5.
+
+---
+
 # HANDOFF — Botanique Clone, end of chat session 2026-04-25
 
 ## Purpose

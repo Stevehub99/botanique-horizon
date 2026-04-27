@@ -65,20 +65,20 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 | # | Section | Status | Notes |
 |---|---------|--------|-------|
 | 1 | Hero | ✅ | |
-| 2 | Industry context | ⬜ | |
-| 3 | Under-eye causes | ⬜ | |
-| 4 | Dual-technology | ⬜ | |
-| 5 | Mission | ⬜ | |
+| 2 | Industry context | ⬜ | closed as one-off (pre-refactor) |
+| 3 | Under-eye causes | ⬜ | image-text family · bq-image-text.liquid |
+| 4 | Dual-technology | ⬜ | image-text family · bq-image-text.liquid |
+| 5 | Mission | ⬜ | image-text family · bq-image-text.liquid |
 | 6 | Results timeline | ⬜ | Animated |
 | 7 | Science stats | ⬜ | |
 | 8 | Medical-grade / FDA | ⬜ | |
 | 9 | How to Use | ⬜ | |
 | 10 | Comparison grid | ⬜ | |
 | 11 | Promise icons | ⬜ | |
-| 12 | Precision engineering | ⬜ | Has video |
+| 12 | Precision engineering | ⬜ | image-text family · bq-image-text.liquid · Has video |
 | 13 | Urgency banner | ⬜ | |
 | 14 | Testimonials | ⬜ | |
-| 15 | Founder story | ⬜ | |
+| 15 | Founder story | ⬜ | image-text family · bq-image-text.liquid |
 | 16 | Tech specs | ⬜ | |
 | 17 | Product buy block | ⬜ | Scroll-pinned reveal |
 | 18 | Stats bar (repeat?) | ⬜ | |
@@ -93,6 +93,8 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - [ ] Hero images (desktop + mobile) — still needed; exposing as section image picker with placeholder until uploaded
 
 ## Decisions log
+- 2026-04-27: **Workflow rule added — Step 0 family-clustering audit** (see Working protocol). Future projects start with this audit before any section build.
+- 2026-04-27: **Mid-build workaround for current project** (Botanique). Step 0 was missed at project start. Sections 1 and 2 are already built as one-offs; not retrofitting. From Section 3 onward, image-text family (Sections 3, 4, 5, 12, 15) consolidates into one configurable section `bq-image-text.liquid`. Section 2 stays as `bq-industry.liquid`, grandfathered. This is a one-time workaround, not a pattern — future projects do Step 0 upfront and avoid the mid-build refactor entirely.
 - 2026-04-24: Theme = Horizon unpublished, not Dawn
 - 2026-04-24: Italian copy, written fresh — not translated from source
 - 2026-04-24: Stopped iterating capture script at ~90% render; manual Chrome screenshots fill gaps
@@ -114,6 +116,18 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - Checklists for anything user executes; minimal prose
 - No padding, no preamble, ship-focused
 - Files > explanations — user reads the code itself
+
+### Step 0: Family-clustering audit (per-project, mandatory for future projects)
+
+Before any per-section work, walk the full source DOM and group sections by structural family, not by sequence. For each family, list every section instance.
+
+Decision rule:
+- 2+ instances of a family → build one configurable section with blocks; configure each instance against it
+- Singleton family → build as a one-off section
+
+Output of Step 0 is a family map (e.g., "image-text family: sections 2, 3, 4, 5, 12, 15"), saved to `inventories/family-audit.md`. Used to plan build order and decide which sections need block schemas.
+
+Step 0 happens once per project, before Section 1. Do not skip it. Skipping produces section duplication that compounds across the build — see the Botanique project Decisions log (2026-04-27) for the cost of catching this mid-build instead of upfront.
 
 ### Per-section workflow
 Step 1: User says "Section N"

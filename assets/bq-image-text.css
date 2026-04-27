@@ -29,7 +29,8 @@
   margin-bottom: 24px;
 }
 
-.bq-image-text__image {
+.bq-image-text__image,
+.bq-image-text__video {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
@@ -94,6 +95,51 @@
 .bq-image-text__list ol li strong { color: var(--bq-image-text-accent, #FF7E97); }
 .bq-image-text__list ol li:last-child { padding-bottom: 0; }
 
+/* CTA — hero pattern (uppercase + pink hover), NOT source's plain CTA.
+   Project decision for visual consistency with the hero CTA. */
+.bq-image-text__cta {
+  display: block;
+  width: 100%;
+  margin-top: 30px;
+  padding: 10px 20px;
+  background: var(--bq-ink, #000);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 0;
+  transition: background 200ms ease;
+}
+.bq-image-text__cta:hover { background: var(--bq-image-text-accent, #FF7E97); }
+
+/* Trust row — mirrors source spec from inventory §3 (b00:8504–8513, 9119–9122, 9420–9544) */
+.bq-image-text__trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 25px;
+}
+.bq-image-text__trust-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.bq-image-text__trust-item p {
+  margin: 0 15px 0 10px;
+  font-size: 16px;
+  color: #000;
+}
+.bq-image-text__trust-item .bq-check { width: 14px; height: 14px; }
+.bq-image-text__trust-item .bq-check svg { width: 9px; height: 9px; }
+
+@media (max-width: 390px) {
+  .bq-image-text__cta { padding: 10px 10px; }
+}
+
 @media (min-width: 391px) and (max-width: 767px) {
   .bq-image-text__subtitle { font-size: 30px; }
 }
@@ -135,4 +181,15 @@
     margin: 0 0 32px;
     font-size: 32px;
   }
+
+  .bq-image-text__cta {
+    display: block;
+    width: max-content;
+    padding: 15px 40px;
+    font-size: 20px;
+    text-align: left;
+  }
+
+  .bq-image-text__trust { flex-wrap: nowrap; gap: 0; }
+  .bq-image-text__trust-item { width: auto; margin-bottom: 0; }
 }

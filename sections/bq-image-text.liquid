@@ -45,6 +45,12 @@
   assign pad_top = section.settings.section_padding_top | default: 10
   assign pad_bot = section.settings.section_padding_bottom | default: 10
   assign image_alt = section.settings.image_alt | default: 'Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili'
+  assign brand = section.settings.brand_name_token | default: 'Lumière Paris'
+  assign subheading = section.settings.subheading_h3 | replace: '%brand%', brand
+  assign intro = section.settings.intro_p | replace: '%brand%', brand
+  assign list = section.settings.numbered_list | replace: '%brand%', brand
+  assign closing = section.settings.closing_p | replace: '%brand%', brand
+  assign trust_blocks = section.blocks | where: 'type', 'trust_item'
 -%}
 
 <section
@@ -60,7 +66,26 @@
   <div class="bq-image-text__container">
     <div class="bq-image-text__row">
       <div class="bq-image-text__photo" data-aos="fade-up">
-        {%- if section.settings.image != blank -%}
+        {%- if section.settings.video != blank -%}
+          {%- assign vid = section.settings.video -%}
+          <video
+            class="bq-image-text__video"
+            playsinline
+            autoplay
+            loop="loop"
+            muted="muted"
+            preload="metadata"
+            {% if vid.preview_image != blank %}poster="{{ vid.preview_image | image_url: width: 1100 }}"{% endif %}
+            aria-label="{{ image_alt | escape }}"
+          >
+            {%- for vsource in vid.sources -%}
+              <source src="{{ vsource.url }}" type="{{ vsource.mime_type }}">
+            {%- endfor -%}
+            {%- if vid.preview_image != blank -%}
+              {{ vid.preview_image | image_url: width: 1100 | image_tag: class: 'bq-image-text__image', widths: '600,900,1100', loading: 'lazy', alt: image_alt }}
+            {%- endif -%}
+          </video>
+        {%- elsif section.settings.image != blank -%}
           {{ section.settings.image
              | image_url: width: 1200
              | image_tag:
@@ -78,20 +103,41 @@
       </div>
 
       <div class="bq-image-text__content" data-aos="fade-up">
-        {%- if section.settings.subheading_h3 != blank -%}
-          <h3 class="bq-image-text__subtitle">{{ section.settings.subheading_h3 }}</h3>
+        {%- if subheading != blank -%}
+          <h3 class="bq-image-text__subtitle">{{ subheading }}</h3>
         {%- endif -%}
 
-        {%- if section.settings.intro_p != blank -%}
-          <div class="bq-image-text__intro">{{ section.settings.intro_p }}</div>
+        {%- if intro != blank -%}
+          <div class="bq-image-text__intro">{{ intro }}</div>
         {%- endif -%}
 
-        {%- if section.settings.numbered_list != blank -%}
-          <div class="bq-image-text__list">{{ section.settings.numbered_list }}</div>
+        {%- if list != blank -%}
+          <div class="bq-image-text__list">{{ list }}</div>
         {%- endif -%}
 
-        {%- if section.settings.closing_p != blank -%}
-          <div class="bq-image-text__closing">{{ section.settings.closing_p }}</div>
+        {%- if closing != blank -%}
+          <div class="bq-image-text__closing">{{ closing }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+          <a class="bq-image-text__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+
+        {%- if trust_blocks.size > 0 -%}
+          <div class="bq-image-text__trust">
+            {%- for block in trust_blocks -%}
+              {%- if block.settings.label != blank -%}
+                <div class="bq-image-text__trust-item" {{ block.shopify_attributes }}>
+                  <span class="bq-check" aria-hidden="true">
+                    <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </span>
+                  <p>{{ block.settings.label }}</p>
+                </div>
+              {%- endif -%}
+            {%- endfor -%}
+          </div>
         {%- endif -%}
       </div>
     </div>
@@ -108,13 +154,18 @@
   },
   "settings": [
     { "type": "header", "content": "Content" },
+    { "type": "text",     "id": "brand_name_token", "label": "Brand name (token)", "default": "Lumière Paris", "info": "Replaces the literal string %brand% wherever it appears in copy." },
     { "type": "richtext", "id": "subheading_h3", "label": "Subheading (h3)",     "default": "<p><strong>L'invecchiamento del contorno occhi</strong> non è una questione di genetica, disidratazione o poche ore di sonno.</p>", "info": "Wrap accent words in <strong> for pink emphasis." },
     { "type": "richtext", "id": "intro_p",       "label": "Intro paragraph",     "default": "<p>Dipende da tre fattori biologici che agiscono sotto la superficie della tua pelle.</p>" },
     { "type": "richtext", "id": "numbered_list", "label": "Numbered list",       "default": "<ol><li><strong>Microcircolazione rallentata</strong> fa ristagnare il sangue poco ossigenato e crea ombre scure.</li><li><strong>Drenaggio linfatico ridotto</strong> fa accumulare liquidi durante la notte e forma le borse.</li><li><strong>Perdita di collagene</strong> assottiglia ulteriormente la pelle già sottile, rendendo visibili capillari e ombre.</li></ol>", "info": "Use an <ol> for decimal-numbered items. Wrap each item's leading phrase in <strong>." },
     { "type": "richtext", "id": "closing_p",     "label": "Closing paragraph",   "default": "<p>Nessuna crema o siero topico può raggiungere queste cause in profondità. Ed è esattamente per questo che l'industria continua a vendertele.</p>" },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_label", "label": "CTA label" },
+    { "type": "url",  "id": "cta_link",  "label": "CTA link" },
     { "type": "header", "content": "Media" },
+    { "type": "video",        "id": "video",     "label": "Video (1:1, autoplay/loop/muted)", "info": "Takes priority over image when both are set." },
     { "type": "image_picker", "id": "image",     "label": "Image (1:1, ~1200×1200)" },
-    { "type": "text",         "id": "image_alt", "label": "Image alt text",      "default": "Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili", "info": "Describe what the image shows for screen readers." },
+    { "type": "text",         "id": "image_alt", "label": "Image / video alt text",      "default": "Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili", "info": "Describe what the media shows for screen readers." },
     { "type": "header", "content": "Layout" },
     {
       "type": "select", "id": "layout", "label": "Image position", "default": "image_right",
@@ -129,6 +180,15 @@
     { "type": "header", "content": "Spacing" },
     { "type": "range", "id": "section_padding_top",    "label": "Section padding top",    "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" },
     { "type": "range", "id": "section_padding_bottom", "label": "Section padding bottom", "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" }
+      ]
+    }
   ],
   "presets": [
     { "name": "Image + Text — Causes", "category": "Botanique" }

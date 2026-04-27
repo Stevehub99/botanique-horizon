@@ -21,6 +21,35 @@
       "blocks": {},
       "block_order": []
     },
+    "bq-image-text-dual-tech": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "subheading_h3": "<p><strong>Da %brand%,</strong> usiamo una doppia tecnologia per affrontare tutte e tre le cause profonde delle occhiaie.</p>",
+        "intro_p": "",
+        "numbered_list": "<ol><li><strong>Terapia con luce rossa</strong> (630–660nm) penetra 2–3mm in profondità per aumentare la microcircolazione e stimolare la produzione di collagene a livello cellulare.</li><li><strong>Microcorrenti EMS</strong> drenano i liquidi linfatici accumulati e tonificano i 43 muscoli dell'area perioculare.</li></ol>",
+        "closing_p": "<p>Insieme, agiscono su microcircolazione lenta, ritenzione di liquidi e perdita di collagene — le cause reali di borse e occhiaie.</p>",
+        "cta_label": "PROVA LA DOPPIA TECNOLOGIA",
+        "cta_link": "/products/revitaleyes",
+        "image_alt": "Dimostrazione del dispositivo: luce rossa e microcorrenti EMS in azione sull'area perioculare",
+        "layout": "image_right",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 10,
+        "section_padding_bottom": 30
+      },
+      "blocks": {
+        "trust1": {
+          "type": "trust_item",
+          "settings": { "label": "Garanzia 365 giorni soddisfatti o rimborsati" }
+        },
+        "trust2": {
+          "type": "trust_item",
+          "settings": { "label": "Spedizione espressa in tutto il mondo" }
+        }
+      },
+      "block_order": ["trust1", "trust2"]
+    },
     "bq_industry_kP9mTr": {
       "type": "bq-industry",
       "settings": {}
@@ -87,6 +116,7 @@
   "order": [
     "bq_hero_Hg7vZw",
     "bq_industry_kP9mTr",
-    "bq_image_text_causes_xQzFck"
+    "bq_image_text_causes_xQzFck",
+    "bq-image-text-dual-tech"
   ]
 }

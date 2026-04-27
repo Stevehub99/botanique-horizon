@@ -1,0 +1,121 @@
+/* Section 2 — Industry context. Source-mirror per inventories/section-02-industry.md.
+   Layout: text 60% / image 40% desktop; stacked image-on-top + text-below mobile.
+   Background: linear-gradient(180deg, #FFE9ED 0%, #F6F8F9 100%) — section-scoped via CSS vars. */
+
+.bq-industry {
+  background: linear-gradient(
+    180deg,
+    var(--bq-industry-grad-top, #FFE9ED) 0%,
+    var(--bq-industry-grad-bot, #F6F8F9) 100%
+  );
+  font-family: var(--bq-font-sans);
+  color: #000;
+}
+
+.bq-industry__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: var(--bq-industry-pad-top, 30px) 20px var(--bq-industry-pad-bot, 10px);
+}
+
+.bq-industry__header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bq-industry__title {
+  margin: 0 auto;
+  max-width: 700px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #000;
+  text-align: center;
+}
+.bq-industry__title p { margin: 0; }
+.bq-industry__title strong {
+  color: var(--bq-accent, #FF7E97);
+  font-weight: 700;
+}
+
+.bq-industry__row {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.bq-industry__content {
+  order: 2;
+  width: 100%;
+}
+
+.bq-industry__subtitle {
+  margin: 20px 0 28px;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+  color: #000;
+}
+.bq-industry__subtitle p { margin: 0; }
+.bq-industry__subtitle strong {
+  color: var(--bq-accent, #FF7E97);
+  font-weight: 700;
+}
+
+.bq-industry__body {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #000;
+}
+.bq-industry__body p { margin: 0 0 1em; }
+.bq-industry__body p:last-child { margin-bottom: 0; }
+
+.bq-industry__photo {
+  order: 1;
+  width: 100%;
+}
+
+.bq-industry__image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 20px;
+  display: block;
+}
+
+.bq-industry__image--placeholder {
+  background: var(--bq-card-bg, #F6EFE8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.bq-industry__image--placeholder svg {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 391px) and (max-width: 767px) {
+  .bq-industry__title { font-size: 30px; }
+  .bq-industry__subtitle { font-size: 30px; }
+}
+
+@media (min-width: 768px) {
+  .bq-industry__row {
+    flex-direction: row;
+    align-items: center;
+  }
+  .bq-industry__content {
+    order: 1;
+    width: 60%;
+    padding-right: 40px;
+  }
+  .bq-industry__photo {
+    order: 2;
+    width: 40%;
+  }
+  .bq-industry__title { font-size: 46px; }
+  .bq-industry__subtitle {
+    margin: 0 0 32px;
+    font-size: 32px;
+  }
+}

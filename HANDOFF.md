@@ -94,6 +94,14 @@ All custom sections prefixed `bq-` to avoid collision with Horizon's stock secti
 
 All verified: true. All stars: 5.
 
+## Italian copy locked for Section 2 (use verbatim)
+- Headline (h2): `Come l'Industria della Bellezza Sfrutta l'Insicurezza Più Profonda delle Donne` — pink-strong span: `Industria della Bellezza`
+- Subheading (h3): `L'industria della bellezza lo sa: borse e occhiaie sono tra le insicurezze più radicate di ogni donna.` — pink-strong span: `insicurezze più radicate di ogni donna.`
+- Body (single `<p>`, `<br><br>` between beats, no `<strong>`): `Così ci ha costruito sopra un modello di business. Ti vendono creme che non penetrano abbastanza in profondità per agire davvero, ti danno giusto la speranza necessaria per farti continuare a comprare, e quando finalmente stai per arrenderti…<br><br>Ti spingono verso filler da 1.500€ o interventi chirurgici da 4.000€ e oltre. Non si tratta di risolvere il tuo problema. Si tratta di spremerti fino all'ultimo euro mentre sei vulnerabile.`
+- Image alt: `Donna che si specchia con sguardo pensieroso, espressione di insicurezza`
+
+Italian aesthetic-medicine pricing (1.500€ filler / 4.000€ surgery) confirmed realistic for IT market.
+
 ## Tooling state
 - Node.js v25.9.0 ✓
 - Shopify CLI 3.93.2 ✓

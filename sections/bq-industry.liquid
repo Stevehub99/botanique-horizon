@@ -1,0 +1,109 @@
+{% comment %}
+  SECTION 2 — Industry Context
+  Source: source/rendered.html:5544–5606
+  Inventory: inventories/section-02-industry.md
+
+  Structure (mirrors source):
+    section.bq-industry
+    └─ div.bq-industry__container (max-width 1440, padding 30/10 + 20px sides)
+       ├─ div.bq-industry__header[data-aos="fade-up"]
+       │  └─ h2.bq-industry__title  (richtext; <strong> = pink accent)
+       └─ div.bq-industry__row (flex row desktop / column mobile)
+          ├─ div.bq-industry__content[data-aos="fade-up"]   (60% desktop / order:2 mobile)
+          │  ├─ h3.bq-industry__subtitle (richtext)
+          │  └─ div.bq-industry__body    (richtext, may contain <br><br> separators)
+          └─ div.bq-industry__photo[data-aos="fade-up"]     (40% desktop / order:1 mobile)
+             └─ img.bq-industry__image  (1:1, border-radius 20px)
+
+  AOS init is in layout/theme.liquid (loaded once, body-level data-attrs set defaults).
+  Discrepancy rulings applied per build prompt:
+    - mobile h3 = 28px (narrower @media wins)
+    - h3 desktop margin-top = 0
+    - <img> sizes attribute uses correct (min-width: 768px) 40vw, 100vw
+    - <img> alt is required (Italian, settable)
+    - decorative :after image (11_5.png) omitted
+{% endcomment %}
+
+{{ 'bq-industry.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign accent = section.settings.accent_color | default: '#FF7E97'
+  assign grad_top = section.settings.gradient_top | default: '#FFE9ED'
+  assign grad_bot = section.settings.gradient_bottom | default: '#F6F8F9'
+  assign pad_top = section.settings.section_padding_top | default: 30
+  assign pad_bot = section.settings.section_padding_bottom | default: 10
+  assign image_alt = section.settings.image_alt | default: 'Donna che si specchia con sguardo pensieroso, espressione di insicurezza'
+-%}
+
+<section
+  class="bq-industry"
+  data-section-id="{{ section.id }}"
+  style="
+    --bq-accent: {{ accent }};
+    --bq-industry-grad-top: {{ grad_top }};
+    --bq-industry-grad-bot: {{ grad_bot }};
+    --bq-industry-pad-top: {{ pad_top }}px;
+    --bq-industry-pad-bot: {{ pad_bot }}px;
+  "
+>
+  <div class="bq-industry__container">
+    <div class="bq-industry__header" data-aos="fade-up">
+      <h2 class="bq-industry__title">{{ section.settings.heading }}</h2>
+    </div>
+
+    <div class="bq-industry__row">
+      <div class="bq-industry__content" data-aos="fade-up">
+        <h3 class="bq-industry__subtitle">{{ section.settings.subheading }}</h3>
+        <div class="bq-industry__body">{{ section.settings.body }}</div>
+      </div>
+
+      <div class="bq-industry__photo" data-aos="fade-up">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image
+             | image_url: width: 1200
+             | image_tag:
+                 class: 'bq-industry__image',
+                 widths: '400, 600, 900, 1200',
+                 sizes: '(min-width: 768px) 40vw, 100vw',
+                 loading: 'lazy',
+                 alt: image_alt
+          }}
+        {%- else -%}
+          <div class="bq-industry__image bq-industry__image--placeholder" aria-hidden="true">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Industry Context",
+  "tag": "section",
+  "class": "bq-section-industry",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "richtext", "id": "heading",    "label": "Heading (h2)",       "default": "<p>Come l'<strong>Industria della Bellezza</strong> Sfrutta l'Insicurezza Più Profonda delle Donne</p>", "info": "Wrap accent words in <strong> for pink emphasis." },
+    { "type": "richtext", "id": "subheading", "label": "Subheading (h3)",    "default": "<p>L'industria della bellezza lo sa: borse e occhiaie sono tra le <strong>insicurezze più radicate di ogni donna.</strong></p>", "info": "Wrap accent words in <strong> for pink emphasis." },
+    { "type": "richtext", "id": "body",       "label": "Body paragraph",    "default": "<p>Così ci ha costruito sopra un modello di business. Ti vendono creme che non penetrano abbastanza in profondità per agire davvero, ti danno giusto la speranza necessaria per farti continuare a comprare, e quando finalmente stai per arrenderti…<br><br>Ti spingono verso filler da 1.500€ o interventi chirurgici da 4.000€ e oltre. Non si tratta di risolvere il tuo problema. Si tratta di spremerti fino all'ultimo euro mentre sei vulnerabile.</p>" },
+    { "type": "header", "content": "Media" },
+    { "type": "image_picker", "id": "image",  "label": "Image (1:1, ~1200×1200)" },
+    { "type": "text",  "id": "image_alt",     "label": "Image alt text",     "default": "Donna che si specchia con sguardo pensieroso, espressione di insicurezza", "info": "Describe what the image shows for screen readers." },
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "accent_color",     "label": "Accent color (strong)",   "default": "#FF7E97" },
+    { "type": "color", "id": "gradient_top",     "label": "Background gradient — top", "default": "#FFE9ED" },
+    { "type": "color", "id": "gradient_bottom",  "label": "Background gradient — bottom", "default": "#F6F8F9" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "section_padding_top",    "label": "Section padding top",    "min": 0, "max": 200, "step": 5, "default": 30, "unit": "px" },
+    { "type": "range", "id": "section_padding_bottom", "label": "Section padding bottom", "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" }
+  ],
+  "presets": [
+    { "name": "Industry Context", "category": "Botanique" }
+  ]
+}
+{% endschema %}

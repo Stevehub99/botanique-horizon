@@ -38,7 +38,12 @@
     {{ content_for_header }}
   </head>
 
-  <body class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}">
+  <body
+    class="page-width-{{ settings.page_width }} card-hover-effect-{{ settings.card_hover_effect }}"
+    data-aos-easing="ease"
+    data-aos-duration="400"
+    data-aos-delay="0"
+  >
     {% render 'skip-to-content-link', href: '#MainContent', text: 'accessibility.skip_to_text' %}
     <div id="header-group">
       {% sections 'header-group' %}
@@ -132,5 +137,10 @@
     {% if settings.quick_add or settings.mobile_quick_add %}
       {% render 'quick-add-modal' %}
     {% endif %}
+
+    {% comment %} AOS — Animate On Scroll, used by bq- sections (data-aos="fade-up") {% endcomment %}
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script>document.addEventListener('DOMContentLoaded', function () { if (window.AOS) AOS.init(); });</script>
   </body>
 </html>

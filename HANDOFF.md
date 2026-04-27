@@ -87,6 +87,30 @@ After every Claude Code run that writes files:
 
 Screenshots (live preview + source crops PNGs) are NOT synced — user still drops these in chat as needed.
 
+## Theme editor / templates/index.json sync
+
+`templates/index.json` is the source of truth for homepage section placement and settings. The theme editor maintains its own runtime state on Shopify's servers; the two are NOT auto-synced.
+
+### Rules
+
+- Section placement (which sections appear, in what order) lives in `templates/index.json`, edited in code. Theme-editor placement changes don't count as committed work.
+- Section settings edited via the theme editor (image picks, color overrides, any field) are stored in the editor's runtime only until pulled. They will be overwritten the next time `templates/index.json` is edited locally and the dev theme syncs from disk.
+- Before ANY edit to `templates/index.json` (by Claude Code or by hand), run `shopify theme pull` first to capture editor-state into the file. Skipping this step erases editor-only settings.
+- Image uploads only happen via the theme editor (no other practical option for picking from Shopify's media library). Immediately after uploading, run `shopify theme pull` and commit the resulting `index.json` diff. Treat image uploads as code changes.
+
+### Drift check
+
+To verify editor and git are in sync at any moment:
+
+1. `shopify theme pull` (pulls editor state to disk)
+2. `git status` / `git diff templates/index.json`
+3. If there's a diff, the editor had unsaved-to-git state. Decide whether to commit it (preserve editor changes) or revert (preserve git as source of truth).
+
+### Project status: when this rule was missed
+
+- 2026-04-25/26: Section 1 (`bq-hero`) and Section 2 (`bq-industry`) were added via the theme editor, never made it into `index.json`. Discovered during Section 3 build (2026-04-27) when Claude Code reported only the stock Horizon hero in the template.
+- 2026-04-27: Both sections were added to `index.json` via Claude Code edits. Their image settings (placeholder uploads) were lost in the process. Acceptable because images were placeholders; would have been a real problem if they'd been final assets.
+
 ## Italian copy locked for Section 1 (use verbatim)
 - Eyebrow: `SALDI FESTA DELLA MAMMA 🎉`
 - Headline line 1: `Ringiovanisci il Tuo Sguardo`

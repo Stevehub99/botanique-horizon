@@ -1,0 +1,137 @@
+{% comment %}
+  CONSOLIDATED SECTION — Image-Text family
+  Source family: .shopify-section.image-width-text-sec (10 instances in
+  source/rendered.html, see inventories/family-audit-image-text.md).
+
+  This file starts with the Section 3 (Under-eye causes) field set per
+  inventories/section-03-causes.md. Schema grows by accretion as future
+  sections in this family demand fields — DO NOT pre-add fields for
+  hypothetical instances. Empty optional fields collapse via {% if %}
+  guards, so adding fields later is non-breaking for existing instances.
+
+  Discrepancy rulings applied (from inventory §9):
+    - <img loading>: lazy (live runtime authoritative; below-fold)
+    - <img sizes>: clean (min-width: 768px) 40vw, 100vw — do NOT mirror
+      source's malformed (min-width: narrowpx) -100px hint
+    - <img alt>: required, settable via image_alt schema
+    - empty source .top-header div: omitted entirely (no h2 wrapper, no
+      AOS fade target for an empty container)
+    - <ol> markers stay UA-default decimal black; do NOT add ::marker color
+    - no gradient, no decorative :after pseudo (Section 3 is solid bg only)
+    - h3 strong: 700 weight + accent color (project-wide rule), NOT
+      source's font-weight: normal
+
+  AOS is loaded globally in layout/theme.liquid (decisions log 2026-04-26).
+  Body-level data-attrs gate to easing=ease, duration=400, delay=0.
+
+  Future field additions for this family (will accrue as sections demand):
+    - heading (h2) for Sections 5, 13, 15-pt1, 15-pt3
+    - body paragraph blocks (instead of single richtext) for narrative
+      sections with mixed paragraph/list ordering
+    - <ul> support (Sections 6, 8) — bullet vs checkmark style toggle
+    - h5 sub-heading (Section 8 only)
+    - video picker (Sections 4, 5)
+    - CTA label + link (Sections 4, 5, 13)
+    - dark-theme variant (Section 13: high-demand-selling-october)
+    - decorative :after image (Sections 2, 4)
+{% endcomment %}
+
+{{ 'bq-image-text.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign layout = section.settings.layout | default: 'image_right'
+  assign bg = section.settings.bg_color | default: '#F6F8F9'
+  assign accent = section.settings.accent_color | default: '#FF7E97'
+  assign pad_top = section.settings.section_padding_top | default: 10
+  assign pad_bot = section.settings.section_padding_bottom | default: 10
+  assign image_alt = section.settings.image_alt | default: 'Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili'
+-%}
+
+<section
+  class="bq-image-text bq-image-text--{{ layout }}"
+  data-section-id="{{ section.id }}"
+  style="
+    --bq-image-text-bg: {{ bg }};
+    --bq-image-text-accent: {{ accent }};
+    --bq-image-text-pad-top: {{ pad_top }}px;
+    --bq-image-text-pad-bot: {{ pad_bot }}px;
+  "
+>
+  <div class="bq-image-text__container">
+    <div class="bq-image-text__row">
+      <div class="bq-image-text__photo" data-aos="fade-up">
+        {%- if section.settings.image != blank -%}
+          {{ section.settings.image
+             | image_url: width: 1200
+             | image_tag:
+                 class: 'bq-image-text__image',
+                 widths: '400, 600, 900, 1200',
+                 sizes: '(min-width: 768px) 40vw, 100vw',
+                 loading: 'lazy',
+                 alt: image_alt
+          }}
+        {%- else -%}
+          <div class="bq-image-text__image bq-image-text__image--placeholder" aria-hidden="true">
+            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="bq-image-text__content" data-aos="fade-up">
+        {%- if section.settings.subheading_h3 != blank -%}
+          <h3 class="bq-image-text__subtitle">{{ section.settings.subheading_h3 }}</h3>
+        {%- endif -%}
+
+        {%- if section.settings.intro_p != blank -%}
+          <div class="bq-image-text__intro">{{ section.settings.intro_p }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.numbered_list != blank -%}
+          <div class="bq-image-text__list">{{ section.settings.numbered_list }}</div>
+        {%- endif -%}
+
+        {%- if section.settings.closing_p != blank -%}
+          <div class="bq-image-text__closing">{{ section.settings.closing_p }}</div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Image + Text",
+  "tag": "section",
+  "class": "bq-section-image-text",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "richtext", "id": "subheading_h3", "label": "Subheading (h3)",     "default": "<p><strong>L'invecchiamento del contorno occhi</strong> non è una questione di genetica, disidratazione o poche ore di sonno.</p>", "info": "Wrap accent words in <strong> for pink emphasis." },
+    { "type": "richtext", "id": "intro_p",       "label": "Intro paragraph",     "default": "<p>Dipende da tre fattori biologici che agiscono sotto la superficie della tua pelle.</p>" },
+    { "type": "richtext", "id": "numbered_list", "label": "Numbered list",       "default": "<ol><li><strong>Microcircolazione rallentata</strong> fa ristagnare il sangue poco ossigenato e crea ombre scure.</li><li><strong>Drenaggio linfatico ridotto</strong> fa accumulare liquidi durante la notte e forma le borse.</li><li><strong>Perdita di collagene</strong> assottiglia ulteriormente la pelle già sottile, rendendo visibili capillari e ombre.</li></ol>", "info": "Use an <ol> for decimal-numbered items. Wrap each item's leading phrase in <strong>." },
+    { "type": "richtext", "id": "closing_p",     "label": "Closing paragraph",   "default": "<p>Nessuna crema o siero topico può raggiungere queste cause in profondità. Ed è esattamente per questo che l'industria continua a vendertele.</p>" },
+    { "type": "header", "content": "Media" },
+    { "type": "image_picker", "id": "image",     "label": "Image (1:1, ~1200×1200)" },
+    { "type": "text",         "id": "image_alt", "label": "Image alt text",      "default": "Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili", "info": "Describe what the image shows for screen readers." },
+    { "type": "header", "content": "Layout" },
+    {
+      "type": "select", "id": "layout", "label": "Image position", "default": "image_right",
+      "options": [
+        { "value": "image_right", "label": "Image right, text left" },
+        { "value": "image_left",  "label": "Image left, text right" }
+      ]
+    },
+    { "type": "header", "content": "Style" },
+    { "type": "color", "id": "bg_color",     "label": "Background color",     "default": "#F6F8F9" },
+    { "type": "color", "id": "accent_color", "label": "Accent color (strong)", "default": "#FF7E97" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "section_padding_top",    "label": "Section padding top",    "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" },
+    { "type": "range", "id": "section_padding_bottom", "label": "Section padding bottom", "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" }
+  ],
+  "presets": [
+    { "name": "Image + Text — Causes", "category": "Botanique" }
+  ]
+}
+{% endschema %}

@@ -73,6 +73,20 @@ All custom sections prefixed `bq-` to avoid collision with Horizon's stock secti
 
 10. **Computed-style read for unresolvable properties.** When static CSS extraction returns "CANNOT DETERMINE" for a property (theme defaults, custom property cascades), Claude Code reads computed styles from source's live page (via headless browser or curl plus style block parsing) rather than guessing. No "reasonable default" substitutions.
 
+### Rule 11: Source-of-truth access
+
+Project knowledge is synced from GitHub. Chat-Claude reads inventories, source/css/, source/rendered.html, PROJECT.md, HANDOFF.md, and current Liquid/CSS via project_knowledge_search — not via paste.
+
+After every Claude Code run that writes files:
+
+1. User: git push
+
+2. User: click "Sync now" in project files block
+
+3. Chat-Claude has current state next message
+
+Screenshots (live preview + source crops PNGs) are NOT synced — user still drops these in chat as needed.
+
 ## Italian copy locked for Section 1 (use verbatim)
 - Eyebrow: `SALDI FESTA DELLA MAMMA 🎉`
 - Headline line 1: `Ringiovanisci il Tuo Sguardo`

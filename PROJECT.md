@@ -103,9 +103,10 @@ Status: ⬜ not started · 🏗 in progress · ✅ done · ⏭ skipped
 - 2026-04-25: Switched from screenshot-driven CSS approximation to source-CSS extraction. All section CSS must mirror source CSS values exactly.
 - 2026-04-25: Section 1 closed at ~92% fidelity. Hero video/image asset and announcement bar deferred. Decorative full-bleed bg PNG omitted.
 - 2026-04-25: Per-section workflow updated: visual triangulation (HTML + CSS + render) + behavioral check (live observation + JS config extraction) replaces the screenshot-driven approximation cycle. Audit/structural-diff prompts retired except where explicitly needed.
-- 2026-04-26: Section 2 (Industry context) Italian copy locked. Pink-strong spans: "Industria della Bellezza" in h2, "insicurezze più radicate di ogni donna." in h3. Body uses Italian aesthetic-medicine pricing (1.500€ filler / 4.000€ surgery) — confirmed realistic for IT market by user.
-- 2026-04-26: AOS loaded globally in layout/theme.liquid (single init, body-level defaults). Used by 72 elements page-wide, no per-element overrides. Decision applies to all future sections.
-- 2026-04-26: Heading font substitution = Inter, project-wide rule (inherited from Section 1 bq-tokens.css --bq-font-sans). Source uses circular_stdmedium (paid). Manrope flagged as visually closer alternative; not switching mid-build.
+- 2026-04-26: Section 2 (Industry context) closed and committed. Italian copy locked, pink-strong spans on "Industria della Bellezza" (h2) and "insicurezze più radicate di ogni donna." (h3).
+- 2026-04-26: AOS loaded globally in layout/theme.liquid. 72 reveals across the page, body-level defaults (easing=ease, duration=400, delay=0), no per-element overrides. Project-wide rule.
+- 2026-04-26: Heading font substitution = Inter (project-wide), inherited from Section 1 bq-tokens.css --bq-font-sans. Source uses paid circular_stdmedium. Manrope flagged as visually closer alternative; not switching mid-build.
+- 2026-04-26: Repo synced to project knowledge via "Add from GitHub" feature. Workflow: git push → click Sync now → chat-Claude reads via project_knowledge_search. Replaces manual paste workflow.
 
 ## Working protocol (instructions for Claude Code)
 

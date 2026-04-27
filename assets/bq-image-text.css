@@ -86,11 +86,14 @@
 }
 
 .bq-image-text__intro,
-.bq-image-text__closing {
+.bq-image-text__closing,
+.bq-image-text__paragraph {
   font-size: 18px;
   line-height: 1.6;
   color: #000;
 }
+.bq-image-text__paragraph { margin-block: 18px; }
+.bq-image-text__paragraph p { margin: 0; }
 .bq-image-text__intro p,
 .bq-image-text__closing p {
   margin: 1em 0;

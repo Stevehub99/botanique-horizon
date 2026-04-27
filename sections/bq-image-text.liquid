@@ -46,10 +46,12 @@
   assign pad_bot = section.settings.section_padding_bottom | default: 10
   assign image_alt = section.settings.image_alt | default: 'Primo piano del contorno occhi con borse, occhiaie e linee sottili visibili'
   assign brand = section.settings.brand_name_token | default: 'Lumière Paris'
-  assign subheading = section.settings.subheading_h3 | replace: '%brand%', brand
-  assign intro = section.settings.intro_p | replace: '%brand%', brand
-  assign list = section.settings.numbered_list | replace: '%brand%', brand
-  assign closing = section.settings.closing_p | replace: '%brand%', brand
+  assign product = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+  assign heading = section.settings.heading_h2 | replace: '%brand%', brand | replace: '%product%', product
+  assign subheading = section.settings.subheading_h3 | replace: '%brand%', brand | replace: '%product%', product
+  assign intro = section.settings.intro_p | replace: '%brand%', brand | replace: '%product%', product
+  assign list = section.settings.numbered_list | replace: '%brand%', brand | replace: '%product%', product
+  assign closing = section.settings.closing_p | replace: '%brand%', brand | replace: '%product%', product
   assign trust_blocks = section.blocks | where: 'type', 'trust_item'
 -%}
 
@@ -64,6 +66,11 @@
   "
 >
   <div class="bq-image-text__container">
+    {%- if heading != blank -%}
+      <div class="bq-image-text__top-header" data-aos="fade-up">
+        <h2 class="bq-image-text__h2">{{ heading }}</h2>
+      </div>
+    {%- endif -%}
     <div class="bq-image-text__row">
       <div class="bq-image-text__photo" data-aos="fade-up">
         {%- if section.settings.video != blank -%}
@@ -111,6 +118,14 @@
           <div class="bq-image-text__intro">{{ intro }}</div>
         {%- endif -%}
 
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'paragraph' and block.settings.text != blank -%}
+            <div class="bq-image-text__paragraph" {{ block.shopify_attributes }}>
+              {{ block.settings.text | replace: '%brand%', brand | replace: '%product%', product }}
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+
         {%- if list != blank -%}
           <div class="bq-image-text__list">{{ list }}</div>
         {%- endif -%}
@@ -154,7 +169,9 @@
   },
   "settings": [
     { "type": "header", "content": "Content" },
-    { "type": "text",     "id": "brand_name_token", "label": "Brand name (token)", "default": "Lumière Paris", "info": "Replaces the literal string %brand% wherever it appears in copy." },
+    { "type": "text",     "id": "brand_name_token",   "label": "Brand name (token)",   "default": "Lumière Paris",        "info": "Replaces the literal string %brand% wherever it appears in copy." },
+    { "type": "text",     "id": "product_name_token", "label": "Product name (token)", "default": "Il Nostro Dispositivo", "info": "Replaces the literal string %product% wherever it appears in copy." },
+    { "type": "richtext", "id": "heading_h2",   "label": "Heading (h2)", "info": "Optional section-level heading rendered above the row. Wrap accent words in <strong> for pink emphasis." },
     { "type": "richtext", "id": "subheading_h3", "label": "Subheading (h3)",     "default": "<p><strong>L'invecchiamento del contorno occhi</strong> non è una questione di genetica, disidratazione o poche ore di sonno.</p>", "info": "Wrap accent words in <strong> for pink emphasis." },
     { "type": "richtext", "id": "intro_p",       "label": "Intro paragraph",     "default": "<p>Dipende da tre fattori biologici che agiscono sotto la superficie della tua pelle.</p>" },
     { "type": "richtext", "id": "numbered_list", "label": "Numbered list",       "default": "<ol><li><strong>Microcircolazione rallentata</strong> fa ristagnare il sangue poco ossigenato e crea ombre scure.</li><li><strong>Drenaggio linfatico ridotto</strong> fa accumulare liquidi durante la notte e forma le borse.</li><li><strong>Perdita di collagene</strong> assottiglia ulteriormente la pelle già sottile, rendendo visibili capillari e ombre.</li></ol>", "info": "Use an <ol> for decimal-numbered items. Wrap each item's leading phrase in <strong>." },
@@ -182,6 +199,13 @@
     { "type": "range", "id": "section_padding_bottom", "label": "Section padding bottom", "min": 0, "max": 200, "step": 5, "default": 10, "unit": "px" }
   ],
   "blocks": [
+    {
+      "type": "paragraph",
+      "name": "Paragraph",
+      "settings": [
+        { "type": "richtext", "id": "text", "label": "Paragraph text" }
+      ]
+    },
     {
       "type": "trust_item",
       "name": "Trust item",

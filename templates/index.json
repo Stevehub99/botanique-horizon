@@ -50,6 +50,49 @@
       },
       "block_order": ["trust1", "trust2"]
     },
+    "bq-image-text-mission": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "<p>La Missione di <strong>%brand%</strong></p>",
+        "subheading_h3": "<p>Aiutare le donne ad <strong>apparire giovani, radiose e sicure</strong> come si sentono davvero — senza procedure invasive, soldi sprecati o compromessi sulla loro bellezza naturale.</p>",
+        "intro_p": "",
+        "numbered_list": "",
+        "closing_p": "",
+        "cta_label": "INIZIA LA TRASFORMAZIONE",
+        "cta_link": "/products/revitaleyes",
+        "image_alt": "La nostra missione: tecnologia non invasiva per il benessere dell'area perioculare",
+        "layout": "image_left",
+        "bg_color": "#FFFFFF",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 30,
+        "section_padding_bottom": 30
+      },
+      "blocks": {
+        "p1": {
+          "type": "paragraph",
+          "settings": { "text": "<p>Dopo anni di creme inefficaci e la paura della chirurgia, meriti una tecnologia che funziona davvero.</p>" }
+        },
+        "p2": {
+          "type": "paragraph",
+          "settings": { "text": "<p>%product% combina luce rossa clinicamente provata e microcorrenti EMS in un unico dispositivo. Bastano 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi.</p>" }
+        },
+        "p3": {
+          "type": "paragraph",
+          "settings": { "text": "<p>Niente appuntamenti, niente aghi, niente routine complicate. Finalmente la trasformazione che cercavi: occhi naturalmente giovani, riposati e radiosi, proprio come ti senti.</p>" }
+        },
+        "trust1": {
+          "type": "trust_item",
+          "settings": { "label": "Garanzia 365 giorni soddisfatti o rimborsati" }
+        },
+        "trust2": {
+          "type": "trust_item",
+          "settings": { "label": "Spedizione espressa in tutto il mondo" }
+        }
+      },
+      "block_order": ["p1", "p2", "p3", "trust1", "trust2"]
+    },
     "bq_industry_kP9mTr": {
       "type": "bq-industry",
       "settings": {}
@@ -117,6 +160,7 @@
     "bq_hero_Hg7vZw",
     "bq_industry_kP9mTr",
     "bq_image_text_causes_xQzFck",
-    "bq-image-text-dual-tech"
+    "bq-image-text-dual-tech",
+    "bq-image-text-mission"
   ]
 }

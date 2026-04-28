@@ -69,7 +69,8 @@
               </div>
               <div class="card right-card right-text-box">
                 <p>
-                  {%- if block.settings.desc_icon != blank -%}
+                  {%- comment -%} Defensive: image_picker may return truthy placeholder objects without a real image; require .id (only real Shopify images have one). {%- endcomment -%}
+                  {%- if block.settings.desc_icon != blank and block.settings.desc_icon.id -%}
                     <img src="{{ block.settings.desc_icon | image_url: width: 200 }}" alt="" width="{{ block.settings.desc_icon.width }}" height="{{ block.settings.desc_icon.height }}" loading="lazy">
                   {%- else -%}
                     <img src="{{ step_icon_file | asset_url }}" alt="" width="40" height="40" loading="lazy">
@@ -83,7 +84,8 @@
             <div class="timeline-step exiting" {{ block.shopify_attributes }}>
               <div class="card left-card right-text-box">
                 <p>
-                  {%- if block.settings.desc_icon != blank -%}
+                  {%- comment -%} Defensive: image_picker may return truthy placeholder objects without a real image; require .id (only real Shopify images have one). {%- endcomment -%}
+                  {%- if block.settings.desc_icon != blank and block.settings.desc_icon.id -%}
                     <img src="{{ block.settings.desc_icon | image_url: width: 200 }}" alt="" width="{{ block.settings.desc_icon.width }}" height="{{ block.settings.desc_icon.height }}" loading="lazy">
                   {%- else -%}
                     <img src="{{ step_icon_file | asset_url }}" alt="" width="40" height="40" loading="lazy">

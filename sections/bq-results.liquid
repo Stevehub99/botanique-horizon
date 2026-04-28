@@ -73,7 +73,7 @@
                   <circle cx="11" cy="23" r="1.5" fill="#FF7E97"/>
                   <circle cx="16" cy="23" r="1.5" fill="#FF7E97"/>
                 </svg>
-                <h4><strong>{{ block.settings.time_label }}</strong><br>{{ block.settings.heading }}</h4>
+                <h4><strong>{{ block.settings.time_label }}</strong>{{ block.settings.heading }}</h4>
               </div>
               <div class="bq-results__number" aria-hidden="true">
                 <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@
                   <circle cx="11" cy="23" r="1.5" fill="#FF7E97"/>
                   <circle cx="16" cy="23" r="1.5" fill="#FF7E97"/>
                 </svg>
-                <h4><strong>{{ block.settings.time_label }}</strong><br>{{ block.settings.heading }}</h4>
+                <h4><strong>{{ block.settings.time_label }}</strong>{{ block.settings.heading }}</h4>
                 {%- if block.settings.result_image != blank -%}
                   <img src="{{ block.settings.result_image | image_url: width: 400 }}" alt="" width="{{ block.settings.result_image.width }}" height="{{ block.settings.result_image.height }}" loading="lazy">
                 {%- endif -%}

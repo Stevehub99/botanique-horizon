@@ -1,10 +1,12 @@
-/* Section 6 — Results timeline. Verbatim copy of source/rendered.html:6051–6568
-   inline <style>, with the mechanical class-name substitution table applied
+/* Section 6 — Results timeline. Verbatim copy of source/rendered.html:6052–6567
+   inline <style>, with mechanical class-name substitution table applied
    literally (no interpretation). Orphan rules (.card-right-item, step IDs)
-   dropped per spec rule 4. height:95% shadow on ::after dropped per spec rule 5.
-   text-transform: capitalize on .card p dropped per spec rule 6. */
+   dropped. .timeline::after { height: 95% } shadow line dropped.
+   text-transform: capitalize dropped. Re-derived from source via
+   /tmp/build-results-css.py with the full substitution table including
+   .timeline-step.active / .exiting → BEM modifier mappings. */
 
-  .bq-results__cta-wrapper {
+.bq-results__cta-wrapper {
   display: flex;
   flex-direction: column; /* stack the link + ul */
   align-items: center;   /* center horizontally */
@@ -68,6 +70,7 @@
   border: solid 3px #FF7E97;
   background: #FFF0F5;
 }
+
 .bq-results__card.bq-results__card--leftgrid {
   display: flex;
   align-items: center;
@@ -178,9 +181,13 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
     font-weight: 400;
     font-size: 18px;
 }
+
 .bq-results .bq-results__card-left-item h4 img {
   width: 60px;
 }
+
+
+
 .bq-results__container.container button.bq-results__cta-wrapper {
   margin-top: 40px;
 }
@@ -195,18 +202,38 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
 
 
 
+
+
+
 @media only screen and (max-width: 600px) {
   .bq-results__cta-wrapper .bq-results__cta{
     font-size: 14px;
     width: max-content;
   }
-  .bq-results__step.active .bq-results__number svg{
+  .bq-results__step.bq-results__step--active .bq-results__number svg{
   width: 40px;
 }
 .bq-results__step:first-child .bq-results__number {
     margin-top: -17px;
 }
 
+   /* Step 1: icon size */
+  
+
+  /* Step 2: icon size */
+  
+
+  /* Step 3: icon size */
+  
+
+  /* Step 4: icon size */
+  
+
+  /* Step 5: icon size */
+  
+
+  /* Step 6: icon size */
+  
   .bq-results__step {
            display: flex;
         flex-wrap: wrap;
@@ -214,12 +241,16 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
   }
   .bq-results .bq-results__card {
       max-width: 100%;
-
+      
   }
   .bq-results__container {
       padding: 20px 15px;
       margin-bottom: -30px;
   }
+  
+  
+  
+  
   .icons-list-grid .grid.grid--uniform.grid--flush-bottom {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -231,13 +262,13 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
 .bq-results {
     padding: 20px 0;
 }
-
+  
    /* Base line on left */
   .bq-results__timeline::before,
   .bq-results__timeline::after {
     left: 13px !important;   /* Align both base line and progress line */
     transform: none !important;
-
+    
   }
     /* Numbers aligned with line */
   .bq-results__step .bq-results__number {
@@ -260,22 +291,25 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
       margin: 10px 0 0;
 
   }
+  
   .bq-results__step {
       margin: 0px;
   }
-
+  
   .bq-results__container .bq-results__card {
       padding: 15px 15px;
       align-self: start;
   }
+  
   .bq-results .bq-results__card p {
       font-size: 14px;
-  }
+  }  
+  
   .bq-results__timeline::before {
       content: "";
       top: 20px;
   }
-
+  
   .bq-results__container .bq-results__card.bq-results__card--left.bq-results__card--leftgrid.leftcard-grid{
   padding-top: 0;
   padding-left: 0;
@@ -283,6 +317,26 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
 .bq-results__container h3{
   margin-bottom: 30px;
 }
+
+  /* --- Specific Hides for Mobile --- */
+  /* Number 1: hide big left image, keep h4 */
+  
+
+  /* Number 2: hide product image, keep h4 */
+  
+
+  /* Number 4: hide product image, keep h4 */
+  
+
+  /* Number 5: hide big left image, keep h4 */
+  
+   /* Step 6: move heading inline above the description card */
+  
+
+  
+
+  /* Hide the big product image under h4 (same as step 2, 4, 5) */
+  
 
   /* --- Force h4 icons to 30x30 --- */
  .bq-results .bq-results__card h4 img {
@@ -344,27 +398,27 @@ echanced-scents-main .bq-results__card.bq-results__card--left.bq-results__card--
 }
 
 /* Animate IN */
-.bq-results__step.active .bq-results__card--left,
-.bq-results__step.active .bq-results__card--right,
-.bq-results__step.active .bq-results__number {
+.bq-results__step.bq-results__step--active .bq-results__card--left,
+.bq-results__step.bq-results__step--active .bq-results__card--right,
+.bq-results__step.bq-results__step--active .bq-results__number {
   opacity: 1;
   transform: translate(0,0);
 }
 
 
-.bq-results__step.active .bq-results__card--left { transition-delay: 0.1s; }
-.bq-results__step.active .bq-results__number { transition-delay: 0.2s; }
-.bq-results__step.active .bq-results__card--right { transition-delay: 0.3s; }
+.bq-results__step.bq-results__step--active .bq-results__card--left { transition-delay: 0.1s; }
+.bq-results__step.bq-results__step--active .bq-results__number { transition-delay: 0.2s; }
+.bq-results__step.bq-results__step--active .bq-results__card--right { transition-delay: 0.3s; }
 
-.bq-results__step.exiting .bq-results__card--left {
+.bq-results__step.bq-results__step--exiting .bq-results__card--left {
   transform: translateX(-60px);
   opacity: 0;
 }
-.bq-results__step.exiting .bq-results__card--right {
+.bq-results__step.bq-results__step--exiting .bq-results__card--right {
   transform: translateX(60px);
   opacity: 0;
 }
-.bq-results__step.exiting .bq-results__number {
+.bq-results__step.bq-results__step--exiting .bq-results__number {
   transform: translateY(30px);
   opacity: 0;
 }

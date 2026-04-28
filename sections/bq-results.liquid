@@ -17,7 +17,7 @@
 
 <style>
   #shopify-section-{{ section.id }} .echanced-scents-main {
-    background: url({{ 'bq-results-bg.jpg' | asset_url }}) center/cover no-repeat, #FFFFFF;
+    background-image: url({{ 'bq-results-bg.jpg' | asset_url }});
   }
 </style>
 
@@ -34,6 +34,7 @@
     {%- if heading != blank -%}
       <h2>{{ heading }}</h2>
     {%- endif -%}
+    <h3></h3>{%- comment -%} Empty h3 mirrors source DOM (rendered.html:5840). Renders 0 height + 5px margin-bottom. {%- endcomment -%}
 
     {%- if step_blocks.size > 0 -%}
       <div class="timeline">
@@ -101,24 +102,29 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
-      <a class="custom-btn" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
-    {%- endif -%}
-
-    {%- if trust_blocks.size > 0 -%}
-      <ul class="shipping-list" role="list">
-        {%- for block in trust_blocks -%}
-          {%- if block.settings.label != blank -%}
-            <li {{ block.shopify_attributes }}>
-              <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <circle cx="8.5" cy="8.5" r="7.5" fill="#fff"/>
-                <path d="M8.33333 0C3.75 0 0 3.75 0 8.33333C0 12.9167 3.75 16.6667 8.33333 16.6667C12.9167 16.6667 16.6667 12.9167 16.6667 8.33333C16.6667 3.75 12.9167 0 8.33333 0ZM6.66667 12.5L2.5 8.33333L3.675 7.15833L6.66667 10.1417L12.9917 3.81667L14.1667 5L6.66667 12.5Z" fill="#00AD21"/>
-              </svg>
-              {{ block.settings.label }}
-            </li>
-          {%- endif -%}
-        {%- endfor -%}
-      </ul>
+    {%- assign has_cta = false -%}
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}{%- assign has_cta = true -%}{%- endif -%}
+    {%- if has_cta or trust_blocks.size > 0 -%}
+      <div class="custo-button">
+        {%- if has_cta -%}
+          <a class="custom-btn" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+        {%- endif -%}
+        {%- if trust_blocks.size > 0 -%}
+          <ul class="shipping-list" role="list">
+            {%- for block in trust_blocks -%}
+              {%- if block.settings.label != blank -%}
+                <li {{ block.shopify_attributes }}>
+                  <svg width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="8.5" cy="8.5" r="7.5" fill="#fff"/>
+                    <path d="M8.33333 0C3.75 0 0 3.75 0 8.33333C0 12.9167 3.75 16.6667 8.33333 16.6667C12.9167 16.6667 16.6667 12.9167 16.6667 8.33333C16.6667 3.75 12.9167 0 8.33333 0ZM6.66667 12.5L2.5 8.33333L3.675 7.15833L6.66667 10.1417L12.9917 3.81667L14.1667 5L6.66667 12.5Z" fill="#00AD21"/>
+                  </svg>
+                  {{ block.settings.label }}
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
     {%- endif -%}
   </div>
 </section>

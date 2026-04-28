@@ -1,14 +1,51 @@
 /* Section 6 — Results timeline. Verbatim copy of source/rendered.html:6052-6567
-   inline <style>. Class names match source verbatim (no BEM). Three documented
-   drops applied:
+   inline <style>, plus source/css/external-00-base.css:9018-9038 (the section's
+   external rules outside the inline <style>). Class names match source verbatim
+   (no BEM). Three documented drops applied:
      1. .timeline::after { height: 95% } shadow override (source bug)
      2. text-transform: capitalize on .echanced-scents-main .card p
      3. orphan rules targeting non-existent step IDs (gPDhFN, 4Bfp34, 98Anhx,
         MkMwMg, 7ikq9B, Tx8KET, 7HQTfE, 8qmQcE, BDXDei, aRHgyi, 7kzHP7, JW8VBW)
-   Marble background wired via inline <style> in section template (Liquid in
-   .css files is not processed by Shopify; the template-level <style> block
-   sets the background-image directly on .echanced-scents-main, taking
-   precedence over the static no-bg fallback below). */
+   Marble background wired via inline <style> in section template. */
+
+/* === External CSS rules (b00:9018-9038) — needed for source-fidelity === */
+.echanced-scents-main {
+  padding: 60px 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: #000;
+  font-size: 18px;
+  line-height: 1.6;
+}
+.echanced-scents-main .shipping-list {
+  display: flex;
+  margin-top: 15px;
+}
+.echanced-scents-main .shipping-list li {
+  display: flex;
+  font-size: 18px;
+}
+.echanced-scents-main .shipping-list li svg {
+  margin-right: 10px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+/* === Project override: explicit h2 typography to compensate for Horizon
+   theme defaults (h2 = 48px/700) which don't match source's theme defaults
+   (h2 = 44px/400). Without this override, our h2 renders larger and bolder
+   than source. === */
+.enhanced-timeline h2 {
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.enhanced-timeline h2 strong {
+  font-weight: 700;
+}
 
 .custo-button {
   display: flex;
@@ -58,6 +95,7 @@
   text-align: center;
   padding: 0 0px;
   margin: auto;
+  max-width: 1440px;
 }
 .timeline::before {
   content: "";
@@ -161,10 +199,19 @@ echanced-scents-main .card.left-card.left-card-item {
       align-items: flex-start !important;
   display: flex;
   align-self: center; justify-content: center;
+  /* === Project overrides (Horizon theme defaults `.card` to position:relative,
+     overflow:hidden, flex-direction:column, color:rgba(0,0,0,0.5); force source
+     behaviour) === */
+  position: static;
+  overflow: visible;
+  flex-direction: row;
+  color: #000;
 }
 .echanced-scents-main .card img {
   max-width: 40px;
   display: block;
+  /* Reset aspect-ratio (our explicit width/height attrs add it; source has none) */
+  aspect-ratio: auto;
 }
 .echanced-scents-main .card p {
   font-size: 20px;
@@ -461,8 +508,27 @@ echanced-scents-main .card.left-card.left-card-item {
   opacity: 0;
 }
 
-/* Project override: source's `.echanced-scents-main .card { align-items: flex-start !important }`
-   (line 161) wins over the verbatim `.card.left-card-item { align-items: center }` (line 84) due
-   to !important. This higher-specificity override (0,3,0 + !important) restores the rule's
-   intended behaviour so the heading-card icon vertically centers next to the <h4>. */
-.echanced-scents-main .card.left-card-item { align-items: center !important; }
+/* === External CSS responsive rules (b00:9403, 9475, 9548, 9552, 9735) === */
+@media (max-width: 991px) {
+  .timeline-step:last-child .number {
+    align-content: flex-end;
+    top: -59px;
+    position: relative;
+  }
+}
+@media (max-width: 767px) {
+  .timeline-step:last-child .number { top: 0; }
+  .echanced-scents-main .shipping-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .echanced-scents-main .shipping-list li {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 390px) {
+  .custo-button .custom-btn { padding: 15px 15px !important; }
+}
+

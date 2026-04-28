@@ -1,0 +1,355 @@
+/* Section 6 — Results timeline. Source-fidelity rewrite.
+   Verbatim copy of source/rendered.html:6051–6568 (inline <style>) + b00:9018–9038
+   external rules, with class names BEM-prefixed (.timeline → .bq-results__timeline,
+   .timeline-step → .bq-results__step, .card.right-text-box → .bq-results__card--textbox,
+   .card.left-card-item → .bq-results__card--leftgrid, .echanced-scents-main → .bq-results,
+   .enhanced-timeline → .bq-results__container, .enhanced-timeline h2 → .bq-results__heading).
+
+   Deliberate omissions per inventories/section-06-results.md §10 + spec hard nos:
+     - orphan rules with .card-right-item, step IDs (gPDhFN/4Bfp34/Tx8KET/etc.) — none match
+     - .timeline::after { height: 95% } shadow override (let --timeline-progress var drive)
+     - .echanced-scents-main .card p { text-transform: capitalize } (Italian readability)
+     - h2 strong pink color (source has no such rule)
+   Marble background wired via inline <style> block in section template; CSS reads
+   var(--bq-results-bg-image). */
+
+/* === Section root (b00:9030 + RH:6371 mobile override) === */
+.bq-results {
+  position: relative;
+  padding: var(--bq-results-pad-top, 60px) 0 var(--bq-results-pad-bot, 60px);
+  background-color: #FFFFFF;
+  background-image: var(--bq-results-bg-image, none);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  font-family: var(--bq-font-sans);
+  color: #000;
+}
+
+/* === Container (RH:6096) === */
+.bq-results__container {
+  text-align: center;
+  padding: 0;
+  margin: auto;
+  max-width: var(--bq-page-max, 1300px);
+}
+
+/* === Heading h2 (RH:6126) — NO pink strong rule (source has none) === */
+.bq-results__heading {
+  margin-bottom: 5px;
+  color: #000;
+  font-family: var(--bq-font-sans);
+  font-size: 44px;
+  line-height: 1.2;
+  font-weight: 500;
+}
+.bq-results__heading p { margin: 0; }
+
+/* === Timeline container (RH:6137) === */
+.bq-results__timeline {
+  position: relative;
+  margin: 40px 0 0;
+}
+
+/* === Background rail (RH:6101) — light pink line === */
+.bq-results__timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 75px;
+  left: 50%;
+  width: 4px;
+  background: #ff7e9759;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+/* === Pink-line dynamic fill (RH:6514–6526, drops `height: 95%` shadow per §10.B) === */
+.bq-results__timeline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 4px;
+  background: #ff7e97;
+  transform: translateX(-50%);
+  height: var(--timeline-progress, 0%);
+  transition: height 0.3s ease-out;
+  z-index: 1;
+}
+
+/* === Step grid (RH:6143) === */
+.bq-results__step {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: start;
+  gap: 40px;
+  position: relative;
+  margin-bottom: 90px;
+}
+.bq-results__card--left  { grid-column: 1; }
+.bq-results__card--right { grid-column: 3; }
+
+/* === Number column (RH:6171) === */
+.bq-results__number {
+  grid-column: 2;
+  justify-self: center;
+  align-self: start;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 50%;
+  width: 60px;
+  line-height: 40px;
+  text-align: center;
+  z-index: 2;
+  transition: background 0.3s ease-out, opacity 0.6s ease-out, transform 0.6s ease-out;
+  display: block;
+  align-content: center;
+  height: 100%;
+}
+.bq-results__step:first-child .bq-results__number {
+  align-content: start;
+  margin-top: -8px;
+}
+
+/* === Card base (RH:6195) === */
+.bq-results__card {
+  padding: 15px 20px;
+  border-radius: 10px;
+  max-width: 100%;
+  text-align: left;
+  align-items: flex-start !important;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+/* === Card image — generic constraint (RH:6204) === */
+.bq-results__card img {
+  max-width: 40px;
+  display: block;
+}
+
+/* === Card paragraph (RH:6208 — drops capitalize per §10.D) === */
+.bq-results__card p {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 0;
+}
+.bq-results__card p strong {
+  color: #FF7E97;
+  font-weight: 600;
+}
+
+/* === Card h4 (RH:6219) === */
+.bq-results__card h4 {
+  margin: 5px 0;
+  color: #000;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: inherit;
+  letter-spacing: 0;
+  font-family: var(--bq-font-sans) !important;
+}
+.bq-results__card h4 strong {
+  color: #FF7E97;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+/* === Heading h4 with image (RH:6232 — kept .card-left-item only; .card-right-item is orphan) === */
+.bq-results__card--leftgrid h4 {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.bq-results__card--leftgrid h4 img { width: 60px; }
+
+/* === Description text-box modifier (RH:6112) === */
+.bq-results__card--textbox {
+  border: solid 3px #FF7E97;
+  background: #FFF0F5;
+}
+
+/* === Heading-card leftgrid layout (RH:6121) === */
+.bq-results__card--leftgrid {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* === Heading-card leading time-icon (project addition; calendar glyph) === */
+.bq-results__time-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-right: 12px;
+}
+
+/* === Description leading emoji (project addition) === */
+.bq-results__desc-emoji {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+/* === Animation styles (RH:6513–6566) === */
+.bq-results__step .bq-results__card,
+.bq-results__step .bq-results__number {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.bq-results__step .bq-results__card--left  { transform: translateX(-60px); }
+.bq-results__step .bq-results__card--right { transform: translateX(60px); }
+.bq-results__step .bq-results__number      { transform: translateY(30px); }
+
+.bq-results__step--active .bq-results__card,
+.bq-results__step--active .bq-results__number {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+.bq-results__step--active .bq-results__card--left  { transition-delay: 0.1s; }
+.bq-results__step--active .bq-results__number      { transition-delay: 0.2s; }
+.bq-results__step--active .bq-results__card--right { transition-delay: 0.3s; }
+
+.bq-results__step--exiting .bq-results__card--left  { transform: translateX(-60px); opacity: 0; }
+.bq-results__step--exiting .bq-results__card--right { transform: translateX(60px);  opacity: 0; }
+.bq-results__step--exiting .bq-results__number      { transform: translateY(30px);  opacity: 0; }
+
+/* === CTA (RH:6064 + b00:9735 ≤390 padding) — translates .custo-button .custom-btn === */
+.bq-results__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 40px auto 0;
+  background: rgb(0, 0, 0);
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 0;
+  text-transform: uppercase;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 20px;
+}
+.bq-results__cta:hover { background: #ff7e97; transition: 0.5s; }
+
+/* === Trust list — translates .shipping-list (RH:6089 + b00:9018) === */
+.bq-results__trust {
+  list-style: none;
+  padding: 10px 0 0;
+  margin: 15px 0 0;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.bq-results__trust-item {
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+}
+.bq-results__trust-icon {
+  margin-right: 10px;
+  margin-left: 10px;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   Mobile (RH:6286–6499 inline + b00:9548 / 9552 / 9735 external)
+   ============================================================ */
+@media only screen and (max-width: 600px) {
+  .bq-results { padding: 20px 0; }
+
+  .bq-results__container {
+    padding: 20px 15px;
+    margin-bottom: -30px;
+  }
+
+  .bq-results__heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .bq-results__timeline {
+    padding-left: 50px;
+    margin: 10px 0 0;
+  }
+  .bq-results__timeline::before,
+  .bq-results__timeline::after {
+    left: 13px !important;
+    transform: none !important;
+  }
+  .bq-results__timeline::before {
+    top: 20px;
+    bottom: 0;
+  }
+
+  .bq-results__step {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    margin: 0;
+  }
+  .bq-results__card--left,
+  .bq-results__card--right { grid-column: auto; width: 100%; }
+
+  .bq-results__number {
+    position: absolute;
+    left: -45px !important;
+    margin-left: -8px;
+    top: 0;
+    font-size: 16px;
+    display: block;
+    align-content: flex-start;
+  }
+  .bq-results__step:first-child .bq-results__number { margin-top: -17px; }
+  .bq-results__step--active .bq-results__number svg { width: 40px; }
+
+  .bq-results__card { padding: 15px; max-width: 100%; align-self: start; }
+  .bq-results__card p { font-size: 14px; }
+  .bq-results__card h4 {
+    font-size: 15px;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px !important;
+  }
+  .bq-results__card h4 img {
+    width: 30px !important;
+    height: 30px !important;
+    object-fit: contain;
+  }
+
+  /* Description box stacks below its heading-card sibling on mobile (RH:6495) */
+  .bq-results__card--textbox {
+    order: 2;
+    margin-bottom: 35px;
+  }
+
+  .bq-results__cta {
+    font-size: 14px;
+    width: max-content;
+  }
+
+  .bq-results__trust {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bq-results__trust-item {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 360px) {
+  .bq-results__card h4 { font-size: 14px; }
+}
+
+@media (max-width: 390px) {
+  .bq-results__cta { padding: 15px 15px !important; }
+}

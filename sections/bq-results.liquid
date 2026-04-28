@@ -1,0 +1,238 @@
+{% comment %}
+  STANDALONE SECTION — Section 6 (Results timeline)
+  Source: source/rendered.html lines 5836–6620 (singleton; see
+  inventories/section-06-results.md). NOT part of the bq-image-text
+  family — different DOM, motion model, and layout.
+
+  Animation model (mirrors source script at rendered.html:6574–6619):
+    - IntersectionObserver toggles .bq-results__step--active /
+      .bq-results__step--exiting on each step.
+    - Scroll listener writes --timeline-progress (0–100%) onto
+      .bq-results__timeline; CSS reads it on the ::after pseudo
+      so the centre pink line "fills" downward as the user scrolls
+      through the section.
+    - Drops the source bug `height: 95%` shadow override (see
+      inventory §10.A) — our line uses the var alone.
+
+  Token replace: %brand% / %product% piped through any heading_h2
+  and step description richtext fields.
+{% endcomment %}
+
+{{ 'bq-results.css' | asset_url | stylesheet_tag }}
+
+<style>
+  #shopify-section-{{ section.id }} {
+    --bq-results-bg-image: url({{ 'bq-results-bg.jpg' | asset_url }});
+  }
+</style>
+
+{%- liquid
+  assign brand = section.settings.brand_name_token | default: 'Lumière Paris'
+  assign product = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+  assign heading = section.settings.heading_h2 | replace: '%brand%', brand | replace: '%product%', product
+  assign step_blocks = section.blocks | where: 'type', 'step'
+  assign trust_blocks = section.blocks | where: 'type', 'trust_item'
+-%}
+
+<section
+  class="bq-results"
+  data-section-id="{{ section.id }}"
+  style="
+    --bq-results-pad-top: {{ section.settings.section_padding_top | default: 60 }}px;
+    --bq-results-pad-bot: {{ section.settings.section_padding_bottom | default: 60 }}px;
+    {%- if section.settings.background_image != blank -%}
+    --bq-results-bg-image: url({{ section.settings.background_image | image_url: width: 1920 }});
+    {%- endif -%}
+  "
+>
+  <div class="bq-results__container">
+    {%- if heading != blank -%}
+      <h2 class="bq-results__heading">{{ heading }}</h2>
+    {%- endif -%}
+
+    {%- if step_blocks.size > 0 -%}
+      <div class="bq-results__timeline">
+        {%- for block in step_blocks -%}
+          {%- assign is_odd = forloop.index0 | modulo: 2 -%}
+          {%- assign desc = block.settings.description | replace: '%brand%', brand | replace: '%product%', product | replace: '<p>', '' | replace: '</p>', '' -%}
+          {%- if is_odd == 0 -%}
+            {%- comment -%} Odd visual step (1, 3, 5): heading-card LEFT, description-card RIGHT {%- endcomment -%}
+            <div class="bq-results__step bq-results__step--exiting" data-step-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <div class="bq-results__card bq-results__card--left bq-results__card--heading bq-results__card--leftgrid">
+                {%- if block.settings.result_image != blank -%}
+                  <img src="{{ block.settings.result_image | image_url: width: 400 }}" alt="" width="{{ block.settings.result_image.width }}" height="{{ block.settings.result_image.height }}" loading="lazy">
+                {%- endif -%}
+                <svg class="bq-results__time-icon" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="4" y="6" width="24" height="22" rx="2" stroke="#FF7E97" stroke-width="2" fill="none"/>
+                  <line x1="4" y1="12" x2="28" y2="12" stroke="#FF7E97" stroke-width="2"/>
+                  <line x1="10" y1="3" x2="10" y2="9" stroke="#FF7E97" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="22" y1="3" x2="22" y2="9" stroke="#FF7E97" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="11" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="16" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="21" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="11" cy="23" r="1.5" fill="#FF7E97"/>
+                  <circle cx="16" cy="23" r="1.5" fill="#FF7E97"/>
+                </svg>
+                <h4><strong>{{ block.settings.time_label }}</strong><br>{{ block.settings.heading }}</h4>
+              </div>
+              <div class="bq-results__number" aria-hidden="true">
+                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="36" cy="36" r="35.5" fill="#FF7E97" stroke="#FF7E97"/>
+                  <path d="M50 26L30.75 45.25L22 36.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="bq-results__card bq-results__card--right bq-results__card--description bq-results__card--textbox">
+                <p>
+                  {%- if block.settings.desc_emoji != blank -%}
+                    <span class="bq-results__desc-emoji" aria-hidden="true">{{ block.settings.desc_emoji }}</span>
+                  {%- endif -%}
+                  {{ desc }}
+                </p>
+              </div>
+            </div>
+          {%- else -%}
+            {%- comment -%} Even visual step (2, 4, 6): description-card LEFT, heading-card RIGHT {%- endcomment -%}
+            <div class="bq-results__step bq-results__step--exiting" data-step-index="{{ forloop.index0 }}" {{ block.shopify_attributes }}>
+              <div class="bq-results__card bq-results__card--left bq-results__card--description bq-results__card--textbox">
+                <p>
+                  {%- if block.settings.desc_emoji != blank -%}
+                    <span class="bq-results__desc-emoji" aria-hidden="true">{{ block.settings.desc_emoji }}</span>
+                  {%- endif -%}
+                  {{ desc }}
+                </p>
+              </div>
+              <div class="bq-results__number" aria-hidden="true">
+                <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="36" cy="36" r="35.5" fill="#FF7E97" stroke="#FF7E97"/>
+                  <path d="M50 26L30.75 45.25L22 36.5" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="bq-results__card bq-results__card--right bq-results__card--heading">
+                <svg class="bq-results__time-icon" width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="4" y="6" width="24" height="22" rx="2" stroke="#FF7E97" stroke-width="2" fill="none"/>
+                  <line x1="4" y1="12" x2="28" y2="12" stroke="#FF7E97" stroke-width="2"/>
+                  <line x1="10" y1="3" x2="10" y2="9" stroke="#FF7E97" stroke-width="2" stroke-linecap="round"/>
+                  <line x1="22" y1="3" x2="22" y2="9" stroke="#FF7E97" stroke-width="2" stroke-linecap="round"/>
+                  <circle cx="11" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="16" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="21" cy="18" r="1.5" fill="#FF7E97"/>
+                  <circle cx="11" cy="23" r="1.5" fill="#FF7E97"/>
+                  <circle cx="16" cy="23" r="1.5" fill="#FF7E97"/>
+                </svg>
+                <h4><strong>{{ block.settings.time_label }}</strong><br>{{ block.settings.heading }}</h4>
+                {%- if block.settings.result_image != blank -%}
+                  <img src="{{ block.settings.result_image | image_url: width: 400 }}" alt="" width="{{ block.settings.result_image.width }}" height="{{ block.settings.result_image.height }}" loading="lazy">
+                {%- endif -%}
+              </div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+      <a class="bq-results__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+    {%- endif -%}
+
+    {%- if trust_blocks.size > 0 -%}
+      <ul class="bq-results__trust" role="list">
+        {%- for block in trust_blocks -%}
+          {%- if block.settings.label != blank -%}
+            <li class="bq-results__trust-item" {{ block.shopify_attributes }}>
+              <svg class="bq-results__trust-icon" width="17" height="17" viewBox="0 0 17 17" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="8.5" cy="8.5" r="7.5" fill="#fff"/>
+                <path d="M8.33333 0C3.75 0 0 3.75 0 8.33333C0 12.9167 3.75 16.6667 8.33333 16.6667C12.9167 16.6667 16.6667 12.9167 16.6667 8.33333C16.6667 3.75 12.9167 0 8.33333 0ZM6.66667 12.5L2.5 8.33333L3.675 7.15833L6.66667 10.1417L12.9917 3.81667L14.1667 5L6.66667 12.5Z" fill="#00AD21"/>
+              </svg>
+              <span>{{ block.settings.label }}</span>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    {%- endif -%}
+  </div>
+</section>
+
+<script>
+  (function () {
+    var section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!section) return;
+    var timeline = section.querySelector('.bq-results__timeline');
+    var steps = section.querySelectorAll('.bq-results__step');
+    if (!timeline || !steps.length) return;
+
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('bq-results__step--active');
+          entry.target.classList.remove('bq-results__step--exiting');
+        } else if (entry.target.classList.contains('bq-results__step--active')) {
+          entry.target.classList.remove('bq-results__step--active');
+          entry.target.classList.add('bq-results__step--exiting');
+        }
+      });
+    }, { rootMargin: '-100px 0px -30% 0px', threshold: 0 });
+    steps.forEach(function (s) { io.observe(s); });
+
+    function updateProgress() {
+      var rect = timeline.getBoundingClientRect();
+      if (rect.height <= 0) return;
+      var raw = ((window.innerHeight / 2 - rect.top) / rect.height) * 100;
+      var progress = Math.max(0, Math.min(100, raw));
+      timeline.style.setProperty('--timeline-progress', progress + '%');
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Botanique Results",
+  "tag": "section",
+  "class": "bq-section-results",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "max_blocks": 14,
+  "settings": [
+    { "type": "header", "content": "Content" },
+    { "type": "text",     "id": "brand_name_token",   "label": "Brand name (token)",   "default": "Lumière Paris",        "info": "Replaces the literal string %brand% wherever it appears in copy." },
+    { "type": "text",     "id": "product_name_token", "label": "Product name (token)", "default": "Il Nostro Dispositivo", "info": "Replaces the literal string %product% wherever it appears in copy." },
+    { "type": "richtext", "id": "heading_h2", "label": "Heading (h2)", "default": "<p>I Risultati che Vedrai Usando <br><strong>%product% Ogni Giorno</strong></p>", "info": "Wrap accent words in <strong> for pink emphasis." },
+    { "type": "header", "content": "Call to action" },
+    { "type": "text", "id": "cta_label", "label": "CTA label" },
+    { "type": "url",  "id": "cta_link",  "label": "CTA link" },
+    { "type": "header", "content": "Background" },
+    { "type": "image_picker", "id": "background_image", "label": "Background image (optional, full-bleed)" },
+    { "type": "header", "content": "Spacing" },
+    { "type": "range", "id": "section_padding_top",    "label": "Section padding top",    "min": 0, "max": 200, "step": 5, "default": 60, "unit": "px" },
+    { "type": "range", "id": "section_padding_bottom", "label": "Section padding bottom", "min": 0, "max": 200, "step": 5, "default": 60, "unit": "px" }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline step",
+      "limit": 10,
+      "settings": [
+        { "type": "text",         "id": "time_label",    "label": "Time label", "info": "e.g. \"Settimana 1:\" or \"Mese 3:\"" },
+        { "type": "text",         "id": "heading",       "label": "Step heading" },
+        { "type": "text",         "id": "desc_emoji",    "label": "Description leading emoji", "info": "Single emoji glyph (e.g. 👁️). Renders block-level above description text." },
+        { "type": "richtext",     "id": "description",   "label": "Description", "info": "Wrap accent phrases in <strong> for pink emphasis. Use %brand% / %product% tokens for replacements." },
+        { "type": "image_picker", "id": "result_image",  "label": "Result image (heading-card thumbnail)" }
+      ]
+    },
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "limit": 4,
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label" }
+      ]
+    }
+  ],
+  "presets": [
+    { "name": "Botanique Results", "category": "Botanique" }
+  ]
+}
+{% endschema %}

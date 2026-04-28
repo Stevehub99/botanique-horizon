@@ -181,6 +181,13 @@
   gap: 12px;
 }
 
+/* === Right-side heading cards (even steps 2/4/6) — same flex+gap as leftgrid === */
+.bq-results__card--right.bq-results__card--heading {
+  display: flex;
+  align-items: center !important;
+  gap: 12px;
+}
+
 /* === Heading-card h4 — block layout so strong+text stack === */
 .bq-results__card--heading h4 {
   display: block;

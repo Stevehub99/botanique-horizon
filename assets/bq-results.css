@@ -174,18 +174,22 @@
   background: #FFF0F5;
 }
 
-/* === Heading-card leftgrid layout (RH:6121) — !important to beat .card { align-items: flex-start !important } from RH:6195 === */
+/* === Heading-card leftgrid layout (RH:6121) === */
 .bq-results__card--leftgrid {
   display: flex;
-  align-items: center !important;
   gap: 12px;
 }
 
 /* === Right-side heading cards (even steps 2/4/6) — same flex+gap as leftgrid === */
 .bq-results__card--right.bq-results__card--heading {
   display: flex;
-  align-items: center !important;
   gap: 12px;
+}
+
+/* === Heading-card icon alignment — top-anchored with baseline nudge === */
+.bq-results__card--leftgrid,
+.bq-results__card--right.bq-results__card--heading {
+  align-items: flex-start;
 }
 
 /* === Heading-card h4 — block layout so strong+text stack === */
@@ -207,6 +211,7 @@
   width: 48px !important;
   height: 48px !important;
   flex-shrink: 0;
+  margin-top: 4px;
 }
 
 /* === Description leading emoji (project addition) === */

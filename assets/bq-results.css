@@ -460,3 +460,9 @@ echanced-scents-main .card.left-card.left-card-item {
   transform: translateY(30px);
   opacity: 0;
 }
+
+/* Project override: source's `.echanced-scents-main .card { align-items: flex-start !important }`
+   (line 161) wins over the verbatim `.card.left-card-item { align-items: center }` (line 84) due
+   to !important. This higher-specificity override (0,3,0 + !important) restores the rule's
+   intended behaviour so the heading-card icon vertically centers next to the <h4>. */
+.echanced-scents-main .card.left-card-item { align-items: center !important; }

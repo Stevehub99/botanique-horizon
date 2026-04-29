@@ -229,3 +229,11 @@ Then summarize:
 
 Do not write any code or send any prompts to Claude Code until I confirm the summary is correct.
 ```
+
+## Lessons from Section 6
+
+1. **Diagnose with DOM probes, not screenshots.** When the user reports a visual issue, ask Claude Code to measure (computed styles, bounding boxes, element accounting) before proposing a fix. Screenshots imply the problem; probes prove it.
+
+2. **Italian copy length breaks mobile layouts in non-obvious ways.** Source's English may fit on one line where Italian wraps. This causes flex-wrap, empty-rectangle artifacts, height overages. Test mobile with the longest plausible Italian string before declaring a section done.
+
+3. **3-attempt diagnostic ceiling.** If 3 fixes haven't closed a single visual issue, the diagnosis is wrong. Stop fixing, run a full DOM probe, re-diagnose. Section 6 had 4 wrong diagnoses (Italian copy, Horizon `.card` collision, image presence, flex-wrap behavior) — each cost an iteration.

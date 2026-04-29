@@ -1,0 +1,155 @@
+{{ 'bq-urgency-banner.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_name = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+  assign pad_top = section.settings.section_padding_top | default: 10
+  assign pad_bot = section.settings.section_padding_bottom | default: 30
+-%}
+
+<section
+  class="bq-ub"
+  data-section-id="{{ section.id }}"
+  style="--bq-ub-pad-top: {{ pad_top }}px; --bq-ub-pad-bot: {{ pad_bot }}px;"
+>
+  <div class="page-width">
+    <div class="bq-ub__inner">
+
+      <div class="bq-ub__photo">
+        {%- if section.settings.image != blank -%}
+          {{
+            section.settings.image
+            | image_url: width: 1500
+            | image_tag:
+              loading: 'eager',
+              alt: section.settings.image_alt | default: 'Donna con dispositivo per il contorno occhi'
+          }}
+        {%- else -%}
+          <img
+            src="//botaniqueparis.com/cdn/shop/files/dd137e6fb88b035084bc1caeb85af737daea95ac.jpg?v=1760417532&width=1500"
+            srcset="//botaniqueparis.com/cdn/shop/files/dd137e6fb88b035084bc1caeb85af737daea95ac.jpg?v=1760417532&width=360 360w,
+                    //botaniqueparis.com/cdn/shop/files/dd137e6fb88b035084bc1caeb85af737daea95ac.jpg?v=1760417532&width=750 750w,
+                    //botaniqueparis.com/cdn/shop/files/dd137e6fb88b035084bc1caeb85af737daea95ac.jpg?v=1760417532&width=1500 1500w"
+            sizes="(min-width: 750px) 50vw, 100vw"
+            width="1500"
+            height="2000"
+            loading="eager"
+            alt="{{ section.settings.image_alt | default: 'Donna con dispositivo per il contorno occhi' }}"
+          >
+        {%- endif -%}
+      </div>
+
+      <div class="bq-ub__content">
+        <h3 class="bq-ub__headline">
+          A causa dell'alta domanda e dei limiti di produzione,
+          {{ product_name }} ha un rischio
+          <strong>molto elevato di esaurirsi</strong>
+        </h3>
+
+        <a
+          href="{{ section.settings.cta_url | default: '#' }}"
+          class="bq-ub__cta"
+        >
+          {{ section.settings.cta_label | default: 'Ringiovanisci Il Tuo Contorno Occhi Ora' }}
+        </a>
+
+        <div class="bq-ub__trust">
+          <div class="bq-ub__trust-item">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="7" fill="#2ED215"/>
+                <path d="M10.8883 4.0835L5.54103 9.43072L3.11047 7.00016" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p>{{ section.settings.trust_1 | default: 'Garanzia soddisfatti o rimborsati 365 giorni' }}</p>
+          </div>
+
+          <div class="bq-ub__trust-item">
+            <span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
+                <circle cx="7" cy="7" r="7" fill="#2ED215"/>
+                <path d="M10.8883 4.0835L5.54103 9.43072L3.11047 7.00016" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </span>
+            <p>{{ section.settings.trust_2 | default: 'Spedizione express in tutto il mondo' }}</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BQ Urgency Banner",
+  "tag": "div",
+  "class": "bq-urgency-banner-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Nome prodotto",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Immagine"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Alt immagine",
+      "default": "Donna con dispositivo per il contorno occhi"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Testo pulsante CTA",
+      "default": "Ringiovanisci Il Tuo Contorno Occhi Ora"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "URL pulsante CTA"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust item 1",
+      "default": "Garanzia soddisfatti o rimborsati 365 giorni"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust item 2",
+      "default": "Spedizione express in tutto il mondo"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 30
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ Urgency Banner"
+    }
+  ]
+}
+{% endschema %}

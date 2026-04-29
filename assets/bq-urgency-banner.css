@@ -1,0 +1,123 @@
+/* bq-urgency-banner.css — Section 13: Urgency Banner (high-demand-selling-october) */
+
+.bq-ub {
+  padding-top: var(--bq-ub-pad-top, 10px);
+  padding-bottom: var(--bq-ub-pad-bot, 30px);
+}
+
+.bq-ub__inner {
+  display: flex;
+  align-items: center;
+  background: #000;
+}
+
+.bq-ub__photo {
+  order: 1;
+  width: 50%;
+  position: relative;
+  padding-top: 462px;
+}
+
+.bq-ub__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0;
+}
+
+.bq-ub__content {
+  order: 2;
+  width: 50%;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.bq-ub__headline {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 50px;
+  margin-top: 0;
+}
+
+.bq-ub__headline strong {
+  color: #ff7e97;
+  font-weight: normal;
+}
+
+.bq-ub__cta {
+  display: block;
+  background: #ff7e97;
+  color: #fff;
+  text-align: center;
+  padding: 15px 40px;
+  font-size: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 0.3s;
+}
+
+.bq-ub__cta:hover {
+  background: #e06080;
+}
+
+.bq-ub__trust {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-top: 25px;
+  gap: 0;
+}
+
+.bq-ub__trust-item {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.bq-ub__trust-item span {
+  flex-shrink: 0;
+}
+
+.bq-ub__trust-item p {
+  margin: 0;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 16px;
+}
+
+@media (max-width: 767px) {
+  .bq-ub__inner {
+    flex-wrap: wrap;
+  }
+
+  .bq-ub__photo {
+    width: 100%;
+    padding-top: 410px;
+  }
+
+  .bq-ub__photo img {
+    height: 400px;
+    position: absolute;
+  }
+
+  .bq-ub__content {
+    width: 100%;
+    padding: 0 15px 15px;
+  }
+
+  .bq-ub__headline {
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .bq-ub__cta {
+    width: 100%;
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}

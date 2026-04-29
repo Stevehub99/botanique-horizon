@@ -7,7 +7,7 @@
  * made to this file may be overwritten.
  * ------------------------------------------------------------
  */
- {
+{
   "sections": {
     "bq_image_text_causes_xQzFck": {
       "type": "bq-image-text",
@@ -17,12 +17,28 @@
         "accent_color": "#FF7E97",
         "section_padding_top": 10,
         "section_padding_bottom": 10
-      },
-      "blocks": {},
-      "block_order": []
+      }
     },
     "bq-image-text-dual-tech": {
       "type": "bq-image-text",
+      "blocks": {
+        "trust1": {
+          "type": "trust_item",
+          "settings": {
+            "label": "Garanzia 365 giorni soddisfatti o rimborsati"
+          }
+        },
+        "trust2": {
+          "type": "trust_item",
+          "settings": {
+            "label": "Spedizione espressa in tutto il mondo"
+          }
+        }
+      },
+      "block_order": [
+        "trust1",
+        "trust2"
+      ],
       "settings": {
         "brand_name_token": "Lumière Paris",
         "subheading_h3": "<p><strong>Da %brand%,</strong> usiamo una doppia tecnologia per affrontare tutte e tre le cause profonde delle occhiaie.</p>",
@@ -37,21 +53,49 @@
         "accent_color": "#FF7E97",
         "section_padding_top": 10,
         "section_padding_bottom": 30
-      },
-      "blocks": {
-        "trust1": {
-          "type": "trust_item",
-          "settings": { "label": "Garanzia 365 giorni soddisfatti o rimborsati" }
-        },
-        "trust2": {
-          "type": "trust_item",
-          "settings": { "label": "Spedizione espressa in tutto il mondo" }
-        }
-      },
-      "block_order": ["trust1", "trust2"]
+      }
     },
     "bq-image-text-mission": {
       "type": "bq-image-text",
+      "blocks": {
+        "p1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Dopo anni di creme inefficaci e la paura della chirurgia, meriti una tecnologia che funziona davvero.</p>"
+          }
+        },
+        "p2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>%product% combina luce rossa clinicamente provata e microcorrenti EMS in un unico dispositivo. Bastano 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi.</p>"
+          }
+        },
+        "p3": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Niente appuntamenti, niente aghi, niente routine complicate. Finalmente la trasformazione che cercavi: occhi naturalmente giovani, riposati e radiosi, proprio come ti senti.</p>"
+          }
+        },
+        "trust1": {
+          "type": "trust_item",
+          "settings": {
+            "label": "Garanzia 365 giorni soddisfatti o rimborsati"
+          }
+        },
+        "trust2": {
+          "type": "trust_item",
+          "settings": {
+            "label": "Spedizione espressa in tutto il mondo"
+          }
+        }
+      },
+      "block_order": [
+        "p1",
+        "p2",
+        "p3",
+        "trust1",
+        "trust2"
+      ],
       "settings": {
         "brand_name_token": "Lumière Paris",
         "product_name_token": "Il Nostro Dispositivo",
@@ -68,49 +112,16 @@
         "accent_color": "#FF7E97",
         "section_padding_top": 30,
         "section_padding_bottom": 30
-      },
-      "blocks": {
-        "p1": {
-          "type": "paragraph",
-          "settings": { "text": "<p>Dopo anni di creme inefficaci e la paura della chirurgia, meriti una tecnologia che funziona davvero.</p>" }
-        },
-        "p2": {
-          "type": "paragraph",
-          "settings": { "text": "<p>%product% combina luce rossa clinicamente provata e microcorrenti EMS in un unico dispositivo. Bastano 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi.</p>" }
-        },
-        "p3": {
-          "type": "paragraph",
-          "settings": { "text": "<p>Niente appuntamenti, niente aghi, niente routine complicate. Finalmente la trasformazione che cercavi: occhi naturalmente giovani, riposati e radiosi, proprio come ti senti.</p>" }
-        },
-        "trust1": {
-          "type": "trust_item",
-          "settings": { "label": "Garanzia 365 giorni soddisfatti o rimborsati" }
-        },
-        "trust2": {
-          "type": "trust_item",
-          "settings": { "label": "Spedizione espressa in tutto il mondo" }
-        }
-      },
-      "block_order": ["p1", "p2", "p3", "trust1", "trust2"]
+      }
     },
     "bq-results-timeline": {
       "type": "bq-results",
-      "settings": {
-        "brand_name_token": "Lumière Paris",
-        "product_name_token": "Il Nostro Dispositivo",
-        "heading_h2": "<p>I Risultati che Vedrai Usando <br><strong>%product% Ogni Giorno</strong></p>",
-        "cta_label": "INIZIA IL TUO PERCORSO",
-        "cta_link": "/products/revitaleyes",
-        "section_padding_top": 60,
-        "section_padding_bottom": 60
-      },
       "blocks": {
         "s1": {
           "type": "step",
           "settings": {
             "time_label": "Settimana 1:",
             "heading": "Riduzione immediata del gonfiore",
-            "desc_emoji": "👁️",
             "description": "<p>Le microcorrenti drenano <strong>l'accumulo di liquidi, riducendo il gonfiore mattutino,</strong> stimolando il drenaggio linfatico e la circolazione in pochi minuti. I tuoi occhi appaiono meno gonfi, più aperti, più svegli.</p>"
           }
         },
@@ -119,7 +130,6 @@
           "settings": {
             "time_label": "Settimana 2:",
             "heading": "Miglioramenti della texture",
-            "desc_emoji": "😍",
             "description": "<p>Le linee sottili iniziano ad ammorbidirsi. La <strong>pelle sottile e segnata sotto gli occhi comincia a levigarsi</strong> mentre la luce rossa stimola la produzione di collagene in profondità.</p>"
           }
         },
@@ -128,7 +138,6 @@
           "settings": {
             "time_label": "Settimana 4:",
             "heading": "Sguardo visibilmente più luminoso",
-            "desc_emoji": "✨",
             "description": "<p>Occhiaie notevolmente più chiare. La microcircolazione migliorata <strong>elimina il ristagno di sangue che crea ombre, rivelando una pelle più luminosa e dal tono uniforme.</strong> Le persone iniziano a chiederti se usi un nuovo prodotto.</p>"
           }
         },
@@ -137,7 +146,6 @@
           "settings": {
             "time_label": "Settimana 6:",
             "heading": "Riduzione drammatica delle borse",
-            "desc_emoji": "💆",
             "description": "<p>Borse visibilmente ridotte. L'area perioculare cedevole e gonfia si rassoda mentre <strong>il collagene si rigenera e i muscoli si tonificano.</strong> Gli studi clinici mostrano che <strong>oltre l'85% vede cambiamenti significativi</strong> a questo punto.</p>"
           }
         },
@@ -146,7 +154,6 @@
           "settings": {
             "time_label": "Settimana 8:",
             "heading": "Rughe e linee sottili più levigate",
-            "desc_emoji": "🌟",
             "description": "<p>Zampe di gallina e linee sottili misurabilmente attenuate. La <strong>sintesi continua di collagene ispessisce la pelle,</strong> rendendo ogni vaso e ruga meno visibile. Sembri riposata anche dopo le notti più difficili.</p>"
           }
         },
@@ -155,20 +162,41 @@
           "settings": {
             "time_label": "Mese 3:",
             "heading": "Trasformazione completa",
-            "desc_emoji": "🪞",
             "description": "<p>I tuoi occhi appaiono <strong>anni più giovani.</strong> Naturalmente giovani, sani e svegli. <strong>Le occhiaie sono colmate, l'ombra svanita, il gonfiore eliminato.</strong> Vedi finalmente la vera te nello specchio.</p>"
           }
         },
         "trust1": {
           "type": "trust_item",
-          "settings": { "label": "Garanzia 365 giorni soddisfatti o rimborsati" }
+          "settings": {
+            "label": "Garanzia 365 giorni soddisfatti o rimborsati"
+          }
         },
         "trust2": {
           "type": "trust_item",
-          "settings": { "label": "Spedizione espressa in tutto il mondo" }
+          "settings": {
+            "label": "Spedizione espressa in tutto il mondo"
+          }
         }
       },
-      "block_order": ["s1", "s2", "s3", "s4", "s5", "s6", "trust1", "trust2"]
+      "block_order": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "trust1",
+        "trust2"
+      ],
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "<p>I Risultati che Vedrai Usando <br><strong>%product% Ogni Giorno</strong></p>",
+        "cta_label": "INIZIA IL TUO PERCORSO",
+        "cta_link": "/products/revitaleyes",
+        "section_padding_top": 60,
+        "section_padding_bottom": 60
+      }
     },
     "bq_industry_kP9mTr": {
       "type": "bq-industry",
@@ -176,13 +204,12 @@
     },
     "bq_hero_Hg7vZw": {
       "type": "bq-hero",
-      "settings": {},
       "blocks": {
         "t1": {
           "type": "testimonial",
           "settings": {
-            "name": "Giulia M.",
             "quote": "La combinazione di luce rossa ed EMS si sente davvero al lavoro sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.",
+            "name": "Giulia M.",
             "verified": true,
             "stars": 5
           }
@@ -190,8 +217,8 @@
         "t2": {
           "type": "testimonial",
           "settings": {
-            "name": "Aurora B.",
             "quote": "Non credevo ai risultati nelle foto prima/dopo, poi l'ho provato. Ora le occhiaie che avevo da anni sono davvero meno visibili.",
+            "name": "Aurora B.",
             "verified": true,
             "stars": 5
           }
@@ -199,8 +226,8 @@
         "t3": {
           "type": "testimonial",
           "settings": {
-            "name": "Chiara V.",
             "quote": "Dopo 3 settimane di uso quotidiano lo sguardo è decisamente più fresco. Mi fa risparmiare i filler, valeva ogni centesimo.",
+            "name": "Chiara V.",
             "verified": true,
             "stars": 5
           }
@@ -208,8 +235,8 @@
         "t4": {
           "type": "testimonial",
           "settings": {
-            "name": "Martina D.",
             "quote": "Non avevo grandi aspettative, invece funziona. Lo uso la mattina mentre bevo il caffè.",
+            "name": "Martina D.",
             "verified": true,
             "stars": 5
           }
@@ -217,8 +244,8 @@
         "t5": {
           "type": "testimonial",
           "settings": {
-            "name": "Sofia R.",
             "quote": "Palpebre più tese e borse ridotte. Mia sorella mi ha chiesto subito dove l'avevo comprato.",
+            "name": "Sofia R.",
             "verified": true,
             "stars": 5
           }
@@ -230,7 +257,20 @@
         "t3",
         "t4",
         "t5"
-      ]
+      ],
+      "settings": {}
+    }
+    ,
+    "bq-urgency-banner-s13": {
+      "type": "bq-urgency-banner",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "cta_label": "Ringiovanisci Il Tuo Contorno Occhi Ora",
+        "trust_1": "Garanzia soddisfatti o rimborsati 365 giorni",
+        "trust_2": "Spedizione express in tutto il mondo",
+        "section_padding_top": 10,
+        "section_padding_bottom": 30
+      }
     }
   },
   "order": [
@@ -239,6 +279,7 @@
     "bq_image_text_causes_xQzFck",
     "bq-image-text-dual-tech",
     "bq-image-text-mission",
-    "bq-results-timeline"
+    "bq-results-timeline",
+    "bq-urgency-banner-s13"
   ]
 }

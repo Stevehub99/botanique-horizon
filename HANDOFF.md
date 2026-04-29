@@ -237,3 +237,27 @@ Do not write any code or send any prompts to Claude Code until I confirm the sum
 2. **Italian copy length breaks mobile layouts in non-obvious ways.** Source's English may fit on one line where Italian wraps. This causes flex-wrap, empty-rectangle artifacts, height overages. Test mobile with the longest plausible Italian string before declaring a section done.
 
 3. **3-attempt diagnostic ceiling.** If 3 fixes haven't closed a single visual issue, the diagnosis is wrong. Stop fixing, run a full DOM probe, re-diagnose. Section 6 had 4 wrong diagnoses (Italian copy, Horizon `.card` collision, image presence, flex-wrap behavior) — each cost an iteration.
+
+## Workflow rules from Section 6 retrospective
+
+These rules emerged from Section 6's polish-spiral. Apply throughout subsequent sections.
+
+### For chat-Claude
+
+1. **Diagnose with data, not theories.** When a fix fails, the next message asks Claude Code for measurements (DOM probe, computed styles, bounding boxes), not another speculative fix. Theory follows data.
+
+2. **3-attempt diagnostic ceiling per visual issue.** After 3 fix attempts on the same issue, stop fixing. Run a full DOM probe. Re-diagnose from scratch. The mental model is wrong — don't keep iterating on it.
+
+3. **Italian mobile pre-check at build time.** Before declaring a section done, render at mobile 390px with the actual Italian copy, measure every element whose source counterpart had English copy. Flag any width overage >20% as a layout risk. Catch flex-wrap and overflow at build, not in user reports.
+
+4. **Goal-check at decision points.** Before any fix attempt, ask: does this advance "shipped clone" more than moving to the next section? Section 6's last 30% of polish cost more than the first 90%. Marginal returns matter.
+
+5. **Route visual-fidelity issues to Claude Code, not chat.** When user reports a visual issue, prompt Claude Code to "diagnose then propose," not propose CSS from a screenshot. CSS forensics from screenshots is wrong by construction.
+
+### For user
+
+1. State the goal, not the tactic. "Match source" not "add 12px gap."
+2. Set a section budget upfront. Time or quality threshold.
+3. Push back early. 2-3 attempts that feel wrong = say so immediately.
+4. One issue per message when possible.
+5. Trust your eye over Claude's data when they conflict.

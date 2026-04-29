@@ -3,6 +3,13 @@
 .bq-ub {
   padding-top: var(--bq-ub-pad-top, 10px);
   padding-bottom: var(--bq-ub-pad-bot, 30px);
+  background: #fff;
+}
+
+.bq-ub__container {
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: auto;
 }
 
 .bq-ub__inner {

@@ -453,21 +453,6 @@ echanced-scents-main .bq-card.left-card.left-card-item {
   vertical-align: middle;
 }
 
-/* === Project override: hide last-step heading-card thumbnail on mobile.
-   Italian "Trasformazione completa" (h4 min-content ~180px) makes the
-   heading-card too wide to share row 1 with the 60px number, forcing a
-   flex-wrap and adding 65px to step height. English "Full Transformation"
-   in source fits naturally. Hiding the 70×70 thumb frees enough horizontal
-   space for the heading-card to fit row 1, restoring source's −30px
-   visual gap to step 5. Last-step + mobile-only scope keeps steps 1–5
-   source-faithful. */
-@media (max-width: 600px) {
-  .timeline-step:last-child .right-card > img,
-  .timeline-step:last-child .left-card-item > img {
-    display: none;
-  }
-}
-
 /* --- Animation styles --- */
 .timeline::after {
   content: "";

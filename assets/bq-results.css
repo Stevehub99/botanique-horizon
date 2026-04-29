@@ -3,7 +3,7 @@
    external rules outside the inline <style>). Class names match source verbatim
    (no BEM). Three documented drops applied:
      1. .timeline::after { height: 95% } shadow override (source bug)
-     2. text-transform: capitalize on .echanced-scents-main .card p
+     2. text-transform: capitalize on .echanced-scents-main .bq-card p
      3. orphan rules targeting non-existent step IDs (gPDhFN, 4Bfp34, 98Anhx,
         MkMwMg, 7ikq9B, Tx8KET, 7HQTfE, 8qmQcE, BDXDei, aRHgyi, 7kzHP7, JW8VBW)
    Marble background wired via inline <style> in section template. */
@@ -108,16 +108,16 @@
   transform: translateX(-50%);
   z-index: 0;
 }
-.card.right-text-box {
+.bq-card.right-text-box {
   border: solid 3px #FF7E97;
   background: #FFF0F5;
 }
-.card.card-right-item.left-card-item h4 img {
+.bq-card.card-right-item.left-card-item h4 img {
   display: flex;
   width: 30px;
   margin-left: 0 !important;
 }
-.card.left-card-item {
+.bq-card.left-card-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -159,7 +159,7 @@
   order: 2;
   margin-left: 10px !important;
 }
-echanced-scents-main .card.left-card.left-card-item {
+echanced-scents-main .bq-card.left-card.left-card-item {
     justify-content: flex-end;
 }
 .timeline::before,
@@ -191,7 +191,7 @@ echanced-scents-main .card.left-card.left-card-item {
 
 
 
-.echanced-scents-main .card {
+.echanced-scents-main .bq-card {
   padding: 15px 20px;
   border-radius: 10px;
   max-width: 100%;
@@ -199,7 +199,7 @@ echanced-scents-main .card.left-card.left-card-item {
       align-items: flex-start !important;
   display: flex;
   align-self: center; justify-content: center;
-  /* === Project overrides (Horizon theme defaults `.card` to position:relative,
+  /* === Project overrides (Horizon theme defaults `.bq-card` to position:relative,
      overflow:hidden, flex-direction:column, color:rgba(0,0,0,0.5); force source
      behaviour) === */
   position: static;
@@ -207,23 +207,23 @@ echanced-scents-main .card.left-card.left-card-item {
   flex-direction: row;
   color: #000;
 }
-.echanced-scents-main .card img {
+.echanced-scents-main .bq-card img {
   max-width: 40px;
   display: block;
   /* Reset aspect-ratio (our explicit width/height attrs add it; source has none) */
   aspect-ratio: auto;
 }
-.echanced-scents-main .card p {
+.echanced-scents-main .bq-card p {
   font-size: 20px;
   font-weight: 400;
 }
-.echanced-scents-main .card p strong{
+.echanced-scents-main .bq-card p strong{
   color: #FF7E97; font-weight:600;
 }
 .timeline-step span {
   font-weight: bold;
 }
-.echanced-scents-main .card h4 {
+.echanced-scents-main .bq-card h4 {
   margin: 5px 0;
   color: #000;
   font-size: 24px;
@@ -231,7 +231,7 @@ echanced-scents-main .card.left-card.left-card-item {
   text-transform: inherit;
   letter-spacing: 0;     font-family: var(--font-paragraph--family) !important;
 }
-.echanced-scents-main .card h4 strong{
+.echanced-scents-main .bq-card h4 strong{
   color: #FF7E97;
     font-weight: 400;
     font-size: 18px;
@@ -245,16 +245,16 @@ echanced-scents-main .card.left-card.left-card-item {
 .echanced-scents-main .card-left-item h4 img {
   width: 60px;
 }
-.echanced-scents-main .card.card-right-item.right-text-box img {
+.echanced-scents-main .bq-card.card-right-item.right-text-box img {
   width: 24px;
   margin: 10px 0;
 }
-.echanced-scents-main .card.card-right-item.left-card-item.leftcard-grid {
+.echanced-scents-main .bq-card.card-right-item.left-card-item.leftcard-grid {
   display: grid;
   grid-template-columns: 40% 60%;
   gap: 30px;
 }
-.echanced-scents-main .card.card-right-item.left-card-item.rightcard-item {
+.echanced-scents-main .bq-card.card-right-item.left-card-item.rightcard-item {
   display: grid;
   grid-template-columns: 60% 40%;
   gap: 30px;
@@ -267,7 +267,7 @@ echanced-scents-main .card.left-card.left-card-item {
   transform: rotate(-60deg);
 }
 
-.echanced-scents-main .card.card-right-item.left-card-item.rightcard-item {
+.echanced-scents-main .bq-card.card-right-item.left-card-item.rightcard-item {
   padding: 15px 0;
 }
 
@@ -313,7 +313,7 @@ echanced-scents-main .card.left-card.left-card-item {
         flex-wrap: wrap;
         gap: 0;
   }
-  .echanced-scents-main .card {
+  .echanced-scents-main .bq-card {
       max-width: 100%;
       
   }
@@ -321,17 +321,17 @@ echanced-scents-main .card.left-card.left-card-item {
       padding: 20px 15px;
       margin-bottom: -30px;
   }
-  .echanced-scents-main .card.card-right-item.left-card-item.leftcard-grid {
+  .echanced-scents-main .bq-card.card-right-item.left-card-item.leftcard-grid {
       display: block;
   }
-  .echanced-scents-main .card.card-right-item.left-card-item.leftcard-grid img {
+  .echanced-scents-main .bq-card.card-right-item.left-card-item.leftcard-grid img {
       display: none;
   }
-  .echanced-scents-main .card.card-right-item.left-card-item.leftcard-grid h4 img,
-  .echanced-scents-main .card.card-right-item.left-card-item.rightcard-item h4 img {
+  .echanced-scents-main .bq-card.card-right-item.left-card-item.leftcard-grid h4 img,
+  .echanced-scents-main .bq-card.card-right-item.left-card-item.rightcard-item h4 img {
       display: flex;
   }
-  .echanced-scents-main .card.card-right-item.left-card-item.rightcard-item {
+  .echanced-scents-main .bq-card.card-right-item.left-card-item.rightcard-item {
       display: block;
   }
   .icons-list-grid .grid.grid--uniform.grid--flush-bottom {
@@ -379,14 +379,14 @@ echanced-scents-main .card.left-card.left-card-item {
       margin: 0px;
   }
   
-  .enhanced-timeline .card {
+  .enhanced-timeline .bq-card {
       padding: 15px 15px;
       align-self: start;
   }
-  .echanced-scents-main .card.card-right-item.right-text-box {
+  .echanced-scents-main .bq-card.card-right-item.right-text-box {
       padding: 15px;
   }
-  .echanced-scents-main .card p {
+  .echanced-scents-main .bq-card p {
       font-size: 14px;
   }  
   
@@ -395,7 +395,7 @@ echanced-scents-main .card.left-card.left-card-item {
       top: 20px;
   }
   
-  .enhanced-timeline .card.left-card.left-card-item.leftcard-grid{
+  .enhanced-timeline .bq-card.left-card.left-card-item.leftcard-grid{
   padding-top: 0;
   padding-left: 0;
 }
@@ -424,12 +424,12 @@ echanced-scents-main .card.left-card.left-card-item {
   
 
   /* --- Force h4 icons to 30x30 --- */
- .echanced-scents-main .card h4 img {
+ .echanced-scents-main .bq-card h4 img {
       width: 30px !important;
       height: 30px !important;
       object-fit: contain;
   }
- .echanced-scents-main .card h4 {
+ .echanced-scents-main .bq-card h4 {
       font-size: 15px;
       align-items: center;
       gap: 8px;
@@ -441,10 +441,10 @@ echanced-scents-main .card.left-card.left-card-item {
   }
 }
 @media only screen and (min-width: 320px) and (max-width: 360px) {
-  .echanced-scents-main .card h4 { font-size: 14px;
+  .echanced-scents-main .bq-card h4 { font-size: 14px;
    }
 }
-.echanced-scents-main .card h4 img {
+.echanced-scents-main .bq-card h4 img {
   width: 40px;       /* smaller, consistent size */
   height: 40px;
   object-fit: contain;
@@ -467,7 +467,7 @@ echanced-scents-main .card.left-card.left-card-item {
   z-index: 1;
 }
 
-.timeline-step .card,
+.timeline-step .bq-card,
 .timeline-step .number {
   opacity: 0;
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;

@@ -261,3 +261,93 @@ These rules emerged from Section 6's polish-spiral. Apply throughout subsequent 
 3. Push back early. 2-3 attempts that feel wrong = say so immediately.
 4. One issue per message when possible.
 5. Trust your eye over Claude's data when they conflict.
+<!--
+APPEND THIS BLOCK TO THE EXISTING HANDOFF.md.
+
+Add it at the top (after the file header / purpose section, before the existing 2026-04-25 and 2026-04-27 blocks). HANDOFF.md is reverse-chronological — newest entries first.
+
+Do NOT replace existing content. Insert only.
+-->
+
+# HANDOFF — start of autonomous-loop era 2026-04-29
+
+## Purpose
+This block documents the workflow change from interactive per-section chat-Claude approval to autonomous Ralph-loop iterations. Sections 1–6 closed under the old workflow; sections 7–19 will close under the new one.
+
+## What changed
+
+### Before this session
+Per-section workflow: user says "Section N" → chat-Claude prompts Claude Code for inventory → user approves inventory → chat-Claude drafts brief → Claude Code builds → user previews → chat-Claude diffs → iterate. Each section took multiple back-and-forths in chat.
+
+### After this session
+Per-section workflow: ralph.sh picks next pending story from `prd.json` → spawns fresh `claude --print --dangerously-skip-permissions` with section-build prompt → fresh-context Claude reads `CLAUDE.md` (project) + `~/clone-pipeline/CLAUDE.md` (generic) + the story → executes inventory + localize + build + push + verify + commit autonomously → exits. Loop spawns next iteration. Continues until all stories pass or 2 consecutive sections hit the ceiling.
+
+User involvement: launch the loop, check `progress.txt` periodically, resolve blockers when the loop auto-pauses. No per-section approvals.
+
+## Why
+- 13 sections remaining (§7–19); manual workflow estimated 2–3 batched sessions. Loop estimated to close most autonomously with periodic check-ins.
+- Multiple clones planned (US → EU brand migrations); the generic scaffold at `~/clone-pipeline/` is the durable asset. Botanique becomes the first project that runs through the pipeline; next clone (1 week to 1 month gap) starts from a `cp -r` of the scaffold.
+- Research output (project knowledge artifact, 2026-04-29) identified the closest off-the-shelf pattern (Ralph) and the right additions for this stack: Shopify AI Toolkit (released 2026-04-09), Playwright CLI+Skill (4× more token-efficient than MCP), Opus 4.7 vision judge as second-pass on probe-diff failures.
+
+## What's installed / scaffolded
+
+### Generic scaffold (`~/clone-pipeline/`)
+- `CLAUDE.md` — generic master autonomy instructions
+- `SETUP.md` — Day-1 install checklist
+- `ralph.sh` — the loop runner with iteration ceilings, consecutive-failure auto-pause, per-iteration timeout
+- `prompts/section-build.md` — iteration prompt template
+- `skills/clone-website/` — JCodesMore `/clone-website` skill (for the *next* clone's recon phase; not used on Botanique since inventories §1–6 already exist hand-rolled)
+
+### Project overlay (`./` = `~/botanique-clone-build/botanique-horizon/`)
+- `CLAUDE.md` — project-specific overlay (locked decisions, IT rules, regulatory substitution table, founder identity strategy, §17/§19 specifics)
+- `prd.json` — 13 stories (§7–§19) with disposition + acceptance criteria + Italian copy hints + iteration tracking
+- `progress.txt` — empty initially; loop appends after each iteration
+- `.ralph/` (gitignored) — loop state directory with failure-log.txt and per-iteration logs
+
+### Plugins / skills installed in Claude Code
+- `shopify-plugin@shopify-ai-toolkit` (Liquid validation, GraphQL, `shopify store execute`)
+- `@playwright/skill` (preferred over `@playwright/mcp` for token efficiency)
+- `JCodesMore/ai-website-cloner-template` (for next clone, not Botanique)
+
+## What did NOT change
+- Sections 1–6 stay closed and untouched. Loop only governs §7–19.
+- All Standing Rules (1–11) remain in force inside the loop.
+- All locked decisions (title case, verified badge color, font sub, file naming, hero placeholders) remain locked. Loop reads them from `CLAUDE.md`.
+- All pre-confirmed factual claims (91/87/35/94, 93/86/89, 365-day, express shipping, promo eyebrow) remain pre-confirmed. Loop never asks.
+- Italian copy rules (sentence case h3+, title case h1/h2, Tu form, parallel grammar, packaging-aware register, locked pricing context) remain in force.
+- Source-of-truth flow: GitHub repo → Claude.ai project knowledge sync. Loop commits + pushes after every passing story; user runs Sync now in Claude.ai when checking progress.
+
+## Smoke test before unattended launch
+Run `~/clone-pipeline/ralph.sh --max-stories 1 --only section-13-urgency --debug` against the dev server to verify the full pipeline works end-to-end on the smallest section before committing to an unattended overnight run. See `~/clone-pipeline/SETUP.md` Step 6.
+
+## When the loop auto-pauses
+Check in this order:
+1. `cat progress.txt | tail -n 20` — last few iteration outcomes
+2. `cat .ralph/failure-log.txt` — failure modes
+3. `python3 -c "import json; print(json.dumps(json.load(open('prd.json'))['stories'], indent=2))" | grep -A1 '"status":' | grep -v pending` — non-pending stories
+4. Resolve the blocker (usually: missing context in CLAUDE.md, wrong acceptance threshold for that section, or genuine project decision needed)
+5. Set the blocked story's `status` back to `pending` in prd.json
+6. Re-run `~/clone-pipeline/ralph.sh` (idempotent; resumes from where it stopped)
+
+## Things to watch for in early runs
+- **Italian mobile pre-check failures** (longer copy → flex-wrap regressions). Project Lesson 2 from §6 retrospective. Loop should catch this via Playwright mobile screenshot + probe-diff at 390px, but the threshold may need tuning per section.
+- **Shopify theme push race conditions**. If `shopify theme dev` is running while the loop pushes, occasionally the dev preview lags 5–10s behind the push. Build a small wait before Playwright capture.
+- **Loop tries to `pull` first**: per project rule, before any `templates/index.json` edit, `shopify theme pull` runs. The loop should respect this; verify in iter logs that pulls happen before edits.
+- **Vision judge false APPROVE**: Opus 4.7 is strong but not perfect. If a passed section visibly looks wrong, mark the story `pending` again, add a note to `progress.txt` describing the regression the judge missed, and re-run. The next iteration's prompt includes the failure context.
+
+## Decisions confirmed in 2026-04-29 chat (locked here for posterity)
+- **Run mode**: tmux/background, NOT supervised foreground.
+- **Scaffold scope**: generic `~/clone-pipeline/`, NOT Botanique-only.
+- **Italian copy autonomy**: agent generates fresh per locked rules; user does NOT approve per-section copy.
+- **Founder identity**: copy 1:1, tweak only US-specific references that don't make sense for IT reader.
+- **§17 buy block**: visual structure only; variants/inventory deferred to migration.
+- **§19 reviews**: skip; placeholder slot for app install later.
+- **Regulatory substitution**: FDA → CE-marked during build; verifiability check post-build.
+
+## Next session entry point
+- Verify smoke test passed (`progress.txt` should have one entry, `prd.json` should have `section-13-urgency.status == "passing"`).
+- Launch unattended loop in tmux per `SETUP.md` Step 7.
+- Check in periodically (every few hours) on `progress.txt`.
+- Resolve any auto-pauses per "When the loop auto-pauses" section above.
+
+---

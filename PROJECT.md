@@ -177,3 +177,58 @@ Step 7: Iterate only if real discrepancy surfaces; otherwise mark done
 - Never publish the Horizon theme on store 1
 - Never modify Horizon core files outside `sections/`, `snippets/`, `assets/`, `blocks/`, `config/` unless explicitly required and approved
 - If a Liquid pattern is uncertain, use the Shopify AI Toolkit's validation before writing
+<!--
+APPEND THIS BLOCK TO THE EXISTING PROJECT.md.
+
+Two sections to add:
+1. Append "Autonomous loop" subsection to "Working protocol".
+2. Append a new entry to "Decisions log".
+
+Do NOT replace existing content. Append only.
+-->
+
+<!-- ==== APPEND TO "Working protocol" SECTION ==== -->
+
+### Autonomous loop (added 2026-04-29)
+
+From §7 onward, the per-section workflow runs through an autonomous Ralph-pattern loop instead of interactive chat-Claude approval gates. The loop lives in `~/clone-pipeline/ralph.sh` and reads:
+
+- `./CLAUDE.md` (this project's overlay) — locked decisions, target-market rules, regulatory substitution.
+- `~/clone-pipeline/CLAUDE.md` — generic master autonomy instructions.
+- `./prd.json` — section dispositions (BUILD / FAMILY-REUSE / DUPLICATE / APP-INSTALL) with acceptance criteria.
+- `./progress.txt` — cross-iteration learnings written by the loop after every iteration.
+- `./.ralph/failure-log.txt` — failure mode log (loop-managed).
+
+Per-iteration shape: ralph picks the next pending/blocked story → spawns `claude --print --dangerously-skip-permissions` with the section-build prompt → fresh context reads the files above → runs Phases 1–6 (inventory, localize, build, push, verify, commit) → exits. Loop spawns the next iteration. Continues until all stories pass or until 2 consecutive sections hit the iteration ceiling (auto-pause).
+
+The loop runs unattended in tmux (`tmux new -s ralph`, `~/clone-pipeline/ralph.sh`, `Ctrl+B D` to detach).
+
+**Stop conditions** (set `blocked-needs-human` in prd.json + clear progress.txt entry, then exit):
+1. 5-iteration ceiling hit on a story
+2. Source has multiple variants requiring project decision
+3. Factual claim appears that's not on `pre_confirmed_factual_claims`
+4. Section requires admin-only config beyond visual structure
+5. Asset IP-blocked AND no auto-stealable equivalent AND placeholder inadequate
+6. Same failure mode 3 iterations in a row
+
+**Acceptance gates per story** (defined in `prd.json` `acceptance` block):
+- `liquid_validation` via Shopify AI Toolkit `/validate`
+- `probe_diff_threshold` via `lib/probe-diff.js`
+- `computed_style_match` via Playwright CLI/Skill `getComputedStyle()` queries
+- `vision_judge` (when probe-diff fails or story explicitly requires) via inline Opus 4.7 vision prompt with pre-classified explicable residuals as the noise-filter
+
+**What the agent decides without asking** (project rules, automated):
+- Italian copy generation per locked rules (no per-section approval)
+- Source CDN asset stealing for non-product visuals
+- Placeholder SVGs for product imagery (deferred to Phase 2 audit)
+- Class namespacing (`.card` → `.bq-card`)
+- Regulatory substitution (FDA → CE-marked per CLAUDE.md table)
+- Cultural adaptation (currency format, payment methods, decimal separator, VAT)
+- Testimonial fabrication in Italian per §1 hero pattern
+- Apply pre-classified explicable residuals as expected, not failures
+
+**Sections 1–6** are NOT in the loop — closed before the workflow change. The loop governs §7–19 only.
+
+<!-- ==== APPEND TO "Decisions log" SECTION ==== -->
+
+- 2026-04-29: **Autonomous Ralph loop adopted for §7–19.** Workflow shifts from interactive per-section chat-Claude approval to fresh-context `claude --print` iterations gated on probe-diff + Shopify AI Toolkit Liquid validation + Playwright computed-style checks + Opus 4.7 vision judge. Generic scaffold lives in `~/clone-pipeline/`; project-specific overlay in `./CLAUDE.md` + `./prd.json`. Italian copy generation, regulatory substitution (FDA → CE-marked), and testimonial fabrication are delegated to the agent per locked rules — no per-section copy approval. Loop runs unattended in tmux. Investment justified by next clone (1-week-to-1-month gap to next US→EU brand migration); generic scaffold is the asset, not this specific build. See `~/clone-pipeline/SETUP.md` for install + smoke-test procedure. §1–§6 grandfathered (closed before workflow change), not retrofitted.

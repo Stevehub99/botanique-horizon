@@ -1,0 +1,428 @@
+{
+  "project": "botanique-clone",
+  "version": "1.0",
+  "target_market": "IT",
+  "notes": "Sections 1–6 already closed. This prd governs §7–19 only. Stories sorted by build order (priority ascending = build first).",
+  "stories": [
+    {
+      "id": "section-07-science-stats",
+      "priority": 7,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["stats-grid", "stat-box", "grun-stat-number"],
+        "search_strategy": "grep 'stats-grid' source/rendered.html for the section block; the percentages 91%/87%/35%/94% are unique anchors",
+        "css_files": ["source/css/external-00-base.css", "inline in rendered.html"],
+        "crop": "source/crops/section-08-science-stats-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "section with title/subtitle (likely empty in source HTML), 4 stat boxes each with h3 (big %), h4>p (headline phrase), p (mechanism explanation), AOS fade-down/fade-up reveals, dark-bg variant inline style #fff text"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "section padding (top/bottom)",
+          "stats-grid display (likely flex/grid 4-col desktop, 2-col or stack mobile)",
+          "stat-box .grun-stat-number font-size, color, font-weight",
+          "h4 font-size, color (white per inline #fff override)",
+          "background-color or background-image"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "rules_ref": "CLAUDE.md Italian copy rules + project-level rules",
+        "preconfirmed_claims": ["91%", "87%", "35%", "94%"],
+        "headline_pattern": "Science / The Science Behind <Product> — IT: 'La scienza dietro <product_name_token>' (sentence case as h3) OR title-case h2 if source uses h2",
+        "stat_headlines_target": "concise, parallel grammar across the 4 stats; mirror source persuasion beats; e.g., 'Riduzione delle borse', 'Sguardo più luminoso', 'Aumento del collagene', 'Pelle più tonica'",
+        "stat_mechanisms_target": "single short sentence per stat explaining the mechanism (microcorrente, luce rossa, etc.); accurate to source claims"
+      },
+      "notes": "Verify whether §18 is a literal duplicate of §7 or a near-duplicate (different copy, same shell). If literal duplicate, §18 disposition becomes DUPLICATE-OF and references this story. Decide during inventory.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-08-medical-grade-fda",
+      "priority": 8,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["main-memory", "fda-multi-line-part", "group-memory"],
+        "search_strategy": "grep 'fda-multi-line-part' source/rendered.html",
+        "css_files": ["inline in rendered.html (background-image declared inline)", "source/css/external-00-base.css"],
+        "crop": "source/crops/section-09-medical-grade-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "dark-bg section with background-image, h2 with strong-emphasis, paragraph with NASA/FDA framing, checkmark bullet list of credentials"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.03,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "background-image presence and positioning",
+          "color scheme (color-scheme-2 in source)",
+          "h2 font-size, font-weight (strong-emphasis on subset)",
+          "checkmark bullet style if present"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "regulatory_substitution_required": true,
+        "source_claim": "Medical-Grade Technology. FDA-Cleared Safety.",
+        "target_substitute": "Tecnologia di grado medico. Sicurezza certificata CE.",
+        "body_target": "rewrite source body with: tecnologia certificata CE, sviluppata con la ricerca aerospaziale (substituting NASA), testato dermatologicamente, used by professionisti del settore for decades",
+        "rules_ref": "CLAUDE.md Regulatory substitution rules"
+      },
+      "notes": "This section relies heavily on regulatory authority claims. ALL substitutions go through the table in CLAUDE.md. Do not invent claims.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-09-how-to-use",
+      "priority": 9,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["how-to-use", "step", "usage-step"],
+        "search_strategy": "grep 'how to use' (case-insensitive) + look for 3-step structure with usage images",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-10-how-to-use-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "pink-background section with 3 columns (or 3 stacked rows on mobile), each with usage image + step number + step title + step description"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "background color (pink strip ≈ #FFE4EA)",
+          "3-column grid desktop, 1-column or stack mobile",
+          "step number styling",
+          "image aspect ratio per step"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": [],
+        "step_headlines_target": "3 short imperative-tone IT instructions (e.g., 'Pulisci la pelle', 'Applica il dispositivo', 'Goditi i risultati'); parallel grammar; sentence case",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "Usage images are placeholder SVGs per project standing rule (real assets deferred to Phase 2 audit).",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-10-comparison-grid",
+      "priority": 10,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["comparison", "compare-table", "vs-grid"],
+        "search_strategy": "grep 'comparison' + look for table-like structure comparing product to alternatives (creams, fillers, surgery)",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-11-comparison-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "table or grid with columns for product vs other treatments (creams / filler / surgery), rows for criteria (price, results, downtime, safety, etc.), checkmark/cross icons per cell"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.03,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "grid layout (likely 4-col desktop, transformed mobile)",
+          "checkmark/cross icon styling and color",
+          "header row styling (highlighted product column)",
+          "responsive behavior on mobile (likely horizontal scroll OR stacked rows)"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": ["1.500€ filler", "4.000€ surgery (locked from §2)"],
+        "comparison_dimensions_target": "preserve source's persuasion structure: price, results timeline, downtime, side effects, sustainability of results. IT phrasing per skincare register.",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "Mobile responsive behavior is the highest-risk technical detail here. Verify via Playwright at 390px before declaring done.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-11-promise-icons",
+      "priority": 11,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["promise-row", "icon-row", "feature-icons"],
+        "search_strategy": "grep for 6-icon row near footer / pre-buy block; likely simple flex row with svg + label per item",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-12-promise-icons-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "single row with 6 icon+label items; likely flex-row on desktop, 3x2 grid or 2x3 on mobile"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.02,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "flex layout, 6 items, equal-width",
+          "icon size (likely 32-48px)",
+          "label font-size and color"
+        ],
+        "vision_judge": "optional"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": ["365-day guarantee", "express shipping"],
+        "labels_target": "6 short IT phrases — likely: spedizione gratuita, garanzia 365 giorni, pagamento sicuro, reso facile, qualità garantita, assistenza clienti",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "Smallest section in §7–19. Good candidate for early iteration. Steal source CDN icons per project standing rule.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-12-precision-engineering",
+      "priority": 12,
+      "disposition": "FAMILY-REUSE",
+      "family": "bq-image-text",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["video-with-text-sec"],
+        "search_strategy": "grep 'video-with-text-sec' source/rendered.html",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-13-precision-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "image-text family pattern with VIDEO instead of image (autoplay/loop/muted/playsinline), dark-bg variant, h3 + paragraph + 4 feature icons grid below",
+        "family_reference": "Sections 3, 4, 5 closed instances; section 4 already has video support in schema (priority over image)"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "video element autoplay/loop/muted/playsinline attrs",
+          "dark-bg variant background-color",
+          "feature icons grid layout"
+        ],
+        "vision_judge": "required",
+        "schema_accretion_check": "if dark-bg variant requires new schema field, add it; otherwise configure existing fields"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": [],
+        "headline_target": "preserve source persuasion ('precision engineering' = 'Ingegneria di precisione' or similar IT calque); body about technology specifics; feature icons labels short and parallel",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "Configure as 4th instance of bq-image-text. Schema may need a feature_icons block list — extend by accretion only.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-13-urgency-banner",
+      "priority": 13,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["urgency-banner", "stock-warning", "limited-time"],
+        "search_strategy": "grep for dark-bg single-band section near purchase block; likely contains scarcity/urgency copy",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-14-urgency-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "single-row dark-bg band with headline + sub-copy + possibly a countdown timer or stock indicator"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.02,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "dark background color",
+          "section padding (likely tight, e.g., 20-30px vertical)",
+          "headline font-size and color"
+        ],
+        "vision_judge": "optional"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": [],
+        "headline_target": "IT urgency framing — avoid US 'flash sale' clichés; lean toward 'Disponibilità limitata' or 'Offerta valida fino al [date]' if source has a date; sentence case",
+        "rules_ref": "CLAUDE.md Italian copy rules; respect IT consumer-protection conventions (no fake urgency)"
+      },
+      "notes": "Smoke-test candidate. Smallest reasonable section — good for the first supervised ralph run.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-14-testimonials",
+      "priority": 14,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["testimonials-section", "review-cards", "customer-stories"],
+        "search_strategy": "grep for dark-bg section with multiple cards each containing quote + name + star rating + verified badge",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-15-testimonials-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per §1 precedent), verified badge (Twitter blue per locked decision)"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.03,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "card background-color, border, border-radius",
+          "star color (pink per §1 precedent)",
+          "verified badge color (Twitter blue #1DA1F2 — locked)",
+          "carousel behavior if present (autoplay, loop, dots)"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": [],
+        "fabricate_testimonials": true,
+        "fabrication_pattern": "match §1 hero testimonial pattern: 4-6 IT first names + IT cities, ages 28-58, brief lifestyle context (madre, professionista, ecc.), specific result framing tied to source's claimed benefits, all 5-star, all verified=true",
+        "fabrication_examples_from_§1": "Giulia (Milano, 42), Francesca (Roma, 51), Chiara (Torino, 38), etc. — pull pattern from sections/bq-hero.liquid testimonials",
+        "rules_ref": "CLAUDE.md Italian copy rules; testimonial fabrication is project-accepted practice"
+      },
+      "notes": "Carousel behavior parity with §1 hero is critical. If §1 uses Slick/Swiper/vanilla, mirror.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-15-founder-story",
+      "priority": 15,
+      "disposition": "FAMILY-REUSE",
+      "family": "bq-image-text",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["founder-pt1", "founder-pt2", "founder-pt3", "founder-pt6", "founder-pt7"],
+        "search_strategy": "grep 'founder-pt' source/rendered.html — 5 sequential instances (pt1, pt2, pt3, pt6, pt7; gaps at pt4, pt5 noted in HANDOFF)",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-16-founder-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "5 image-text family instances back-to-back. Configure 5 instances of bq-image-text consecutively in templates/index.json. Per HANDOFF: do NOT build a wrapper.",
+        "family_reference": "use existing bq-image-text.liquid; no schema changes expected"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "alternating image-left / image-right per instance",
+          "section spacing between consecutive instances",
+          "narrative continuity (each pt is a story beat)"
+        ],
+        "vision_judge": "required"
+      },
+      "italian_copy": {
+        "preconfirmed_claims": [],
+        "founder_identity_strategy": "copy 1:1 from source narrative; per CLAUDE.md, tweak only US-specific references → IT equivalents (cities, names, clinic names)",
+        "five_beats_target": "preserve source's 5-beat arc; each pt a paragraph; first-person POV; emotional + factual balance per source",
+        "rules_ref": "CLAUDE.md Founder identity (§15) section"
+      },
+      "notes": "This is the largest single story by content volume. Allow extra time. Each of 5 instances is its own configuration in templates/index.json — but treat the 5 as one story for ralph purposes (one inventory, one localization pass, one verification pass).",
+      "iteration_count": 0,
+      "max_iterations": 6,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-16-tech-specs",
+      "priority": 16,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["tech-specs", "spec-box", "specs-section"],
+        "search_strategy": "grep for dark-bg box with 4 badge icons (likely battery, wireless, weight, materials)",
+        "css_files": ["source/css/external-00-base.css"],
+        "crop": "source/crops/section-17-tech-specs-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "dark-bg section with title + 4 badge-style spec items in grid (icon + label + value)"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "dark background-color",
+          "4-column grid desktop, 2x2 or stack mobile",
+          "badge icon size and styling"
+        ],
+        "vision_judge": "optional"
+      },
+      "italian_copy": {
+        "regulatory_substitution_required": true,
+        "preconfirmed_claims": [],
+        "specs_target": "4 IT spec labels + values; technical vocabulary (batteria, ricarica wireless, peso, materiali); preserve source's spec values verbatim if they're product specs (not regulatory claims)",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-17-buy-block",
+      "priority": 17,
+      "disposition": "BUILD",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["buy-block", "product-cta", "purchase-section"],
+        "search_strategy": "grep for pink-gradient section with variant selector + price + CTA + scroll-pinned reveal behavior",
+        "css_files": ["source/css/external-00-base.css", "inline in rendered.html"],
+        "crop": "source/crops/section-18-buy-block-{desktop,mobile}.png (capture if missing)",
+        "expected_dom": "pink gradient bg, product image, variant selector (color/size), price display, qty selector, primary CTA, trust row below, possibly scroll-pinned reveal animation"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.04,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "pink gradient background",
+          "variant selector layout",
+          "CTA button styling (square corners, black bg per project pattern)",
+          "scroll-pinned reveal behavior (if present in source)"
+        ],
+        "vision_judge": "required",
+        "stub_data_acceptable": true
+      },
+      "italian_copy": {
+        "preconfirmed_claims": ["365-day guarantee", "express shipping"],
+        "cta_target": "primary CTA in IT — e.g., 'Acquista ora' or 'Ordina adesso'; lowercase per source convention; black bg + white text + square corners",
+        "trust_row_target": "preserve §1/§4 trust row pattern in IT",
+        "rules_ref": "CLAUDE.md Italian copy rules + §17 Buy block project notes"
+      },
+      "notes": "Build VISUAL STRUCTURE ONLY. Use stub variant data: 1 product, 2-3 variants, placeholder pricing. Real wiring deferred to migration. Mark story passing-with-stubs when visual gates pass.",
+      "iteration_count": 0,
+      "max_iterations": 6,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-18-stats-bar-repeat",
+      "priority": 18,
+      "disposition": "DUPLICATE",
+      "duplicate_of": "section-07-science-stats",
+      "status": "pending",
+      "source": {
+        "anchor_classes": ["stats-grid", "stat-box"],
+        "search_strategy": "grep for second occurrence of stats-grid in source/rendered.html",
+        "verify_during_inventory": "is §18 a literal duplicate of §7 or a near-duplicate? If literal, DUPLICATE works. If different copy/different shell, change disposition to BUILD and add a NEW story for the variant."
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "vision_judge": "required",
+        "duplicate_check": "if §7 was built, §18 should reuse the section file. If §7's story was inventoried and showed §18 is different, flag during inventory and request disposition change."
+      },
+      "italian_copy": {
+        "inherits_from": "section-07-science-stats",
+        "rules_ref": "CLAUDE.md Italian copy rules"
+      },
+      "notes": "Do this story AFTER §7 closes. The §7 inventory determines whether this is a literal duplicate (just re-place section in templates/index.json) or a near-duplicate variant (build new section file).",
+      "iteration_count": 0,
+      "max_iterations": 4,
+      "max_same_failure": 3
+    },
+    {
+      "id": "section-19-customer-reviews",
+      "priority": 19,
+      "disposition": "APP-INSTALL",
+      "status": "deferred",
+      "source": {
+        "anchor_classes": ["ali-widget", "reviews-app", "judge-me-widget"],
+        "search_strategy": "source uses AliReviews per project knowledge. Locate the app's mount point in rendered.html for placeholder positioning."
+      },
+      "acceptance": {
+        "agent_action": "leave placeholder block in templates/index.json with comment 'App install slot for reviews — Judge.me / Loox / Yotpo / Stamped (TBD)'. Do NOT build a custom reviews section. Mark story deferred-app-install."
+      },
+      "italian_copy": {
+        "n/a": "Reviews app handles its own UI strings"
+      },
+      "notes": "App selection is post-build user decision per chat session. Do not pre-select. Just leave the slot.",
+      "iteration_count": 0,
+      "max_iterations": 1,
+      "max_same_failure": 1
+    }
+  ]
+}

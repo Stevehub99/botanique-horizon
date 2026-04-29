@@ -453,6 +453,19 @@ echanced-scents-main .bq-card.left-card.left-card-item {
   vertical-align: middle;
 }
 
+/* === Project override: shift wrapped heading-card on step 6 mobile.
+   When step 6's heading-card flex-wraps to row 2 (because Italian copy
+   pushes it past the row-1 width budget), Chrome places it at the
+   x-coordinate where number's flex slot ended on row 1 (60px in from
+   step.x), creating a 60×72 empty rectangle on row 2. Negative margin
+   pulls the wrapped heading-card back to the step's left edge so the
+   thumbnail + h4 read as a normal flex item starting at x=0 of row 2. */
+@media (max-width: 600px) {
+  .timeline-step:last-child .right-card {
+    margin-left: -60px;
+  }
+}
+
 /* --- Animation styles --- */
 .timeline::after {
   content: "";

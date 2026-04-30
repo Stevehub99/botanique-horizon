@@ -503,6 +503,35 @@
         "section_padding_bottom": 20
       }
     },
+    "bq-buy-block-s17": {
+      "type": "bq-buy-block",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_eyebrow": "Ottieni",
+        "heading_strong": "Il Nostro Dispositivo Oggi",
+        "subtext": "Alto rischio di esaurimento scorte!",
+        "color_label": "Colore",
+        "feature_2": "Crema contorno occhi GRATIS",
+        "feature_3": "Cinturini regolabili GRATIS",
+        "feature_4": "Garanzia soddisfatti o rimborsati 365 giorni",
+        "bundle_promo_label": "FESTA DELLA MAMMA",
+        "bundle1_price": "69,95€",
+        "bundle1_compare": "138,95€",
+        "bundle2_badge": "OGGI SOLTANTO",
+        "bundle2_sublabel": "ACQUISTA IL COMBO",
+        "bundle2_name": "Il Nostro Dispositivo + Crema Occhi",
+        "bundle2_price": "60,95€",
+        "bundle2_compare": "138,95€",
+        "upsell_label": "+ AGGIUNGI GRATIS",
+        "upsell_price": "0,00€",
+        "upsell_compare": "90,95€",
+        "cta_label": "ELIMINA LE BORSE",
+        "trust_1": "Garanzia soddisfatti o rimborsati 365 giorni",
+        "trust_2": "Spedizione gratuita in Italia",
+        "section_padding_top": 80,
+        "section_padding_bottom": 80
+      }
+    },
     "bq-tech-specs-s16": {
       "type": "bq-tech-specs",
       "blocks": {
@@ -588,6 +617,7 @@
     "bq-founder-pt3",
     "bq-founder-pt6",
     "bq-founder-pt7",
-    "bq-tech-specs-s16"
+    "bq-tech-specs-s16",
+    "bq-buy-block-s17"
   ]
 }

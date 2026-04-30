@@ -412,7 +412,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -420,7 +420,7 @@
       "id": "section-17-buy-block",
       "priority": 17,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing-with-stubs",
       "source": {
         "anchor_classes": [
           "buy-block",
@@ -457,7 +457,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules + §17 Buy block project notes"
       },
       "notes": "Build VISUAL STRUCTURE ONLY. Use stub variant data: 1 product, 2-3 variants, placeholder pricing. Real wiring deferred to migration. Mark story passing-with-stubs when visual gates pass.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 6,
       "max_same_failure": 3
     },

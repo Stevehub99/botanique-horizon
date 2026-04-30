@@ -1,0 +1,366 @@
+{{ 'bq-buy-block.css' | asset_url | stylesheet_tag }}
+
+{%- assign prod = section.settings.product_name_token -%}
+
+<section
+  class="bq-bb__section"
+  style="padding-top:{{ section.settings.section_padding_top }}px; padding-bottom:{{ section.settings.section_padding_bottom }}px;"
+  id="bq-buy-block-{{ section.id }}"
+>
+  <div class="bq-bb__inner">
+
+    {%- comment -%} ── Headline above card ── {%- endcomment -%}
+    <div class="bq-bb__top">
+      <h3>
+        {{ section.settings.heading_eyebrow }}
+        <strong>{{ section.settings.heading_strong }}</strong>
+      </h3>
+      <p class="bq-bb__subtext">{{ section.settings.subtext }}</p>
+    </div>
+
+    {%- comment -%} ── Product card ── {%- endcomment -%}
+    <div class="bq-bb__card">
+
+      {%- comment -%} Pink gradient pill header {%- endcomment -%}
+      <h4 class="bq-bb__card-title">{{ prod }}</h4>
+
+      {%- comment -%} Main product image {%- endcomment -%}
+      <div class="bq-bb__main-img-wrap">
+        <img
+          src="//botaniqueparis.com/cdn/shop/files/RevitalEyes_1_57165608-7db0-428b-9d2c-efedd9b3af8c.png?v=1776379466&width=500"
+          alt="{{ prod }}"
+          loading="eager"
+          width="500"
+          height="500"
+        >
+      </div>
+
+      {%- comment -%} Thumbnail strip {%- endcomment -%}
+      <div class="bq-bb__thumbs">
+        <button class="bq-bb__thumb bq-bb__thumb--active" type="button" aria-label="{{ prod }}">
+          <img
+            src="//botaniqueparis.com/cdn/shop/files/RevitalEyes_1_57165608-7db0-428b-9d2c-efedd9b3af8c.png?v=1776379466&width=144"
+            alt="{{ prod }}"
+            width="64"
+            height="64"
+            loading="eager"
+          >
+        </button>
+        <button class="bq-bb__thumb" type="button" aria-label="Risultati">
+          <img
+            src="//botaniqueparis.com/cdn/shop/files/Results.webp?v=1776379466&width=144"
+            alt="Risultati"
+            width="64"
+            height="64"
+            loading="lazy"
+          >
+        </button>
+        <button class="bq-bb__thumb" type="button" aria-label="Prima e dopo">
+          <img
+            src="//botaniqueparis.com/cdn/shop/files/SBS1.webp?v=1776379387&width=144"
+            alt="Prima e dopo"
+            width="64"
+            height="64"
+            loading="lazy"
+          >
+        </button>
+        <button class="bq-bb__thumb" type="button" aria-label="Prima e dopo 2">
+          <img
+            src="//botaniqueparis.com/cdn/shop/files/SBS2.webp?v=1776369450&width=144"
+            alt="Prima e dopo 2"
+            width="64"
+            height="64"
+            loading="lazy"
+          >
+        </button>
+      </div>
+
+      {%- comment -%} Product info area {%- endcomment -%}
+      <div class="bq-bb__product-info">
+
+        {%- comment -%} Features checklist {%- endcomment -%}
+        <ul class="bq-bb__features">
+          <li>{{ prod }}</li>
+          <li>{{ section.settings.feature_2 }}</li>
+          <li>{{ section.settings.feature_3 }}</li>
+          <li>{{ section.settings.feature_4 }}</li>
+        </ul>
+
+        {%- comment -%} Color swatch picker (static visual stub) {%- endcomment -%}
+        <div class="bq-bb__variants">
+          <div class="bq-bb__variant-label">{{ section.settings.color_label }}</div>
+          <div class="bq-bb__swatches">
+            <span class="bq-bb__swatch bq-bb__swatch--white bq-bb__swatch--active" title="Bianco"></span>
+            <span class="bq-bb__swatch bq-bb__swatch--pink" title="Rosa"></span>
+            <span class="bq-bb__swatch bq-bb__swatch--black" title="Nero"></span>
+            <span class="bq-bb__swatch bq-bb__swatch--hotpink" title="Rosa Acceso"></span>
+          </div>
+        </div>
+
+        {%- comment -%} Bundle selector — visual replica of kaching-bundles (stub) {%- endcomment -%}
+        <div class="bq-bb__bundles">
+          <div class="bq-bb__bundles-header">
+            <span class="bq-bb__bundles-line"></span>
+            <span class="bq-bb__bundles-label">{{ section.settings.bundle_promo_label }}</span>
+            <span class="bq-bb__bundles-line"></span>
+          </div>
+
+          {%- comment -%} Bundle option 1 {%- endcomment -%}
+          <div class="bq-bb__bundle">
+            <span class="bq-bb__bundle-radio"></span>
+            <span class="bq-bb__bundle-img">
+              <img
+                src="//botaniqueparis.com/cdn/shop/files/RevitalEyes_1_57165608-7db0-428b-9d2c-efedd9b3af8c.png?v=1776379466&width=47"
+                alt="{{ prod }}"
+                width="47"
+                height="47"
+                loading="lazy"
+              >
+            </span>
+            <span class="bq-bb__bundle-name">{{ prod }}</span>
+            <span class="bq-bb__bundle-prices">
+              <span class="bq-bb__bundle-compare">{{ section.settings.bundle1_compare }}</span>
+              <span class="bq-bb__bundle-price">{{ section.settings.bundle1_price }}</span>
+            </span>
+          </div>
+
+          {%- comment -%} Bundle option 2 — highlighted / selected {%- endcomment -%}
+          <div class="bq-bb__bundle bq-bb__bundle--selected">
+            <span class="bq-bb__bundle-badge">{{ section.settings.bundle2_badge }}</span>
+            <div class="bq-bb__bundle-inner">
+              <span class="bq-bb__bundle-radio bq-bb__bundle-radio--checked"></span>
+              <span class="bq-bb__bundle-img">
+                <img
+                  src="//botaniqueparis.com/cdn/shop/files/BP_UEC_2_1x1_transp.png?v=1776369450&width=47"
+                  alt="{{ prod }} + Crema Occhi"
+                  width="47"
+                  height="47"
+                  loading="lazy"
+                >
+              </span>
+              <span class="bq-bb__bundle-name-col">
+                <span class="bq-bb__bundle-sublabel">{{ section.settings.bundle2_sublabel }}</span>
+                <span class="bq-bb__bundle-name">{{ section.settings.bundle2_name }}</span>
+              </span>
+              <span class="bq-bb__bundle-prices">
+                <span class="bq-bb__bundle-compare">{{ section.settings.bundle2_compare }}</span>
+                <span class="bq-bb__bundle-price">{{ section.settings.bundle2_price }}</span>
+              </span>
+            </div>
+
+            {%- comment -%} Upsell add-on row (pre-checked) {%- endcomment -%}
+            <div class="bq-bb__upsell">
+              <span class="bq-bb__upsell-check"></span>
+              <span class="bq-bb__upsell-img">
+                <img
+                  src="//botaniqueparis.com/cdn/shop/files/BP_UEC_2_1x1_transp.png?v=1776369450&width=47"
+                  alt="{{ section.settings.upsell_label }}"
+                  width="45"
+                  height="45"
+                  loading="lazy"
+                >
+              </span>
+              <span class="bq-bb__upsell-label">{{ section.settings.upsell_label }}</span>
+              <span class="bq-bb__bundle-prices">
+                <span class="bq-bb__bundle-compare">{{ section.settings.upsell_compare }}</span>
+                <span class="bq-bb__bundle-price">{{ section.settings.upsell_price }}</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {%- comment -%} CTA button (visual stub — no cart) {%- endcomment -%}
+        <a href="#" class="bq-bb__cta">{{ section.settings.cta_label }}</a>
+
+        {%- comment -%} Trust row {%- endcomment -%}
+        <ul class="bq-bb__trust">
+          <li>{{ section.settings.trust_1 }}</li>
+          <li>{{ section.settings.trust_2 }}</li>
+        </ul>
+
+      </div>{%- comment -%} /.bq-bb__product-info {%- endcomment -%}
+    </div>{%- comment -%} /.bq-bb__card {%- endcomment -%}
+
+  </div>{%- comment -%} /.bq-bb__inner {%- endcomment -%}
+</section>
+
+{% schema %}
+{
+  "name": "§17 Buy Block",
+  "tag": "section",
+  "class": "bq-buy-block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Product name token",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "heading_eyebrow",
+      "label": "Heading eyebrow (plain)",
+      "default": "Ottieni"
+    },
+    {
+      "type": "text",
+      "id": "heading_strong",
+      "label": "Heading strong (pink)",
+      "default": "Il Nostro Dispositivo Oggi"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext below headline",
+      "default": "Alto rischio di esaurimento scorte!"
+    },
+    {
+      "type": "text",
+      "id": "color_label",
+      "label": "Color picker label",
+      "default": "Colore"
+    },
+    {
+      "type": "header",
+      "content": "Features checklist"
+    },
+    {
+      "type": "text",
+      "id": "feature_2",
+      "label": "Feature 2",
+      "default": "Crema contorno occhi GRATIS"
+    },
+    {
+      "type": "text",
+      "id": "feature_3",
+      "label": "Feature 3",
+      "default": "Cinturini regolabili GRATIS"
+    },
+    {
+      "type": "text",
+      "id": "feature_4",
+      "label": "Feature 4",
+      "default": "Garanzia soddisfatti o rimborsati 365 giorni"
+    },
+    {
+      "type": "header",
+      "content": "Bundle selector"
+    },
+    {
+      "type": "text",
+      "id": "bundle_promo_label",
+      "label": "Bundle promo divider label",
+      "default": "FESTA DELLA MAMMA"
+    },
+    {
+      "type": "text",
+      "id": "bundle1_price",
+      "label": "Bundle 1 price",
+      "default": "69,95€"
+    },
+    {
+      "type": "text",
+      "id": "bundle1_compare",
+      "label": "Bundle 1 compare-at price",
+      "default": "138,95€"
+    },
+    {
+      "type": "text",
+      "id": "bundle2_badge",
+      "label": "Bundle 2 badge text",
+      "default": "OGGI SOLTANTO"
+    },
+    {
+      "type": "text",
+      "id": "bundle2_sublabel",
+      "label": "Bundle 2 sub-label",
+      "default": "ACQUISTA IL COMBO"
+    },
+    {
+      "type": "text",
+      "id": "bundle2_name",
+      "label": "Bundle 2 name",
+      "default": "Il Nostro Dispositivo + Crema Occhi"
+    },
+    {
+      "type": "text",
+      "id": "bundle2_price",
+      "label": "Bundle 2 price",
+      "default": "60,95€"
+    },
+    {
+      "type": "text",
+      "id": "bundle2_compare",
+      "label": "Bundle 2 compare-at price",
+      "default": "138,95€"
+    },
+    {
+      "type": "text",
+      "id": "upsell_label",
+      "label": "Upsell add-on label",
+      "default": "+ AGGIUNGI GRATIS"
+    },
+    {
+      "type": "text",
+      "id": "upsell_price",
+      "label": "Upsell price",
+      "default": "0,00€"
+    },
+    {
+      "type": "text",
+      "id": "upsell_compare",
+      "label": "Upsell compare-at price",
+      "default": "90,95€"
+    },
+    {
+      "type": "header",
+      "content": "CTA & trust"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "CTA button label",
+      "default": "ELIMINA LE BORSE"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust item 1",
+      "default": "Garanzia soddisfatti o rimborsati 365 giorni"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust item 2",
+      "default": "Spedizione gratuita in Italia"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Padding top (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Padding bottom (px)",
+      "min": 0,
+      "max": 120,
+      "step": 4,
+      "default": 80
+    }
+  ],
+  "presets": [
+    {
+      "name": "§17 Buy Block"
+    }
+  ]
+}
+{% endschema %}

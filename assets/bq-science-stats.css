@@ -1,0 +1,123 @@
+/* bq-science-stats.css — Science stats section (§7)
+   Source: external-00-base.css lines 8374–8427 (.number--txt family)
+   + responsive overrides at lines 9438–9441 (max-width:991px) and 9557–9576 (max-width:767px)
+   Inline section padding: 40px top / 10px bottom (rendered.html:6621)
+   Background image stolen from botanique CDN (decorative, non-product).
+*/
+
+.bq-ss {
+  background-image: url(https://botaniqueparis.com/cdn/shop/files/sl_032421_41660_05_1_bbf2dbc5-0a39-47b7-8e4b-a7cf63a006d5.png?v=1760344795);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: var(--bq-ss-pad-top, 40px);
+  padding-bottom: var(--bq-ss-pad-bot, 10px);
+}
+
+.bq-ss__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Section heading h3 — source: .number--txt h3 */
+.bq-ss__heading {
+  font-size: 46px;
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.bq-ss__heading strong {
+  color: #ff7e97;
+  font-weight: 400;
+}
+
+/* Subtitle — source: .number--txt .subtitle */
+.bq-ss__subtitle {
+  font-size: 20px;
+  color: #000;
+  text-align: center;
+  margin-top: 0;
+}
+
+/* Stats grid — source: .number--txt .stats-grid */
+.bq-ss__grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+/* Stat box — source: .number--txt .stat-box */
+.bq-ss__box {
+  text-align: center;
+}
+
+/* Stat number h3 — source: .number--txt .grun-stat-number */
+.bq-ss__number {
+  font-size: 54px;
+  font-weight: 600;
+  color: #ff7e97;
+  margin-bottom: 10px;
+}
+
+/* Stat headline h4 — source: .number--txt .stat-box h4 */
+.bq-ss__headline {
+  color: #000;
+  font-weight: 400;
+  font-family: var(--bq-font-sans);
+  margin-top: 0;
+  font-size: 18px;
+  max-width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Mechanism text p — source: .number--txt .stat-box p */
+.bq-ss__mechanism {
+  color: #65656d;
+  margin-top: 0;
+  max-width: 214px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 991px) {
+  .bq-ss__number {
+    font-size: 40px;
+  }
+
+  .bq-ss__headline {
+    font-size: 16px;
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bq-ss__heading {
+    font-size: 30px;
+    margin-bottom: 5px;
+  }
+
+  .bq-ss__grid {
+    flex-wrap: wrap;
+  }
+
+  .bq-ss__box {
+    width: 50%;
+    padding: 10px 5px;
+  }
+
+  .bq-ss__number {
+    font-size: 36px;
+  }
+
+  .bq-ss__mechanism {
+    font-size: 16px;
+  }
+
+  .bq-ss__headline {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+}

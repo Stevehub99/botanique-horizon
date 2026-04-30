@@ -271,6 +271,14 @@
         "section_padding_top": 10,
         "section_padding_bottom": 30
       }
+    },
+    "bq-science-stats-s07": {
+      "type": "bq-science-stats",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "section_padding_top": 40,
+        "section_padding_bottom": 10
+      }
     }
   },
   "order": [
@@ -280,6 +288,7 @@
     "bq-image-text-dual-tech",
     "bq-image-text-mission",
     "bq-results-timeline",
+    "bq-science-stats-s07",
     "bq-urgency-banner-s13"
   ]
 }

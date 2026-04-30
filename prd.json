@@ -330,7 +330,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules; testimonial fabrication is project-accepted practice"
       },
       "notes": "Carousel behavior parity with §1 hero is critical. If §1 uses Slick/Swiper/vanilla, mirror. Source §14 uses single burned-in composite image (review-comment--items section, line 7213); replaced with 4 fabricated IT HTML cards in 2-col grid. Actual source anchor class: review-comment--items / ladies-are-saying (not PRD anchors).",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -339,7 +339,7 @@
       "priority": 15,
       "disposition": "FAMILY-REUSE",
       "family": "bq-image-text",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "founder-pt1",
@@ -373,7 +373,7 @@
         "rules_ref": "CLAUDE.md Founder identity (§15) section"
       },
       "notes": "This is the largest single story by content volume. Allow extra time. Each of 5 instances is its own configuration in templates/index.json — but treat the 5 as one story for ralph purposes (one inventory, one localization pass, one verification pass).",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 6,
       "max_same_failure": 3
     },

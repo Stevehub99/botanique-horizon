@@ -115,6 +115,13 @@
 .bq-image-text__list ol li { padding-bottom: 15px; }
 .bq-image-text__list ol li strong { color: var(--bq-image-text-accent, #FF7E97); }
 .bq-image-text__list ol li:last-child { padding-bottom: 0; }
+.bq-image-text__list ul {
+  margin: 1em 0;
+  padding-left: 20px;
+}
+.bq-image-text__list ul li { padding-bottom: 12px; }
+.bq-image-text__list ul li:last-child { padding-bottom: 0; }
+.bq-image-text__list ul li strong { color: var(--bq-image-text-accent, #FF7E97); }
 
 /* CTA — hero pattern (uppercase + pink hover), NOT source's plain CTA.
    Project decision for visual consistency with the hero CTA. */

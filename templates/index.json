@@ -412,6 +412,96 @@
         "heading_plain": "Ecco Cosa Dicono",
         "heading_strong": "Le Nostre Clienti"
       }
+    },
+    "bq-founder-pt1": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "",
+        "subheading_h3": "<p>Ciao, sono <strong>Sofia!</strong></p><p>Fondatrice di <strong>%brand%</strong></p>",
+        "intro_p": "<p>Per anni ho lottato con borse e occhiaie, il che mi ha portato a:</p>",
+        "numbered_list": "<ul><li>Apparire cronicamente esausta</li><li>Autostima a pezzi</li><li>Sembrare anni più vecchia di come mi sentivo</li><li>Sprecare migliaia di euro in soluzioni inutili</li></ul>",
+        "closing_p": "<p><strong>E questi sono solo alcuni dei problemi</strong></p>",
+        "image_alt": "Sofia, fondatrice di %brand%, sorridente davanti alla telecamera",
+        "layout": "image_left",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 10,
+        "section_padding_bottom": 20
+      }
+    },
+    "bq-founder-pt2": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "",
+        "subheading_h3": "",
+        "intro_p": "<p>Ogni mattina mi svegliavo e la prima cosa che vedevo nello specchio erano queste borse gonfie e scure. Sembravo malata, invecchiata, niente a che fare con come mi sentivo davvero dentro.</p><p>Passavo 20 minuti cercando di coprirle col correttore, per poi guardarlo crepare e depositarsi nelle rughe entro mezzogiorno, rendendo le borse ancora più visibili.</p><p>Ero stanca di nascondermi. Ero stanca di sembrare stanca. Così mi sono messa in testa di trovare qualcosa che funzionasse davvero.</p>",
+        "numbered_list": "",
+        "closing_p": "",
+        "image_alt": "Donna allo specchio al mattino che osserva il contorno occhi",
+        "layout": "image_right",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 10,
+        "section_padding_bottom": 20
+      }
+    },
+    "bq-founder-pt3": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "",
+        "subheading_h3": "<p><strong>Ho Provato Tutto:</strong></p>",
+        "intro_p": "",
+        "numbered_list": "<ul><li><strong>\"Creme contorno occhi premium\"</strong> — centinaia di euro sprecati</li><li><strong>Roller alla caffeina e sieri</strong> — funzionavano per un'ora, poi il gonfiore tornava</li><li><strong>Cucchiai freddi e fette di cetriolo</strong> — zero miglioramenti</li><li><strong>Patch sotto gli occhi</strong> — piacevoli da usare, nessun risultato duraturo</li></ul>",
+        "closing_p": "",
+        "image_alt": "Scaffale di prodotti cosmetici per il contorno occhi",
+        "layout": "image_right",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 10,
+        "section_padding_bottom": 20
+      }
+    },
+    "bq-founder-pt6": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "",
+        "subheading_h3": "<p><strong>Ecco Il Problema...</strong></p>",
+        "intro_p": "<p>Dovevo raggiungere due cliniche separate, fissare appuntamenti con settimane di anticipo e pagare 200–250€ a seduta. Funzionava — ma a oltre 1.500€ al mese non era sostenibile.</p><p><strong>Fu allora che ebbi l'idea: e se potessi combinare entrambe le tecnologie in un unico dispositivo da usare a casa?</strong></p><p>Ho trascorso 3 anni e oltre 50.000€ collaborando con bioingegneri per creare un dispositivo elegante e indossabile, progettato specificamente per l'area perioculare.</p><p><strong>Dopo 47 prototipi, nacque %product%.</strong></p>",
+        "numbered_list": "",
+        "closing_p": "",
+        "image_alt": "Prototipo del dispositivo %product% durante lo sviluppo",
+        "layout": "image_right",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 20,
+        "section_padding_bottom": 20
+      }
+    },
+    "bq-founder-pt7": {
+      "type": "bq-image-text",
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_h2": "",
+        "subheading_h3": "<p>Un Solo Dispositivo con <strong>Entrambe Le Tecnologie</strong> di cui Hai Bisogno per <strong>Eliminare Borse e Occhiaie</strong></p>",
+        "intro_p": "<p>%product% combina luce rossa di grado medico e microcorrenti EMS in un unico trattamento integrato.</p><p>Solo 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi. Gli stessi trattamenti per cui le cliniche ti farebbero pagare centinaia di euro.</p><p><strong>Oggi, oltre 300.000 donne usano %product% per trasformare il loro contorno occhi e sembrare finalmente riposate e radiose come si sentono davvero.</strong></p>",
+        "numbered_list": "",
+        "closing_p": "",
+        "image_alt": "%product% — il dispositivo combinato luce rossa e microcorrenti EMS",
+        "layout": "image_right",
+        "bg_color": "#F6F8F9",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 20,
+        "section_padding_bottom": 20
+      }
     }
   },
   "order": [
@@ -427,6 +517,11 @@
     "bq-comparison-grid-s10",
     "bq-image-text-precision",
     "bq-urgency-banner-s13",
-    "bq-testimonials-s14"
+    "bq-testimonials-s14",
+    "bq-founder-pt1",
+    "bq-founder-pt2",
+    "bq-founder-pt3",
+    "bq-founder-pt6",
+    "bq-founder-pt7"
   ]
 }

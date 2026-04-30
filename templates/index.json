@@ -298,6 +298,19 @@
         "item_5_label": "Testato dermatologicamente",
         "item_5_desc": "Risultati di livello professionale senza i rischi di aghi o interventi chirurgici"
       }
+    },
+    "bq-how-to-use-s09": {
+      "type": "bq-how-to-use",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_plain": "Come Usare",
+        "step_1_title": "Applica il siero e indossa il dispositivo",
+        "step_1_desc": "Applica il siero sotto entrambi gli occhi per aumentare la conducibilità e massimizzare i risultati. Posiziona il dispositivo comodamente sull'area perioculare e premi il tasto di avvio.",
+        "step_2_title": "Lascia che la luce rossa penetri in profondità",
+        "step_2_desc": "La luce rossa penetra sotto la pelle, stimolando la produzione di collagene ed elastina dove le creme non arrivano. Rilassati 5 minuti mentre la tecnologia agisce.",
+        "step_3_title": "Completa il trattamento con le microcorrenti",
+        "step_3_desc": "Delicati impulsi elettrici attivano il drenaggio linfatico per eliminare il gonfiore e tonificare i muscoli intorno agli occhi. In soli 5 minuti il tuo trattamento è completo."
+      }
     }
   },
   "order": [
@@ -309,6 +322,7 @@
     "bq-results-timeline",
     "bq-science-stats-s07",
     "bq-medical-fda-s08",
+    "bq-how-to-use-s09",
     "bq-urgency-banner-s13"
   ]
 }

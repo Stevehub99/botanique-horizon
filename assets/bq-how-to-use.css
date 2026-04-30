@@ -1,0 +1,114 @@
+.bq-htu {
+  padding: 0;
+}
+
+.bq-htu__bg {
+  background-image: url(//botaniqueparis.com/cdn/shop/files/Rectangle_39799.png?v=1760356456);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+}
+
+.bq-htu__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bq-htu__heading {
+  font-size: 46px;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #fff;
+}
+
+.bq-htu__heading strong {
+  color: #ff7e97;
+}
+
+.bq-htu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 95px;
+}
+
+.bq-htu__item {
+  text-align: center;
+}
+
+.bq-htu__image-wrap {
+  position: relative;
+  margin: 0 auto;
+  max-width: 650px;
+}
+
+.bq-htu__image-wrap::after {
+  content: '';
+  position: absolute;
+  right: -60%;
+  top: 50%;
+  width: 85%;
+  border: 1px dashed #F6F8F9;
+}
+
+.bq-htu__item:last-child .bq-htu__image-wrap::after {
+  display: none;
+}
+
+.bq-htu__step-number {
+  width: 60px;
+  height: 60px;
+  background: #ff7e97;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 auto 30px;
+  position: relative;
+  z-index: 1;
+}
+
+.bq-htu__placeholder {
+  border-radius: 16px;
+  width: 100%;
+  display: block;
+  background: rgba(255,255,255,0.08);
+  aspect-ratio: 3 / 4;
+}
+
+.bq-htu__step-title {
+  font-size: 20px;
+  max-width: 300px;
+  margin: 15px auto 15px;
+  color: #fff;
+}
+
+.bq-htu__step-desc {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+@media (max-width: 749px) {
+  .bq-htu__heading {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+
+  .bq-htu__grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 50px;
+  }
+
+  .bq-htu__image-wrap::after {
+    display: none;
+  }
+}

@@ -1,0 +1,110 @@
+{{ 'bq-how-to-use.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_name = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+-%}
+
+<div class="bq-htu" data-section-id="{{ section.id }}">
+  <div class="bq-htu__bg">
+    <div class="bq-htu__container">
+
+      <h2 class="bq-htu__heading">
+        {{ section.settings.heading_plain }} <strong>{{ product_name }}</strong>
+      </h2>
+
+      <div class="bq-htu__grid">
+
+        <div class="bq-htu__item">
+          <div class="bq-htu__image-wrap">
+            <div class="bq-htu__step-number">1</div>
+            <div class="bq-htu__placeholder" role="img" aria-label="{{ section.settings.step_1_title }}"></div>
+          </div>
+          <h4 class="bq-htu__step-title">{{ section.settings.step_1_title }}</h4>
+          <p class="bq-htu__step-desc">{{ section.settings.step_1_desc }}</p>
+        </div>
+
+        <div class="bq-htu__item">
+          <div class="bq-htu__image-wrap">
+            <div class="bq-htu__step-number">2</div>
+            <div class="bq-htu__placeholder" role="img" aria-label="{{ section.settings.step_2_title }}"></div>
+          </div>
+          <h4 class="bq-htu__step-title">{{ section.settings.step_2_title }}</h4>
+          <p class="bq-htu__step-desc">{{ section.settings.step_2_desc }}</p>
+        </div>
+
+        <div class="bq-htu__item">
+          <div class="bq-htu__image-wrap">
+            <div class="bq-htu__step-number">3</div>
+            <div class="bq-htu__placeholder" role="img" aria-label="{{ section.settings.step_3_title }}"></div>
+          </div>
+          <h4 class="bq-htu__step-title">{{ section.settings.step_3_title }}</h4>
+          <p class="bq-htu__step-desc">{{ section.settings.step_3_desc }}</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BQ How To Use",
+  "tag": "div",
+  "class": "bq-how-to-use-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Nome prodotto",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "heading_plain",
+      "label": "Titolo (parte normale)",
+      "default": "Come Usare"
+    },
+    {
+      "type": "text",
+      "id": "step_1_title",
+      "label": "Passo 1 – titolo",
+      "default": "Applica il siero e indossa il dispositivo"
+    },
+    {
+      "type": "textarea",
+      "id": "step_1_desc",
+      "label": "Passo 1 – descrizione",
+      "default": "Applica il siero sotto entrambi gli occhi per aumentare la conducibilità e massimizzare i risultati. Posiziona il dispositivo comodamente sull'area perioculare e premi il tasto di avvio."
+    },
+    {
+      "type": "text",
+      "id": "step_2_title",
+      "label": "Passo 2 – titolo",
+      "default": "Lascia che la luce rossa penetri in profondità"
+    },
+    {
+      "type": "textarea",
+      "id": "step_2_desc",
+      "label": "Passo 2 – descrizione",
+      "default": "La luce rossa penetra sotto la pelle, stimolando la produzione di collagene ed elastina dove le creme non arrivano. Rilassati 5 minuti mentre la tecnologia agisce."
+    },
+    {
+      "type": "text",
+      "id": "step_3_title",
+      "label": "Passo 3 – titolo",
+      "default": "Completa il trattamento con le microcorrenti"
+    },
+    {
+      "type": "textarea",
+      "id": "step_3_desc",
+      "label": "Passo 3 – descrizione",
+      "default": "Delicati impulsi elettrici attivano il drenaggio linfatico per eliminare il gonfiore e tonificare i muscoli intorno agli occhi. In soli 5 minuti il tuo trattamento è completo."
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ How To Use"
+    }
+  ]
+}
+{% endschema %}

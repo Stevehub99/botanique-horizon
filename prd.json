@@ -90,7 +90,7 @@
         "rules_ref": "CLAUDE.md Regulatory substitution rules"
       },
       "notes": "This section relies heavily on regulatory authority claims. ALL substitutions go through the table in CLAUDE.md. Do not invent claims.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -98,7 +98,7 @@
       "id": "section-09-how-to-use",
       "priority": 9,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "how-to-use",
@@ -129,7 +129,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Usage images are placeholder SVGs per project standing rule (real assets deferred to Phase 2 audit).",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

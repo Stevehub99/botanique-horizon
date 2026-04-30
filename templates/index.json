@@ -503,6 +503,10 @@
         "section_padding_bottom": 20
       }
     },
+    "bq-stats-repeat-s18": {
+      "type": "bq-stats-repeat",
+      "settings": {}
+    },
     "bq-buy-block-s17": {
       "type": "bq-buy-block",
       "settings": {
@@ -618,6 +622,7 @@
     "bq-founder-pt6",
     "bq-founder-pt7",
     "bq-tech-specs-s16",
-    "bq-buy-block-s17"
+    "bq-buy-block-s17",
+    "bq-stats-repeat-s18"
   ]
 }

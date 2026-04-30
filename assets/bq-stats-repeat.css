@@ -1,0 +1,104 @@
+/* bq-stats-repeat.css — §18 dark-bg stats bar repeat
+   Source: external-00-base.css lines 8844–8875 (.reduction-puffines-id)
+   + responsive overrides lines 9435 (max-991) and 9692–9695 (max-767)
+   Inherits base .number--txt grid rules from §7 inventory.
+   Background image CDN-stolen (decorative, non-product).
+*/
+
+.bq-sr {
+  background-image: url(https://botaniqueparis.com/cdn/shop/files/0fe909673fd2fc22622f099794fc7ad9_2.png?v=1760426278);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.bq-sr__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bq-sr__grid {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0;
+}
+
+.bq-sr__box {
+  text-align: center;
+  position: relative;
+}
+
+.bq-sr__box:before {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  content: '';
+  background: #ffffffa1;
+  top: 0;
+  right: -50px;
+}
+
+.bq-sr__box:last-child:before {
+  display: none;
+}
+
+.bq-sr__number {
+  font-size: 54px;
+  font-weight: 600;
+  color: #ff7e97;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.bq-sr__headline {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  font-family: var(--bq-font-sans);
+  margin-top: 0;
+  font-size: 18px;
+  max-width: 230px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 991px) {
+  .bq-sr__number {
+    font-size: 40px;
+  }
+
+  .bq-sr__headline {
+    font-size: 16px;
+    max-width: 160px;
+  }
+
+  .bq-sr__box:before {
+    right: -8px;
+  }
+}
+
+@media (max-width: 767px) {
+  .bq-sr__grid {
+    flex-wrap: wrap;
+  }
+
+  .bq-sr__box {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 10px 5px;
+  }
+
+  .bq-sr__number {
+    font-size: 36px;
+  }
+
+  .bq-sr__headline {
+    font-size: 16px;
+  }
+
+  .bq-sr__box:before {
+    display: none;
+  }
+}

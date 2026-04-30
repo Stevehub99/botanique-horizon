@@ -1,0 +1,43 @@
+{{ 'bq-stats-repeat.css' | asset_url | stylesheet_tag }}
+
+<section class="bq-sr" data-section-id="{{ section.id }}">
+  <div class="bq-sr__container">
+    <div class="bq-sr__grid">
+
+      <div class="bq-sr__box">
+        <h3 class="bq-sr__number">91%</h3>
+        <h4 class="bq-sr__headline">Riduzione del gonfiore sottooculare</h4>
+      </div>
+
+      <div class="bq-sr__box">
+        <h3 class="bq-sr__number">87%</h3>
+        <h4 class="bq-sr__headline">Occhiaie più luminose e meno infossate</h4>
+      </div>
+
+      <div class="bq-sr__box">
+        <h3 class="bq-sr__number">35%</h3>
+        <h4 class="bq-sr__headline">Aumento della densità del collagene</h4>
+      </div>
+
+      <div class="bq-sr__box">
+        <h3 class="bq-sr__number">94%</h3>
+        <h4 class="bq-sr__headline">Pelle più liscia e tonica</h4>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "BQ Stats Repeat",
+  "tag": "div",
+  "class": "bq-stats-repeat-wrapper",
+  "settings": [],
+  "presets": [
+    {
+      "name": "BQ Stats Repeat"
+    }
+  ]
+}
+{% endschema %}

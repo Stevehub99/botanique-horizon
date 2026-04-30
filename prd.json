@@ -457,7 +457,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules + §17 Buy block project notes"
       },
       "notes": "Build VISUAL STRUCTURE ONLY. Use stub variant data: 1 product, 2-3 variants, placeholder pricing. Real wiring deferred to migration. Mark story passing-with-stubs when visual gates pass.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 6,
       "max_same_failure": 3
     },
@@ -465,7 +465,7 @@
       "id": "section-18-stats-bar-repeat",
       "priority": 18,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "stats-grid",
@@ -490,7 +490,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "§7 inventory confirmed: §18 is NOT a literal duplicate. It is a dark-background variant (reduction-puffines-id class) with no title/subtitle, no mechanism text, vertical dividers between boxes. Build as new singleton bq-stats-repeat.liquid. Verified during §7 inventory 2026-04-30.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 4,
       "max_same_failure": 3
     },

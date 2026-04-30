@@ -373,7 +373,7 @@
         "rules_ref": "CLAUDE.md Founder identity (§15) section"
       },
       "notes": "This is the largest single story by content volume. Allow extra time. Each of 5 instances is its own configuration in templates/index.json — but treat the 5 as one story for ralph purposes (one inventory, one localization pass, one verification pass).",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 6,
       "max_same_failure": 3
     },
@@ -381,7 +381,7 @@
       "id": "section-16-tech-specs",
       "priority": 16,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "tech-specs",
@@ -412,7 +412,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

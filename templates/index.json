@@ -502,6 +502,71 @@
         "section_padding_top": 20,
         "section_padding_bottom": 20
       }
+    },
+    "bq-tech-specs-s16": {
+      "type": "bq-tech-specs",
+      "blocks": {
+        "badge-ce": {
+          "type": "badge",
+          "settings": {
+            "icon_url": "//botaniqueparis.com/cdn/shop/files/Group_48095902_600x.png?v=1760357855",
+            "label": "Certificato CE"
+          }
+        },
+        "badge-wavelengths": {
+          "type": "badge",
+          "settings": {
+            "icon_url": "//botaniqueparis.com/cdn/shop/files/Group_48095909_600x.png?v=1760357855",
+            "label": "Lunghezze d'onda provate"
+          }
+        },
+        "badge-session": {
+          "type": "badge",
+          "settings": {
+            "icon_url": "//botaniqueparis.com/cdn/shop/files/Group_48095895_600x.png?v=1760422350",
+            "label": "Sessione da 10 minuti"
+          }
+        },
+        "badge-guarantee": {
+          "type": "badge",
+          "settings": {
+            "icon_url": "//botaniqueparis.com/cdn/shop/files/Group_48095894_600x.png?v=1760422348",
+            "label": "Garanzia 365 giorni"
+          }
+        }
+      },
+      "block_order": [
+        "badge-ce",
+        "badge-wavelengths",
+        "badge-session",
+        "badge-guarantee"
+      ],
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_strong": "La Magia",
+        "heading_rest": "Dietro",
+        "card_title": "Specifiche tecniche di",
+        "spec1_title": "Luce Rossa Terapeutica:",
+        "spec1_item1_label": "Lunghezza d'onda:",
+        "spec1_item1_value": "630nm (clinicamente provata per la stimolazione del collagene e il ringiovanimento della pelle)",
+        "spec1_item2_label": "Penetrazione:",
+        "spec1_item2_value": "la luce rossa a bassa intensità penetra la pelle per stimolare la funzione cellulare e accelerare la crescita cellulare",
+        "spec2_title": "Microcorrente (EMS):",
+        "spec2_item1_label": "3 Livelli di intensità:",
+        "spec2_sub1_label": "Basso (12mA):",
+        "spec2_sub1_value": "introduzione delicata per pelli sensibili",
+        "spec2_sub2_label": "Medio (15mA):",
+        "spec2_sub2_value": "stimolazione equilibrata per la maggior parte degli utenti",
+        "spec2_sub3_label": "Alto (18mA):",
+        "spec2_sub3_value": "massimo boost di collagene e ringiovanimento completo",
+        "spec3_title": "Caratteristiche del trattamento:",
+        "spec3_item1_label": "Effetto 2-in-1:",
+        "spec3_item1_value": "combina la luce rossa terapeutica e la microcorrente in un'unica sessione",
+        "spec3_item2_label": "Tecnologia di prossimità:",
+        "spec3_item2_value": "maggiore efficacia quando usato vicino alla pelle",
+        "spec3_item3_label": "Benefici clinicamente dimostrati:",
+        "spec3_item3_value": "riduce le rughe sottili, migliora la complessione, aumenta la produzione di collagene e di ATP"
+      }
     }
   },
   "order": [
@@ -522,6 +587,7 @@
     "bq-founder-pt2",
     "bq-founder-pt3",
     "bq-founder-pt6",
-    "bq-founder-pt7"
+    "bq-founder-pt7",
+    "bq-tech-specs-s16"
   ]
 }

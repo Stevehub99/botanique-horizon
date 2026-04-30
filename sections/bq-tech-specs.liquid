@@ -1,0 +1,248 @@
+{{ 'bq-tech-specs.css' | asset_url | stylesheet_tag }}
+
+<div class="bq-ts">
+  <div class="bq-ts__inner page-width">
+
+    <div class="bq-ts__top">
+      <div class="bq-ts__heading-wrap">
+        <h2 class="bq-ts__h2"><strong>{{ section.settings.heading_strong }}</strong> {{ section.settings.heading_rest }} {{ section.settings.product_name_token }}</h2>
+      </div>
+
+      <div class="bq-ts__card">
+        <h3>{{ section.settings.card_title }} {{ section.settings.product_name_token }}</h3>
+
+        <h4>{{ section.settings.spec1_title }}</h4>
+        <ul>
+          <li><strong>{{ section.settings.spec1_item1_label }}</strong> {{ section.settings.spec1_item1_value }}</li>
+          <li><strong>{{ section.settings.spec1_item2_label }}</strong> {{ section.settings.spec1_item2_value }}</li>
+        </ul>
+
+        <h4>{{ section.settings.spec2_title }}</h4>
+        <ul>
+          <li><strong>{{ section.settings.spec2_item1_label }}</strong></li>
+        </ul>
+        <ul class="bq-ts__sublist">
+          <li><strong>{{ section.settings.spec2_sub1_label }}</strong> {{ section.settings.spec2_sub1_value }}</li>
+          <li><strong>{{ section.settings.spec2_sub2_label }}</strong> {{ section.settings.spec2_sub2_value }}</li>
+          <li><strong>{{ section.settings.spec2_sub3_label }}</strong> {{ section.settings.spec2_sub3_value }}</li>
+        </ul>
+
+        <h4>{{ section.settings.spec3_title }}</h4>
+        <ul>
+          <li><strong>{{ section.settings.spec3_item1_label }}</strong> {{ section.settings.spec3_item1_value }}</li>
+          <li><strong>{{ section.settings.spec3_item2_label }}</strong> {{ section.settings.spec3_item2_value }}</li>
+          <li><strong>{{ section.settings.spec3_item3_label }}</strong> {{ section.settings.spec3_item3_value }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bq-ts__badges">
+      <ul class="bq-ts__badge-list">
+        {% for block in section.blocks %}
+          {% if block.type == 'badge' %}
+            <li class="bq-ts__badge-item" {{ block.shopify_attributes }}>
+              <div class="bq-ts__badge-icon">
+                <img src="{{ block.settings.icon_url }}" alt="{{ block.settings.label }}" width="70" height="70" loading="lazy">
+              </div>
+              <div class="bq-ts__badge-text">
+                <h5>{{ block.settings.label }}</h5>
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BQ Tech Specs",
+  "tag": "section",
+  "class": "bq-tech-specs-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Product name token",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "heading_strong",
+      "label": "Heading (pink strong part)",
+      "default": "La Magia"
+    },
+    {
+      "type": "text",
+      "id": "heading_rest",
+      "label": "Heading (rest, before product name)",
+      "default": "Dietro"
+    },
+    {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card title (before product name)",
+      "default": "Specifiche tecniche di"
+    },
+    {
+      "type": "header",
+      "content": "Spec group 1: Red Light Therapy"
+    },
+    {
+      "type": "text",
+      "id": "spec1_title",
+      "label": "Group 1 title",
+      "default": "Luce Rossa Terapeutica:"
+    },
+    {
+      "type": "text",
+      "id": "spec1_item1_label",
+      "label": "Item 1 label",
+      "default": "Lunghezza d’onda:"
+    },
+    {
+      "type": "text",
+      "id": "spec1_item1_value",
+      "label": "Item 1 value",
+      "default": "630nm (clinicamente provata per la stimolazione del collagene e il ringiovanimento della pelle)"
+    },
+    {
+      "type": "text",
+      "id": "spec1_item2_label",
+      "label": "Item 2 label",
+      "default": "Penetrazione:"
+    },
+    {
+      "type": "text",
+      "id": "spec1_item2_value",
+      "label": "Item 2 value",
+      "default": "la luce rossa a bassa intensità penetra la pelle per stimolare la funzione cellulare e accelerare la crescita cellulare"
+    },
+    {
+      "type": "header",
+      "content": "Spec group 2: Microcurrent"
+    },
+    {
+      "type": "text",
+      "id": "spec2_title",
+      "label": "Group 2 title",
+      "default": "Microcorrente (EMS):"
+    },
+    {
+      "type": "text",
+      "id": "spec2_item1_label",
+      "label": "Intensity levels label",
+      "default": "3 Livelli di intensità:"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub1_label",
+      "label": "Sub-item 1 label",
+      "default": "Basso (12mA):"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub1_value",
+      "label": "Sub-item 1 value",
+      "default": "introduzione delicata per pelli sensibili"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub2_label",
+      "label": "Sub-item 2 label",
+      "default": "Medio (15mA):"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub2_value",
+      "label": "Sub-item 2 value",
+      "default": "stimolazione equilibrata per la maggior parte degli utenti"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub3_label",
+      "label": "Sub-item 3 label",
+      "default": "Alto (18mA):"
+    },
+    {
+      "type": "text",
+      "id": "spec2_sub3_value",
+      "label": "Sub-item 3 value",
+      "default": "massimo boost di collagene e ringiovanimento completo"
+    },
+    {
+      "type": "header",
+      "content": "Spec group 3: Treatment Features"
+    },
+    {
+      "type": "text",
+      "id": "spec3_title",
+      "label": "Group 3 title",
+      "default": "Caratteristiche del trattamento:"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item1_label",
+      "label": "Item 1 label",
+      "default": "Effetto 2-in-1:"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item1_value",
+      "label": "Item 1 value",
+      "default": "combina la luce rossa terapeutica e la microcorrente in un’unica sessione"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item2_label",
+      "label": "Item 2 label",
+      "default": "Tecnologia di prossimità:"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item2_value",
+      "label": "Item 2 value",
+      "default": "maggiore efficacia quando usato vicino alla pelle"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item3_label",
+      "label": "Item 3 label",
+      "default": "Benefici clinicamente dimostrati:"
+    },
+    {
+      "type": "text",
+      "id": "spec3_item3_value",
+      "label": "Item 3 value",
+      "default": "riduce le rughe sottili, migliora la complessione, aumenta la produzione di collagene e di ATP"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "badge",
+      "name": "Badge icon",
+      "settings": [
+        {
+          "type": "text",
+          "id": "icon_url",
+          "label": "Icon URL",
+          "default": "//botaniqueparis.com/cdn/shop/files/Group_48095902_600x.png?v=1760357855"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Certificato CE"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ Tech Specs"
+    }
+  ]
+}
+{% endschema %}

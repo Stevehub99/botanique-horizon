@@ -1,0 +1,155 @@
+/* bq-tech-specs.css — Section 16: Tech Specs */
+
+.bq-ts {
+  padding: 80px 0;
+  background: #fff;
+}
+
+/* Heading */
+.bq-ts__heading-wrap {
+  margin-bottom: 50px;
+}
+
+.bq-ts__h2 {
+  font-size: 46px;
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto 0;
+  color: #000;
+  font-weight: 700;
+}
+
+.bq-ts__h2 strong {
+  color: #ff7e97;
+  font-weight: 700;
+}
+
+/* Specs card */
+.bq-ts__card {
+  background-image: url(//botaniqueparis.com/cdn/shop/files/Rectangle_39782.png?v=1760423878);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 80px;
+  border-radius: 16px;
+}
+
+.bq-ts__card h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.bq-ts__card h4 {
+  color: #ff7e97;
+  margin-bottom: 8px;
+}
+
+.bq-ts__card ul {
+  list-style: disc !important;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.bq-ts__card ul li {
+  color: #fff;
+  list-style: disc !important;
+  padding-left: 0 !important;
+  background-image: none !important;
+  margin-bottom: 6px;
+}
+
+.bq-ts__card ul li strong {
+  color: #fff;
+}
+
+/* Sub-list indent (intensity levels) */
+.bq-ts__sublist {
+  margin-left: 50px;
+  list-style: disc !important;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+.bq-ts__sublist li {
+  color: #fff;
+  list-style: disc !important;
+  padding-left: 0 !important;
+  background-image: none !important;
+  margin-bottom: 6px;
+}
+
+.bq-ts__sublist li strong {
+  color: #fff;
+}
+
+/* Badge grid */
+.bq-ts__badges {
+  margin-top: 50px;
+}
+
+.bq-ts__badge-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bq-ts__badge-item {
+  list-style: none;
+  text-align: center;
+}
+
+.bq-ts__badge-icon {
+  max-width: 70px;
+  margin: 0 auto 15px;
+}
+
+.bq-ts__badge-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.bq-ts__badge-text h5 {
+  padding: 0 30px;
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Mobile */
+@media (max-width: 749px) {
+  .bq-ts {
+    padding: 40px 0;
+  }
+
+  .bq-ts__h2 {
+    font-size: 30px;
+  }
+
+  .bq-ts__card {
+    padding: 20px 15px;
+  }
+
+  .bq-ts__card ul {
+    padding-left: 20px;
+  }
+
+  .bq-ts__sublist {
+    margin-left: 20px;
+  }
+
+  .bq-ts__badge-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 0;
+  }
+
+  .bq-ts__badge-item {
+    margin-bottom: 0;
+  }
+
+  .bq-ts {
+    padding-bottom: 0;
+  }
+}

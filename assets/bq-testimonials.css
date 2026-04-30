@@ -1,0 +1,137 @@
+/* §14 Testimonials — review-comment--items */
+
+.bq-tc {
+  background-image: url(//botaniqueparis.com/cdn/shop/files/v745-kul-04_2.jpg?v=1760516836);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.bq-tc__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Heading */
+.bq-tc__heading {
+  font-family: var(--bq-font-sans, sans-serif);
+  font-size: 46px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #000;
+  line-height: 1.2;
+}
+
+.bq-tc__heading strong {
+  color: #ff7e97;
+  font-weight: 700;
+}
+
+/* Grid */
+.bq-tc__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Card */
+.bq-tc__card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 15px;
+  border: 1px solid #000;
+}
+
+.bq-tc__top {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 0;
+}
+
+/* Avatar letter placeholder */
+.bq-tc__avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #ff7e97;
+  color: #fff;
+  font-family: var(--bq-font-sans, sans-serif);
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bq-tc__quote {
+  font-style: italic;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.bq-tc__quote p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.bq-tc__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 98px;
+  margin-top: 10px;
+}
+
+.bq-tc__author {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.bq-tc__author h4 {
+  color: #ff7e97;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  font-family: var(--bq-font-sans, sans-serif);
+}
+
+.bq-tc__verified {
+  display: inline-flex;
+}
+
+.bq-tc__stars {
+  color: #ff7e97;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* Mobile */
+@media (max-width: 749px) {
+  .bq-tc__heading {
+    font-size: 30px;
+  }
+
+  .bq-tc__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bq-tc__stars {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
+
+  .bq-tc__top {
+    gap: 10px;
+  }
+}

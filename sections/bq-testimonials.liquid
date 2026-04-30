@@ -1,0 +1,157 @@
+{{ 'bq-testimonials.css' | asset_url | stylesheet_tag }}
+
+<div class="bq-tc" data-section-id="{{ section.id }}">
+  <div class="bq-tc__container">
+
+    <h2 class="bq-tc__heading">
+      {{ section.settings.heading_plain }} <strong>{{ section.settings.heading_strong }}</strong>
+    </h2>
+
+    <div class="bq-tc__grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'testimonial' -%}
+          <div class="bq-tc__card" {{ block.shopify_attributes }}>
+            <div class="bq-tc__top">
+              <div class="bq-tc__avatar" aria-hidden="true">
+                {{- block.settings.name | slice: 0, 1 | upcase -}}
+              </div>
+              <div class="bq-tc__quote">
+                <p>&#8220;{{ block.settings.quote }}&#8221;</p>
+              </div>
+            </div>
+            <div class="bq-tc__bottom">
+              <div class="bq-tc__author">
+                <h4>- {{ block.settings.name }}</h4>
+                {%- if block.settings.verified -%}
+                  <span class="bq-tc__verified" aria-label="Acquisto verificato">
+                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                      <g clip-path="url(#bq-tc-clip-{{ block.id }})">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M0 7C0 5.14348 0.737498 3.36301 2.05025 2.05025C3.36301 0.737498 5.14348 0 7 0C8.85652 0 10.637 0.737498 11.9497 2.05025C13.2625 3.36301 14 5.14348 14 7C14 8.85652 13.2625 10.637 11.9497 11.9497C10.637 13.2625 8.85652 14 7 14C5.14348 14 3.36301 13.2625 2.05025 11.9497C0.737498 10.637 0 8.85652 0 7ZM6.60053 9.996L10.6307 4.95787L9.90267 4.37547L6.46613 8.66973L4.032 6.6416L3.43467 7.3584L6.60053 9.996Z" fill="#1da1f2"/>
+                      </g>
+                      <defs>
+                        <clipPath id="bq-tc-clip-{{ block.id }}">
+                          <rect width="14" height="14" fill="white"/>
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </span>
+                {%- endif -%}
+              </div>
+              <div class="bq-tc__stars" aria-label="{{ block.settings.stars }} stelle su 5">
+                {%- assign star_count = block.settings.stars | default: 5 -%}
+                {%- for i in (1..star_count) -%}★{%- endfor -%}
+              </div>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BQ Testimonials",
+  "tag": "section",
+  "class": "bq-testimonials-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Nome prodotto",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "heading_plain",
+      "label": "Titolo (parte normale)",
+      "default": "Ecco Cosa Dicono"
+    },
+    {
+      "type": "text",
+      "id": "heading_strong",
+      "label": "Titolo (parte in evidenza / rosa)",
+      "default": "Le Nostre Clienti"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonianza",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Citazione",
+          "default": "Risultati straordinari dopo appena due settimane di uso quotidiano."
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Nome cliente",
+          "default": "Francesca B."
+        },
+        {
+          "type": "checkbox",
+          "id": "verified",
+          "label": "Acquisto verificato",
+          "default": true
+        },
+        {
+          "type": "range",
+          "id": "stars",
+          "label": "Stelle",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ Testimonials",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "In soli dieci giorni le borse e le occhiaie sono sparite. Anche i miei figli mi hanno detto che sembro più giovane!",
+            "name": "Francesca B., 51 anni · Roma",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Avevo problemi ormonali che causavano un gonfiore cronico sotto gli occhi. Niente aveva funzionato. Con questo dispositivo il gonfiore è sparito in due settimane. Ho annullato la consulenza chirurgica.",
+            "name": "Elena C., 47 anni · Napoli",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "La palpebra cadente mi faceva sembrare stanca tutto il giorno. Dopo otto settimane c'è uno spazio visibile tra la linea delle ciglia e la piega. Non posso credere che abbia funzionato senza chirurgia.",
+            "name": "Valentina M., 38 anni · Torino",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "quote": "La combinazione di luce rossa ed EMS si sente davvero lavorare sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.",
+            "name": "Laura P., 44 anni · Milano",
+            "verified": true,
+            "stars": 5
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

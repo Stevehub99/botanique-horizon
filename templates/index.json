@@ -360,6 +360,58 @@
         "section_padding_top": 50,
         "section_padding_bottom": 30
       }
+    },
+    "bq-testimonials-s14": {
+      "type": "bq-testimonials",
+      "blocks": {
+        "tc1": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "In soli dieci giorni le borse e le occhiaie sono sparite. Anche i miei figli mi hanno detto che sembro più giovane!",
+            "name": "Francesca B., 51 anni · Roma",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "tc2": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "Avevo problemi ormonali che causavano un gonfiore cronico sotto gli occhi. Niente aveva funzionato. Con questo dispositivo il gonfiore è sparito in due settimane. Ho annullato la consulenza chirurgica.",
+            "name": "Elena C., 47 anni · Napoli",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "tc3": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "La palpebra cadente mi faceva sembrare stanca tutto il giorno. Dopo otto settimane c'è uno spazio visibile tra la linea delle ciglia e la piega. Non posso credere che abbia funzionato senza chirurgia.",
+            "name": "Valentina M., 38 anni · Torino",
+            "verified": true,
+            "stars": 5
+          }
+        },
+        "tc4": {
+          "type": "testimonial",
+          "settings": {
+            "quote": "La combinazione di luce rossa ed EMS si sente davvero lavorare sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.",
+            "name": "Laura P., 44 anni · Milano",
+            "verified": true,
+            "stars": 5
+          }
+        }
+      },
+      "block_order": [
+        "tc1",
+        "tc2",
+        "tc3",
+        "tc4"
+      ],
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_plain": "Ecco Cosa Dicono",
+        "heading_strong": "Le Nostre Clienti"
+      }
     }
   },
   "order": [
@@ -374,6 +426,7 @@
     "bq-how-to-use-s09",
     "bq-comparison-grid-s10",
     "bq-image-text-precision",
-    "bq-urgency-banner-s13"
+    "bq-urgency-banner-s13",
+    "bq-testimonials-s14"
   ]
 }

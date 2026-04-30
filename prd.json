@@ -251,7 +251,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Configure as 4th instance of bq-image-text. Schema may need a feature_icons block list — extend by accretion only.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -297,7 +297,7 @@
       "id": "section-14-testimonials",
       "priority": 14,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "testimonials-section",
@@ -329,8 +329,8 @@
         "fabrication_examples_from_§1": "Giulia (Milano, 42), Francesca (Roma, 51), Chiara (Torino, 38), etc. — pull pattern from sections/bq-hero.liquid testimonials",
         "rules_ref": "CLAUDE.md Italian copy rules; testimonial fabrication is project-accepted practice"
       },
-      "notes": "Carousel behavior parity with §1 hero is critical. If §1 uses Slick/Swiper/vanilla, mirror.",
-      "iteration_count": 0,
+      "notes": "Carousel behavior parity with §1 hero is critical. If §1 uses Slick/Swiper/vanilla, mirror. Source §14 uses single burned-in composite image (review-comment--items section, line 7213); replaced with 4 fabricated IT HTML cards in 2-col grid. Actual source anchor class: review-comment--items / ladies-are-saying (not PRD anchors).",
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

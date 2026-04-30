@@ -1,0 +1,173 @@
+{{ 'bq-comparison-grid.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_name = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+  assign brand_name = section.settings.brand_name_token | default: 'Botanique Paris'
+  assign cta_label = section.settings.cta_label | default: 'Ringiovanisci il tuo contorno occhi oggi'
+  assign cta_link = section.settings.cta_link | default: '/products/revitaleyes'
+  assign trust_1 = section.settings.trust_1 | default: 'Garanzia soddisfatti o rimborsati 365 giorni'
+  assign trust_2 = section.settings.trust_2 | default: 'Spedizione express in tutto il mondo'
+-%}
+
+<div class="bq-cg" data-section-id="{{ section.id }}">
+  <div class="bq-cg__container">
+
+    <div class="bq-cg__header">
+      <h2 class="bq-cg__heading">
+        L'Approccio a Doppia Tecnologia di <strong>{{ product_name }}</strong> È Di Gran Lunga Il Più Efficace Per Il <strong>Ringiovanimento Oculare</strong> a Casa
+      </h2>
+      <p class="bq-cg__subtitle">Ecco perché è la soluzione migliore per le borse e le occhiaie</p>
+    </div>
+
+    <div class="bq-cg__grid">
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096036_e1a992fd-9c1b-4d07-9874-91afb9e50e46_600x.png?v=1760613957" alt="Confronto: creme per gli occhi vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096037_582d6285-de57-4ad1-aecc-7f4997c92fc1_600x.png?v=1760613957" alt="Confronto: dispositivi a luce rossa standard vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096038_600x.png?v=1760613957" alt="Confronto: filler vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096040_2dc8e80f-7896-4eb2-823f-a248d6bde424_600x.png?v=1760613957" alt="Confronto: botox vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096041_cf48de92-24e4-4ce6-9189-deabe67c2449_600x.png?v=1760613957" alt="Confronto: blefaroplastica inferiore vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+      <div class="bq-cg__card">
+        <div class="bq-cg__card-image-wrap">
+          <img src="//botaniqueparis.com/cdn/shop/files/Group_48096042_f266a21b-8774-4c0b-bf90-3bff9f777ce9_600x.png?v=1760613957" alt="Confronto: sieri alla caffeina vs {{ product_name }}" loading="eager" width="600" height="641">
+        </div>
+      </div>
+    </div>
+
+    <a class="bq-cg__cta" href="{{ cta_link }}">{{ cta_label }}</a>
+
+    <div class="bq-cg__trust-row">
+      <div class="bq-cg__trust-item">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="7" fill="#2ED215"/>
+            <path d="M10.8883 4.0835L5.54103 9.43072L3.11047 7.00016" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>{{ trust_1 }}</p>
+      </div>
+      <div class="bq-cg__trust-item">
+        <span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <circle cx="7" cy="7" r="7" fill="#2ED215"/>
+            <path d="M10.8883 4.0835L5.54103 9.43072L3.11047 7.00016" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p>{{ trust_2 }}</p>
+      </div>
+    </div>
+
+    <div class="bq-cg__promise">
+      <div class="bq-cg__promise-header">
+        <h3>La promessa di <strong>{{ brand_name }}</strong></h3>
+      </div>
+      <ul class="bq-cg__promise-list">
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48095902_600x.png?v=1760357855" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Certificato CE</h5>
+        </li>
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48095908_600x.png?v=1760357855" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Non invasivo</h5>
+        </li>
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48095909_600x.png?v=1760357855" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Zero tempi di recupero</h5>
+        </li>
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48096043_600x.png?v=1760359373" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Clinicamente sicuro</h5>
+        </li>
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48096044_600x.png?v=1760359373" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Senza dolore</h5>
+        </li>
+        <li class="bq-cg__badge">
+          <div class="bq-cg__badge-icon">
+            <img src="//botaniqueparis.com/cdn/shop/files/Group_48096045_600x.png?v=1760359372" alt="" loading="eager" width="70" height="70">
+          </div>
+          <h5>Per tutti i tipi di pelle</h5>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BQ Comparison Grid",
+  "tag": "div",
+  "class": "bq-comparison-grid-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Nome prodotto",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "brand_name_token",
+      "label": "Nome brand",
+      "default": "Botanique Paris"
+    },
+    {
+      "type": "text",
+      "id": "cta_label",
+      "label": "Testo CTA",
+      "default": "Ringiovanisci il tuo contorno occhi oggi"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Link CTA"
+    },
+    {
+      "type": "text",
+      "id": "trust_1",
+      "label": "Trust badge 1",
+      "default": "Garanzia soddisfatti o rimborsati 365 giorni"
+    },
+    {
+      "type": "text",
+      "id": "trust_2",
+      "label": "Trust badge 2",
+      "default": "Spedizione express in tutto il mondo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ Comparison Grid"
+    }
+  ]
+}
+{% endschema %}

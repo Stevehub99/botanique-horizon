@@ -129,7 +129,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Usage images are placeholder SVGs per project standing rule (real assets deferred to Phase 2 audit).",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -137,7 +137,7 @@
       "id": "section-10-comparison-grid",
       "priority": 10,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "comparison",
@@ -171,7 +171,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Mobile responsive behavior is the highest-risk technical detail here. Verify via Playwright at 390px before declaring done.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

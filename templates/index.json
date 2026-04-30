@@ -311,6 +311,17 @@
         "step_3_title": "Completa il trattamento con le microcorrenti",
         "step_3_desc": "Delicati impulsi elettrici attivano il drenaggio linfatico per eliminare il gonfiore e tonificare i muscoli intorno agli occhi. In soli 5 minuti il tuo trattamento è completo."
       }
+    },
+    "bq-comparison-grid-s10": {
+      "type": "bq-comparison-grid",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "brand_name_token": "Botanique Paris",
+        "cta_label": "Ringiovanisci il tuo contorno occhi oggi",
+        "cta_link": "/products/revitaleyes",
+        "trust_1": "Garanzia soddisfatti o rimborsati 365 giorni",
+        "trust_2": "Spedizione express in tutto il mondo"
+      }
     }
   },
   "order": [
@@ -323,6 +334,7 @@
     "bq-science-stats-s07",
     "bq-medical-fda-s08",
     "bq-how-to-use-s09",
+    "bq-comparison-grid-s10",
     "bq-urgency-banner-s13"
   ]
 }

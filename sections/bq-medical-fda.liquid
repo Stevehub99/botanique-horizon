@@ -1,0 +1,125 @@
+{{ 'bq-medical-fda.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign product_name = section.settings.product_name_token | default: 'Il Nostro Dispositivo'
+-%}
+
+<div class="bq-mfda" data-section-id="{{ section.id }}">
+  <div class="bq-mfda__container">
+
+    <div class="bq-mfda__top">
+      <h2>{{ section.settings.heading_plain }} <strong>{{ section.settings.heading_strong }}</strong></h2>
+      <p>{{ product_name }} {{ section.settings.body_text }}</p>
+    </div>
+
+    <div class="bq-mfda__list">
+      <ul>
+        <li><strong>{{ section.settings.item_1_label }}</strong> - {{ section.settings.item_1_desc }}</li>
+        <li><strong>{{ section.settings.item_2_label }}</strong> - {{ section.settings.item_2_desc }}</li>
+        <li><strong>{{ section.settings.item_3_label }}</strong> - {{ section.settings.item_3_desc }}</li>
+        <li><strong>{{ section.settings.item_4_label }}</strong> - {{ section.settings.item_4_desc }}</li>
+        <li><strong>{{ section.settings.item_5_label }}</strong> - {{ section.settings.item_5_desc }}</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "BQ Medical FDA",
+  "tag": "div",
+  "class": "bq-medical-fda-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_name_token",
+      "label": "Nome prodotto",
+      "default": "Il Nostro Dispositivo"
+    },
+    {
+      "type": "text",
+      "id": "heading_plain",
+      "label": "Titolo (parte normale)",
+      "default": "Tecnologia Di Grado Medico."
+    },
+    {
+      "type": "text",
+      "id": "heading_strong",
+      "label": "Titolo (parte in evidenza)",
+      "default": "Sicurezza Certificata CE."
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Testo corpo",
+      "default": "utilizza tecnologie di grado medico, sviluppate in collaborazione con la ricerca aerospaziale e validate clinicamente, impiegate dai professionisti da decenni. Sicurezza certificata secondo gli standard europei per un uso efficace a casa tua."
+    },
+    {
+      "type": "text",
+      "id": "item_1_label",
+      "label": "Voce 1 – etichetta",
+      "default": "Luce rossa certificata CE"
+    },
+    {
+      "type": "text",
+      "id": "item_1_desc",
+      "label": "Voce 1 – descrizione",
+      "default": "Sviluppata in collaborazione con la ricerca aerospaziale per la rigenerazione cellulare"
+    },
+    {
+      "type": "text",
+      "id": "item_2_label",
+      "label": "Voce 2 – etichetta",
+      "default": "Lunghezze d'onda clinicamente sicure (630–660 nm)"
+    },
+    {
+      "type": "text",
+      "id": "item_2_desc",
+      "label": "Voce 2 – descrizione",
+      "default": "Trattamento non invasivo e non termico, senza tempi di recupero"
+    },
+    {
+      "type": "text",
+      "id": "item_3_label",
+      "label": "Voce 3 – etichetta",
+      "default": "Tecnologia a microcorrente di grado medico"
+    },
+    {
+      "type": "text",
+      "id": "item_3_desc",
+      "label": "Voce 3 – descrizione",
+      "default": "Impiegata in fisioterapia dagli anni '70 per la riabilitazione facciale"
+    },
+    {
+      "type": "text",
+      "id": "item_4_label",
+      "label": "Voce 4 – etichetta",
+      "default": "Nessun raggio UV, nessun prodotto chimico, nessun effetto indesiderato"
+    },
+    {
+      "type": "text",
+      "id": "item_4_desc",
+      "label": "Voce 4 – descrizione",
+      "default": "Sicura per l'uso quotidiano sulla pelle più delicata del corpo"
+    },
+    {
+      "type": "text",
+      "id": "item_5_label",
+      "label": "Voce 5 – etichetta",
+      "default": "Testato dermatologicamente"
+    },
+    {
+      "type": "text",
+      "id": "item_5_desc",
+      "label": "Voce 5 – descrizione",
+      "default": "Risultati di livello professionale senza i rischi di aghi o interventi chirurgici"
+    }
+  ],
+  "presets": [
+    {
+      "name": "BQ Medical FDA"
+    }
+  ]
+}
+{% endschema %}

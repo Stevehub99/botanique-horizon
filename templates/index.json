@@ -279,6 +279,25 @@
         "section_padding_top": 40,
         "section_padding_bottom": 10
       }
+    },
+    "bq-medical-fda-s08": {
+      "type": "bq-medical-fda",
+      "settings": {
+        "product_name_token": "Il Nostro Dispositivo",
+        "heading_plain": "Tecnologia Di Grado Medico.",
+        "heading_strong": "Sicurezza Certificata CE.",
+        "body_text": "utilizza tecnologie di grado medico, sviluppate in collaborazione con la ricerca aerospaziale e validate clinicamente, impiegate dai professionisti da decenni. Sicurezza certificata secondo gli standard europei per un uso efficace a casa tua.",
+        "item_1_label": "Luce rossa certificata CE",
+        "item_1_desc": "Sviluppata in collaborazione con la ricerca aerospaziale per la rigenerazione cellulare",
+        "item_2_label": "Lunghezze d'onda clinicamente sicure (630–660 nm)",
+        "item_2_desc": "Trattamento non invasivo e non termico, senza tempi di recupero",
+        "item_3_label": "Tecnologia a microcorrente di grado medico",
+        "item_3_desc": "Impiegata in fisioterapia dagli anni '70 per la riabilitazione facciale",
+        "item_4_label": "Nessun raggio UV, nessun prodotto chimico, nessun effetto indesiderato",
+        "item_4_desc": "Sicura per l'uso quotidiano sulla pelle più delicata del corpo",
+        "item_5_label": "Testato dermatologicamente",
+        "item_5_desc": "Risultati di livello professionale senza i rischi di aghi o interventi chirurgici"
+      }
     }
   },
   "order": [
@@ -289,6 +308,7 @@
     "bq-image-text-mission",
     "bq-results-timeline",
     "bq-science-stats-s07",
+    "bq-medical-fda-s08",
     "bq-urgency-banner-s13"
   ]
 }

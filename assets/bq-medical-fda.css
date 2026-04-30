@@ -1,0 +1,77 @@
+/* §8 Medical-Grade / FDA (CE) section */
+
+.bq-mfda {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-image: url(//botaniqueparis.com/cdn/shop/files/sl_032421_41660_05_1_bbf2dbc5-0a39-47b7-8e4b-a7cf63a006d5.png?v=1760344795);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.bq-mfda__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.bq-mfda__top {
+  margin-bottom: 50px;
+}
+
+.bq-mfda h2 {
+  font-family: var(--bq-font-sans, sans-serif);
+  font-size: 46px;
+  font-weight: 700;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #000;
+  line-height: 1.15;
+}
+
+.bq-mfda h2 strong {
+  color: #ff7e97;
+  font-weight: 700;
+}
+
+.bq-mfda__top > p {
+  font-family: var(--bq-font-sans, sans-serif);
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto;
+  font-size: 16px;
+  color: #000;
+}
+
+.bq-mfda__list ul {
+  padding-left: 0;
+  list-style: none;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.bq-mfda__list ul li {
+  position: relative;
+  list-style: none !important;
+  padding-left: 30px !important;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-family: var(--bq-font-sans, sans-serif);
+  color: #000;
+  background-image: url(//botaniqueparis.com/cdn/shop/files/Group_48095911.svg?v=1760621385);
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-position: left top;
+  line-height: 1.4;
+}
+
+@media (max-width: 749px) {
+  .bq-mfda h2 {
+    font-size: 32px;
+  }
+
+  .bq-mfda__list ul li {
+    font-size: 16px;
+  }
+}

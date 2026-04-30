@@ -48,7 +48,7 @@
         "stat_mechanisms_target": "single short sentence per stat explaining the mechanism (microcorrente, luce rossa, etc.); accurate to source claims"
       },
       "notes": "Verify whether §18 is a literal duplicate of §7 or a near-duplicate (different copy, same shell). If literal duplicate, §18 disposition becomes DUPLICATE-OF and references this story. Decide during inventory.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -56,7 +56,7 @@
       "id": "section-08-medical-grade-fda",
       "priority": 8,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "main-memory",
@@ -90,7 +90,7 @@
         "rules_ref": "CLAUDE.md Regulatory substitution rules"
       },
       "notes": "This section relies heavily on regulatory authority claims. ALL substitutions go through the table in CLAUDE.md. Do not invent claims.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

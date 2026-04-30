@@ -322,6 +322,44 @@
         "trust_1": "Garanzia soddisfatti o rimborsati 365 giorni",
         "trust_2": "Spedizione express in tutto il mondo"
       }
+    },
+    "bq-image-text-precision": {
+      "type": "bq-image-text",
+      "blocks": {
+        "fi1": {
+          "type": "feature_icon",
+          "settings": {
+            "label": "Diodi LED di grado medico"
+          }
+        },
+        "fi2": {
+          "type": "feature_icon",
+          "settings": {
+            "label": "Microcorrente calibrata di precisione"
+          }
+        },
+        "fi3": {
+          "type": "feature_icon",
+          "settings": {
+            "label": "Impianto certificato CE"
+          }
+        }
+      },
+      "block_order": [
+        "fi1",
+        "fi2",
+        "fi3"
+      ],
+      "settings": {
+        "brand_name_token": "Lumière Paris",
+        "product_name_token": "Il Nostro Dispositivo",
+        "subheading_h3": "<p><strong>%brand%</strong> Ingegneria di precisione</p>",
+        "layout": "video_centered",
+        "bg_color": "#FFFFFF",
+        "accent_color": "#FF7E97",
+        "section_padding_top": 50,
+        "section_padding_bottom": 30
+      }
     }
   },
   "order": [
@@ -335,6 +373,7 @@
     "bq-medical-fda-s08",
     "bq-how-to-use-s09",
     "bq-comparison-grid-s10",
+    "bq-image-text-precision",
     "bq-urgency-banner-s13"
   ]
 }

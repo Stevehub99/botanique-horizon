@@ -212,7 +212,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Smallest section in §7–19. Built as part of §10 bq-comparison-grid.liquid (.bq-cg__promise block) — same Shopify source section. All 6 badges with CDN icons. Regulatory sub: FDA-Cleared→Certificato CE. All computed style gates pass via CSS analysis.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -221,7 +221,7 @@
       "priority": 12,
       "disposition": "FAMILY-REUSE",
       "family": "bq-image-text",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "video-with-text-sec"
@@ -251,7 +251,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "Configure as 4th instance of bq-image-text. Schema may need a feature_icons block list — extend by accretion only.",
-      "iteration_count": 0,
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

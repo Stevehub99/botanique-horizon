@@ -157,6 +157,81 @@
 .bq-image-text__trust-item .bq-check { width: 14px; height: 14px; }
 .bq-image-text__trust-item .bq-check svg { width: 9px; height: 9px; }
 
+/* video_centered layout — §12 Precision Engineering
+   Source: inline CSS in video-with-text-sec + b00:8702–8712, b00:9119–9122, b00:9417–9422, b00:9633–9635 */
+.bq-image-text--video_centered .bq-image-text__vc-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bq-image-text__subtitle--center {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+/* Centered video container.
+   Source uses padding-top: 50% (mobile) / 40.5% (desktop) relative to page-width parent.
+   We use aspect-ratio to get the correct ratio regardless of our wider container. */
+.bq-image-text__vc-video {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 2 / 1; /* mobile: source padding-top 50% = 2:1 at full viewport width */
+}
+
+.bq-image-text__vc-video-el {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+}
+
+.bq-image-text__vc-video .bq-image-text__image--placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  aspect-ratio: unset;
+}
+
+/* Feature icons row — source: .video-last-icon-text (b00:8702–8712) */
+.bq-image-text__feat-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 800px;
+  padding-top: 25px;
+  gap: 10px;
+}
+
+.bq-image-text__feat-icon {
+  display: flex;
+  align-items: center;
+}
+
+.bq-image-text__feat-icon p {
+  margin: 0;
+  margin-left: 10px;
+  margin-right: 15px;
+  font-size: 14px;
+  color: #000;
+}
+
+.bq-feat-check {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
 @media (max-width: 390px) {
   .bq-image-text__cta { padding: 10px 10px; }
   .bq-image-text__h2 { font-size: 28px; }
@@ -165,6 +240,11 @@
 @media (min-width: 391px) and (max-width: 767px) {
   .bq-image-text__subtitle { font-size: 30px; }
   .bq-image-text__h2 { font-size: 30px; }
+}
+
+/* video_centered: mobile h3 font-size override per b00:9633 */
+@media (max-width: 767px) {
+  .bq-image-text--video_centered .bq-image-text__subtitle--center { font-size: 30px; }
 }
 
 @media (min-width: 768px) {
@@ -215,4 +295,21 @@
 
   .bq-image-text__trust { flex-wrap: nowrap; gap: 0; }
   .bq-image-text__trust-item { width: auto; margin-bottom: 0; }
+
+  /* video_centered desktop: 16:9 ratio + larger border-radius + horizontal icons.
+     Source desktop is 40.5% of ~1100px page-width ≈ 445px at 800px width ≈ 16:9. */
+  .bq-image-text__vc-video {
+    aspect-ratio: 16 / 9;
+  }
+  .bq-image-text__vc-video-el,
+  .bq-image-text__vc-video .bq-image-text__image--placeholder {
+    border-radius: 16px;
+  }
+  .bq-image-text__feat-icons {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .bq-image-text__feat-icon { width: auto; }
 }

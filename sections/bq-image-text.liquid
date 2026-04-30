@@ -53,6 +53,7 @@
   assign list = section.settings.numbered_list | replace: '%brand%', brand | replace: '%product%', product
   assign closing = section.settings.closing_p | replace: '%brand%', brand | replace: '%product%', product
   assign trust_blocks = section.blocks | where: 'type', 'trust_item'
+  assign feature_icon_blocks = section.blocks | where: 'type', 'feature_icon'
 -%}
 
 <section
@@ -66,86 +67,57 @@
   "
 >
   <div class="bq-image-text__container">
-    {%- if heading != blank -%}
-      <div class="bq-image-text__top-header" data-aos="fade-up">
-        <h2 class="bq-image-text__h2">{{ heading }}</h2>
-      </div>
-    {%- endif -%}
-    <div class="bq-image-text__row">
-      <div class="bq-image-text__photo" data-aos="fade-up">
-        {%- if section.settings.video != blank -%}
-          {%- assign vid = section.settings.video -%}
-          <video
-            class="bq-image-text__video"
-            playsinline
-            autoplay
-            loop="loop"
-            muted="muted"
-            preload="metadata"
-            {% if vid.preview_image != blank %}poster="{{ vid.preview_image | image_url: width: 1100 }}"{% endif %}
-            aria-label="{{ image_alt | escape }}"
-          >
-            {%- for vsource in vid.sources -%}
-              <source src="{{ vsource.url }}" type="{{ vsource.mime_type }}">
-            {%- endfor -%}
-            {%- if vid.preview_image != blank -%}
-              {{ vid.preview_image | image_url: width: 1100 | image_tag: class: 'bq-image-text__image', widths: '600,900,1100', loading: 'lazy', alt: image_alt }}
-            {%- endif -%}
-          </video>
-        {%- elsif section.settings.image != blank -%}
-          {{ section.settings.image
-             | image_url: width: 1200
-             | image_tag:
-                 class: 'bq-image-text__image',
-                 widths: '400, 600, 900, 1200',
-                 sizes: '(min-width: 768px) 40vw, 100vw',
-                 loading: 'lazy',
-                 alt: image_alt
-          }}
-        {%- else -%}
-          <div class="bq-image-text__image bq-image-text__image--placeholder" aria-hidden="true">
-            {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
-          </div>
-        {%- endif -%}
-      </div>
+    {%- if layout == 'video_centered' -%}
 
-      <div class="bq-image-text__content" data-aos="fade-up">
+      {%- comment -%}§12 video_centered layout: heading → centered video → feature icons row{%- endcomment -%}
+      <div class="bq-image-text__vc-wrap">
         {%- if subheading != blank -%}
-          <h3 class="bq-image-text__subtitle">{{ subheading }}</h3>
+          <h3 class="bq-image-text__subtitle bq-image-text__subtitle--center" data-aos="fade-up">{{ subheading }}</h3>
         {%- endif -%}
 
-        {%- if intro != blank -%}
-          <div class="bq-image-text__intro">{{ intro }}</div>
-        {%- endif -%}
-
-        {%- for block in section.blocks -%}
-          {%- if block.type == 'paragraph' and block.settings.text != blank -%}
-            <div class="bq-image-text__paragraph" {{ block.shopify_attributes }}>
-              {{ block.settings.text | replace: '%brand%', brand | replace: '%product%', product }}
+        <div class="bq-image-text__vc-video" data-aos="fade-up">
+          {%- if section.settings.video != blank -%}
+            {%- assign vid = section.settings.video -%}
+            <video
+              class="bq-image-text__vc-video-el"
+              playsinline
+              autoplay
+              loop="loop"
+              muted="muted"
+              preload="metadata"
+              {% if vid.preview_image != blank %}poster="{{ vid.preview_image | image_url: width: 1100 }}"{% endif %}
+              aria-label="{{ image_alt | escape }}"
+            >
+              {%- for vsource in vid.sources -%}
+                <source src="{{ vsource.url }}" type="{{ vsource.mime_type }}">
+              {%- endfor -%}
+            </video>
+          {%- elsif section.settings.image != blank -%}
+            {{ section.settings.image
+               | image_url: width: 1200
+               | image_tag:
+                   class: 'bq-image-text__vc-video-el',
+                   widths: '400, 600, 900, 1200',
+                   sizes: '(min-width: 768px) 800px, 100vw',
+                   loading: 'lazy',
+                   alt: image_alt
+            }}
+          {%- else -%}
+            <div class="bq-image-text__vc-video-el bq-image-text__image--placeholder" aria-hidden="true">
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
             </div>
           {%- endif -%}
-        {%- endfor -%}
+        </div>
 
-        {%- if list != blank -%}
-          <div class="bq-image-text__list">{{ list }}</div>
-        {%- endif -%}
-
-        {%- if closing != blank -%}
-          <div class="bq-image-text__closing">{{ closing }}</div>
-        {%- endif -%}
-
-        {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
-          <a class="bq-image-text__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
-        {%- endif -%}
-
-        {%- if trust_blocks.size > 0 -%}
-          <div class="bq-image-text__trust">
-            {%- for block in trust_blocks -%}
+        {%- if feature_icon_blocks.size > 0 -%}
+          <div class="bq-image-text__feat-icons" data-aos="fade-up">
+            {%- for block in feature_icon_blocks -%}
               {%- if block.settings.label != blank -%}
-                <div class="bq-image-text__trust-item" {{ block.shopify_attributes }}>
-                  <span class="bq-check" aria-hidden="true">
-                    <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <div class="bq-image-text__feat-icon" {{ block.shopify_attributes }}>
+                  <span class="bq-feat-check" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                      <circle cx="7" cy="7" r="7" fill="#2ED215"/>
+                      <path d="M10.8883 4.0835L5.54103 9.43072L3.11047 7.00016" stroke="white" stroke-width="0.833333" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                   </span>
                   <p>{{ block.settings.label }}</p>
@@ -155,7 +127,102 @@
           </div>
         {%- endif -%}
       </div>
-    </div>
+
+    {%- else -%}
+
+      {%- comment -%}Standard side-by-side layouts: image_right / image_left{%- endcomment -%}
+      {%- if heading != blank -%}
+        <div class="bq-image-text__top-header" data-aos="fade-up">
+          <h2 class="bq-image-text__h2">{{ heading }}</h2>
+        </div>
+      {%- endif -%}
+      <div class="bq-image-text__row">
+        <div class="bq-image-text__photo" data-aos="fade-up">
+          {%- if section.settings.video != blank -%}
+            {%- assign vid = section.settings.video -%}
+            <video
+              class="bq-image-text__video"
+              playsinline
+              autoplay
+              loop="loop"
+              muted="muted"
+              preload="metadata"
+              {% if vid.preview_image != blank %}poster="{{ vid.preview_image | image_url: width: 1100 }}"{% endif %}
+              aria-label="{{ image_alt | escape }}"
+            >
+              {%- for vsource in vid.sources -%}
+                <source src="{{ vsource.url }}" type="{{ vsource.mime_type }}">
+              {%- endfor -%}
+              {%- if vid.preview_image != blank -%}
+                {{ vid.preview_image | image_url: width: 1100 | image_tag: class: 'bq-image-text__image', widths: '600,900,1100', loading: 'lazy', alt: image_alt }}
+              {%- endif -%}
+            </video>
+          {%- elsif section.settings.image != blank -%}
+            {{ section.settings.image
+               | image_url: width: 1200
+               | image_tag:
+                   class: 'bq-image-text__image',
+                   widths: '400, 600, 900, 1200',
+                   sizes: '(min-width: 768px) 40vw, 100vw',
+                   loading: 'lazy',
+                   alt: image_alt
+            }}
+          {%- else -%}
+            <div class="bq-image-text__image bq-image-text__image--placeholder" aria-hidden="true">
+              {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+          {%- endif -%}
+        </div>
+
+        <div class="bq-image-text__content" data-aos="fade-up">
+          {%- if subheading != blank -%}
+            <h3 class="bq-image-text__subtitle">{{ subheading }}</h3>
+          {%- endif -%}
+
+          {%- if intro != blank -%}
+            <div class="bq-image-text__intro">{{ intro }}</div>
+          {%- endif -%}
+
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'paragraph' and block.settings.text != blank -%}
+              <div class="bq-image-text__paragraph" {{ block.shopify_attributes }}>
+                {{ block.settings.text | replace: '%brand%', brand | replace: '%product%', product }}
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+
+          {%- if list != blank -%}
+            <div class="bq-image-text__list">{{ list }}</div>
+          {%- endif -%}
+
+          {%- if closing != blank -%}
+            <div class="bq-image-text__closing">{{ closing }}</div>
+          {%- endif -%}
+
+          {%- if section.settings.cta_label != blank and section.settings.cta_link != blank -%}
+            <a class="bq-image-text__cta" href="{{ section.settings.cta_link }}">{{ section.settings.cta_label }}</a>
+          {%- endif -%}
+
+          {%- if trust_blocks.size > 0 -%}
+            <div class="bq-image-text__trust">
+              {%- for block in trust_blocks -%}
+                {%- if block.settings.label != blank -%}
+                  <div class="bq-image-text__trust-item" {{ block.shopify_attributes }}>
+                    <span class="bq-check" aria-hidden="true">
+                      <svg viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 5L4.5 8.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </span>
+                    <p>{{ block.settings.label }}</p>
+                  </div>
+                {%- endif -%}
+              {%- endfor -%}
+            </div>
+          {%- endif -%}
+        </div>
+      </div>
+
+    {%- endif -%}
   </div>
 </section>
 
@@ -187,8 +254,9 @@
     {
       "type": "select", "id": "layout", "label": "Image position", "default": "image_right",
       "options": [
-        { "value": "image_right", "label": "Image right, text left" },
-        { "value": "image_left",  "label": "Image left, text right" }
+        { "value": "image_right",    "label": "Image right, text left" },
+        { "value": "image_left",     "label": "Image left, text right" },
+        { "value": "video_centered", "label": "Video centered (§12 precision)" }
       ]
     },
     { "type": "header", "content": "Style" },
@@ -211,6 +279,13 @@
       "name": "Trust item",
       "settings": [
         { "type": "text", "id": "label", "label": "Label" }
+      ]
+    },
+    {
+      "type": "feature_icon",
+      "name": "Feature icon",
+      "settings": [
+        { "type": "text", "id": "label", "label": "Label", "info": "Short noun phrase (e.g. 'Diodi LED di grado medico')" }
       ]
     }
   ],

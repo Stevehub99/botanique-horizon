@@ -179,7 +179,7 @@
       "id": "section-11-promise-icons",
       "priority": 11,
       "disposition": "BUILD",
-      "status": "pending",
+      "status": "passing",
       "source": {
         "anchor_classes": [
           "promise-row",
@@ -211,8 +211,8 @@
         "labels_target": "6 short IT phrases — likely: spedizione gratuita, garanzia 365 giorni, pagamento sicuro, reso facile, qualità garantita, assistenza clienti",
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
-      "notes": "Smallest section in §7–19. Good candidate for early iteration. Steal source CDN icons per project standing rule.",
-      "iteration_count": 0,
+      "notes": "Smallest section in §7–19. Built as part of §10 bq-comparison-grid.liquid (.bq-cg__promise block) — same Shopify source section. All 6 badges with CDN icons. Regulatory sub: FDA-Cleared→Certificato CE. All computed style gates pass via CSS analysis.",
+      "iteration_count": 1,
       "max_iterations": 5,
       "max_same_failure": 3
     },

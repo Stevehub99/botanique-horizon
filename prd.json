@@ -21,7 +21,8 @@
           "inline in rendered.html"
         ],
         "crop": "source/crops/section-08-science-stats-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "section with title/subtitle (likely empty in source HTML), 4 stat boxes each with h3 (big %), h4>p (headline phrase), p (mechanism explanation), AOS fade-down/fade-up reveals, dark-bg variant inline style #fff text"
+        "expected_dom": "section with title/subtitle (likely empty in source HTML), 4 stat boxes each with h3 (big %), h4>p (headline phrase), p (mechanism explanation), AOS fade-down/fade-up reveals, dark-bg variant inline style #fff text",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -33,7 +34,11 @@
           "h4 font-size, color (white per inline #fff override)",
           "background-color or background-image"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "rules_ref": "CLAUDE.md Italian copy rules + project-level rules",
@@ -48,7 +53,7 @@
         "stat_mechanisms_target": "single short sentence per stat explaining the mechanism (microcorrente, luce rossa, etc.); accurate to source claims"
       },
       "notes": "Verify whether \u00a718 is a literal duplicate of \u00a77 or a near-duplicate (different copy, same shell). If literal duplicate, \u00a718 disposition becomes DUPLICATE-OF and references this story. Decide during inventory. BLOCKER: CSS fixes committed (font-weight:700 + buy-block checkmark centering) but push/screenshot blocked by expired Shopify CLI auth. User must: (1) run `shopify auth login` (2) run `shopify theme push --unpublished --store=a9iz0x-ip.myshopify.com` (3) restart `shopify theme dev`. After push+auth, re-run iteration to capture screenshots and mark passing.",
-      "iteration_count": 5,
+      "iteration_count": 6,
       "max_iterations": 5,
       "max_same_failure": 3
     },
@@ -69,7 +74,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-09-medical-grade-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "dark-bg section with background-image, h2 with strong-emphasis, paragraph with NASA/FDA framing, checkmark bullet list of credentials"
+        "expected_dom": "dark-bg section with background-image, h2 with strong-emphasis, paragraph with NASA/FDA framing, checkmark bullet list of credentials",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -80,7 +86,11 @@
           "h2 font-size, font-weight (strong-emphasis on subset)",
           "checkmark bullet style if present"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "regulatory_substitution_required": true,
@@ -110,7 +120,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-10-how-to-use-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "pink-background section with 3 columns (or 3 stacked rows on mobile), each with usage image + step number + step title + step description"
+        "expected_dom": "pink-background section with 3 columns (or 3 stacked rows on mobile), each with usage image + step number + step title + step description",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -121,7 +132,11 @@
           "step number styling",
           "image aspect ratio per step"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [],
@@ -149,7 +164,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-11-comparison-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "table or grid with columns for product vs other treatments (creams / filler / surgery), rows for criteria (price, results, downtime, safety, etc.), checkmark/cross icons per cell"
+        "expected_dom": "table or grid with columns for product vs other treatments (creams / filler / surgery), rows for criteria (price, results, downtime, safety, etc.), checkmark/cross icons per cell",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -160,7 +176,11 @@
           "header row styling (highlighted product column)",
           "responsive behavior on mobile (likely horizontal scroll OR stacked rows)"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [
@@ -191,7 +211,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-12-promise-icons-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "single row with 6 icon+label items; likely flex-row on desktop, 3x2 grid or 2x3 on mobile"
+        "expected_dom": "single row with 6 icon+label items; likely flex-row on desktop, 3x2 grid or 2x3 on mobile",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.02,
@@ -201,7 +222,11 @@
           "icon size (likely 32-48px)",
           "label font-size and color"
         ],
-        "vision_judge": "optional"
+        "vision_judge": {
+          "required": false,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": "probe_diff below threshold AND no computed_style failures"
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [
@@ -232,7 +257,8 @@
         ],
         "crop": "source/crops/section-13-precision-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "image-text family pattern with VIDEO instead of image (autoplay/loop/muted/playsinline), dark-bg variant, h3 + paragraph + 4 feature icons grid below",
-        "family_reference": "Sections 3, 4, 5 closed instances; section 4 already has video support in schema (priority over image)"
+        "family_reference": "Sections 3, 4, 5 closed instances; section 4 already has video support in schema (priority over image)",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -242,7 +268,11 @@
           "dark-bg variant background-color",
           "feature icons grid layout"
         ],
-        "vision_judge": "required",
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        },
         "schema_accretion_check": "if dark-bg variant requires new schema field, add it; otherwise configure existing fields"
       },
       "italian_copy": {
@@ -271,7 +301,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-14-urgency-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "single-row dark-bg band with headline + sub-copy + possibly a countdown timer or stock indicator"
+        "expected_dom": "single-row dark-bg band with headline + sub-copy + possibly a countdown timer or stock indicator",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.02,
@@ -281,7 +312,11 @@
           "section padding (likely tight, e.g., 20-30px vertical)",
           "headline font-size and color"
         ],
-        "vision_judge": "optional"
+        "vision_judge": {
+          "required": false,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": "probe_diff below threshold AND no computed_style failures"
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [],
@@ -292,6 +327,45 @@
       "iteration_count": 6,
       "max_iterations": 5,
       "max_same_failure": 3
+    },
+    {
+      "id": "section-13b-here-is-the-problem",
+      "priority": 13.5,
+      "disposition": "BUILD",
+      "status": "pending",
+      "iteration_count": 0,
+      "max_iterations": 5,
+      "max_same_failure": 3,
+      "source": {
+        "anchor_text": "Nothing worked long-term",
+        "search_strategy": "grep 'Nothing worked' source/rendered.html OR look at the section between bq-image-text founder-pt3 instance and bq-tech-specs",
+        "expected_dom": "text-only narrative block (paragraph, h4 callout, paragraph, h4 callout, final paragraph) between founder-pt3 (I-Tried-Everything) and bq-tech-specs",
+        "images": []
+      },
+      "section_order_position": {
+        "after": "section-15-founder-story",
+        "before": "section-16-tech-specs"
+      },
+      "acceptance": {
+        "probe_diff_threshold": 0.025,
+        "liquid_validation": true,
+        "computed_style_match": [
+          "paragraph font-size and line-height",
+          "h4 callout font-weight and color",
+          "section padding and margin"
+        ],
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
+      },
+      "italian_copy": {
+        "rules_ref": "CLAUDE.md Italian copy + Founder identity",
+        "paraphrase_strategy": "1:1 narrative beat, US-specific references swapped for IT equivalents, Tu form, sentence case h3+",
+        "preconfirmed_claims": []
+      },
+      "notes": "Missing section the overnight loop skipped. Sits between founder-pt3 (last instance of bq-image-text founder family) and bq-tech-specs in source DOM. Build as singleton bq-here-is-problem.liquid with all text exposed via schema settings."
     },
     {
       "id": "section-14-testimonials",
@@ -309,7 +383,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-15-testimonials-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per \u00a71 precedent), verified badge (Twitter blue per locked decision)"
+        "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per \u00a71 precedent), verified badge (Twitter blue per locked decision)",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -320,7 +395,11 @@
           "verified badge color (Twitter blue #1DA1F2 \u2014 locked)",
           "carousel behavior if present (autoplay, loop, dots)"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [],
@@ -354,7 +433,8 @@
         ],
         "crop": "source/crops/section-16-founder-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "5 image-text family instances back-to-back. Configure 5 instances of bq-image-text consecutively in templates/index.json. Per HANDOFF: do NOT build a wrapper.",
-        "family_reference": "use existing bq-image-text.liquid; no schema changes expected"
+        "family_reference": "use existing bq-image-text.liquid; no schema changes expected",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -364,7 +444,11 @@
           "section spacing between consecutive instances",
           "narrative continuity (each pt is a story beat)"
         ],
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "preconfirmed_claims": [],
@@ -393,7 +477,8 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-17-tech-specs-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "dark-bg section with title + 4 badge-style spec items in grid (icon + label + value)"
+        "expected_dom": "dark-bg section with title + 4 badge-style spec items in grid (icon + label + value)",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -403,7 +488,11 @@
           "4-column grid desktop, 2x2 or stack mobile",
           "badge icon size and styling"
         ],
-        "vision_judge": "optional"
+        "vision_judge": {
+          "required": false,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": "probe_diff below threshold AND no computed_style failures"
+        }
       },
       "italian_copy": {
         "regulatory_substitution_required": true,
@@ -433,7 +522,8 @@
           "inline in rendered.html"
         ],
         "crop": "source/crops/section-18-buy-block-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "pink gradient bg, product image, variant selector (color/size), price display, qty selector, primary CTA, trust row below, possibly scroll-pinned reveal animation"
+        "expected_dom": "pink gradient bg, product image, variant selector (color/size), price display, qty selector, primary CTA, trust row below, possibly scroll-pinned reveal animation",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.04,
@@ -444,7 +534,11 @@
           "CTA button styling (square corners, black bg per project pattern)",
           "scroll-pinned reveal behavior (if present in source)"
         ],
-        "vision_judge": "required",
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        },
         "stub_data_acceptable": true
       },
       "italian_copy": {
@@ -476,12 +570,17 @@
         "css_files": [
           "source/css/external-00-base.css lines 8852\u20138873 (.reduction-puffines-id overrides)"
         ],
-        "expected_dom": "Same 4 stat boxes as \u00a77 (same numbers/headlines) but: dark background, NO title/subtitle, NO mechanism text (empty p), vertical divider lines between boxes via :before pseudo-elements. padding-top:30px; padding-bottom:30px."
+        "expected_dom": "Same 4 stat boxes as \u00a77 (same numbers/headlines) but: dark background, NO title/subtitle, NO mechanism text (empty p), vertical divider lines between boxes via :before pseudo-elements. padding-top:30px; padding-bottom:30px.",
+        "images": []
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
         "liquid_validation": true,
-        "vision_judge": "required"
+        "vision_judge": {
+          "required": true,
+          "fallback_when_probe_diff_unavailable": true,
+          "skip_when": null
+        }
       },
       "italian_copy": {
         "numbers": "91% / 87% / 35% / 94% (same as \u00a77)",
@@ -505,7 +604,8 @@
           "reviews-app",
           "judge-me-widget"
         ],
-        "search_strategy": "source uses AliReviews per project knowledge. Locate the app's mount point in rendered.html for placeholder positioning."
+        "search_strategy": "source uses AliReviews per project knowledge. Locate the app's mount point in rendered.html for placeholder positioning.",
+        "images": []
       },
       "acceptance": {
         "agent_action": "leave placeholder block in templates/index.json with comment 'App install slot for reviews \u2014 Judge.me / Loox / Yotpo / Stamped (TBD)'. Do NOT build a custom reviews section. Mark story deferred-app-install."

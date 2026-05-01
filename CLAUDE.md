@@ -140,3 +140,37 @@ When probe-diff or vision judge surfaces these, treat as expected, not failures:
 - Not a screenshot-driven build. Inventories drive builds. Diffs gate verification.
 - Not optimizing for cross-project section reuse. Block schemas are designed only for what we observe in this build. Future Botanique-style clones are fresh builds that reference this site as a template, not a library.
 - Not a literal translation project. Italian is generated fresh from rules, not translated.
+
+## Hardened rules acknowledgement (added 2026-05-01)
+
+This project's loop now operates under the hardened generic rules added to `~/clone-pipeline/CLAUDE.md`:
+
+- **G-1**: prove-changes gate (git diff required before marking passing)
+- **G-2**: auth/infra failure = immediate `blocked-needs-human` (no grinding)
+- **G-3**: vision_judge runs unconditionally when probe_diff unavailable
+
+These rules override prior project-specific instructions where they conflict.
+
+### Project-specific image classification (added 2026-05-01)
+
+For Botanique specifically, every section iteration must classify each `<img>` and `<video>` reference at inventory time. Acceptable types and required actions:
+
+| Type | Description | Required action |
+|---|---|---|
+| `PRODUCT` | Product photography (the device itself, packaging, product-on-white) | placeholder SVG; defer to Phase 2 asset audit |
+| `UGC` | User/customer photography, founder portrait, lifestyle photo with model's face | placeholder SVG; defer to Phase 2 |
+| `BURNED-IN-TEXT` | Image with rendered text inside it (badges, before/after labels, FAQ collages) | regenerate with our copy via Phase 2; placeholder SVG meanwhile |
+| `DECORATIVE` | Generic illustration, abstract pattern, dashed line, gradient, icon | source CDN steal allowed |
+| `STOCK-LIFESTYLE` | Generic stock-style imagery (no identifiable person, generic skincare context) | placeholder SVG; defer to Phase 2 |
+
+When in doubt between `DECORATIVE` and any other class: choose the other class. False placeholders are recoverable; false CDN steals are project rule violations.
+
+### §13b story added 2026-05-01
+
+A new story `section-13b-here-is-the-problem` was added to prd.json. It sits between §15 founder-story and §16 tech-specs in source DOM order. Build as singleton `bq-here-is-problem.liquid` with ALL text exposed via schema settings (no hardcoded copy in Liquid). Italian copy: 1:1 narrative beat from source, US-specific references swapped for IT equivalents.
+
+### Brand name substitution rule (added 2026-05-01)
+
+If source copy contains the source brand name ("Botanique Paris", "Botanique", "Botaniqueparis", etc.) anywhere — headlines, body copy, comparison grid, image alt text — substitute with `{{ section.settings.product_name_token | default: 'Il Nostro Dispositivo' }}` (or block-level equivalent). Never hardcode the source brand. Never invent a new brand name (e.g., "Lumière Paris" was an invention violation in §12 and §15 — these are forbidden).
+
+When source copy has no brand reference (just generic product/category language): no substitution needed; render as-is in Italian.

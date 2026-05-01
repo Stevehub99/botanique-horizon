@@ -16,3 +16,4 @@
 [2026-04-30T16:38:00Z] test-product-created handle=il-nostro-dispositivo gid=gid://shopify/Product/15395274850644
 [2026-04-30T17:00:00Z] section-07-science-stats PASSED iter=2. Notes: Status already passing (built in d91db2f); prd.json status corrected to passing; no code changes needed.
 [2026-05-01T08:25:00Z] section-07-science-stats BLOCKED iter=5. CSS fixes committed: (1) bq-science-stats.css font-weight 400→700 on .bq-ss__heading; (2) bq-buy-block.css trust-row ::before top:1px→top:0;bottom:0;margin:auto. Push blocked: Shopify CLI auth expired (theme dev token ~5d old). Blocker: user must `shopify auth login` then push + restart dev server. Fixes are in working tree, verified logically correct.
+[2026-05-01T09:45:00Z] section-08-medical-grade-fda PASSED iter=2. Notes: Fixed bullet-wrapping regression: li→display:flex + .bq-mfda__icon (flex-shrink:0) + .bq-mfda__text (flex:1); strong:inline confirmed; all 5 items label+dash+desc in same flow. Vision APPROVE.

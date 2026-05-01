@@ -52,18 +52,36 @@
 }
 
 .bq-mfda__list ul li {
-  position: relative;
+  display: flex;
+  align-items: flex-start;
   list-style: none !important;
-  padding-left: 30px !important;
+  padding-left: 0 !important;
   margin-bottom: 15px;
   font-size: 20px;
   font-family: var(--bq-font-sans, sans-serif);
   color: #000;
+  line-height: 1.4;
+}
+
+.bq-mfda__icon {
+  flex-shrink: 0;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  margin-top: 2px;
   background-image: url(//botaniqueparis.com/cdn/shop/files/Group_48095911.svg?v=1760621385);
   background-repeat: no-repeat;
   background-size: 25px;
-  background-position: left top;
-  line-height: 1.4;
+}
+
+.bq-mfda__text {
+  flex: 1;
+  min-width: 0;
+}
+
+.bq-mfda__text strong {
+  font-weight: 700;
 }
 
 @media (max-width: 749px) {

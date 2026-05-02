@@ -503,12 +503,14 @@
       "disposition": "BUILD",
       "status": "passing",
       "source": {
+        "anchor_text": "magic-revital-eyess",
         "anchor_classes": [
-          "tech-specs",
-          "spec-box",
-          "specs-section"
+          "magic-revital-eyess",
+          "second-group-class",
+          "main-list-class",
+          "multi-line-icons"
         ],
-        "search_strategy": "grep for dark-bg box with 4 badge icons (likely battery, wireless, weight, materials)",
+        "search_strategy": "grep for magic-revital-eyess class in rendered.html; section has dark-bg card (second-group-class) + badge grid (main-list-class multi-line-icons)",
         "css_files": [
           "source/css/external-00-base.css"
         ],

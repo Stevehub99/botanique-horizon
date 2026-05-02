@@ -490,13 +490,6 @@ These rules emerged from Section 6's polish-spiral. Apply throughout subsequent 
 3. Push back early. 2-3 attempts that feel wrong = say so immediately.
 4. One issue per message when possible.
 5. Trust your eye over Claude's data when they conflict.
-<!--
-APPEND THIS BLOCK TO THE EXISTING HANDOFF.md.
-
-Add it at the top (after the file header / purpose section, before the existing 2026-04-25 and 2026-04-27 blocks). HANDOFF.md is reverse-chronological — newest entries first.
-
-Do NOT replace existing content. Insert only.
--->
 
 # HANDOFF — start of autonomous-loop era 2026-04-29
 

@@ -1,3 +1,232 @@
+# HANDOFF — 2026-05-01 end of session
+
+## Purpose
+
+This block hands the Botanique clone build to the next chat session cleanly. It captures the system rewrite that just happened, the role split that was agreed, every lesson learned from this session's failures, and what the next chat should do first.
+
+Read top to bottom. Do not skip.
+
+---
+
+## Current state of Botanique build
+
+### Sections status (as of 2026-05-01 end of session)
+
+All 13 stories §7–§19 went through the autonomous loop. Status before system rewrite:
+
+- §7 science-stats: blocked-needs-human iter 6 — headline weight fixed, checkmark-alignment finding was misattributed to §6 (corrected).
+- §8 medical-grade-fda: passing iter 3 — bullet flex wrap fixed; remaining wrap is IT copy length residual.
+- §9 how-to-use: passing iter 2 — but PDF review surfaced unfixed regressions: source UGC images used (project rule violation), dashed-line z-index wrong, subtitle too small, background color wrong.
+- §10 comparison-grid: passing iter 1 — but possibly has hardcoded "Botanique Paris" brand name to verify.
+- §11 promise-icons: passing iter 2 — content built inline within §10 per agent's interpretation; verify.
+- §12 precision-engineering: passing iter 2 — but PDF review: fake brand "Lumière Paris" in headline (forbidden invention), headline weight too light, video field too small, trust-row font too small.
+- §13 urgency-banner: passing iter 6 — wrapper fix landed but PDF review surfaced source UGC photo violation and CTA text alignment.
+- §13b here-is-the-problem: pending iter 0 — added to prd.json after audit, never built.
+- §14 testimonials: passing iter 2 — but PDF review: headline color wrong (pink should be black), bullet col, bullet icon, background gray when should be white.
+- §15 founder-story: passing iter 2 — five image-text instances; PDF review: source founder photo used, fake "Lumière Paris", image dims wrong, bullet style wrong.
+- §16 tech-specs: passing after manual 16→18 patch and inner max-width patch — but full diff against source surfaced more mismatches: section padding 80px should be 20px, ul padding-left 20px should be 30px.
+- §17 buy-block: passing-with-stubs iter 2 — should be replaced with native Horizon `featured-product.liquid` + style overrides; deferred until products configured (test product `il-nostro-dispositivo` gid 15395274850644 created 2026-04-30).
+- §18 stats-bar-repeat: passing iter 2 — duplicates §7's content; verify after §7 fix.
+- §19 reviews: deferred-app-install — user installs Judge.me/Loox/Yotpo themselves later.
+
+### What "passing" means right now
+
+Under the OLD acceptance gates, "passing" meant: liquid_validation passed, probe-diff was absent so silently skipped, vision-judge was optional so didn't run, computed-style match was a curated subset. All twelve sections that say "passing" pass this weak bar. Several have real regressions invisible to those gates.
+
+Under the NEW gates (from system rewrite this session), "passing" means: complete extracted source rules → applied verbatim to our CSS → diff against our build's computed styles is empty or only pre-classified residuals. The next chat should re-run every "passing" section under the new gates. Sections that re-pass are genuinely done; sections that fail surface what was always wrong.
+
+---
+
+## System rewrite — applied 2026-05-01 end of session
+
+`~/clone-pipeline/CLAUDE.md`, `~/clone-pipeline/prompts/section-build.md`, `~/clone-pipeline/ralph.sh`, and two new helper scripts (`~/clone-pipeline/lib/extract-source-rules.sh`, `~/clone-pipeline/lib/diff-section.sh`) were rewritten/added in one bash applier (`~/clone-pipeline/apply-system-rewrite.sh`). Project-side: `prd.json`, project `CLAUDE.md`, and `templates/index.json` ordering may have been touched by re-runs.
+
+The new system enforces three things the old system didn't:
+
+### 1. Inventory is exhaustive, not curated
+
+Phase 1 of every iteration runs `extract-source-rules.sh <story-id>`. That script grep-walks `source/css/` and `source/rendered.html` for every CSS rule that targets the section's selectors (and inherited rules from parents/body). Output is a complete property table at `inventories/<story-id>-source-rules.json`. Agent does NOT write the inventory in prose anymore; the script produces structured data. Agent reads it.
+
+If the script can't extract source rules (selector not found, file missing), iteration sets `blocked-needs-human` and exits. No silent passes when input data is missing.
+
+### 2. Build phase forbids token defaulting when source has a value
+
+New rule in CLAUDE.md: when the source-rules table has a property value, our CSS must apply that exact value. No `var(--bq-fs-body)` defaulting. No "what looks reasonable." Tokens are only used when source genuinely has no value (rare).
+
+Agent must show a git diff before marking passing where every property in the source-rules table appears in the relevant CSS file with its exact source value (or with a residual flag for font-substitution / asset-host / copy-length differences).
+
+### 3. Verify phase runs a complete diff, not a checklist
+
+Phase 5 runs `diff-section.sh <story-id>`. That script:
+- Loads the source-rules table
+- Renders our dev preview via Playwright at desktop (1440) and mobile (390)
+- Runs `getComputedStyle()` on every selector in the table
+- Diffs each property's computed value against the source value
+- Returns either PASS (empty diff or residuals-only) or a structured mismatch list
+
+The vision-judge is now redundant for property mismatches (the diff catches them mechanically) and runs only as a sanity layer for compositional/structural concerns the property diff can't see.
+
+### 4. Goal restatement at iteration start
+
+Section-build prompt now leads with one line: *"Your acceptance criterion is: diff(source-rules, our-computed-styles) returns empty-or-residuals. If you cannot prove this diff, set blocked-needs-human and exit."*
+
+Anchors the agent to the goal regardless of intra-iteration drift.
+
+---
+
+## Role split (decided 2026-05-01)
+
+**Claude (decision maker):** decides what to build, in what order, how to verify, when to stop, when something is wrong, what changes to rules, what tradeoffs to make. Writes all artifacts (CLAUDE.md, prompts, scripts, prd.json updates). Does not offer "A or B?" choices on operational decisions — if X is correct, just does X.
+
+**User (executor / hands):** runs terminal commands Claude can't run, uploads files, clicks sync on GitHub connector, completes browser auth flows, tells Claude when dev preview output looks wrong on the rare cases where Claude genuinely can't see it. Does NOT do property-by-property visual reviews; the system catches that.
+
+If a future iteration of Claude reverts to "want me to do X?" or "A or B?" framing on operational decisions, that's a regression — push back.
+
+---
+
+## Decisions log (additions from this session)
+
+- 2026-04-30: Test product created on dev store (`il-nostro-dispositivo`, gid 15395274850644, 4 variants, 199€/299€ comparison pricing, no inventory allocated).
+- 2026-04-30: Asset generation deferred to Phase 2 (post-structural-clone). Frame: match category + vibe of source, NOT mistakable for source's identity. Tools planned: Flux 2 Pro for hero, Ideogram v3 for in-image text, Seedream Lite for batch. Estimated $5–20 per clone.
+- 2026-04-30: Schema discipline refactor deferred to Phase 3 (post-publish, before next clone). Botanique ships with hardcoded copy in Liquid; future clones get schema-portable sections after the refactor.
+- 2026-05-01: Hardened rules G-1, G-2, G-3 added to `~/clone-pipeline/CLAUDE.md` (prove-changes gate, auth=stop, vision-judge required when probe-diff unavailable). vision_judge field in prd.json restructured.
+- 2026-05-01: §13b "Here's The Problem" added to prd.json as missing story (priority 13.5, BUILD).
+- 2026-05-01: Brand substitution rule added to project CLAUDE.md — never invent brand names ("Lumière Paris" was a violation), substitute source brand with `product_name_token`.
+- 2026-05-01: Project-specific image classification table added — PRODUCT, UGC, BURNED-IN-TEXT, DECORATIVE, STOCK-LIFESTYLE — with required actions per type.
+- 2026-05-01: Native-first audit rule added — before custom-build, check `sections/` and `blocks/` for native primitives. Custom only when no native primitive matches structural job. (Caused §17 reinventing `featured-product.liquid`.)
+- 2026-05-01: System rewrite — Phase 1 exhaustive extraction, Phase 3 verbatim-apply, Phase 5 complete-diff, prompt leads with goal restatement. Two helper scripts added: `extract-source-rules.sh`, `diff-section.sh`.
+
+---
+
+## Lessons surfaced this session — to encode at next clone setup
+
+These are the failure modes from this build. The next clone's CLAUDE.md should bake these in from day one rather than learn them through failure:
+
+1. **Loop must be validated on one section before scaling.** Do not run overnight on all sections. Run §1 supervised, eyeball, find gate weaknesses, fix, then expand. We jumped to twelve and twelve all closed under broken gates simultaneously.
+
+2. **Inventory is the input contract.** Curated inventories produce curated builds. Inventory must be a mechanical extraction, not a prose summary. If the script can't extract a value, escalate; don't fill with defaults.
+
+3. **"Passing" must be defined as a binary diff against complete source rules.** Anything else admits silent regressions. Agent self-grading on a checklist is rubber-stamping in disguise.
+
+4. **The goal must be in front of every iteration, not just at project setup.** Single-line goal restatement at the top of the build prompt. Otherwise drift accumulates.
+
+5. **Auth/infrastructure failures are immediate stops, never retries.** Loop wasted 30 minutes grinding on expired Shopify auth before this rule was added.
+
+6. **Prefer native theme primitives. Custom-build only when no primitive fits.** Saves wiring effort, gives free upgrades, survives theme updates.
+
+7. **Apps are infrastructure, not sections to build.** Reviews, bundles, BNPL — all APP-INSTALL, never custom code.
+
+8. **Brand names: never invent, never preserve source's. Always tokenize.** "Lumière Paris" came from agent filling perceived gap creatively. Forbidden.
+
+9. **Image classification at inventory time, not build time.** PRODUCT/UGC/etc. labels live in prd.json's `images` array, set when the story is authored, not decided by the agent during build.
+
+10. **The PDF review pattern is good and should continue.** User looks at finished output, lists every regression in one document. Better than per-section feedback. But the goal of the system rewrite is to make even the PDF review surface fewer issues over time.
+
+---
+
+## Next chat — first three actions
+
+The next session should pick up here:
+
+### Action 1 — Sync project knowledge
+
+User clicks "Update" on the GitHub connector to pull latest. Confirm sync completed before doing anything else.
+
+### Action 2 — Read three files
+
+- `HANDOFF.md` (this file, top of file = newest entry, scan all 2026-04-29 onward)
+- `TODO.md` (deferred Phase 2 / Phase 3 / Phase 4 work, open questions)
+- `~/clone-pipeline/CLAUDE.md` (the rewritten generic — confirm the new Phase 1/3/5 rules are present)
+
+If any of those files are missing from project knowledge, sync didn't work. Tell user; have them re-sync.
+
+### Action 3 — Verify the system rewrite landed correctly
+
+Run a probe iteration on one previously-"passing" section to verify the new gates actually catch what they should:
+
+```
+cd ~/botanique-clone-build/botanique-horizon && \
+~/clone-pipeline/ralph.sh --only section-16-tech-specs --diff-mode --debug
+```
+
+Expected outcome: agent runs `extract-source-rules.sh`, produces complete property table, runs `diff-section.sh`, surfaces the section-padding 80→20 mismatch and the ul padding-left 20→30 mismatch as real regressions. Marks the story `pending` for the new gates, fixes both, re-diffs, passes.
+
+If the probe iteration produces something other than that, the system rewrite has a bug. Diagnose before running on remaining sections.
+
+### Action 4 — Run all twelve sections through the new pipeline
+
+Once the probe confirms gates work:
+
+```
+cd ~/botanique-clone-build/botanique-horizon && \
+~/clone-pipeline/ralph.sh --recheck-all-passing
+```
+
+This re-marks every "passing" story as "pending-recheck" and runs the loop on each, applying the new diff-mode gates. Expected outcome: 4–8 sections actually re-pass, the rest surface real mismatches and re-iterate. Total runtime: 3–6 hours unattended.
+
+User checks `progress.txt` periodically; intervenes only when the loop sets `blocked-needs-human`.
+
+### Action 5 — Then handle deferred work in this order
+
+After all sections pass under new gates:
+
+1. §13b new section build (still pending in prd.json; new gates apply).
+2. CTA caps audit and `templates/index.json` ordering (manual one-shots, not loop).
+3. §17 native `featured-product.liquid` swap (test product exists, structural work in loop, admin config in user's hands).
+4. Phase 2 asset audit (deferred — see TODO.md).
+5. §19 reviews app install (user picks app, installs).
+6. Final visual review by user → publish.
+
+---
+
+## Open blockers / things to escalate
+
+- **§7 still flagged blocked-needs-human iter 6.** Headline weight is fixed; checkmark alignment was misattributed to §6 not §7. Mark §7 passing, retest under new gates. The actual §6 checkmark issue should be addressed if it surfaces in the recheck.
+
+- **§16 has been hand-patched twice (16→18 font, max-width 1300px on inner).** New diff may surface that those patches were either correct, partially correct, or stepped on something. Recheck will sort it.
+
+- **§17 is `passing-with-stubs`.** Architecturally wrong (custom build instead of native featured-product). Should be rebuilt, not just style-fixed. Defer until after recheck pass.
+
+- **§19 deferred-app-install.** User picks app outside loop.
+
+- **No CLI text-only computed-style probe currently exists.** `diff-section.sh` uses Playwright on dev preview. If `shopify theme dev` isn't running, diff fails. Loop should detect this and set blocked-needs-human (rule G-2 covers auth, this would extend to dev-server-down).
+
+---
+
+## Files to read for full context
+
+In project knowledge after sync:
+
+- `HANDOFF.md` — this file, plus prior entries (2026-04-29 system adoption, 2026-04-25 onward §1-§6 closes)
+- `PROJECT.md` — long-form project history, decisions log
+- `TODO.md` — deferred Phase 2/3/4 work
+- `prd.json` — section dispositions, statuses, acceptance criteria
+- `CLAUDE.md` (project) — locked decisions, IT copy rules, regulatory substitution table, image classification table, brand substitution rule
+- `~/clone-pipeline/CLAUDE.md` (generic) — master autonomy rules including G-1, G-2, G-3, system-rewrite Phase 1/3/5 rules
+- `~/clone-pipeline/prompts/section-build.md` — iteration prompt template with goal-restatement leader
+- `~/clone-pipeline/lib/extract-source-rules.sh` — exhaustive CSS extraction script
+- `~/clone-pipeline/lib/diff-section.sh` — complete diff oracle
+- `inventories/section-NN-*.md` — per-section inventories (legacy curated format for §1-§6; new structured `-source-rules.json` for §7+ after rewrite)
+- `progress.txt` — cross-iteration learnings, full history
+
+---
+
+## What this session got right
+
+For the record, since the post-mortem above is mostly failures:
+
+- Recognized the autonomous-loop pattern as the right shape for multi-clone work.
+- Built the generic `~/clone-pipeline/` scaffold so the investment is reusable across clones, not just Botanique.
+- Captured the test product creation flow via Shopify Admin API (replicable for next clone).
+- Surfaced and codified ten lessons that will save time on the next clone, listed above.
+- Established the role split that makes Claude the decision maker and user the executor.
+- Wrote the system rewrite to make property-mismatch detection mechanical instead of human-eye dependent.
+
+The build isn't done. But the system that builds is meaningfully better than 48 hours ago, and it's the system that's the durable asset.
+
+---
+
+End 2026-05-01 entry. Next chat resumes from "Next chat — first three actions" above.
 # HANDOFF — end of session 2026-04-27
 
 ## Where we are

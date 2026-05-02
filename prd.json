@@ -2,7 +2,7 @@
   "project": "botanique-clone",
   "version": "1.0",
   "target_market": "IT",
-  "notes": "Sections 1–6 already closed. This prd governs §7–19 only. Stories sorted by build order (priority ascending = build first).",
+  "notes": "Sections 1\u20136 already closed. This prd governs \u00a77\u201319 only. Stories sorted by build order (priority ascending = build first).",
   "stories": [
     {
       "id": "section-07-science-stats",
@@ -48,14 +48,18 @@
           "35%",
           "94%"
         ],
-        "headline_pattern": "Science / The Science Behind <Product> — IT: 'La scienza dietro <product_name_token>' (sentence case as h3) OR title-case h2 if source uses h2",
-        "stat_headlines_target": "concise, parallel grammar across the 4 stats; mirror source persuasion beats; e.g., 'Riduzione delle borse', 'Sguardo più luminoso', 'Aumento del collagene', 'Pelle più tonica'",
+        "headline_pattern": "Science / The Science Behind <Product> \u2014 IT: 'La scienza dietro <product_name_token>' (sentence case as h3) OR title-case h2 if source uses h2",
+        "stat_headlines_target": "concise, parallel grammar across the 4 stats; mirror source persuasion beats; e.g., 'Riduzione delle borse', 'Sguardo pi\u00f9 luminoso', 'Aumento del collagene', 'Pelle pi\u00f9 tonica'",
         "stat_mechanisms_target": "single short sentence per stat explaining the mechanism (microcorrente, luce rossa, etc.); accurate to source claims"
       },
-      "notes": "Verify whether §18 is a literal duplicate of §7 or a near-duplicate (different copy, same shell). If literal duplicate, §18 disposition becomes DUPLICATE-OF and references this story. Decide during inventory. BLOCKER: CSS fixes committed (font-weight:700 + buy-block checkmark centering) but push/screenshot blocked by expired Shopify CLI auth. User must: (1) run `shopify auth login` (2) run `shopify theme push --unpublished --store=a9iz0x-ip.myshopify.com` (3) restart `shopify theme dev`. After push+auth, re-run iteration to capture screenshots and mark passing.",
+      "notes": "Verify whether \u00a718 is a literal duplicate of \u00a77 or a near-duplicate (different copy, same shell). If literal duplicate, \u00a718 disposition becomes DUPLICATE-OF and references this story. Decide during inventory. BLOCKER: CSS fixes committed (font-weight:700 + buy-block checkmark centering) but push/screenshot blocked by expired Shopify CLI auth. User must: (1) run `shopify auth login` (2) run `shopify theme push --unpublished --store=a9iz0x-ip.myshopify.com` (3) restart `shopify theme dev`. After push+auth, re-run iteration to capture screenshots and mark passing.",
       "iteration_count": 6,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-06-results-timeline",
+        "before": "section-08-medical-grade-fda"
+      }
     },
     {
       "id": "section-08-medical-grade-fda",
@@ -102,7 +106,11 @@
       "notes": "This section relies heavily on regulatory authority claims. ALL substitutions go through the table in CLAUDE.md. Do not invent claims.",
       "iteration_count": 3,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-07-science-stats",
+        "before": "section-09-how-to-use"
+      }
     },
     {
       "id": "section-09-how-to-use",
@@ -127,7 +135,7 @@
         "probe_diff_threshold": 0.025,
         "liquid_validation": true,
         "computed_style_match": [
-          "background color (pink strip ≈ #FFE4EA)",
+          "background color (pink strip \u2248 #FFE4EA)",
           "3-column grid desktop, 1-column or stack mobile",
           "step number styling",
           "image aspect ratio per step"
@@ -146,7 +154,11 @@
       "notes": "Usage images are placeholder SVGs per project standing rule (real assets deferred to Phase 2 audit).",
       "iteration_count": 2,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-08-medical-grade-fda",
+        "before": "section-10-comparison-grid"
+      }
     },
     {
       "id": "section-10-comparison-grid",
@@ -184,8 +196,8 @@
       },
       "italian_copy": {
         "preconfirmed_claims": [
-          "1.500€ filler",
-          "4.000€ surgery (locked from §2)"
+          "1.500\u20ac filler",
+          "4.000\u20ac surgery (locked from \u00a72)"
         ],
         "comparison_dimensions_target": "preserve source's persuasion structure: price, results timeline, downtime, side effects, sustainability of results. IT phrasing per skincare register.",
         "rules_ref": "CLAUDE.md Italian copy rules"
@@ -193,7 +205,11 @@
       "notes": "Mobile responsive behavior is the highest-risk technical detail here. Verify via Playwright at 390px before declaring done.",
       "iteration_count": 1,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-09-how-to-use",
+        "before": "section-11-promise-icons"
+      }
     },
     {
       "id": "section-11-promise-icons",
@@ -233,13 +249,17 @@
           "365-day guarantee",
           "express shipping"
         ],
-        "labels_target": "6 short IT phrases — likely: spedizione gratuita, garanzia 365 giorni, pagamento sicuro, reso facile, qualità garantita, assistenza clienti",
+        "labels_target": "6 short IT phrases \u2014 likely: spedizione gratuita, garanzia 365 giorni, pagamento sicuro, reso facile, qualit\u00e0 garantita, assistenza clienti",
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
-      "notes": "Smallest section in §7–19. Built as part of §10 bq-comparison-grid.liquid (.bq-cg__promise block) — same Shopify source section. All 6 badges with CDN icons. Regulatory sub: FDA-Cleared→Certificato CE. All computed style gates pass via CSS analysis.",
+      "notes": "Smallest section in \u00a77\u201319. Built as part of \u00a710 bq-comparison-grid.liquid (.bq-cg__promise block) \u2014 same Shopify source section. All 6 badges with CDN icons. Regulatory sub: FDA-Cleared\u2192Certificato CE. All computed style gates pass via CSS analysis.",
       "iteration_count": 2,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-10-comparison-grid",
+        "before": "section-12-precision-engineering"
+      }
     },
     {
       "id": "section-12-precision-engineering",
@@ -280,10 +300,14 @@
         "headline_target": "preserve source persuasion ('precision engineering' = 'Ingegneria di precisione' or similar IT calque); body about technology specifics; feature icons labels short and parallel",
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
-      "notes": "Configure as 4th instance of bq-image-text. Schema may need a feature_icons block list — extend by accretion only.",
+      "notes": "Configure as 4th instance of bq-image-text. Schema may need a feature_icons block list \u2014 extend by accretion only.",
       "iteration_count": 2,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-11-promise-icons",
+        "before": "section-13-urgency-banner"
+      }
     },
     {
       "id": "section-13-urgency-banner",
@@ -320,13 +344,17 @@
       },
       "italian_copy": {
         "preconfirmed_claims": [],
-        "headline_target": "IT urgency framing — avoid US 'flash sale' clichés; lean toward 'Disponibilità limitata' or 'Offerta valida fino al [date]' if source has a date; sentence case",
+        "headline_target": "IT urgency framing \u2014 avoid US 'flash sale' clich\u00e9s; lean toward 'Disponibilit\u00e0 limitata' or 'Offerta valida fino al [date]' if source has a date; sentence case",
         "rules_ref": "CLAUDE.md Italian copy rules; respect IT consumer-protection conventions (no fake urgency)"
       },
-      "notes": "Smoke-test candidate. Smallest reasonable section — good for the first supervised ralph run.",
+      "notes": "Smoke-test candidate. Smallest reasonable section \u2014 good for the first supervised ralph run.",
       "iteration_count": 6,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-12-precision-engineering",
+        "before": "section-14-testimonials"
+      }
     },
     {
       "id": "section-13b-here-is-the-problem",
@@ -383,7 +411,7 @@
           "source/css/external-00-base.css"
         ],
         "crop": "source/crops/section-15-testimonials-{desktop,mobile}.png (capture if missing)",
-        "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per §1 precedent), verified badge (Twitter blue per locked decision)",
+        "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per \u00a71 precedent), verified badge (Twitter blue per locked decision)",
         "images": []
       },
       "acceptance": {
@@ -391,8 +419,8 @@
         "liquid_validation": true,
         "computed_style_match": [
           "card background-color, border, border-radius",
-          "star color (pink per §1 precedent)",
-          "verified badge color (Twitter blue #1DA1F2 — locked)",
+          "star color (pink per \u00a71 precedent)",
+          "verified badge color (Twitter blue #1DA1F2 \u2014 locked)",
           "carousel behavior if present (autoplay, loop, dots)"
         ],
         "vision_judge": {
@@ -404,14 +432,18 @@
       "italian_copy": {
         "preconfirmed_claims": [],
         "fabricate_testimonials": true,
-        "fabrication_pattern": "match §1 hero testimonial pattern: 4-6 IT first names + IT cities, ages 28-58, brief lifestyle context (madre, professionista, ecc.), specific result framing tied to source's claimed benefits, all 5-star, all verified=true",
-        "fabrication_examples_from_§1": "Giulia (Milano, 42), Francesca (Roma, 51), Chiara (Torino, 38), etc. — pull pattern from sections/bq-hero.liquid testimonials",
+        "fabrication_pattern": "match \u00a71 hero testimonial pattern: 4-6 IT first names + IT cities, ages 28-58, brief lifestyle context (madre, professionista, ecc.), specific result framing tied to source's claimed benefits, all 5-star, all verified=true",
+        "fabrication_examples_from_\u00a71": "Giulia (Milano, 42), Francesca (Roma, 51), Chiara (Torino, 38), etc. \u2014 pull pattern from sections/bq-hero.liquid testimonials",
         "rules_ref": "CLAUDE.md Italian copy rules; testimonial fabrication is project-accepted practice"
       },
-      "notes": "Carousel behavior parity with §1 hero is critical. If §1 uses Slick/Swiper/vanilla, mirror. Source §14 uses single burned-in composite image (review-comment--items section, line 7213); replaced with 4 fabricated IT HTML cards in 2-col grid. Actual source anchor class: review-comment--items / ladies-are-saying (not PRD anchors).",
+      "notes": "Carousel behavior parity with \u00a71 hero is critical. If \u00a71 uses Slick/Swiper/vanilla, mirror. Source \u00a714 uses single burned-in composite image (review-comment--items section, line 7213); replaced with 4 fabricated IT HTML cards in 2-col grid. Actual source anchor class: review-comment--items / ladies-are-saying (not PRD anchors).",
       "iteration_count": 2,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-13-urgency-banner",
+        "before": "section-15-founder-story"
+      }
     },
     {
       "id": "section-15-founder-story",
@@ -427,7 +459,7 @@
           "founder-pt6",
           "founder-pt7"
         ],
-        "search_strategy": "grep 'founder-pt' source/rendered.html — 5 sequential instances (pt1, pt2, pt3, pt6, pt7; gaps at pt4, pt5 noted in HANDOFF)",
+        "search_strategy": "grep 'founder-pt' source/rendered.html \u2014 5 sequential instances (pt1, pt2, pt3, pt6, pt7; gaps at pt4, pt5 noted in HANDOFF)",
         "css_files": [
           "source/css/external-00-base.css"
         ],
@@ -452,14 +484,18 @@
       },
       "italian_copy": {
         "preconfirmed_claims": [],
-        "founder_identity_strategy": "copy 1:1 from source narrative; per CLAUDE.md, tweak only US-specific references → IT equivalents (cities, names, clinic names)",
+        "founder_identity_strategy": "copy 1:1 from source narrative; per CLAUDE.md, tweak only US-specific references \u2192 IT equivalents (cities, names, clinic names)",
         "five_beats_target": "preserve source's 5-beat arc; each pt a paragraph; first-person POV; emotional + factual balance per source",
-        "rules_ref": "CLAUDE.md Founder identity (§15) section"
+        "rules_ref": "CLAUDE.md Founder identity (\u00a715) section"
       },
-      "notes": "This is the largest single story by content volume. Allow extra time. Each of 5 instances is its own configuration in templates/index.json — but treat the 5 as one story for ralph purposes (one inventory, one localization pass, one verification pass).",
+      "notes": "This is the largest single story by content volume. Allow extra time. Each of 5 instances is its own configuration in templates/index.json \u2014 but treat the 5 as one story for ralph purposes (one inventory, one localization pass, one verification pass).",
       "iteration_count": 2,
       "max_iterations": 6,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-14-testimonials",
+        "before": "section-13b-here-is-the-problem"
+      }
     },
     {
       "id": "section-16-tech-specs",
@@ -501,9 +537,13 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
-      "iteration_count": 3,
+      "iteration_count": 4,
       "max_iterations": 5,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-13b-here-is-the-problem",
+        "before": "section-17-buy-block"
+      }
     },
     {
       "id": "section-17-buy-block",
@@ -546,14 +586,18 @@
           "365-day guarantee",
           "express shipping"
         ],
-        "cta_target": "primary CTA in IT — e.g., 'Acquista ora' or 'Ordina adesso'; lowercase per source convention; black bg + white text + square corners",
-        "trust_row_target": "preserve §1/§4 trust row pattern in IT",
-        "rules_ref": "CLAUDE.md Italian copy rules + §17 Buy block project notes"
+        "cta_target": "primary CTA in IT \u2014 e.g., 'Acquista ora' or 'Ordina adesso'; lowercase per source convention; black bg + white text + square corners",
+        "trust_row_target": "preserve \u00a71/\u00a74 trust row pattern in IT",
+        "rules_ref": "CLAUDE.md Italian copy rules + \u00a717 Buy block project notes"
       },
       "notes": "Build VISUAL STRUCTURE ONLY. Use stub variant data: 1 product, 2-3 variants, placeholder pricing. Real wiring deferred to migration. Mark story passing-with-stubs when visual gates pass.",
       "iteration_count": 2,
       "max_iterations": 6,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-16-tech-specs",
+        "before": "section-18-stats-bar-repeat"
+      }
     },
     {
       "id": "section-18-stats-bar-repeat",
@@ -566,11 +610,11 @@
           "stat-box",
           "reduction-puffines-id"
         ],
-        "search_strategy": "source/rendered.html lines 10947–11009. Class reduction-puffines-id is the distinguishing variant class.",
+        "search_strategy": "source/rendered.html lines 10947\u201311009. Class reduction-puffines-id is the distinguishing variant class.",
         "css_files": [
-          "source/css/external-00-base.css lines 8852–8873 (.reduction-puffines-id overrides)"
+          "source/css/external-00-base.css lines 8852\u20138873 (.reduction-puffines-id overrides)"
         ],
-        "expected_dom": "Same 4 stat boxes as §7 (same numbers/headlines) but: dark background, NO title/subtitle, NO mechanism text (empty p), vertical divider lines between boxes via :before pseudo-elements. padding-top:30px; padding-bottom:30px.",
+        "expected_dom": "Same 4 stat boxes as \u00a77 (same numbers/headlines) but: dark background, NO title/subtitle, NO mechanism text (empty p), vertical divider lines between boxes via :before pseudo-elements. padding-top:30px; padding-bottom:30px.",
         "images": []
       },
       "acceptance": {
@@ -583,15 +627,19 @@
         }
       },
       "italian_copy": {
-        "numbers": "91% / 87% / 35% / 94% (same as §7)",
-        "headlines": "Same 4 IT headlines as §7 (no mechanism text needed — empty p in source)",
+        "numbers": "91% / 87% / 35% / 94% (same as \u00a77)",
+        "headlines": "Same 4 IT headlines as \u00a77 (no mechanism text needed \u2014 empty p in source)",
         "no_title_no_subtitle": true,
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
-      "notes": "§7 inventory confirmed: §18 is NOT a literal duplicate. It is a dark-background variant (reduction-puffines-id class) with no title/subtitle, no mechanism text, vertical dividers between boxes. Build as new singleton bq-stats-repeat.liquid. Verified during §7 inventory 2026-04-30.",
+      "notes": "\u00a77 inventory confirmed: \u00a718 is NOT a literal duplicate. It is a dark-background variant (reduction-puffines-id class) with no title/subtitle, no mechanism text, vertical dividers between boxes. Build as new singleton bq-stats-repeat.liquid. Verified during \u00a77 inventory 2026-04-30.",
       "iteration_count": 2,
       "max_iterations": 4,
-      "max_same_failure": 3
+      "max_same_failure": 3,
+      "section_order_position": {
+        "after": "section-17-buy-block",
+        "before": "section-19-customer-reviews"
+      }
     },
     {
       "id": "section-19-customer-reviews",
@@ -608,7 +656,7 @@
         "images": []
       },
       "acceptance": {
-        "agent_action": "leave placeholder block in templates/index.json with comment 'App install slot for reviews — Judge.me / Loox / Yotpo / Stamped (TBD)'. Do NOT build a custom reviews section. Mark story deferred-app-install."
+        "agent_action": "leave placeholder block in templates/index.json with comment 'App install slot for reviews \u2014 Judge.me / Loox / Yotpo / Stamped (TBD)'. Do NOT build a custom reviews section. Mark story deferred-app-install."
       },
       "italian_copy": {
         "n/a": "Reviews app handles its own UI strings"
@@ -616,7 +664,11 @@
       "notes": "App selection is post-build user decision per chat session. Do not pre-select. Just leave the slot.",
       "iteration_count": 0,
       "max_iterations": 1,
-      "max_same_failure": 1
+      "max_same_failure": 1,
+      "section_order_position": {
+        "after": "section-18-stats-bar-repeat",
+        "before": null
+      }
     }
   ]
 }

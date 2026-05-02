@@ -1,0 +1,17 @@
+[     732ms] [ERROR] [HotReload] Connection closed by the server, attempting to reconnect... @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:304
+[     825ms] [INFO] [HotReload] Connected @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:299
+[     998ms] [ERROR] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors https://a9iz0x-ip.myshopify.com https://a9iz0x-ip.account.myshopify.com https://avermilano.it https://www.avermilano.it https://sartori-milano.it https://www.sartori-milano.it https://shopify.com". The request has been blocked.
+ @ :0
+[    5696ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10226ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   25680ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   47286ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   64749ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   85972ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   95949ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[  213163ms] [INFO] [HotReload] Full reload: templates/index.json @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:55
+[  214100ms] [ERROR] [HotReload] Connection closed by the server, attempting to reconnect... @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:304
+[  214236ms] [INFO] [HotReload] Connected @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:299
+[  214540ms] [ERROR] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors https://a9iz0x-ip.myshopify.com https://a9iz0x-ip.account.myshopify.com https://avermilano.it https://www.avermilano.it https://sartori-milano.it https://www.sartori-milano.it https://shopify.com". The request has been blocked.
+ @ :0
+[  227337ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119

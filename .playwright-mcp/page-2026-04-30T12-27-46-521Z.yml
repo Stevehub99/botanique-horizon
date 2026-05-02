@@ -1,0 +1,587 @@
+- generic [active] [ref=e1]:
+  - link "Vai direttamente al contenuto" [ref=e2] [cursor=pointer]:
+    - /url: "#MainContent"
+  - generic [ref=e3]:
+    - complementary [ref=e6]:
+      - paragraph [ref=e10]: Welcome to our store
+    - banner [ref=e11]:
+      - generic [ref=e12]:
+        - heading "Sartori Milano" [level=1] [ref=e14]
+        - generic [ref=e16]:
+          - generic [ref=e17]:
+            - link "Sartori Milano" [ref=e18] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e19]: Sartori Milano
+            - navigation "Principale" [ref=e22]:
+              - list [ref=e24]:
+                - generic:
+                  - link "CONTATTACI" [ref=e25] [cursor=pointer]:
+                    - /url: /pages/contact
+                    - generic [ref=e26]: CONTATTACI
+                  - link "TRACCIA IL TUO ORDINE" [ref=e27] [cursor=pointer]:
+                    - /url: https://estilomoreno.com/apps/parcelpanel
+                    - generic [ref=e28]: TRACCIA IL TUO ORDINE
+          - generic [ref=e29]:
+            - button "Ricerca" [ref=e31] [cursor=pointer]:
+              - generic:
+                - img
+            - generic [ref=e32]:
+              - button "Account" [ref=e37] [cursor=pointer]:
+                - img [ref=e39]
+              - button "Carrello" [ref=e42] [cursor=pointer]:
+                - generic [ref=e43]:
+                  - generic:
+                    - img
+                  - generic [ref=e44]:
+                    - status:
+                      - generic [ref=e46]: "Totale articoli nel carrello: 0"
+  - main [ref=e47]:
+    - region "Ringiovanisci il Tuo Sguardo" [ref=e49]:
+      - generic [ref=e50]:
+        - generic [ref=e54]: Carica video o immagine hero (1:1)
+        - generic [ref=e55]:
+          - paragraph [ref=e56]:
+            - strong [ref=e57]: SALDI FESTA DELLA MAMMA 🎉
+          - heading "Ringiovanisci il Tuo Sguardo Senza Chirurgia" [level=1] [ref=e58]:
+            - text: Ringiovanisci il Tuo Sguardo
+            - strong [ref=e59]: Senza Chirurgia
+          - paragraph [ref=e60]: "In uno studio clinico di 12 settimane, le donne che hanno usato Il Nostro Dispositivo hanno dichiarato:"
+          - list [ref=e61]:
+            - listitem [ref=e62]:
+              - img [ref=e64]
+              - generic [ref=e66]: 93% di riduzione visibile del gonfiore
+            - listitem [ref=e67]:
+              - img [ref=e69]
+              - generic [ref=e71]: 86% sguardo più luminoso, meno incavato
+            - listitem [ref=e72]:
+              - img [ref=e74]
+              - generic [ref=e76]: 89% di miglioramento su rughe e linee sottili
+          - link "RINGIOVANISCI LO SGUARDO" [ref=e77] [cursor=pointer]:
+            - /url: "#"
+          - generic [ref=e78]:
+            - generic [ref=e79]:
+              - img [ref=e81]
+              - generic [ref=e83]: Garanzia 365 giorni soddisfatti o rimborsati
+            - generic [ref=e84]:
+              - img [ref=e86]
+              - generic [ref=e88]: Spedizione espressa in tutto il mondo
+          - region "Recensioni clienti" [ref=e89]:
+            - list [ref=e90]:
+              - listitem [ref=e91]:
+                - figure [ref=e92]:
+                  - generic [ref=e93]:
+                    - generic [ref=e94]: S
+                    - paragraph [ref=e97]: Palpebre più tese e borse ridotte. Mia sorella mi ha chiesto subito dove l'avevo comprato.
+                  - generic [ref=e98]:
+                    - generic [ref=e99]:
+                      - heading [level=4] [ref=e100]: "- Sofia R."
+                      - img [ref=e102]
+                    - generic [ref=e105]: ★★★★★
+              - listitem [ref=e106]:
+                - figure [ref=e107]:
+                  - generic [ref=e108]:
+                    - generic [ref=e109]: G
+                    - paragraph [ref=e112]: La combinazione di luce rossa ed EMS si sente davvero al lavoro sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.
+                  - generic [ref=e113]:
+                    - generic [ref=e114]:
+                      - heading "- Giulia M." [level=4] [ref=e115]
+                      - generic "Verified" [ref=e116]:
+                        - img [ref=e117]
+                    - generic "5 stelle su 5" [ref=e120]: ★★★★★
+              - listitem [ref=e121]:
+                - figure [ref=e122]:
+                  - generic [ref=e123]:
+                    - generic [ref=e124]: A
+                    - paragraph [ref=e127]: Non credevo ai risultati nelle foto prima/dopo, poi l'ho provato. Ora le occhiaie che avevo da anni sono davvero meno visibili.
+                  - generic [ref=e128]:
+                    - generic [ref=e129]:
+                      - heading "- Aurora B." [level=4] [ref=e130]
+                      - generic "Verified" [ref=e131]:
+                        - img [ref=e132]
+                    - generic "5 stelle su 5" [ref=e135]: ★★★★★
+              - listitem [ref=e136]:
+                - figure [ref=e137]:
+                  - generic [ref=e138]:
+                    - generic [ref=e139]: C
+                    - paragraph [ref=e142]: Dopo 3 settimane di uso quotidiano lo sguardo è decisamente più fresco. Mi fa risparmiare i filler, valeva ogni centesimo.
+                  - generic [ref=e143]:
+                    - generic [ref=e144]:
+                      - heading "- Chiara V." [level=4] [ref=e145]
+                      - generic "Verified" [ref=e146]:
+                        - img [ref=e147]
+                    - generic "5 stelle su 5" [ref=e150]: ★★★★★
+              - listitem [ref=e151]:
+                - figure [ref=e152]:
+                  - generic [ref=e153]:
+                    - generic [ref=e154]: M
+                    - paragraph [ref=e157]: Non avevo grandi aspettative, invece funziona. Lo uso la mattina mentre bevo il caffè.
+                  - generic [ref=e158]:
+                    - generic [ref=e159]:
+                      - heading "- Martina D." [level=4] [ref=e160]
+                      - generic "Verified" [ref=e161]:
+                        - img [ref=e162]
+                    - generic "5 stelle su 5" [ref=e165]: ★★★★★
+              - listitem [ref=e166]:
+                - figure [ref=e167]:
+                  - generic [ref=e168]:
+                    - generic [ref=e169]: S
+                    - paragraph [ref=e172]: Palpebre più tese e borse ridotte. Mia sorella mi ha chiesto subito dove l'avevo comprato.
+                  - generic [ref=e173]:
+                    - generic [ref=e174]:
+                      - heading "- Sofia R." [level=4] [ref=e175]
+                      - generic "Verified" [ref=e176]:
+                        - img [ref=e177]
+                    - generic "5 stelle su 5" [ref=e180]: ★★★★★
+              - listitem [ref=e181]:
+                - figure [ref=e182]:
+                  - generic [ref=e183]:
+                    - generic [ref=e184]: G
+                    - paragraph [ref=e187]: La combinazione di luce rossa ed EMS si sente davvero al lavoro sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.
+                  - generic [ref=e188]:
+                    - generic [ref=e189]:
+                      - heading [level=4] [ref=e190]: "- Giulia M."
+                      - img [ref=e192]
+                    - generic [ref=e195]: ★★★★★
+            - tablist "Slide selector" [ref=e196]:
+              - listitem [ref=e197]:
+                - tab "1 of 5" [selected] [ref=e198] [cursor=pointer]
+              - listitem [ref=e199]:
+                - tab "2 of 5" [ref=e200] [cursor=pointer]
+              - listitem [ref=e201]:
+                - tab "3 of 5" [ref=e202] [cursor=pointer]
+              - listitem [ref=e203]:
+                - tab "4 of 5" [ref=e204] [cursor=pointer]
+              - listitem [ref=e205]:
+                - tab "5 of 5" [ref=e206] [cursor=pointer]
+    - generic [ref=e209]:
+      - heading "Come l'Industria della Bellezza Sfrutta l'Insicurezza Più Profonda delle Donne" [level=2] [ref=e211]:
+        - paragraph [ref=e212]:
+          - text: Come l'
+          - strong [ref=e213]: Industria della Bellezza
+          - text: Sfrutta l'Insicurezza Più Profonda delle Donne
+      - generic [ref=e214]:
+        - generic [ref=e215]:
+          - 'heading "L''industria della bellezza lo sa: borse e occhiaie sono tra le insicurezze più radicate di ogni donna." [level=3] [ref=e216]':
+            - paragraph [ref=e217]:
+              - text: "L'industria della bellezza lo sa: borse e occhiaie sono tra le"
+              - strong [ref=e218]: insicurezze più radicate di ogni donna.
+          - paragraph [ref=e220]:
+            - text: Così ci ha costruito sopra un modello di business. Ti vendono creme che non penetrano abbastanza in profondità per agire davvero, ti danno giusto la speranza necessaria per farti continuare a comprare, e quando finalmente stai per arrenderti…
+            - text: Ti spingono verso filler da 1.500€ o interventi chirurgici da 4.000€ e oltre. Non si tratta di risolvere il tuo problema. Si tratta di spremerti fino all'ultimo euro mentre sei vulnerabile.
+        - img [ref=e223]
+    - generic [ref=e288]:
+      - img [ref=e291]
+      - generic [ref=e353]:
+        - heading "L'invecchiamento del contorno occhi non è una questione di genetica, disidratazione o poche ore di sonno." [level=3] [ref=e354]:
+          - paragraph [ref=e355]:
+            - strong [ref=e356]: L'invecchiamento del contorno occhi
+            - text: non è una questione di genetica, disidratazione o poche ore di sonno.
+        - paragraph [ref=e358]: Dipende da tre fattori biologici che agiscono sotto la superficie della tua pelle.
+        - list [ref=e360]:
+          - listitem [ref=e361]:
+            - strong [ref=e362]: Microcircolazione rallentata
+            - text: fa ristagnare il sangue poco ossigenato e crea ombre scure.
+          - listitem [ref=e363]:
+            - strong [ref=e364]: Drenaggio linfatico ridotto
+            - text: fa accumulare liquidi durante la notte e forma le borse.
+          - listitem [ref=e365]:
+            - strong [ref=e366]: Perdita di collagene
+            - text: assottiglia ulteriormente la pelle già sottile, rendendo visibili capillari e ombre.
+        - paragraph [ref=e368]: Nessuna crema o siero topico può raggiungere queste cause in profondità. Ed è esattamente per questo che l'industria continua a vendertele.
+    - generic [ref=e372]:
+      - img [ref=e375]
+      - generic [ref=e437]:
+        - heading "Da Lumière Paris, usiamo una doppia tecnologia per affrontare tutte e tre le cause profonde delle occhiaie." [level=3] [ref=e438]:
+          - paragraph [ref=e439]:
+            - strong [ref=e440]: Da Lumière Paris,
+            - text: usiamo una doppia tecnologia per affrontare tutte e tre le cause profonde delle occhiaie.
+        - list [ref=e442]:
+          - listitem [ref=e443]:
+            - strong [ref=e444]: Terapia con luce rossa
+            - text: (630–660nm) penetra 2–3mm in profondità per aumentare la microcircolazione e stimolare la produzione di collagene a livello cellulare.
+          - listitem [ref=e445]:
+            - strong [ref=e446]: Microcorrenti EMS
+            - text: drenano i liquidi linfatici accumulati e tonificano i 43 muscoli dell'area perioculare.
+        - paragraph [ref=e448]: Insieme, agiscono su microcircolazione lenta, ritenzione di liquidi e perdita di collagene — le cause reali di borse e occhiaie.
+        - link "PROVA LA DOPPIA TECNOLOGIA" [ref=e449] [cursor=pointer]:
+          - /url: /products/revitaleyes
+        - generic [ref=e450]:
+          - generic [ref=e451]:
+            - img [ref=e453]
+            - paragraph [ref=e455]: Garanzia 365 giorni soddisfatti o rimborsati
+          - generic [ref=e456]:
+            - img [ref=e458]
+            - paragraph [ref=e460]: Spedizione espressa in tutto il mondo
+    - generic [ref=e463]:
+      - heading "La Missione di Lumière Paris" [level=2] [ref=e465]:
+        - paragraph [ref=e466]:
+          - text: La Missione di
+          - strong [ref=e467]: Lumière Paris
+      - generic [ref=e468]:
+        - img [ref=e471]
+        - generic [ref=e533]:
+          - heading "Aiutare le donne ad apparire giovani, radiose e sicure come si sentono davvero — senza procedure invasive, soldi sprecati o compromessi sulla loro bellezza naturale." [level=3] [ref=e534]:
+            - paragraph [ref=e535]:
+              - text: Aiutare le donne ad
+              - strong [ref=e536]: apparire giovani, radiose e sicure
+              - text: come si sentono davvero — senza procedure invasive, soldi sprecati o compromessi sulla loro bellezza naturale.
+          - paragraph [ref=e538]: Dopo anni di creme inefficaci e la paura della chirurgia, meriti una tecnologia che funziona davvero.
+          - paragraph [ref=e540]: Il Nostro Dispositivo combina luce rossa clinicamente provata e microcorrenti EMS in un unico dispositivo. Bastano 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi.
+          - paragraph [ref=e542]: "Niente appuntamenti, niente aghi, niente routine complicate. Finalmente la trasformazione che cercavi: occhi naturalmente giovani, riposati e radiosi, proprio come ti senti."
+          - link "INIZIA LA TRASFORMAZIONE" [ref=e543] [cursor=pointer]:
+            - /url: /products/revitaleyes
+          - generic [ref=e544]:
+            - generic [ref=e545]:
+              - img [ref=e547]
+              - paragraph [ref=e549]: Garanzia 365 giorni soddisfatti o rimborsati
+            - generic [ref=e550]:
+              - img [ref=e552]
+              - paragraph [ref=e554]: Spedizione espressa in tutto il mondo
+    - generic [ref=e557]:
+      - heading "I Risultati che Vedrai Usando Il Nostro Dispositivo Ogni Giorno" [level=2] [ref=e558]:
+        - paragraph [ref=e559]:
+          - text: I Risultati che Vedrai Usando
+          - strong [ref=e560]: Il Nostro Dispositivo Ogni Giorno
+      - heading [level=3]
+      - generic [ref=e561]:
+        - generic [ref=e562]:
+          - 'heading "Settimana 1: Riduzione immediata del gonfiore" [level=4] [ref=e564]':
+            - strong [ref=e565]: "Settimana 1:"
+            - text: Riduzione immediata del gonfiore
+          - img [ref=e567]
+          - paragraph [ref=e571]:
+            - text: Le microcorrenti drenano
+            - strong [ref=e572]: l'accumulo di liquidi, riducendo il gonfiore mattutino,
+            - text: stimolando il drenaggio linfatico e la circolazione in pochi minuti. I tuoi occhi appaiono meno gonfi, più aperti, più svegli.
+        - generic [ref=e573]:
+          - paragraph [ref=e575]:
+            - text: Le linee sottili iniziano ad ammorbidirsi. La
+            - strong [ref=e576]: pelle sottile e segnata sotto gli occhi comincia a levigarsi
+            - text: mentre la luce rossa stimola la produzione di collagene in profondità.
+          - img [ref=e578]
+          - 'heading "Settimana 2: Miglioramenti della texture" [level=4] [ref=e582]':
+            - strong [ref=e583]: "Settimana 2:"
+            - text: Miglioramenti della texture
+        - generic [ref=e584]:
+          - 'heading "Settimana 4: Sguardo visibilmente più luminoso" [level=4] [ref=e586]':
+            - strong [ref=e587]: "Settimana 4:"
+            - text: Sguardo visibilmente più luminoso
+          - img [ref=e589]
+          - paragraph [ref=e593]:
+            - text: Occhiaie notevolmente più chiare. La microcircolazione migliorata
+            - strong [ref=e594]: elimina il ristagno di sangue che crea ombre, rivelando una pelle più luminosa e dal tono uniforme.
+            - text: Le persone iniziano a chiederti se usi un nuovo prodotto.
+        - generic [ref=e595]:
+          - paragraph [ref=e597]:
+            - text: Borse visibilmente ridotte. L'area perioculare cedevole e gonfia si rassoda mentre
+            - strong [ref=e598]: il collagene si rigenera e i muscoli si tonificano.
+            - text: Gli studi clinici mostrano che
+            - strong [ref=e599]: oltre l'85% vede cambiamenti significativi
+            - text: a questo punto.
+          - img [ref=e601]
+          - 'heading "Settimana 6: Riduzione drammatica delle borse" [level=4] [ref=e605]':
+            - strong [ref=e606]: "Settimana 6:"
+            - text: Riduzione drammatica delle borse
+        - generic [ref=e607]:
+          - 'heading "Settimana 8: Rughe e linee sottili più levigate" [level=4] [ref=e609]':
+            - strong [ref=e610]: "Settimana 8:"
+            - text: Rughe e linee sottili più levigate
+          - img [ref=e612]
+          - paragraph [ref=e616]:
+            - text: Zampe di gallina e linee sottili misurabilmente attenuate. La
+            - strong [ref=e617]: sintesi continua di collagene ispessisce la pelle,
+            - text: rendendo ogni vaso e ruga meno visibile. Sembri riposata anche dopo le notti più difficili.
+        - generic [ref=e618]:
+          - paragraph [ref=e620]:
+            - text: I tuoi occhi appaiono
+            - strong [ref=e621]: anni più giovani.
+            - text: Naturalmente giovani, sani e svegli.
+            - strong [ref=e622]: Le occhiaie sono colmate, l'ombra svanita, il gonfiore eliminato.
+            - text: Vedi finalmente la vera te nello specchio.
+          - img [ref=e624]
+          - 'heading "Mese 3: Trasformazione completa" [level=4] [ref=e628]':
+            - strong [ref=e629]: "Mese 3:"
+            - text: Trasformazione completa
+      - generic [ref=e630] [cursor=pointer]:
+        - link "INIZIA IL TUO PERCORSO" [ref=e631]:
+          - /url: /products/revitaleyes
+        - list [ref=e632]:
+          - listitem [ref=e633]:
+            - img [ref=e634]
+            - text: Garanzia 365 giorni soddisfatti o rimborsati
+          - listitem [ref=e637]:
+            - img [ref=e638]
+            - text: Spedizione espressa in tutto il mondo
+    - generic [ref=e643]:
+      - heading "La scienza dietro Il Nostro Dispositivo" [level=3] [ref=e645]:
+        - strong [ref=e646]: La scienza
+        - text: dietro Il Nostro Dispositivo
+      - paragraph [ref=e648]: "Risultati riportati da studi clinici e dall'esperienza dei clienti:"
+      - generic [ref=e649]:
+        - generic [ref=e650]:
+          - heading "91%" [level=3] [ref=e651]
+          - heading "Riduzione del gonfiore sottooculare" [level=4] [ref=e652]
+          - paragraph [ref=e653]: La microcorrente attiva il drenaggio linfatico per eliminare i liquidi in eccesso.
+        - generic [ref=e654]:
+          - heading "87%" [level=3] [ref=e655]
+          - heading "Occhiaie più luminose e meno infossate" [level=4] [ref=e656]
+          - paragraph [ref=e657]: La luce rossa aumenta la circolazione, eliminando il sangue ristagante che crea le ombre scure.
+        - generic [ref=e658]:
+          - heading "35%" [level=3] [ref=e659]
+          - heading "Aumento della densità del collagene" [level=4] [ref=e660]
+          - paragraph [ref=e661]: La luce rossa stimola la produzione di collagene, ispessendo la pelle per attenuare rughe e cavità.
+        - generic [ref=e662]:
+          - heading "94%" [level=3] [ref=e663]
+          - heading "Pelle più liscia e tonica" [level=4] [ref=e664]
+          - paragraph [ref=e665]: La doppia tecnologia combina collagene e tono muscolare per un lifting visibile.
+    - generic [ref=e668]:
+      - generic [ref=e669]:
+        - heading "Tecnologia Di Grado Medico. Sicurezza Certificata CE." [level=2] [ref=e670]:
+          - text: Tecnologia Di Grado Medico.
+          - strong [ref=e671]: Sicurezza Certificata CE.
+        - paragraph [ref=e672]: Il Nostro Dispositivo utilizza tecnologie di grado medico, sviluppate in collaborazione con la ricerca aerospaziale e validate clinicamente, impiegate dai professionisti da decenni. Sicurezza certificata secondo gli standard europei per un uso efficace a casa tua.
+      - list [ref=e674]:
+        - listitem [ref=e675]:
+          - strong [ref=e676]: Luce rossa certificata CE
+          - text: "- Sviluppata in collaborazione con la ricerca aerospaziale per la rigenerazione cellulare"
+        - listitem [ref=e677]:
+          - strong [ref=e678]: Lunghezze d'onda clinicamente sicure (630–660 nm)
+          - text: "- Trattamento non invasivo e non termico, senza tempi di recupero"
+        - listitem [ref=e679]:
+          - strong [ref=e680]: Tecnologia a microcorrente di grado medico
+          - text: "- Impiegata in fisioterapia dagli anni '70 per la riabilitazione facciale"
+        - listitem [ref=e681]:
+          - strong [ref=e682]: Nessun raggio UV, nessun prodotto chimico, nessun effetto indesiderato
+          - text: "- Sicura per l'uso quotidiano sulla pelle più delicata del corpo"
+        - listitem [ref=e683]:
+          - strong [ref=e684]: Testato dermatologicamente
+          - text: "- Risultati di livello professionale senza i rischi di aghi o interventi chirurgici"
+    - generic [ref=e688]:
+      - heading "Come Usare Il Nostro Dispositivo" [level=2] [ref=e689]:
+        - text: Come Usare
+        - strong [ref=e690]: Il Nostro Dispositivo
+      - generic [ref=e691]:
+        - generic [ref=e692]:
+          - generic [ref=e693]:
+            - generic [ref=e694]: "1"
+            - img "Applica il siero e indossa il dispositivo" [ref=e695]
+          - heading "Applica il siero e indossa il dispositivo" [level=4] [ref=e696]
+          - paragraph [ref=e697]: Applica il siero sotto entrambi gli occhi per aumentare la conducibilità e massimizzare i risultati. Posiziona il dispositivo comodamente sull'area perioculare e premi il tasto di avvio.
+        - generic [ref=e698]:
+          - generic [ref=e699]:
+            - generic [ref=e700]: "2"
+            - img "Lascia che la luce rossa penetri in profondità" [ref=e701]
+          - heading "Lascia che la luce rossa penetri in profondità" [level=4] [ref=e702]
+          - paragraph [ref=e703]: La luce rossa penetra sotto la pelle, stimolando la produzione di collagene ed elastina dove le creme non arrivano. Rilassati 5 minuti mentre la tecnologia agisce.
+        - generic [ref=e704]:
+          - generic [ref=e705]:
+            - generic [ref=e706]: "3"
+            - img "Completa il trattamento con le microcorrenti" [ref=e707]
+          - heading "Completa il trattamento con le microcorrenti" [level=4] [ref=e708]
+          - paragraph [ref=e709]: Delicati impulsi elettrici attivano il drenaggio linfatico per eliminare il gonfiore e tonificare i muscoli intorno agli occhi. In soli 5 minuti il tuo trattamento è completo.
+    - generic [ref=e712]:
+      - generic [ref=e713]:
+        - heading "L'Approccio a Doppia Tecnologia di Il Nostro Dispositivo È Di Gran Lunga Il Più Efficace Per Il Ringiovanimento Oculare a Casa" [level=2] [ref=e714]:
+          - text: L'Approccio a Doppia Tecnologia di
+          - strong [ref=e715]: Il Nostro Dispositivo
+          - text: È Di Gran Lunga Il Più Efficace Per Il
+          - strong [ref=e716]: Ringiovanimento Oculare
+          - text: a Casa
+        - paragraph [ref=e717]: Ecco perché è la soluzione migliore per le borse e le occhiaie
+      - generic [ref=e718]:
+        - 'img "Confronto: creme per gli occhi vs Il Nostro Dispositivo" [ref=e721]'
+        - 'img "Confronto: dispositivi a luce rossa standard vs Il Nostro Dispositivo" [ref=e724]'
+        - 'img "Confronto: filler vs Il Nostro Dispositivo" [ref=e727]'
+        - 'img "Confronto: botox vs Il Nostro Dispositivo" [ref=e730]'
+        - 'img "Confronto: blefaroplastica inferiore vs Il Nostro Dispositivo" [ref=e733]'
+        - 'img "Confronto: sieri alla caffeina vs Il Nostro Dispositivo" [ref=e736]'
+      - link "Ringiovanisci il tuo contorno occhi oggi" [ref=e737] [cursor=pointer]:
+        - /url: /products/revitaleyes
+      - generic [ref=e738]:
+        - generic [ref=e739]:
+          - img [ref=e741]
+          - paragraph [ref=e744]: Garanzia soddisfatti o rimborsati 365 giorni
+        - generic [ref=e745]:
+          - img [ref=e747]
+          - paragraph [ref=e750]: Spedizione express in tutto il mondo
+      - generic [ref=e751]:
+        - heading "La promessa di Botanique Paris" [level=3] [ref=e753]:
+          - text: La promessa di
+          - strong [ref=e754]: Botanique Paris
+        - list [ref=e755]:
+          - listitem [ref=e756]:
+            - heading "Certificato CE" [level=5] [ref=e758]
+          - listitem [ref=e759]:
+            - heading "Non invasivo" [level=5] [ref=e761]
+          - listitem [ref=e762]:
+            - heading "Zero tempi di recupero" [level=5] [ref=e764]
+          - listitem [ref=e765]:
+            - heading "Clinicamente sicuro" [level=5] [ref=e767]
+          - listitem [ref=e768]:
+            - heading "Senza dolore" [level=5] [ref=e770]
+          - listitem [ref=e771]:
+            - heading "Per tutti i tipi di pelle" [level=5] [ref=e773]
+    - generic [ref=e777]:
+      - heading "Lumière Paris Ingegneria di precisione" [level=3] [ref=e778]:
+        - paragraph [ref=e779]:
+          - strong [ref=e780]: Lumière Paris
+          - text: Ingegneria di precisione
+      - img [ref=e783]
+      - generic [ref=e845]:
+        - generic [ref=e846]:
+          - img [ref=e848]
+          - paragraph [ref=e851]: Diodi LED di grado medico
+        - generic [ref=e852]:
+          - img [ref=e854]
+          - paragraph [ref=e857]: Microcorrente calibrata di precisione
+        - generic [ref=e858]:
+          - img [ref=e860]
+          - paragraph [ref=e863]: Impianto certificato CE
+    - generic [ref=e867]:
+      - img "Donna con dispositivo per il contorno occhi" [ref=e869]
+      - generic [ref=e870]:
+        - heading "A causa dell'alta domanda e dei limiti di produzione, Il Nostro Dispositivo ha un rischio molto elevato di esaurirsi" [level=3] [ref=e871]:
+          - text: A causa dell'alta domanda e dei limiti di produzione, Il Nostro Dispositivo ha un rischio
+          - strong [ref=e872]: molto elevato di esaurirsi
+        - link "Ringiovanisci Il Tuo Contorno Occhi Ora" [ref=e873] [cursor=pointer]:
+          - /url: "#"
+        - generic [ref=e874]:
+          - generic [ref=e875]:
+            - img [ref=e877]
+            - paragraph [ref=e880]: Garanzia soddisfatti o rimborsati 365 giorni
+          - generic [ref=e881]:
+            - img [ref=e883]
+            - paragraph [ref=e886]: Spedizione express in tutto il mondo
+    - generic [ref=e889]:
+      - heading "Ecco Cosa Dicono Le Nostre Clienti" [level=2] [ref=e890]:
+        - text: Ecco Cosa Dicono
+        - strong [ref=e891]: Le Nostre Clienti
+      - generic [ref=e892]:
+        - generic [ref=e893]:
+          - generic [ref=e894]:
+            - generic [ref=e895]: F
+            - paragraph [ref=e897]: “In soli dieci giorni le borse e le occhiaie sono sparite. Anche i miei figli mi hanno detto che sembro più giovane!”
+          - generic [ref=e898]:
+            - generic [ref=e899]:
+              - heading "- Francesca B., 51 anni · Roma" [level=4] [ref=e900]
+              - generic "Acquisto verificato" [ref=e901]:
+                - img [ref=e902]
+            - generic "5 stelle su 5" [ref=e905]: ★★★★★
+        - generic [ref=e906]:
+          - generic [ref=e907]:
+            - generic [ref=e908]: E
+            - paragraph [ref=e910]: “Avevo problemi ormonali che causavano un gonfiore cronico sotto gli occhi. Niente aveva funzionato. Con questo dispositivo il gonfiore è sparito in due settimane. Ho annullato la consulenza chirurgica.”
+          - generic [ref=e911]:
+            - generic [ref=e912]:
+              - heading "- Elena C., 47 anni · Napoli" [level=4] [ref=e913]
+              - generic "Acquisto verificato" [ref=e914]:
+                - img [ref=e915]
+            - generic "5 stelle su 5" [ref=e918]: ★★★★★
+        - generic [ref=e919]:
+          - generic [ref=e920]:
+            - generic [ref=e921]: V
+            - paragraph [ref=e923]: “La palpebra cadente mi faceva sembrare stanca tutto il giorno. Dopo otto settimane c'è uno spazio visibile tra la linea delle ciglia e la piega. Non posso credere che abbia funzionato senza chirurgia.”
+          - generic [ref=e924]:
+            - generic [ref=e925]:
+              - heading "- Valentina M., 38 anni · Torino" [level=4] [ref=e926]
+              - generic "Acquisto verificato" [ref=e927]:
+                - img [ref=e928]
+            - generic "5 stelle su 5" [ref=e931]: ★★★★★
+        - generic [ref=e932]:
+          - generic [ref=e933]:
+            - generic [ref=e934]: L
+            - paragraph [ref=e936]: “La combinazione di luce rossa ed EMS si sente davvero lavorare sui muscoli. Dopo due settimane il contorno occhi è visibilmente più tonico. Ottima qualità costruttiva.”
+          - generic [ref=e937]:
+            - generic [ref=e938]:
+              - heading "- Laura P., 44 anni · Milano" [level=4] [ref=e939]
+              - generic "Acquisto verificato" [ref=e940]:
+                - img [ref=e941]
+            - generic "5 stelle su 5" [ref=e944]: ★★★★★
+    - generic [ref=e947]:
+      - heading "Ciao, Sono Sofia! Fondatrice di Lumière Paris" [level=2] [ref=e949]:
+        - paragraph [ref=e950]:
+          - text: Ciao, Sono
+          - strong [ref=e951]: Sofia!
+        - paragraph [ref=e952]:
+          - text: Fondatrice di
+          - strong [ref=e953]: Lumière Paris
+      - generic [ref=e954]:
+        - img [ref=e957]
+        - generic [ref=e1019]:
+          - paragraph [ref=e1021]: "Per anni ho lottato con borse e occhiaie, il che mi ha portato a:"
+          - list [ref=e1023]:
+            - listitem [ref=e1024]: Apparire cronicamente esausta
+            - listitem [ref=e1025]: Autostima a pezzi
+            - listitem [ref=e1026]: Sembrare anni più vecchia di come mi sentivo
+            - listitem [ref=e1027]: Sprecare migliaia di euro in soluzioni inutili
+          - paragraph [ref=e1029]:
+            - strong [ref=e1030]: E questi sono solo alcuni dei problemi
+    - generic [ref=e1034]:
+      - img [ref=e1037]
+      - generic [ref=e1100]:
+        - paragraph [ref=e1101]: Ogni mattina mi svegliavo e la prima cosa che vedevo nello specchio erano queste borse gonfie e scure. Sembravo malata, invecchiata, niente a che fare con come mi sentivo davvero dentro.
+        - paragraph [ref=e1102]: Passavo 20 minuti cercando di coprirle col correttore, per poi guardarlo crepare e depositarsi nelle rughe entro mezzogiorno, rendendo le borse ancora più visibili.
+        - paragraph [ref=e1103]: Ero stanca di nascondermi. Ero stanca di sembrare stanca. Così mi sono messa in testa di trovare qualcosa che funzionasse davvero.
+    - generic [ref=e1107]:
+      - img [ref=e1110]
+      - generic [ref=e1172]:
+        - heading "Ho Provato Tutto:" [level=3] [ref=e1173]:
+          - paragraph [ref=e1174]:
+            - strong [ref=e1175]: "Ho Provato Tutto:"
+        - list [ref=e1177]:
+          - listitem [ref=e1178]:
+            - strong [ref=e1179]: "\"Creme contorno occhi premium\""
+            - text: — centinaia di euro sprecati
+          - listitem [ref=e1180]:
+            - strong [ref=e1181]: Roller alla caffeina e sieri
+            - text: — funzionavano per un'ora, poi il gonfiore tornava
+          - listitem [ref=e1182]:
+            - strong [ref=e1183]: Cucchiai freddi e fette di cetriolo
+            - text: — zero miglioramenti
+          - listitem [ref=e1184]:
+            - strong [ref=e1185]: Patch sotto gli occhi
+            - text: — piacevoli da usare, nessun risultato duraturo
+    - generic [ref=e1189]:
+      - img [ref=e1192]
+      - generic [ref=e1254]:
+        - heading "Ecco Il Problema..." [level=3] [ref=e1255]:
+          - paragraph [ref=e1256]:
+            - strong [ref=e1257]: Ecco Il Problema...
+        - generic [ref=e1258]:
+          - paragraph [ref=e1259]: Dovevo raggiungere due cliniche separate, fissare appuntamenti con settimane di anticipo e pagare 200–250€ a seduta. Funzionava — ma a oltre 1.500€ al mese non era sostenibile.
+          - paragraph [ref=e1260]:
+            - strong [ref=e1261]: "Fu allora che ebbi l'idea: e se potessi combinare entrambe le tecnologie in un unico dispositivo da usare a casa?"
+          - paragraph [ref=e1262]: Ho trascorso 3 anni e oltre 50.000€ collaborando con bioingegneri per creare un dispositivo elegante e indossabile, progettato specificamente per l'area perioculare.
+          - paragraph [ref=e1263]:
+            - strong [ref=e1264]: Dopo 47 prototipi, nacque Il Nostro Dispositivo.
+    - generic [ref=e1268]:
+      - img [ref=e1271]
+      - generic [ref=e1333]:
+        - heading "Un Solo Dispositivo con Entrambe Le Tecnologie di cui Hai Bisogno per Eliminare Borse e Occhiaie" [level=3] [ref=e1334]:
+          - paragraph [ref=e1335]:
+            - text: Un Solo Dispositivo con
+            - strong [ref=e1336]: Entrambe Le Tecnologie
+            - text: di cui Hai Bisogno per
+            - strong [ref=e1337]: Eliminare Borse e Occhiaie
+        - generic [ref=e1338]:
+          - paragraph [ref=e1339]: Il Nostro Dispositivo combina luce rossa di grado medico e microcorrenti EMS in un unico trattamento integrato.
+          - paragraph [ref=e1340]: Solo 10 minuti al giorno mentre leggi, guardi la TV o ti rilassi. Gli stessi trattamenti per cui le cliniche ti farebbero pagare centinaia di euro.
+          - paragraph [ref=e1341]:
+            - strong [ref=e1342]: Oggi, oltre 300.000 donne usano Il Nostro Dispositivo per trasformare il loro contorno occhi e sembrare finalmente riposate e radiose come si sentono davvero.
+  - contentinfo [ref=e1343]:
+    - generic [ref=e1347]:
+      - generic [ref=e1349]:
+        - heading "Join our email list" [level=2] [ref=e1351]
+        - paragraph [ref=e1353]: Get exclusive deals and early access to new products.
+      - generic [ref=e1356]:
+        - generic [ref=e1357]: Email
+        - textbox "Email" [ref=e1358]:
+          - /placeholder: Indirizzo email
+        - button "Iscriviti" [ref=e1359] [cursor=pointer]
+    - generic [ref=e1363]:
+      - generic [ref=e1365]:
+        - text: © 2026
+        - link "Sartori Milano" [ref=e1366] [cursor=pointer]:
+          - /url: /
+        - text: ", Powered by Shopify"
+      - button "Termini e informative" [ref=e1368] [cursor=pointer]

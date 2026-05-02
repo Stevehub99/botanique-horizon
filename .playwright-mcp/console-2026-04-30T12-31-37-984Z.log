@@ -1,0 +1,6 @@
+[     876ms] [ERROR] [HotReload] Connection closed by the server, attempting to reconnect... @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:304
+[     991ms] [INFO] [HotReload] Connected @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:299
+[    1165ms] [ERROR] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors https://a9iz0x-ip.myshopify.com https://a9iz0x-ip.account.myshopify.com https://avermilano.it https://www.avermilano.it https://sartori-milano.it https://www.sartori-milano.it https://shopify.com". The request has been blocked.
+ @ :0
+[    6490ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10495ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119

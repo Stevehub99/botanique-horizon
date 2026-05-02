@@ -1,0 +1,9 @@
+[     629ms] [INFO] [HotReload] Connected @ http://127.0.0.1:9292/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:299
+[     814ms] [ERROR] Framing 'https://shop.app/' violates the following Content Security Policy directive: "frame-ancestors https://a9iz0x-ip.myshopify.com https://a9iz0x-ip.account.myshopify.com https://avermilano.it https://www.avermilano.it https://sartori-milano.it https://www.sartori-milano.it https://shopify.com". The request has been blocked.
+ @ :0
+[     896ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   11668ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   30423ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   51835ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   59277ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   70372ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119

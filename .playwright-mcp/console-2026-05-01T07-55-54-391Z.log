@@ -1,0 +1,80 @@
+[    1592ms] [WARNING] polaris:  JSHandle@node - accessibilityLabel is recommended when scroll-box is provided @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1
+[    1689ms] [WARNING] using deprecated parameters for the initialization function; pass a single object instead @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1
+[    1708ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://online-store-web.shopifyapps.com') does not match the recipient window's origin ('https://admin.shopify.com'). @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/common-e472926509b1.js:88
+[    1708ms] [WARNING] Failed to execute 'postMessage' on 'DOMWindow': The target origin provided ('https://online-store-web.shopifyapps.com') does not match the recipient window's origin ('https://admin.shopify.com'). @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/common-e472926509b1.js:88
+[    3294ms] [WARNING] An error occurred! For more details, see the full error text at https://go.apollo.dev/c/err#%7B%22version%22%3A%223.12.11%22%2C%22message%22%3A15%2C%22args%22%3A%5B%22entitlements%22%2C%22Shop%22%2C%22either%20ensure%20all%20objects%20of%20type%20EntitlementsType%20have%20an%20ID%20or%20a%20custom%20merge%20function%2C%20or%20%22%2C%22Shop.entitlements%22%2C%22%7B%5Cn%20%20%5C%22__typename%5C%22%3A%20%5C%22EntitlementsType%5C%22%2C%5Cn%20%20%5C%22rollouts%5C%22%3A%20%7B%5Cn%20%20%20%20%5C%22__typename%5C%22%3A%20%5C%22RolloutsType%5C%22%2C%5Cn%20%20%20%20%5C%22scheduledRollouts%5C%22%3A%20true%5Cn%20%20%7D%5Cn%7D%22%2C%22%7B%5Cn%20%20%5C%22__typename%5C%22%3A%20%5C%22EntitlementsType%5C%22%2C%5Cn%20%20%5C%22checkoutExtensibility%5C%22%3A%20%5C%22LIMITED%5C%22%5Cn%7D%22%5D%7D @ https://cdn.shopify.com/shopifycloud/online-store-web/assets/main/assets/main-e552833fdbbfd4c183c1a3fa4fa21e88716834b2.1.js:5
+[    3450ms] [WARNING] A preload for 'https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv:1949
+[    3469ms] [LOG] [WebPixelsManager] Prevented from executing in the Theme Editor @ https://cdn.shopify.com/wpm/bf4d92176wf885f6b7p0eb8715fm37bdd4cem.js:0
+[    3825ms] [WARNING] Dux iframe sync: Error processing message: SecurityError: Failed to read a named property 'constructor' from 'Window': Blocked a frame with origin "https://admin.shopify.com" from accessing a cross-origin frame.
+    at https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/common-e472926509b1.js:89:49407 @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1
+[    3450ms] [WARNING] A preload for 'https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv:1949
+[    4534ms] [LOG] [WebPixelsManager] Prevented from executing in the Theme Editor @ https://cdn.shopify.com/wpm/bf4d92176wf885f6b7p0eb8715fm37bdd4cem.js:0
+[    3450ms] [WARNING] A preload for 'https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565' is found, but is not used because the request credentials mode does not match. Consider taking a look at crossorigin attribute. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv:1949
+[    5452ms] [LOG] [WebPixelsManager] Prevented from executing in the Theme Editor @ https://cdn.shopify.com/wpm/bf4d92176wf885f6b7p0eb8715fm37bdd4cem.js:0
+[    5560ms] [ERROR] Suppressed error exporting logs: TypeError: Failed to fetch
+    at https://cdn.shopify.com/shopifycloud/app-bridge.js:1:13764 @ https://cdn.shopify.com/shopifycloud/online-store-web/assets/main/assets/main-e552833fdbbfd4c183c1a3fa4fa21e88716834b2.1.js:5
+[    7779ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv:0
+[    8194ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0
+[   10019ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0
+[   10329ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10329ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10332ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10332ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10334ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10334ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10335ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10336ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10338ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10338ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10340ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10340ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10342ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10342ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10344ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10344ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10346ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10346ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10348ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10348ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10349ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10349ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10351ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10351ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10352ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10352ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10354ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10354ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10355ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10355ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10357ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10357ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10358ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10358ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10360ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10360ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10361ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10362ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10363ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10363ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10364ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10365ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10366ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10366ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10367ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10367ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10369ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10369ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10370ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10370ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10371ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10371ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10372ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10372ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10374ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10374ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   10395ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   13901ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0
+[   13934ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0
+[   16764ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
+[   19849ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0
+[   19850ms] [WARNING] The resource https://cdn.shopify.com/s/files/1/0927/9383/1764/t/16/assets/overflow-list.css?v=13500019909476584571777035565 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://a9iz0x-ip.myshopify.com/?oseid=6tFgWMdn3Hcku25rS9FhSLDv&source=visualPreviewInitialLoad:0

@@ -1,0 +1,6 @@
+[    1128ms] [WARNING] polaris:  JSHandle@node - accessibilityLabel is recommended when scroll-box is provided @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1
+[    1345ms] [WARNING] using deprecated parameters for the initialization function; pass a single object instead @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1
+[    1866ms] [WARNING] Dux iframe sync: Blocked message from unauthorized origin: https://admin.shopify.com @ https://cdn.shopify.com/shopifycloud/online-store-web/assets/main/assets/main-e552833fdbbfd4c183c1a3fa4fa21e88716834b2.1.js:5
+[    2157ms] [WARNING] No `HydrateFallback` element provided to render during initial hydration @ https://cdn.shopify.com/shopifycloud/online-store-web/assets/main/assets/main-e552833fdbbfd4c183c1a3fa4fa21e88716834b2.1.js:5
+[    2377ms] [WARNING] Dux iframe sync: Error processing message: SecurityError: Failed to read a named property 'constructor' from 'Window': Blocked a frame with origin "https://admin.shopify.com" from accessing a cross-origin frame.
+    at https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/common-e472926509b1.js:89:49407 @ https://cdn.shopify.com/shopifycloud/web/assets/v1/vite/client/en/assets/main-ac6a3ea57ca0.js:1

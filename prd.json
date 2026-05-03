@@ -561,7 +561,7 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
-      "iteration_count": 6,
+      "iteration_count": 7,
       "max_iterations": 5,
       "max_same_failure": 3,
       "section_order_position": {

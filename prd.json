@@ -22,7 +22,9 @@
         ],
         "crop": "source/crops/section-08-science-stats-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "section with title/subtitle (likely empty in source HTML), 4 stat boxes each with h3 (big %), h4>p (headline phrase), p (mechanism explanation), AOS fade-down/fade-up reveals, dark-bg variant inline style #fff text",
-        "images": []
+        "images": [],
+        "anchor_text": "Microcurrent activates lymphatic drainage",
+        "source_section_selector": "#shopify-section-template--19760795549861__number_text_CqEtGa"
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -59,7 +61,8 @@
       "section_order_position": {
         "after": "section-06-results-timeline",
         "before": "section-08-medical-grade-fda"
-      }
+      },
+      "bq_section_class": "bq-ss"
     },
     {
       "id": "section-08-medical-grade-fda",
@@ -79,7 +82,8 @@
         ],
         "crop": "source/crops/section-09-medical-grade-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "dark-bg section with background-image, h2 with strong-emphasis, paragraph with NASA/FDA framing, checkmark bullet list of credentials",
-        "images": []
+        "images": [],
+        "anchor_text": "Medical-Grade Technology."
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -110,7 +114,8 @@
       "section_order_position": {
         "after": "section-07-science-stats",
         "before": "section-09-how-to-use"
-      }
+      },
+      "bq_section_class": "bq-mfda"
     },
     {
       "id": "section-09-how-to-use",
@@ -129,7 +134,8 @@
         ],
         "crop": "source/crops/section-10-how-to-use-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "pink-background section with 3 columns (or 3 stacked rows on mobile), each with usage image + step number + step title + step description",
-        "images": []
+        "images": [],
+        "anchor_text": "Apply Activating Serum"
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -158,7 +164,8 @@
       "section_order_position": {
         "after": "section-08-medical-grade-fda",
         "before": "section-10-comparison-grid"
-      }
+      },
+      "bq_section_class": "bq-htu"
     },
     {
       "id": "section-10-comparison-grid",
@@ -177,7 +184,8 @@
         ],
         "crop": "source/crops/section-11-comparison-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "table or grid with columns for product vs other treatments (creams / filler / surgery), rows for criteria (price, results, downtime, safety, etc.), checkmark/cross icons per cell",
-        "images": []
+        "images": [],
+        "anchor_text": "Without Surgery"
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -209,7 +217,8 @@
       "section_order_position": {
         "after": "section-09-how-to-use",
         "before": "section-11-promise-icons"
-      }
+      },
+      "bq_section_class": "bq-cg"
     },
     {
       "id": "section-11-promise-icons",
@@ -228,7 +237,8 @@
         ],
         "crop": "source/crops/section-12-promise-icons-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "single row with 6 icon+label items; likely flex-row on desktop, 3x2 grid or 2x3 on mobile",
-        "images": []
+        "images": [],
+        "anchor_text": "365-day Money Back Guarantee"
       },
       "acceptance": {
         "probe_diff_threshold": 0.02,
@@ -259,7 +269,8 @@
       "section_order_position": {
         "after": "section-10-comparison-grid",
         "before": "section-12-precision-engineering"
-      }
+      },
+      "bq_section_class": "bq-cg"
     },
     {
       "id": "section-12-precision-engineering",
@@ -278,7 +289,8 @@
         "crop": "source/crops/section-13-precision-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "image-text family pattern with VIDEO instead of image (autoplay/loop/muted/playsinline), dark-bg variant, h3 + paragraph + 4 feature icons grid below",
         "family_reference": "Sections 3, 4, 5 closed instances; section 4 already has video support in schema (priority over image)",
-        "images": []
+        "images": [],
+        "anchor_text": "Precision-Calibrated Microcurrent"
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -307,7 +319,9 @@
       "section_order_position": {
         "after": "section-11-promise-icons",
         "before": "section-13-urgency-banner"
-      }
+      },
+      "bq_section_class": "bq-image-text",
+      "dev_section_selector": "#shopify-section-bq-image-text-precision"
     },
     {
       "id": "section-13-urgency-banner",
@@ -326,7 +340,8 @@
         ],
         "crop": "source/crops/section-14-urgency-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "single-row dark-bg band with headline + sub-copy + possibly a countdown timer or stock indicator",
-        "images": []
+        "images": [],
+        "anchor_text": "very high chance of selling out"
       },
       "acceptance": {
         "probe_diff_threshold": 0.02,
@@ -354,7 +369,8 @@
       "section_order_position": {
         "after": "section-12-precision-engineering",
         "before": "section-14-testimonials"
-      }
+      },
+      "bq_section_class": "bq-ub"
     },
     {
       "id": "section-13b-here-is-the-problem",
@@ -393,7 +409,8 @@
         "paraphrase_strategy": "1:1 narrative beat, US-specific references swapped for IT equivalents, Tu form, sentence case h3+",
         "preconfirmed_claims": []
       },
-      "notes": "Missing section the overnight loop skipped. Sits between founder-pt3 (last instance of bq-image-text founder family) and bq-tech-specs in source DOM. Build as singleton bq-here-is-problem.liquid with all text exposed via schema settings."
+      "notes": "Missing section the overnight loop skipped. Sits between founder-pt3 (last instance of bq-image-text founder family) and bq-tech-specs in source DOM. Build as singleton bq-here-is-problem.liquid with all text exposed via schema settings.",
+      "bq_section_class": "bq-hep"
     },
     {
       "id": "section-14-testimonials",
@@ -412,7 +429,8 @@
         ],
         "crop": "source/crops/section-15-testimonials-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "dark-bg section with 4-6 testimonial cards (carousel or grid); each card: quote, customer name, age/location, star rating (5 stars pink per \u00a71 precedent), verified badge (Twitter blue per locked decision)",
-        "images": []
+        "images": [],
+        "anchor_text": "Are Saying"
       },
       "acceptance": {
         "probe_diff_threshold": 0.03,
@@ -443,7 +461,8 @@
       "section_order_position": {
         "after": "section-13-urgency-banner",
         "before": "section-15-founder-story"
-      }
+      },
+      "bq_section_class": "bq-tc"
     },
     {
       "id": "section-15-founder-story",
@@ -466,7 +485,8 @@
         "crop": "source/crops/section-16-founder-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "5 image-text family instances back-to-back. Configure 5 instances of bq-image-text consecutively in templates/index.json. Per HANDOFF: do NOT build a wrapper.",
         "family_reference": "use existing bq-image-text.liquid; no schema changes expected",
-        "images": []
+        "images": [],
+        "anchor_text": "Hey, I'm Sophie!"
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -495,7 +515,9 @@
       "section_order_position": {
         "after": "section-14-testimonials",
         "before": "section-13b-here-is-the-problem"
-      }
+      },
+      "bq_section_class": "bq-image-text",
+      "gate_skip_reason": "multi-section-array-pending"
     },
     {
       "id": "section-16-tech-specs",
@@ -503,7 +525,7 @@
       "disposition": "BUILD",
       "status": "passing",
       "source": {
-        "anchor_text": "magic-revital-eyess",
+        "anchor_text": "Revitaleyes Technology Specs",
         "anchor_classes": [
           "magic-revital-eyess",
           "second-group-class",
@@ -539,13 +561,14 @@
         "rules_ref": "CLAUDE.md Italian copy rules"
       },
       "notes": "If a spec value is a regulatory claim (e.g., 'FDA-approved for cosmetic use'), apply the regulatory substitution table.",
-      "iteration_count": 4,
+      "iteration_count": 6,
       "max_iterations": 5,
       "max_same_failure": 3,
       "section_order_position": {
         "after": "section-13b-here-is-the-problem",
         "before": "section-17-buy-block"
-      }
+      },
+      "bq_section_class": "bq-ts"
     },
     {
       "id": "section-17-buy-block",
@@ -565,7 +588,8 @@
         ],
         "crop": "source/crops/section-18-buy-block-{desktop,mobile}.png (capture if missing)",
         "expected_dom": "pink gradient bg, product image, variant selector (color/size), price display, qty selector, primary CTA, trust row below, possibly scroll-pinned reveal animation",
-        "images": []
+        "images": [],
+        "anchor_text": "Addresses all 3 root causes"
       },
       "acceptance": {
         "probe_diff_threshold": 0.04,
@@ -599,7 +623,8 @@
       "section_order_position": {
         "after": "section-16-tech-specs",
         "before": "section-18-stats-bar-repeat"
-      }
+      },
+      "bq_section_class": "bq-bb__section"
     },
     {
       "id": "section-18-stats-bar-repeat",
@@ -617,7 +642,9 @@
           "source/css/external-00-base.css lines 8852\u20138873 (.reduction-puffines-id overrides)"
         ],
         "expected_dom": "Same 4 stat boxes as \u00a77 (same numbers/headlines) but: dark background, NO title/subtitle, NO mechanism text (empty p), vertical divider lines between boxes via :before pseudo-elements. padding-top:30px; padding-bottom:30px.",
-        "images": []
+        "images": [],
+        "anchor_text": "Reported Smoother, Firmer Skin",
+        "source_section_selector": ".reduction-puffines-id"
       },
       "acceptance": {
         "probe_diff_threshold": 0.025,
@@ -641,7 +668,8 @@
       "section_order_position": {
         "after": "section-17-buy-block",
         "before": "section-19-customer-reviews"
-      }
+      },
+      "bq_section_class": "bq-sr"
     },
     {
       "id": "section-19-customer-reviews",
@@ -670,7 +698,8 @@
       "section_order_position": {
         "after": "section-18-stats-bar-repeat",
         "before": null
-      }
+      },
+      "bq_section_class": null
     }
   ]
 }

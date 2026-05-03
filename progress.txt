@@ -34,3 +34,14 @@
   .bq-ts__sublist {margin-left: 50px} ✓ source=50px ours=50px
   Mobile .bq-ts__card {padding: 20px 15px} ✓ source=20px 15px ours=20px 15px
   Mobile .bq-ts__badge-list {grid-template-columns: 1fr 1fr} ✓ source=1fr 1fr ours=1fr 1fr
+[2026-05-03T14:35:00Z] section-16-tech-specs BLOCKED iter=5. Reason: Shopify dev server auth token expired (HTTP 401 with "access token expired" on localhost:9292). diff-section.sh exits 2 (SCRIPT ERROR / G-2 condition). Section code and CSS unchanged from iter=3 (committed, deployed, visually verified). Source-rules JSON exists (408 rules). Previous diff PASSED (338 checks, 0 mismatches at iter=4).
+  Resolution: user must run `shopify auth login` then `shopify theme dev --store=a9iz0x-ip.myshopify.com` to refresh the dev server token. Once dev server returns 200 at localhost:9292, re-run this iteration — no code changes needed, only verification step.
+[2026-05-03T15:00:00Z] section-16-tech-specs PASSED iter=6. Diff: PASS 338 checks 0 mismatches. Section code unchanged from iter=3 (committed, deployed). Auth issue from iter=5 resolved by user. Re-ran diff-section.sh — clean pass. G-4 verified verbatim (same as iter=4):
+  .bq-ts__card {padding: 80px} ✓ source=80px ours=80px
+  .bq-ts__card {background-position: center} ✓ source=center ours=center
+  .bq-ts__card {border-radius: 16px} ✓ source=16px ours=16px
+  .bq-ts__card h4 {color: #ff7e97} ✓ source=#ff7e97 ours=#ff7e97
+  .bq-ts__card ul li {list-style: disc!important} ✓ source=disc ours=disc
+  .bq-ts__badge-list {grid-template-columns: 1fr 1fr 1fr 1fr} ✓ source=1fr 1fr 1fr 1fr ours=1fr 1fr 1fr 1fr
+  Mobile .bq-ts__badge-list {grid-template-columns: 1fr 1fr} ✓ source=1fr 1fr ours=1fr 1fr
+  prd.json status corrected pending→passing. iteration_count corrected 0→6.

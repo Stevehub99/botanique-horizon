@@ -45,3 +45,4 @@
   .bq-ts__badge-list {grid-template-columns: 1fr 1fr 1fr 1fr} ✓ source=1fr 1fr 1fr 1fr ours=1fr 1fr 1fr 1fr
   Mobile .bq-ts__badge-list {grid-template-columns: 1fr 1fr} ✓ source=1fr 1fr ours=1fr 1fr
   prd.json status corrected pending→passing. iteration_count corrected 0→6.
+[2026-05-03T15:30:00Z] section-16-tech-specs CONFIRMED-PASS iter=7 (re-verification). Diff: PASS 338 checks 0 mismatches. prd.json working-tree was reset to pending/0; HEAD commit 52076be already had status=passing/iteration_count=6. Restored working tree to match HEAD. No code changes needed — section code, CSS, and deployed theme unchanged from iter=3. Dev server healthy (HTTP 200). G-1: no new file changes (working-tree restoration only). G-4 verbatim props re-confirmed by diff-section.sh exit 0.

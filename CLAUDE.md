@@ -180,3 +180,11 @@ When source copy has no brand reference (just generic product/category language)
 **Search applies to repo structure, not just contents.** Before reasoning about what documents exist, what folders are organized how, or what the architecture looks like, search project knowledge or list the repo. Do not propose creating files that may already exist. Do not draft "best practice" structures from generic web search before checking what is actually present in this repo.
 
 **Search applies to settings I cannot read directly.** Profile preferences and project Custom instructions are not visible to me through search. Before drafting replacements for them, ask the user to paste current contents and merge — never replace blindly.
+
+## Lesson propagation protocol (added 2026-05-04)
+
+**Mid-session.** After any fix or finding lands during a build, append one line to `LESSONS.md` in this repo. Format: `[YYYY-MM-DD] [section] [finding] — [botanique-specific | generic] — [propagated: yes/no]`. Mechanical record, no judgment in the moment about whether it's "important enough" — log everything, classify later.
+
+**End-of-session.** Before closing any chat, scan LESSONS.md for entries marked `generic` with `propagated: no`. For each: write the lesson into `~/clone-pipeline/CLAUDE.md` under "Lessons from clones" with a citation back to the source (clone name + section + date), commit and push clone-pipeline, then update LESSONS.md entry to `propagated: yes`. This is mechanical — do not decide what's worth propagating in the moment, propagate everything classified as generic.
+
+**Session-start.** Read LESSONS.md to see what's accumulated since last propagation. If any `generic` entries are still `propagated: no`, propagate them before starting new work.

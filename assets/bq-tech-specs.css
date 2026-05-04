@@ -5,6 +5,13 @@
   background: #fff;
 }
 
+/* Explicit inner padding — page-width class doesn't apply horizontal padding in this theme context */
+.bq-ts__inner {
+  max-width: 1440px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
 /* Heading */
 .bq-ts__heading-wrap {
   margin-bottom: 50px;
@@ -16,7 +23,7 @@
   max-width: 100%;
   margin: 0 auto 0;
   color: #000;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .bq-ts__h2 strong {
@@ -38,11 +45,13 @@
   color: #fff;
   margin-top: 0;
   margin-bottom: 20px;
+  font-weight: 400;
 }
 
 .bq-ts__card h4 {
   color: #ff7e97;
   margin-bottom: 8px;
+  font-weight: 400;
 }
 
 .bq-ts__card ul {
@@ -136,12 +145,16 @@
     padding: 20px 15px;
   }
 
+  .bq-ts__card h3 {
+    font-size: 21.3333px;
+  }
+
   .bq-ts__card ul {
-    padding-left: 20px;
+    padding-left: 30px;
   }
 
   .bq-ts__sublist {
-    margin-left: 20px;
+    padding-left: 30px;
   }
 
   .bq-ts__badge-list {
@@ -155,5 +168,11 @@
 
   .bq-ts {
     padding-bottom: 0;
+  }
+}
+
+@media (max-width: 390px) {
+  .bq-ts__h2 {
+    font-size: 28px;
   }
 }

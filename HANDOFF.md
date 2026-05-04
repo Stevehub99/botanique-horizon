@@ -73,4 +73,5 @@ For Botanique: source uses Inter weight 400 for headings/subheadings; destinatio
 - Initialized clone-pipeline repo without `.gitignore` first — committed `node_modules/`, had to clean up. Future repo init: `.gitignore` is the first commit.
 - Wrote rules in chat without making clear they don't persist until committed to a synced repo.
 - Drafted replacements for profile preferences and project instructions without reading current contents — should ask for current state first when settings aren't visible to me.
+- Proposed creating PROJECT.md and PROGRESS.md without searching the repo first; both PROJECT.md and SELF-AUDIT.md already existed. Search-first applies to repo structure, not just file contents.
 - Made user download HANDOFF.md and `cp` from Downloads — wrong file got copied, HANDOFF was nuked. Future handoff writes: heredoc directly into the repo via terminal, no download intermediary.

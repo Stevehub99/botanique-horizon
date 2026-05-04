@@ -60,6 +60,8 @@ For Botanique: source uses Inter weight 400 for headings/subheadings; destinatio
 5. If both close cleanly, run `~/clone-pipeline/ralph.sh --recheck-all-passing` overnight.
 6. Morning: review progress.txt. Diagnose thrashers individually.
 7. After recheck pass: §13b build, §15 multi-section gate, §17 native featured-product swap.
+8. Add to ~/clone-pipeline/CLAUDE.md a "File persistence" section with two rules: (a) Use heredoc directly into target paths when writing files that have known destinations; do not use download → cp via the user. (b) Before any commit replacing a critical file (HANDOFF.md, prd.json, CLAUDE.md), show wc -l and abort if drastically smaller than current.
+9. Add a pre-commit hook in botanique-horizon that aborts if HANDOFF.md drops below 30 lines.
 
 ## Self-audit (don't repeat)
 

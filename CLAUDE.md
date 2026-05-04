@@ -174,3 +174,9 @@ A new story `section-13b-here-is-the-problem` was added to prd.json. It sits bet
 If source copy contains the source brand name ("Botanique Paris", "Botanique", "Botaniqueparis", etc.) anywhere — headlines, body copy, comparison grid, image alt text — substitute with `{{ section.settings.product_name_token | default: 'Il Nostro Dispositivo' }}` (or block-level equivalent). Never hardcode the source brand. Never invent a new brand name (e.g., "Lumière Paris" was an invention violation in §12 and §15 — these are forbidden).
 
 When source copy has no brand reference (just generic product/category language): no substitution needed; render as-is in Italian.
+
+## Search-first rules (added 2026-05-04)
+
+**Search applies to repo structure, not just contents.** Before reasoning about what documents exist, what folders are organized how, or what the architecture looks like, search project knowledge or list the repo. Do not propose creating files that may already exist. Do not draft "best practice" structures from generic web search before checking what is actually present in this repo.
+
+**Search applies to settings I cannot read directly.** Profile preferences and project Custom instructions are not visible to me through search. Before drafting replacements for them, ask the user to paste current contents and merge — never replace blindly.

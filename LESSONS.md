@@ -6,7 +6,7 @@ Format: `[YYYY-MM-DD] [section] [finding] — [botanique-specific | generic] —
 
 ## Entries
 
-- [2026-05-04] §16 — Theme heading font-weight defaults differ between source (`inter_n4` = 400) and our Horizon (`inter_n7` = 700). Fixed via theme customizer Typography settings. — generic — propagated: yes (clone-pipeline commit 62b2599, 2026-05-05)
+- [2026-05-04] §16 — Theme heading font-weight defaults differ between source (`inter_n4` = 400) and our Horizon (`inter_n7` = 700). MECHANISM CORRECTED 2026-05-05 (Botanique 5e re-diagnosis): the §16 closure was NOT via theme customizer. config/settings_data.json has zero commits changing typography (only Horizon v2.0.3 + v3.0.0 baselines). Actual fix was per-section overrides in assets/bq-tech-specs.css (font-weight: 400 at lines 26/48/54 from commit 0e332b9, plus h5 override at line 130 from 9d3b306). The customizer-Typography hypothesis remains an untested approach to global parity. — generic — propagated: yes (clone-pipeline commit 62b2599, 2026-05-05) — mechanism: REFUTED-as-stated; per-section-overrides VERIFIED (artifacts: 0e332b9, 9d3b306)
 - [2026-05-04] §16 — `.page-width` class doesn't apply horizontal padding in dev preview context. Inner wrappers need explicit `padding: 0 20px`. — generic — propagated: yes (clone-pipeline commit 62b2599, 2026-05-05)
 - [2026-05-04] §16 — Source mobile breakpoint is `@media (max-width: 390px)`; our theme variables resolve differently. Per-section media queries may be needed. — generic — propagated: yes (clone-pipeline commit 62b2599, 2026-05-05)
 - [2026-05-04] §16 — `ul padding-left: 30px` (source) vs theme default 20px — extract per-section, not global. — botanique-specific — propagated: n/a

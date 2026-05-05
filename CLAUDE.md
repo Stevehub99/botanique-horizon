@@ -188,3 +188,33 @@ When source copy has no brand reference (just generic product/category language)
 **End-of-session.** Before closing any chat, scan LESSONS.md for entries marked `generic` with `propagated: no`. For each: write the lesson into `~/clone-pipeline/CLAUDE.md` under "Lessons from clones" with a citation back to the source (clone name + section + date), commit and push clone-pipeline, then update LESSONS.md entry to `propagated: yes`. This is mechanical — do not decide what's worth propagating in the moment, propagate everything classified as generic.
 
 **Session-start.** Read LESSONS.md to see what's accumulated since last propagation. If any `generic` entries are still `propagated: no`, propagate them before starting new work.
+
+## Dual-goal enforcement (added 2026-05-04)
+
+Every session must produce evidence of system-building, not just clone-building.
+
+End-of-session check (mechanical): if any `generic` entries exist in LESSONS.md with `propagated: no`, propagating them to `~/clone-pipeline/CLAUDE.md` is the immediate next action — not whatever else TODO says. The session has failed the dual goal if it closes with backlog > 0.
+
+The clone-pipeline repo's CLAUDE.md should have a counter at the top: "Lessons absorbed from clones: N." This counter must increment over time. If it doesn't, the system is not being built.
+
+Session-start: first response in every new chat restates top-line goal verbatim, names immediate next action, reports LESSONS.md propagation backlog count.
+
+## Long-chat workarounds (added 2026-05-04)
+
+End chats on clean states, not when "almost done." A clean state is: a commit just pushed, a story just closed, a gate just passed. When one of those happens, propose ending the chat: "Clean state. Recommend ending chat here and opening new one for [next action]."
+
+Re-anchor every ~10 messages or after any git push. One line: restate top-line goal + report LESSONS.md backlog.
+
+Mid-chat summary at signs of length. When chat passes ~30 messages OR includes 3+ git pushes, produce a 5-line summary: top-line goal, what session has done, what's next, what's blocked, what's at risk of being forgotten.
+
+## Context window thresholds (added 2026-05-04, sources: NVIDIA RULER, Stanford, Chroma research March 2026)
+
+Claude.ai chat = 200K-token context window. Effective usable context is ~50-65% of that before sharp degradation.
+
+- 0-100K tokens (~50% of window): full quality. Complex reasoning safe.
+- 100K-160K tokens (50-80%): simple tasks only. No architectural decisions, no rule design, no multi-step planning.
+- 160K+ tokens (80%+): degraded. End the chat.
+
+Hard rule: at any point a chat has had 100+ messages OR includes 10+ git operations OR shows the "Actually... let me reconsider..." regression pattern, propose ending the chat. Don't ask permission — surface "We've crossed the context threshold for complex reasoning. Recommend ending here. Open new chat with [next action]."
+
+This rule overrides "we're almost done" reasoning.

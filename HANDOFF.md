@@ -26,3 +26,18 @@ Read CLAUDE.md and TODO.md. Then start at TODO Phase 4 step 1 (manifest classify
 - Used `git add -A` in LESSONS.md propagation step, sweeping 23+ untracked build artifacts (cleanup commit c896b0c had to delete 148 files / 31186 lines). Should have used targeted `git add LESSONS.md`. .gitignore patterns now prevent recurrence.
 - Spent 4-5 turns debugging mangled-filename panic that turned out to be a chat-UI display artifact, not real filesystem damage. Real on-disk filenames were correct all along. Lesson: when shell operations fail in surprising ways, search past chats for actual file state before assuming filesystem corruption.
 - Failed to recognize that user's reference to "Next chat — first three actions" and LESSONS.md indicated state from a session not yet synced into project knowledge — should have called conversation_search immediately rather than asking user to print files.
+
+## Session 2026-05-05b close
+
+**What landed:** Lesson +1 propagated to clone-pipeline (counter 3→4: repo-init `.gitignore` + commit discipline). Classify rules updated in `lib/generate-manifest.sh` — `LESSONS.md` now `TICK (critical)`; clone-pipeline scaffold/lib/prompts now TICK; `skills/clone-website/`, `*.bak.*`, `.claude/` now excluded. MANIFESTs regenerated in both repos. Auto-tick confusion logged as new generic LESSONS entry (propagated: no — for next session sweep). Workflow framing for lessons (where in pipeline + new method/criteria/tool/step) demonstrated in clone-pipeline entry.
+
+**What's broken or pending input:** §7 still blocked on Shopify auth (unchanged). LESSONS.md and templates/password.json tick/untick pending in botanique-horizon picker.
+
+## Next action
+
+Action 3: Phase 0 theme-settings parity rule into `~/clone-pipeline/prompts/section-build.md` and `~/clone-pipeline/CLAUDE.md`. Also flag: Stefano wants clone-pipeline knowledge reorganized as a system spec by pipeline phase rather than appended lessons — log as follow-up after Action 3, not bundled.
+
+## Session 2026-05-05b self-audit
+
+- Used the word "auto-tick" twice in this session despite knowing the GitHub connector has no auto-tick mechanism — caused confusion. Logged as LESSONS entry, will propagate next session.
+- Asked user to verify 63 ticked files manually instead of doing the search-based diff first. Should have searched project knowledge to compute the actual delta, then asked only about the missing/extra ones. User had to push back to get the right behavior.

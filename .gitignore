@@ -1,3 +1,15 @@
 node_modules/
 node_modules/
 .ralph/
+
+# 2026-05-05 — build artifacts and tool outputs
+.playwright-mcp/
+screenshots/
+*.bak
+*.bak.*
+ad-*.png
+ad-*.json
+advertiser-*.png
+advertiser-*.json
+collation-*.json
+graphql-*.json

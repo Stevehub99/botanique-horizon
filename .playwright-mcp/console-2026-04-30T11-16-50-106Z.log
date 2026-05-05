@@ -1,7 +1,0 @@
-[     856ms] [INFO] [HotReload] CLI hot reload disabled - No hot reload port specified. @ https://a9iz0x-ip.myshopify.com/cdn/shopifycloud/theme-hot-reload/theme-hot-reload.js:316
-[    1362ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
-[    1441ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://a9iz0x-ip.myshopify.com/favicon.ico:0
-[    5216ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
-[   40395ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
-[   59538ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119
-[   63705ms] [VERBOSE] Rendering was performed in a subtree hidden by content-visibility. @ :3119

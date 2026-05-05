@@ -23,7 +23,6 @@
   max-width: 100%;
   margin: 0 auto 0;
   color: #000;
-  font-weight: 400;
 }
 
 .bq-ts__h2 strong {
@@ -45,13 +44,11 @@
   color: #fff;
   margin-top: 0;
   margin-bottom: 20px;
-  font-weight: 400;
 }
 
 .bq-ts__card h4 {
   color: #ff7e97;
   margin-bottom: 8px;
-  font-weight: 400;
 }
 
 .bq-ts__card ul {
@@ -127,7 +124,6 @@
   padding: 0 30px;
   margin: 0;
   font-size: 20px;
-  font-weight: 400;
   color: #000;
 }
 

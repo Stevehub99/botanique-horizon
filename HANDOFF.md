@@ -112,3 +112,49 @@ Next chat: actual Phase 0 execution + validation in Botanique. Steps:
 - The python heredoc with f-string `!r` repr spec was a known zsh footgun and I should have caught it before sending. The dotted symptom would have been "weird Python error mentioning shell history content" — I diagnosed it correctly after the fact but should have written `repr(cur[k])` from the start.
 - Initial Step 2 plan presented Phase 0 sentinel work as separable from validating the doctrine. It's not: the sentinel asserts "applied", and that assertion needs to be evidenced or it's a lie. Should have framed Phase 0 as "execute + validate + sentinel" from the start, not "write sentinel describing existing fix."
 - Did not propose ending the chat at the natural seam (after Step 1 propagation landed) even though that was a clean state. Continued into Step 2 instead. The right call would have been to end after the propagation, do Step 2 in a fresh chat with full context budget for the diagnosis. The diagnosis itself was lean enough that this didn't matter, but the principle held.
+
+## Session 2026-05-05f close
+
+**What landed:** Phase 0 doctrine validated end-to-end for the first time in any clone. 9 commits across both repos; 4 in 5f's first half (LESSONS propagation + theme ID lock), 5 in the second half (Phase 0 execution + sentinel + LESSONS flip + clone-pipeline doctrine flip).
+
+Specific changes:
+- Canonical destination theme locked: `botanique-horizon-preview #195678142804` on store `a9iz0x-ip.myshopify.com`. CLAUDE.md "Locked decisions" section lists 7 anti-target unpublished themes (all named literally `195371860308`) plus Zest #178646581588 (live, different brand) as do-not-target. Every future `theme pull`/`theme push` MUST pass `--theme=195678142804` explicitly. Never `--live`.
+- `config/settings_data.json` updated via Shopify admin customizer: `type_heading_font` inter_n7 → inter_n4, `type_subheading_font` inter_n5 → inter_n4 (commit 75e6530). Note: Subheading was at n5/Medium, not n7/Bold as 5e's plan assumed — minor finding, didn't change the fix.
+- 4 redundant per-section font-weight:400 overrides removed from `assets/bq-tech-specs.css` (commit 07e26e1). Line 31's `font-weight: 700` for `.bq-ts__h2 strong` retained — legitimate per-element override, not made redundant by Phase 0.
+- §16 visual-diff gate run with overrides absent: PASS, 0/163420 desktop pixels (0.00%), 0/429799 mobile pixels (0.00%), 0 mismatches per viewport on 17 source elements. Doctrine works.
+- Phase 0 sentinel `inventories/theme-settings-parity.json` written with `status: "applied"`, `doctrine_status: "verified"`, full artifact chain (commit 05f7fcf). Future ralph.sh G-10 reads this.
+- §16 LESSONS entry: customizer mechanism flipped to ALSO VERIFIED alongside per-section-overrides VERIFIED. Both mechanisms now independently sufficient (commit b2e602b).
+- clone-pipeline CLAUDE.md doctrine annotation flipped `unverified` → `verified` with full artifact chain (commit 3674ebe). Both the status header (line 314) and the doctrine paragraph (line 317) updated — single str_replace would have left the status header stale; caught on diff review.
+- Generic LESSON propagated to clone-pipeline: zsh `!` history expansion in single-quoted heredocs (counter 10→11, clone-pipeline 80a3d45, marked propagated in Botanique LESSONS dc421ac).
+
+**What's broken or pending input:**
+- **§7 still `blocked-needs-human` with `iteration_count: 6, max_iterations: 5`.** Story is over its iteration cap. When ralph.sh next picks it up the carry-blocker logic from 5d's "re-diagnose before re-asserting" lesson will trigger — must reproduce the original failure under current conditions before re-asserting auth as the cause. The 5d theme pull crash with `"after":null}}}` may have been the actual cause, not auth.
+- **Visual-diff-section.sh stdout PASS not mirrored in progress.txt.** Last progress.txt entry is from 2026-05-04T17:37:21Z (`section-16-tech-specs gate=PASS iter=1`). The 5f gate run printed PASS to stdout but didn't append a progress.txt entry. Either the script only writes through ralph.sh wrapping, or there's a gap. Not blocking the doctrine claim (stdout was the verdict and it was PASS); flagging for next session because the locked rule "only ralph.sh writes progress.txt" depends on the script *actually* writing it on success.
+- **"Multiple Botanique themes" observation in admin (operator notice during 5f Step 3).** Operator saw more themes in the customizer's theme-list view than the original `shopify theme list` CLI output had shown. Could be CLI pagination (the same bug suspected in §7), could be themes created since the list was taken, could be themes the CLI doesn't surface in this account. Not blocking but a real signal something is creating themes on this store and we don't know what. Investigate before next pull.
+- **Phase 0 automation deferred.** Customizer manual click-through worked but is the wrong long-term shape — every future clone would require operator admin work to do Phase 0. After 5f validation, doctrine should be: write `lib/phase-0-apply-theme-settings.sh` that scripts the pull/edit/push automation against settings_data.json directly, document customizer-vs-API as equivalent, propagate. Worth a session of its own, not next-up.
+- **`shopify theme dev` was running at chat close** in a separate tab on theme 195678142804. Per 5d "stop theme dev before any working-tree mutation" — if you do anything to the working tree before the next session's first move, stop it (Ctrl+C, verify pgrep clean) first.
+
+## Next action
+
+Next chat: pick from the queue. In rough priority:
+1. **§7 carry-blocker re-diagnosis** (per 5d lesson). Reproduce the failure with theme dev running on canonical theme 195678142804, capture exact error signature, compare to §7's earlier crash log, decide if it's auth or pagination or something else. Resolution becomes the §7 unblock.
+2. **Phase 0 automation script** (`lib/phase-0-apply-theme-settings.sh`). Once §7 is unblocked, this is the right time — Botanique 5f gives us a working reference flow to script against, and it removes the manual-admin requirement before more sections need it.
+3. **§7→§19 actual section build resumes** once 1 and 2 land. ralph.sh autonomous loop should run cleaner because Phase 0 doctrine is verified and §16-class font-weight surprises won't recur.
+
+Decide priority at start of next chat based on context budget; if budget is tight, pick (1) only.
+
+## Session 2026-05-05f self-audit
+
+Three generic errors today, in order of recurrence risk:
+
+1. **Wrote operational steps describing a UI without having seen it.** Step 3 instruction said "Headings: Inter weight 400 / Subheadings: Inter weight 400" against Horizon's customizer. Horizon's customizer has no weight selector at the role level — weight is a property of the font face chosen inside the picker, not a separate field. Operator had to inspect and report back so I could rewrite the step. This is the same class of error as 5-04's "fixed via customizer Typography" lesson — assertion about a UI without primary evidence. The 5d "verifiable artifact" lesson covers LESSONS authoring; the same standard should apply to operational steps. Mitigation: when writing steps that depend on a UI surface I haven't seen, ask the operator to describe the surface first.
+
+2. **Backgrounded an interactive process with bare `&`.** Wrote `shopify theme dev ... &` for the Step 5 dev-server start. zsh suspended it on tty output. Lost ~one round trip diagnosing. Generic — `theme dev` is just one of many interactive Shopify CLI processes, and the failure mode (`suspended (tty output)`) will recur for any of them. Mitigation: never `&` an interactive process; either run in a separate tab (operator instruction) or use `nohup ... > log 2>&1 &` if backgrounding is genuinely needed. Borderline LESSONS-worthy if it appears once more.
+
+3. **Anchored a status flip on only one of two places the status was stated.** clone-pipeline CLAUDE.md had "NOT VERIFIED" in both a status header (line 314) and a follow-up paragraph (line 317). Initial str_replace updated 317 only, leaving 314 stale and contradicting the new content. Caught on diff review before commit. Generic class: "when flipping a multi-place status, find every statement of it." Mitigation: before any status-flip str_replace, grep for the old status word/phrase across the file and confirm there's only one occurrence; if multiple, batch the replacement.
+
+Two procedural notes also worth recording:
+
+4. Asked operator twice for Subheading-role-current-state without blocking on the answer. Operator changed both roles before reporting and then noted (correctly) that I should have asked before letting them proceed. The "speed up" feedback was a fair pushback; I should have either blocked on the answer or accepted not knowing it. Pretending I'd asked sufficiently when I'd let it pass twice was the actual error.
+
+5. Wrote conditional paste instructions ("paste only if X") that required operator to make judgment calls about what counts as "weird." Operator flagged this; replaced with PASTE / RUN / VERIFY labels with no conditionals. Behavioral fix landed mid-session; recurrence risk is low if the labels are used consistently going forward.

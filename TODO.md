@@ -58,6 +58,7 @@ Updates to `~/clone-pipeline/CLAUDE.md` (the GENERIC scaffold, reused across clo
 
 ## Open questions / pending decisions
 
+- **clone-pipeline knowledge as system spec by pipeline phase** (logged 2026-05-05b): restructure `~/clone-pipeline/CLAUDE.md` so rules and lessons are organized under the pipeline phase they govern (Phase 0 / Phase 1 / Phase 2 / Phase 3 / Phase 4 / Phase 5 / Phase 6) instead of flat sections + appended Lessons. Lessons from clones becomes a temporary log; entries get distributed into the right phase upon classification. Separate session — do not bundle with rule additions.
 - §17 buy block cleanup: replace custom file with native `featured-product.liquid` + style overrides. Blocked on having products in Shopify admin (test product created 2026-04-30, can proceed when needed).
 - §19 reviews: app install. User said any app fine; will install themselves later.
 - Bundle section near §17: app install, user will pick (Shopify Bundles / Frequently Bought Together / Bundler / etc.).

@@ -662,3 +662,28 @@ The following files were not accessible and may affect audit completeness:
 ---
 
 *End of SELF-AUDIT.md*
+
+## Session 2026-05-05d — near-destruction of working tree
+
+**What happened:** Attempted `shopify theme pull --store=a9iz0x-ip --live --nodelete` to retrieve the §16 typography fix from the store. `--live` resolved to `Zest` (the actual live theme on this store, NOT botanique-horizon-preview). Pull crashed mid-pagination but had already written ~200+ Zest theme files into the local working tree, deleting/replacing all `bq-*` files on disk. A subsequent `shopify theme dev` restart compounded the damage by reconciling the now-Zest-flavored working tree against the development theme on Shopify.
+
+**How recovered:** Origin/main was untouched. `git checkout HEAD -- .` restored 337 deletions + 3 modifications. `git clean -fd` removed 47 untracked Zest fragments + `.claude/skills/`. Working tree now matches `79e9d6d` (Session 2026-05-05c close) exactly. No commits lost.
+
+**What was nearly lost:** Every `bq-*.css` and `bq-*.liquid` file on disk. Inventories and source/ were untouched (different directories). Recoverable only because nothing had been committed before this chat noticed the damage.
+
+**What was wrong with my reasoning:** Conflated `theme dev` background sync output with the output of commands I had asked the user to run. Twice. Once treating `theme pull`'s asset-listing crash as harmless "auth failure," once treating the long-running `theme dev` reconciliation as a fresh `theme pull`. The terminal showed me what was happening; I read what I expected instead.
+
+**What I missed about the §16 lesson:** LESSONS.md entry "Theme settings parity fix (heading weight 700→400 globally via Typography)" was written 2026-05-04 as if the customizer change had landed. Repo `config/settings_data.json` shows `type_heading_font = 'inter_n7'` (700) — the documented fix never executed in any verifiable form. The §16 close was real (gate exit code), but the *mechanism* attributed to it was hypothesis. We don't actually know why §16 closed.
+
+**Generic lessons to propagate (logging in LESSONS.md, propagation to clone-pipeline next session):**
+1. Never use `--live` with `shopify theme pull` in a working directory containing real work. Always `--theme=<id>` against a known unpublished theme. `--live` is destructive when the live theme isn't what you think.
+2. `shopify theme dev` is bidirectional. Restarting it after working-tree pollution will push the pollution to whatever development theme it targets. Stop `theme dev` before any recovery commands.
+3. Lessons of the form "fixed via [mechanism]" must have a verifiable artifact (commit hash, API audit log, file diff). No artifact = the mechanism is hypothesis. Don't propagate hypothesis lessons.
+4. The §7 "blocked-needs-human Shopify auth" carried in HANDOFF for 3+ sessions is unverified. It may have been the same CLI pagination bug observed today (`"after":null}}}` crash on `theme pull`). Re-diagnose §7 before treating auth as the cause.
+
+**What was NOT confirmed this session:**
+- Where the §16 customizer typography fix actually lives (which theme, if any).
+- Why §16 closed under the new visual-diff gate.
+- Whether `inventories/theme-settings-parity.json` can ever be honestly produced for Botanique without first answering the above.
+
+Phase 0 sentinel work is paused until the §16 mechanism is re-verified from primary evidence (Shopify admin theme editor screenshots of typography settings on each unpublished theme, or computed-style probe of dev preview vs source).

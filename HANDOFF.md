@@ -84,3 +84,31 @@ Do NOT attempt Phase 0 sentinel until the §16 mechanism is verified. Sequence f
 - Recommended `shopify theme pull --live` against a store whose live theme I had not verified. `--live` should never have been in any command I sent; the safer default is `--theme=<id>` always.
 - Did not check for a `.shopify/project.json` or `shopify.theme.toml` in the repo before reasoning about which theme `theme dev` targets. The absence of those files is itself diagnostic and I missed it for several turns.
 - Used "Press Ctrl+C" framing without first asking whether the user knew which terminal `theme dev` was running in. Should have confirmed terminal identification before issuing the action.
+
+## Session 2026-05-05e close
+
+**What landed:** §16 mechanism verified from primary evidence — per-section CSS overrides in assets/bq-tech-specs.css (commits 0e332b9, 9d3b306), NOT theme customizer. Customizer-Typography hypothesis refuted: config/settings_data.json has zero commits changing typography. §16 LESSONS entry annotated with correction. Clone-pipeline Phase 0 doctrine annotated as mechanism-unverified — the doctrine remains recommended but has not been empirically validated end-to-end. 4 backlog lessons from 5d propagated to clone-pipeline (counter 6→10) in workflow-classified shape including the new evidenced/unverified protocol amendment. New generic lesson logged (zsh ! history expansion in heredocs) — backlog 1.
+
+**What's broken or pending input:**
+- §7 cause still unverified (may be CLI pagination bug, not auth — per 5d lesson).
+- Phase 0 has never been executed end-to-end in any clone. Botanique's "Phase 0 work" so far is only per-section overrides on §16. Going forward without real Phase 0, every §7-§19 section will independently need font-weight overrides — defeating the doctrine.
+- Phase 0 sentinel intentionally NOT written. Writing one now would assert "applied" against a state that only patched one section.
+- Repo↔store deploy target relationship still unclear (no .shopify/project.json or shopify.theme.toml; theme dev creates per-machine dev theme).
+- LESSONS.md backlog: 1 generic entry unpropagated (zsh heredoc lesson).
+
+## Next action
+
+Next chat: actual Phase 0 execution + validation in Botanique. Steps:
+1. Propagate 1 backlog LESSONS entry to clone-pipeline (counter 10→11).
+2. Identify the canonical destination theme ID for botanique-horizon's main branch. Document in CLAUDE.md as a project-locked decision so future theme dev / theme push invocations target it via --theme=<id>.
+3. Open Shopify admin → Customize on that theme → Typography → set Headings + Subheadings to Inter weight 400 → save.
+4. shopify theme pull --theme=<id> from a scratch dir; copy back only config/settings_data.json after verifying it's the only changed file.
+5. Re-run visual-diff-section.sh on §16 with the per-section font-weight overrides COMMENTED OUT temporarily. If still PASS: doctrine validated; remove the overrides permanently. If FAIL: doctrine has a gap; diagnose before propagating Phase 0 further.
+6. Only after a successful validation: write inventories/theme-settings-parity.json with status: "applied" and the artifacts referenced inline.
+7. Re-flip the §16 LESSONS entry's mechanism annotation to VERIFIED (with the customizer commit hash as artifact) once the validation succeeds.
+
+## Session 2026-05-05e self-audit
+
+- The python heredoc with f-string `!r` repr spec was a known zsh footgun and I should have caught it before sending. The dotted symptom would have been "weird Python error mentioning shell history content" — I diagnosed it correctly after the fact but should have written `repr(cur[k])` from the start.
+- Initial Step 2 plan presented Phase 0 sentinel work as separable from validating the doctrine. It's not: the sentinel asserts "applied", and that assertion needs to be evidenced or it's a lie. Should have framed Phase 0 as "execute + validate + sentinel" from the start, not "write sentinel describing existing fix."
+- Did not propose ending the chat at the natural seam (after Step 1 propagation landed) even though that was a clean state. Continued into Step 2 instead. The right call would have been to end after the propagation, do Step 2 in a fresh chat with full context budget for the diagnosis. The diagnosis itself was lean enough that this didn't matter, but the principle held.

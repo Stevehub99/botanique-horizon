@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "status": "applied",
+  "applied_at": "2026-05-05T18:51:14Z",
+  "applied_by": "stefano (operator) via Shopify admin customizer",
+  "destination": {
+    "store": "a9iz0x-ip.myshopify.com",
+    "theme_name": "botanique-horizon-preview",
+    "theme_id": "195678142804"
+  },
+  "source_evidence": {
+    "files": [
+      "source/css/inline-styles.css#L134",
+      "source/css/inline-styles.css#L137",
+      "source/rendered.html#L546",
+      "source/rendered.html#L549"
+    ],
+    "values": {
+      "--font-heading--weight": "400",
+      "--font-subheading--weight": "400",
+      "--font-paragraph--weight": "400"
+    }
+  },
+  "changes_applied": [
+    {
+      "field": "type_heading_font",
+      "before": "inter_n7",
+      "after": "inter_n4",
+      "meaning": "Heading role: Inter Bold (700) -> Inter Regular (400)"
+    },
+    {
+      "field": "type_subheading_font",
+      "before": "inter_n5",
+      "after": "inter_n4",
+      "meaning": "Subheading role: Inter Medium (500) -> Inter Regular (400)"
+    }
+  ],
+  "fields_unchanged": [
+    "type_body_font (already inter_n4)",
+    "type_accent_font (inter_n7 retained — Accent role not part of source delta and is consumed by .bq-ts__h2 strong which legitimately wants 700)"
+  ],
+  "artifacts": {
+    "settings_data_commit": "75e65300",
+    "override_removal_commit": "07e26e1",
+    "validation_gate_run": {
+      "section": "section-16-tech-specs",
+      "timestamp": "2026-05-05T~18:55Z",
+      "verdict": "PASS",
+      "desktop": "0/163420 pixels (0.00%), 0 mismatches / 17 source elements",
+      "mobile": "0/429799 pixels (0.00%), 0 mismatches / 17 source elements",
+      "test_condition": "ran with all 4 redundant heading font-weight overrides commented out in assets/bq-tech-specs.css; PASS proves the customizer settings carry the headings without per-section CSS"
+    }
+  },
+  "doctrine_status": "verified",
+  "supersedes": [
+    "Per-section font-weight:400 overrides in assets/bq-tech-specs.css (commits 0e332b9, 9d3b306) — REMOVED in 07e26e1 as redundant.",
+    "Future §7-19 sections must NOT add font-weight:400 overrides on h1-h4 or h5-h6; the role-level fix is canonical."
+  ],
+  "exceptions": [
+    ".bq-ts__h2 strong retains font-weight:700 — legitimate override; source semantics want strong=Bold inside otherwise-Regular h2."
+  ],
+  "notes": "Phase 0 doctrine empirically validated for the first time end-to-end in any clone. Botanique 5f is the validating run. Future clones can rely on this sentinel's presence with status:applied as evidence the parity step ran; ralph.sh G-10 gate should read this file before allowing §7-19 stories to start."
+}

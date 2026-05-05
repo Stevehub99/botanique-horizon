@@ -160,3 +160,95 @@ Two procedural notes also worth recording:
 5. Wrote conditional paste instructions ("paste only if X") that required operator to make judgment calls about what counts as "weird." Operator flagged this; replaced with PASTE / RUN / VERIFY labels with no conditionals. Behavioral fix landed mid-session; recurrence risk is low if the labels are used consistently going forward.
 
 6. **Narrowed scope drift on a goal-reframe.** When operator asked "can the system build itself," I wrote a pivot message for the next chat that scoped the audit goal to "make ralph good enough to ship Botanique 7-19 unattended." That dropped the project's locked dual-goal rule (build Botanique AND build the generic clone-pipeline system; the system is the durable asset). Operator caught it and asked why I had not mentioned the system goal. Generic class: when a user reframes the immediate task, re-anchor on standing constraints (locked rules, dual-goal, role split) before writing the new framing. Do not let the user's most-recent phrasing override constraints they set up earlier and forgot to repeat. Mitigation: before writing any "new plan" or "pivot" message, scan the project's locked rules and confirm the new framing is consistent with each one. This self-note was written AFTER the original HANDOFF push (72f67d7) and amended in via this commit -- itself a sub-lesson: self-notes that arrive post-HANDOFF need to be amended in, not left in chat history.
+## Session 2026-05-05g close
+
+**Hard reframe of project goal landed:** Claude Code is now primary executor; chat-Claude is curator at ralph-batch cadence. Knowledge persistence shape is open for redesign by Claude Code in service of its own future use. Locked rules (dual-goal, role split, manifest discipline, no-progress.txt-writes, search-before-asserting, verifiable-artifact) survive. Knowledge-shape redesign deferred to next chat as item 7 of the 5g fix list.
+
+**What landed (5g):**
+
+5 commits across both repos. clone-pipeline gained 3 new scaffold scripts + 5 patches; botanique-horizon got §7 reset.
+
+clone-pipeline:
+- `lib/preflight.sh` (new): Phase 0 sentinel + dev server reachability checks. Hard-fails before iteration spawn. `--dev-server-only` flag for between-iter health re-checks.
+- `lib/retry-blocked.sh` (new): encodes 5d carry-blocker protocol. Resets `status` to `pending` and `iteration_count` to 0, writes `.ralph/<story>-retry-context.md` with prior failure context + reproduce-before-asserting framing. Refuses to operate on stories not currently `blocked-needs-human`.
+- `lib/ralph-status.sh` (new): derived view of prd.json (id/disposition/status/iter/max + pickability). Three modes: table, JSON, pickable-only.
+- `ralph.sh` (4 patches): launch-time preflight call, `first_iter` flag, between-iter `--dev-server-only` re-check, `RALPH_INVOKED=1` env var on visual-diff-section.sh invocation. Auto-pauses cleanly if dev server dies mid-run instead of burning iterations to 2-consecutive-failures.
+- `lib/visual-diff-section.sh` (1 patch): when run standalone (`RALPH_INVOKED` unset), appends `[<ISO>] <story> gate=<verdict> mode=manual` to progress.txt. Closes the curator-visibility gap from 5f's standalone gate run.
+- `prompts/section-build.md` (1 patch): reads `.ralph/<STORY_ID>-retry-context.md` as highest-priority context when present, alongside `must-fix.md`. Treats retry-context as framing override; must-fix as supplementary.
+- `MANIFEST.md` regenerated.
+
+botanique-horizon:
+- `prd.json`: §7 status `blocked-needs-human → pending`, iteration_count 6 → 0. Re-engageable by ralph.
+- `.ralph/section-07-science-stats-retry-context.md`: written by retry-blocked.sh, kept as ephemeral runtime state (`.ralph/` is gitignored).
+
+**Botanique batch reduced to 2 stories:** §7 (retry, just reset) and §13b here-is-the-problem (pending 0/5, never built). Everything else is `passing`, `passing-with-stubs`, or `deferred`. §13/§16 over-ceiling but already passing — ralph's ceiling check skips them.
+
+**What's broken or pending input:**
+
+- **Ralph never run with this scaffolding.** Launch is unvalidated — first run is itself a smoke test for: preflight gating, retry-context being read by the agent, between-iter health check on iter 2. Stefano launching tomorrow morning.
+- **`HTTP 000000` cosmetic bug in preflight.sh.** When dev server is down, the FAIL line shows `HTTP 000000` instead of `HTTP 000`. Bash `cmd 2>/dev/null || echo "fallback"` inside `$(...)` concatenated curl's stdout (000) with the fallback echo (000). Fix is one-line: use `${var:-default}` parameter expansion. Not blocking — only visible on failure path. Fold into next clone-pipeline commit.
+- **retry-blocked.sh prints misleading "Commit prd.json + .ralph/<story>-retry-context.md" message.** `.ralph/` is gitignored in this project (correctly — runtime state). The retry-context survives only as long as the iteration. Generic fix: drop the retry-context.md from the suggested commit, or check gitignore before suggesting. Not blocking.
+- **Knowledge-shape redesign deferred** to next chat (item 7 of 5g fix list). 31KB clone-pipeline CLAUDE.md still flat-with-appended-Lessons. Phase-keyed split + operations/ tree designed but not executed. Largest remaining GOAL-B item.
+- **Phase 0 automation script (`lib/phase-0-apply-theme-settings.sh`) deferred** (item 8). Until landed, every future clone needs operator admin clicks to do Phase 0. Botanique 5f gives a working reference flow to script against.
+
+## Session 2026-05-05g self-audit
+
+Five generic errors today, in order of recurrence risk:
+
+1. **Wrote a bash heredoc nested inside `$(...)` command substitution.** `RETRY_CTX_BODY="$(cat <<EOF ... EOF)"` parses cleanly on bash 5.x but fails on macOS bash 3.2.57 (the default `/bin/bash`) with `unexpected EOF while looking for matching '"'`. Sandbox `bash -n` validation does not catch this — it ran on bash 5.2. Generic mitigation: write heredocs directly to a file (`cat > FILE <<EOF`) rather than capturing into a variable; or test on bash 3.2 specifically before shipping. Wasted a round trip.
+
+2. **Wrote multi-line bash string with embedded double quotes.** `"...the assumption \"this is the same blocker as last time.\""` — the unescaped inner `"` closed the outer string prematurely, leaving `is the same blocker as last time` to parse as commands. Caught only when Stefano ran the script. Generic mitigation: any multi-line bash string with prose content must use heredoc, never `VAR="..."`.
+
+3. **Pasted `# 1. Install...` comment lines into operator-paste blocks.** zsh interactive shells don't honor `#` as a comment by default (INTERACTIVE_COMMENTS is off). Same root cause as 5c trailing-`#` lesson, but at start-of-line. Generic mitigation: never include `#` comment lines in shell snippets given to operator. Use prose around code blocks instead. Recurred despite 5c — this is a discipline failure, not a knowledge gap.
+
+4. **Suggested a "better commit message" option after Stefano had already pasted the short one.** Should have given the long message from the start, not flagged it as an alternative after the commit was pushed. Frustrated Stefano. Generic mitigation: when the role split has been declared (Stefano executes terminal commands), Claude commits to ONE recommendation per command. No A/B framing inside an in-progress task — same rule that's already in the project's locked rules, just applied to commit-message wording too.
+
+5. **retry-blocked.sh told operator to commit `.ralph/<story>-retry-context.md`** without checking `.gitignore`. `.ralph/` is excluded; the file is intentionally ephemeral runtime state. Operator caught it via `git status --short`. Generic mitigation: when a script suggests a commit, the suggestion should respect the project's gitignore. Either grep `.gitignore` for the suggested path, or scope the message to "stage the relevant changes" without naming specific paths.
+
+## Lessons pending propagation to clone-pipeline (5g batch)
+
+Five generic, all from this session. To be batched into clone-pipeline at next curation cadence (per the new ralph-batch curation cadence rule, this can wait until ralph completes a batch and a new chat reviews findings holistically).
+
+1. **bash heredocs inside `$(...)` break on macOS bash 3.2.** Workflow phase: any shell-script generation. New criteria: "If composing multi-line bash strings, write directly to a file via `cat > FILE <<EOF`. Do NOT use `VAR=\"$(cat <<EOF ... EOF)\"` — bash 3.2 (default on macOS) has parser bugs with this construct. Sandbox validation on bash 5.x will not catch it."
+
+2. **Bash string literals with embedded double quotes break.** Workflow phase: any multi-line shell-string composition. New criteria: "Any multi-line bash assignment with prose-like content must use heredoc (`cat <<EOF ... EOF` to file or stdin). Never `VAR=\"...with embedded quotes...\"` — the inner `\"` closes the outer string."
+
+3. **Don't include `#` comment lines in operator-paste blocks.** Workflow phase: any operator-facing terminal snippet. New criteria: "zsh interactive shells fail with `command not found: #` on `# comment` lines unless INTERACTIVE_COMMENTS is set (off by default). Never include shell-comment lines in operator-paste blocks. Use prose around the code block."
+
+4. **One recommendation per command in execute mode.** Workflow phase: post-decision execution after role split is in effect. New criteria: "When the role split is active (Stefano executes terminal commands), every command sent to operator carries Claude's chosen recommendation, not a menu. No 'option A or option B' framing. The locked rule against A/B framing on operational moves applies to wording choices (commit messages, log entries, etc.) too, not just decision points."
+
+5. **Scripts that suggest a commit must respect project .gitignore.** Workflow phase: any helper script that prints "commit X" instructions. New criteria: "Before suggesting a specific path to commit, check `.gitignore`. If the path is excluded, scope the suggestion to 'stage the relevant changes' instead of naming the path. Particularly important for `.ralph/` runtime state."
+
+## Next action
+
+**Tomorrow morning, Stefano launches ralph in this sequence:**
+
+1. Tab 1 (separate terminal):
+   ```
+   shopify theme dev --theme=195678142804 --store=a9iz0x-ip.myshopify.com
+   ```
+   Wait for `Preview your theme: http://127.0.0.1:9292` line.
+
+2. Tab 2 (main):
+   ```
+   cd ~/botanique-clone-build/botanique-horizon
+   ~/clone-pipeline/lib/preflight.sh
+   ```
+   Confirm both checks pass.
+
+3. Same tab — launch unattended in tmux with auto-sleep on completion:
+   ```
+   tmux new -s ralph
+   cd ~/botanique-clone-build/botanique-horizon
+   caffeinate -dims ~/clone-pipeline/ralph.sh ; pmset sleepnow
+   ```
+   `Ctrl+B D` to detach. (`pmset sleepnow` may or may not require sudo on Stefano's macOS — to be tested before commit by running it manually first.)
+
+**Expected outcome:** ralph picks §7 first (lower priority order), runs an iteration with retry-context.md as highest-priority framing. Either passes the visual-diff gate (commit + status passing), or fails (must-fix.md written, retry next iter), or hits dev-server failure (between-iter check auto-pauses). Same flow for §13b. Stories advance to passing or auto-pause for human review. Mac sleeps when ralph exits.
+
+**On reopening next chat:**
+- Read this HANDOFF entry first.
+- Check ralph state: `cd ~/botanique-clone-build/botanique-horizon && ~/clone-pipeline/lib/ralph-status.sh`.
+- Read last 30 lines of `progress.txt` and the relevant `iter-*-visual.log` for any newly-blocked stories.
+- Decide: GOAL-A items (manual unblocks for §7/§13b if needed) and/or GOAL-B items (knowledge-shape redesign — item 7; Phase 0 automation script — item 8).
+- Curate 5g lessons-pending (5 entries above) into clone-pipeline at this cadence per the ralph-batch curation rule.

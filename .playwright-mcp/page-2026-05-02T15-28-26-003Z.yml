@@ -1,0 +1,1832 @@
+- generic [ref=e1]:
+  - generic [ref=e12]:
+    - generic [ref=e15]:
+      - link "Meta Ad Library" [ref=e18] [cursor=pointer]:
+        - /url: /ads/library/?source=fb-logo
+        - generic [ref=e20]: Meta Ad Library
+      - generic [ref=e22]: Ad Library
+      - menuitem "Ad Library report" [ref=e24] [cursor=pointer]:
+        - generic [ref=e25]: Ad Library report
+      - menuitem "Ad Library API" [ref=e27] [cursor=pointer]:
+        - generic [ref=e28]: Ad Library API
+      - menuitem "Branded content" [ref=e30] [cursor=pointer]:
+        - generic [ref=e31]: Branded content
+      - menuitem "Open navigation panel" [ref=e33] [cursor=pointer]
+    - generic [ref=e40]:
+      - combobox "Italy" [ref=e44] [cursor=pointer]:
+        - generic [ref=e51]: Italy
+      - combobox "All ads" [ref=e62] [cursor=pointer]:
+        - generic [ref=e72]: All ads
+      - generic [ref=e82]:
+        - generic [ref=e88]: Search by keyword or advertiser
+        - generic [ref=e94]:
+          - searchbox "Search by keyword or advertiser" [ref=e100]: Eco Bio Boutique
+          - button "Clear" [ref=e102] [cursor=pointer]
+    - generic [ref=e105]:
+      - generic [ref=e107]:
+        - img "Page profile picture" [ref=e112]
+        - link "Eco Bio Boutique" [ref=e115] [cursor=pointer]:
+          - /url: https://facebook.com/ecobioboutiqueit
+          - heading "Eco Bio Boutique" [level=1] [ref=e116]
+      - generic [ref=e117]:
+        - link "Ads" [ref=e118] [cursor=pointer]
+        - link "About" [ref=e119] [cursor=pointer]
+    - dialog [ref=e120]:
+      - generic [ref=e121]:
+        - link [ref=e122] [cursor=pointer]:
+          - /url: /
+          - heading [level=4] [ref=e123]: Log in
+        - menuitem [ref=e124] [cursor=pointer]
+      - generic [ref=e126]:
+        - generic [ref=e127]:
+          - heading [level=4] [ref=e129]: Ad Library
+          - menuitem [ref=e131] [cursor=pointer]:
+            - heading [level=4] [ref=e133]: Ad Library report
+          - menuitem [ref=e135] [cursor=pointer]:
+            - heading [level=4] [ref=e137]: Ad Library API
+          - menuitem [ref=e139] [cursor=pointer]:
+            - heading [level=4] [ref=e141]: Branded content
+        - separator [ref=e142]
+        - generic [ref=e143]:
+          - menuitem [ref=e145] [cursor=pointer]:
+            - heading [level=4] [ref=e147]: System status
+          - menuitem [ref=e149] [cursor=pointer]:
+            - heading [level=4] [ref=e151]: Subscribe to email updates
+          - menuitem [ref=e153] [cursor=pointer]:
+            - heading [level=4] [ref=e155]: FAQ
+          - menuitem [ref=e157] [cursor=pointer]:
+            - heading [level=4] [ref=e159]: About ads and data use
+          - menuitem [ref=e161] [cursor=pointer]:
+            - heading [level=4] [ref=e163]: Privacy
+          - menuitem [ref=e165] [cursor=pointer]:
+            - heading [level=4] [ref=e167]: Terms
+          - menuitem [ref=e169] [cursor=pointer]:
+            - heading [level=4] [ref=e171]: Cookies
+    - generic [ref=e172]:
+      - generic [ref=e186]:
+        - heading "~950 results" [level=3] [ref=e194]
+        - generic [ref=e195]:
+          - generic [ref=e197]:
+            - heading "Similar regional ads" [level=4] [ref=e199]
+            - generic [ref=e200]:
+              - generic:
+                - button [disabled]:
+                  - img
+              - generic [ref=e203]:
+                - generic [ref=e210]:
+                  - generic [ref=e212]:
+                    - generic [ref=e214]: Eco Bio Boutique - España
+                    - generic [ref=e215]: Beauty, cosmetic & personal care
+                    - generic [ref=e216]: Spain
+                  - button "View Ads" [ref=e218] [cursor=pointer]:
+                    - generic [ref=e222]: View Ads
+                - generic [ref=e229]:
+                  - generic [ref=e231]:
+                    - generic [ref=e233]: Eco Bio Boutique - Portugal
+                    - generic [ref=e234]: Beauty, cosmetic & personal care
+                    - generic [ref=e235]: Portugal
+                  - button "View Ads" [ref=e237] [cursor=pointer]:
+                    - generic [ref=e241]: View Ads
+                - generic [ref=e248]:
+                  - generic [ref=e250]:
+                    - generic [ref=e252]: Eco Bio Boutique
+                    - generic [ref=e254]: Beauty, cosmetic & personal care
+                    - generic [ref=e255]: Germany
+                  - button "View Ads" [ref=e257] [cursor=pointer]:
+                    - generic [ref=e261]: View Ads
+              - generic:
+                - button [disabled]:
+                  - img
+          - generic [ref=e269]:
+            - generic [ref=e270]:
+              - textbox "Keyword" [ref=e272]
+              - button "Filters" [ref=e276] [cursor=pointer]:
+                - generic [ref=e281]: Filters
+              - generic [ref=e283]:
+                - generic [ref=e289]: Sort
+                - combobox "Sort" [ref=e294] [cursor=pointer]:
+                  - generic [ref=e301]: Sort by
+            - generic [ref=e306]:
+              - generic [ref=e307]:
+                - strong [ref=e308]: Active status
+                - text: ": Active ads"
+              - button "Remove" [ref=e309] [cursor=pointer]:
+                - generic [ref=e312]: Remove
+          - generic [ref=e316]:
+            - generic [ref=e318]:
+              - generic [ref=e320]:
+                - generic [ref=e321]:
+                  - generic [ref=e328]: Active
+                  - generic [ref=e331]: "Library ID: 1068039901074398"
+                  - generic [ref=e333]: Started running on 3 Feb 2024
+                  - generic [ref=e335]: Platforms
+                  - generic [ref=e359]: This ad has multiple versions
+                  - generic [ref=e366]: EU transparency
+                - button "Open Drop-down" [ref=e373] [cursor=pointer]:
+                  - generic [ref=e376]: Open Drop-down
+              - button "See ad details" [ref=e379] [cursor=pointer]:
+                - generic [ref=e383]: See ad details
+              - separator [ref=e384]
+              - generic [ref=e389]:
+                - generic [ref=e392]:
+                  - img "Eco Bio Boutique" [ref=e393]
+                  - generic [ref=e395]:
+                    - link "Eco Bio Boutique" [ref=e396] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e400]:
+                      - strong [ref=e402]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e404]:
+                  - button "Siamo su @Starbeneofficial 🥰! Si parla dell'importanza della Skincare Intima e di come andrebbe trattata, anche grazie ai nostri prodotti intimi. Sweet Candy e Flower Power ❤️" [ref=e407]:
+                    - generic [ref=e410]:
+                      - text: Siamo su @Starbeneofficial 🥰!
+                      - text: Si parla dell'importanza della Skincare Intima e di come andrebbe trattata, anche grazie ai nostri prodotti intimi.
+                      - text: Sweet Candy e Flower Power ❤️
+                  - link "Skincare Intima 👉 Shop Now" [ref=e411] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e413]:
+                      - generic [ref=e414]:
+                        - generic:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e416]:
+                          - generic [ref=e417]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e419]:
+                        - generic [ref=e423]: Shop Now
+            - generic [ref=e425]:
+              - generic [ref=e427]:
+                - generic [ref=e428]:
+                  - generic [ref=e435]: Active
+                  - generic [ref=e438]: "Library ID: 971439317785789"
+                  - generic [ref=e440]: Started running on 29 May 2024
+                  - generic [ref=e442]: Platforms
+                  - generic [ref=e466]: This ad has multiple versions
+                  - generic [ref=e473]: EU transparency
+                - button "Open Drop-down" [ref=e480] [cursor=pointer]:
+                  - generic [ref=e483]: Open Drop-down
+              - button "See ad details" [ref=e486] [cursor=pointer]:
+                - generic [ref=e490]: See ad details
+              - separator [ref=e491]
+              - generic [ref=e496]:
+                - generic [ref=e499]:
+                  - img "Eco Bio Boutique" [ref=e500]
+                  - generic [ref=e502]:
+                    - link "Eco Bio Boutique" [ref=e503] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e507]:
+                      - strong [ref=e509]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e511]:
+                  - button "🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!" [ref=e514]:
+                    - generic [ref=e516]: 🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!
+                  - link "Skincare Intima 👉 Shop Now" [ref=e517] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e519]:
+                      - generic [ref=e520]:
+                        - generic:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e522]:
+                          - generic [ref=e523]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e525]:
+                        - generic [ref=e529]: Shop Now
+            - generic [ref=e531]:
+              - generic [ref=e533]:
+                - generic [ref=e534]:
+                  - generic [ref=e541]: Active
+                  - generic [ref=e544]: "Library ID: 1314494983493696"
+                  - generic [ref=e546]: Started running on 29 Aug 2025
+                  - generic [ref=e548]: Platforms
+                  - generic [ref=e577]: This ad has multiple versions
+                  - generic [ref=e584]: EU transparency
+                - button "Open Drop-down" [ref=e591] [cursor=pointer]:
+                  - generic [ref=e594]: Open Drop-down
+              - button "See ad details" [ref=e597] [cursor=pointer]:
+                - generic [ref=e601]: See ad details
+              - separator [ref=e602]
+              - generic [ref=e607]:
+                - generic [ref=e610]:
+                  - img "Eco Bio Boutique" [ref=e611]
+                  - generic [ref=e613]:
+                    - link "Eco Bio Boutique" [ref=e614] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e618]:
+                      - strong [ref=e620]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e622]:
+                  - button "🍃 Perchè aspettare? Non privarti dei nostri prodotti naturali, te lo meriti! 🚚 Pagamento alla Consegna o in 3 Semplici Rate" [ref=e625]:
+                    - generic [ref=e628]:
+                      - text: 🍃 Perchè aspettare? Non privarti dei nostri prodotti naturali, te lo meriti!
+                      - text: 🚚 Pagamento alla Consegna o in 3 Semplici Rate
+                  - link "ECOBIOBOUTIQUE.IT Set Viso Anti Macchie €49 Shop Now" [ref=e629] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fset-viso-anti-macchie-per-un-incarnato-omogeneo%3Futm_content%3DFacebook_UA%26utm_source%3Dfacebook%26variant%3D43519563727064&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e631]:
+                      - generic [ref=e632]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e634]:
+                          - generic [ref=e635]: ECOBIOBOUTIQUE.IT
+                        - button "Set Viso Anti Macchie" [ref=e637]:
+                          - generic [ref=e638]: Set Viso Anti Macchie
+                        - button "€49" [ref=e640]:
+                          - generic [ref=e641]: €49
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e643]:
+                        - generic [ref=e647]: Shop Now
+            - generic [ref=e649]:
+              - generic [ref=e651]:
+                - generic [ref=e652]:
+                  - generic [ref=e659]: Active
+                  - generic [ref=e662]: "Library ID: 551785950879898"
+                  - generic [ref=e664]: Started running on 5 Nov 2024
+                  - generic [ref=e666]: Platforms
+                  - generic [ref=e690]: EU transparency
+                - button "Open Drop-down" [ref=e697] [cursor=pointer]:
+                  - generic [ref=e700]: Open Drop-down
+              - button "See ad details" [ref=e703] [cursor=pointer]:
+                - generic [ref=e707]: See ad details
+              - separator [ref=e708]
+              - generic [ref=e713]:
+                - generic [ref=e715]:
+                  - img "Eco Bio Boutique" [ref=e716]
+                  - generic [ref=e718]:
+                    - generic [ref=e719]:
+                      - link "chiara_geme" [ref=e720] [cursor=pointer]:
+                        - /url: https://www.facebook.com/100069395105336/
+                      - text: with
+                      - link "Eco Bio Boutique" [ref=e721] [cursor=pointer]:
+                        - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e725]:
+                      - strong [ref=e727]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e728]:
+                  - 'button "Vuoi capelli sani, forti e luminosi?✨ Allora prenditi cura anche della cute e non solo delle lunghezze! Hair Pure - Scalp Scrub è lo scrub per il cuoio capelluto in grado di: 💚Pulire in profondità la cute, per capelli puliti più a lungo 💚Esfoliare e rinfrescare, dando sollievo immediato da forfora, prurito e irritazioni 💚Liberare i follicoli, permettendo ai capelli di crescere sani e forti Fai risplendere i tuoi capelli a partire dalla tua cute con Hair Pure - Scalp Scrub Scoprilo su ecobioboutique.it #ecobioboutique #hairpure #scalpscrub" [ref=e731]':
+                    - generic [ref=e734]:
+                      - text: Vuoi capelli sani, forti e luminosi?✨
+                      - text: Allora prenditi cura anche della cute e non solo delle lunghezze!
+                      - text: "Hair Pure - Scalp Scrub è lo scrub per il cuoio capelluto in grado di:"
+                      - text: 💚Pulire in profondità la cute, per capelli puliti più a lungo
+                      - text: 💚Esfoliare e rinfrescare, dando sollievo immediato da forfora, prurito e irritazioni
+                      - text: 💚Liberare i follicoli, permettendo ai capelli di crescere sani e forti
+                      - text: Fai risplendere i tuoi capelli a partire dalla tua cute con Hair Pure - Scalp Scrub Scoprilo su ecobioboutique.it
+                      - text: "#ecobioboutique #hairpure #scalpscrub"
+                  - group "Video player" [ref=e745]:
+                    - button "Play Video" [ref=e747] [cursor=pointer]
+                    - generic [ref=e749]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:46
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "ECOBIOBOUTIQUE.IT chiara_geme Shop now" [ref=e751] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fscalp-scrub-purificante-esfoliante-seboregolatore&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e752]:
+                      - generic [ref=e753]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e755]:
+                          - generic [ref=e756]: ECOBIOBOUTIQUE.IT
+                        - button "chiara_geme" [ref=e758]:
+                          - generic [ref=e759]: chiara_geme
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e761]:
+                        - generic [ref=e765]: Shop now
+            - generic [ref=e767]:
+              - generic [ref=e769]:
+                - generic [ref=e770]:
+                  - generic [ref=e777]: Active
+                  - generic [ref=e780]: "Library ID: 414184918078697"
+                  - generic [ref=e782]: Started running on 4 Oct 2024
+                  - generic [ref=e784]: Platforms
+                  - generic [ref=e808]: This ad has multiple versions
+                  - generic [ref=e815]: EU transparency
+                - button "Open Drop-down" [ref=e822] [cursor=pointer]:
+                  - generic [ref=e825]: Open Drop-down
+              - button "See ad details" [ref=e828] [cursor=pointer]:
+                - generic [ref=e832]: See ad details
+              - separator [ref=e833]
+              - generic [ref=e838]:
+                - generic [ref=e841]:
+                  - img "Eco Bio Boutique" [ref=e842]
+                  - generic [ref=e844]:
+                    - link "Eco Bio Boutique" [ref=e845] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e849]:
+                      - strong [ref=e851]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e853]:
+                  - button "🥰 Crema Rassodante Intima, il trattamento naturale per contrastare la perdita di tono e l’invecchiamento della zona intima femminile! ✅ Rassoda e tonifica ✅ Azione Rimpolpante e Rivitalizzante ✅ Pelle giovane, morbida e profumata" [ref=e856]:
+                    - generic [ref=e859]:
+                      - text: 🥰 Crema Rassodante Intima, il trattamento naturale per contrastare la perdita di tono e l’invecchiamento della zona intima femminile!
+                      - text: ✅ Rassoda e tonifica
+                      - text: ✅ Azione Rimpolpante e Rivitalizzante
+                      - text: ✅ Pelle giovane, morbida e profumata
+                  - group "Video player" [ref=e869]:
+                    - button "Play Video" [ref=e871] [cursor=pointer]
+                    - generic [ref=e873]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:17
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "Trattamento Intimo 👉 Shop Now" [ref=e875] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e876]:
+                      - generic [ref=e877]:
+                        - generic:
+                          - button
+                        - button "Trattamento Intimo 👉" [ref=e879]:
+                          - generic [ref=e880]: Trattamento Intimo 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e882]:
+                        - generic [ref=e886]: Shop Now
+            - generic [ref=e888]:
+              - generic [ref=e890]:
+                - generic [ref=e891]:
+                  - generic [ref=e898]: Active
+                  - generic [ref=e901]: "Library ID: 1839683556517070"
+                  - generic [ref=e903]: Started running on 9 Aug 2024
+                  - generic [ref=e905]: Platforms
+                  - generic [ref=e929]: This ad has multiple versions
+                  - generic [ref=e936]: EU transparency
+                - button "Open Drop-down" [ref=e943] [cursor=pointer]:
+                  - generic [ref=e946]: Open Drop-down
+              - button "See ad details" [ref=e949] [cursor=pointer]:
+                - generic [ref=e953]: See ad details
+              - separator [ref=e954]
+              - generic [ref=e959]:
+                - generic [ref=e962]:
+                  - img "Eco Bio Boutique" [ref=e963]
+                  - generic [ref=e965]:
+                    - link "Eco Bio Boutique" [ref=e966] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e970]:
+                      - strong [ref=e972]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e974]:
+                  - button "🍃 ECO BIO BOUTIQUE Parlano di noi Vanity Fair, la Repubblica, IlSole24Ore, La Stampa e tanti altri! Prodotti innovativi, Naturali, Bio, Vegan, Nickel Tested e Cruelty Free. Made in Italy 🇮🇹" [ref=e977]:
+                    - generic [ref=e980]:
+                      - text: 🍃 ECO BIO BOUTIQUE
+                      - text: Parlano di noi Vanity Fair, la Repubblica, IlSole24Ore, La Stampa e tanti altri!
+                      - text: Prodotti innovativi, Naturali, Bio, Vegan, Nickel Tested e Cruelty Free.
+                      - text: Made in Italy 🇮🇹
+                  - link "ECOBIOBOUTIQUE.IT Scrubber €9 Shop Now" [ref=e981] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fscrubber-scrub-viso%3Futm_content%3DFacebook_UA%26utm_source%3Dfacebook%26variant%3D31589813223473&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e983]:
+                      - generic [ref=e984]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e986]:
+                          - generic [ref=e987]: ECOBIOBOUTIQUE.IT
+                        - button "Scrubber" [ref=e989]:
+                          - generic [ref=e990]: Scrubber
+                        - button "€9" [ref=e992]:
+                          - generic [ref=e993]: €9
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e995]:
+                        - generic [ref=e999]: Shop Now
+            - generic [ref=e1001]:
+              - generic [ref=e1003]:
+                - generic [ref=e1004]:
+                  - generic [ref=e1011]: Active
+                  - generic [ref=e1014]: "Library ID: 1058816593041859"
+                  - generic [ref=e1016]: Started running on 13 Jun 2025
+                  - generic [ref=e1018]: Platforms
+                  - generic [ref=e1047]: EU transparency
+                - button "Open Drop-down" [ref=e1054] [cursor=pointer]:
+                  - generic [ref=e1057]: Open Drop-down
+              - button "See ad details" [ref=e1060] [cursor=pointer]:
+                - generic [ref=e1064]: See ad details
+              - separator [ref=e1065]
+              - generic [ref=e1070]:
+                - generic [ref=e1072]:
+                  - img "Eco Bio Boutique" [ref=e1073]
+                  - generic [ref=e1075]:
+                    - link "Eco Bio Boutique" [ref=e1076] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1080]:
+                      - strong [ref=e1082]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1083]:
+                  - button "🤩 Sweet Candy, il trattamento intimo che previene e protegge da infezioni, pruriti e bruciori! ✅ Elimina i Cattivi odori Migliora l'idratazione, l'aspetto e la luminosità 🍃" [ref=e1086]:
+                    - generic [ref=e1089]:
+                      - text: 🤩 Sweet Candy, il trattamento intimo che previene e protegge da infezioni, pruriti e bruciori!
+                      - text: ✅ Elimina i Cattivi odori
+                      - text: Migliora l'idratazione, l'aspetto e la luminosità 🍃
+                  - link "ECOBIOBOUTIQUE.IT Trattamento Intimo Delicato 👉 L'esclusiva linea dedicata al benessere e alla cura della persona Shop now" [ref=e1090] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1092]:
+                      - generic [ref=e1093]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1095]:
+                          - generic [ref=e1096]: ECOBIOBOUTIQUE.IT
+                        - button "Trattamento Intimo Delicato 👉" [ref=e1098]:
+                          - generic [ref=e1099]: Trattamento Intimo Delicato 👉
+                        - button "L'esclusiva linea dedicata al benessere e alla cura della persona" [ref=e1101]:
+                          - generic [ref=e1102]: L'esclusiva linea dedicata al benessere e alla cura della persona
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1104]:
+                        - generic [ref=e1108]: Shop now
+            - generic [ref=e1110]:
+              - generic [ref=e1112]:
+                - generic [ref=e1113]:
+                  - generic [ref=e1120]: Active
+                  - generic [ref=e1123]: "Library ID: 3055230967948910"
+                  - generic [ref=e1125]: Started running on 2 Jan 2025
+                  - generic [ref=e1127]: Platforms
+                  - generic [ref=e1136]: EU transparency
+                - button "Open Drop-down" [ref=e1143] [cursor=pointer]:
+                  - generic [ref=e1146]: Open Drop-down
+              - button "See ad details" [ref=e1149] [cursor=pointer]:
+                - generic [ref=e1153]: See ad details
+              - separator [ref=e1154]
+              - generic [ref=e1159]:
+                - generic [ref=e1161]:
+                  - img "Eco Bio Boutique" [ref=e1162]
+                  - generic [ref=e1164]:
+                    - generic [ref=e1165]:
+                      - link "chiara_geme" [ref=e1166] [cursor=pointer]:
+                        - /url: https://www.facebook.com/100069395105336/
+                      - text: with
+                      - link "Eco Bio Boutique" [ref=e1167] [cursor=pointer]:
+                        - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1171]:
+                      - strong [ref=e1173]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1174]:
+                  - 'button "Ecco i risultati del Set Antismagliature dopo un anno di utilizzo 😳 Composto da Crema Corpo Smagliature e Cicatrici e Goldenoil è la soluzione più efficace e veloce per trattare e prevenire le smagliature 💪 Scoprilo anche tu e regala una nuova vita alla tua pelle ✨ solo su ecobioboutique.it #ecobioboutique #bodycareroutine #bodyroutine #smagliature #cremasmagliature #goldenoil" [ref=e1177]':
+                    - generic [ref=e1180]:
+                      - text: Ecco i risultati del Set Antismagliature dopo un anno di utilizzo 😳
+                      - text: Composto da Crema Corpo Smagliature e Cicatrici e Goldenoil è la soluzione più efficace e veloce per trattare e prevenire le smagliature 💪
+                      - text: Scoprilo anche tu e regala una nuova vita alla tua pelle ✨ solo su ecobioboutique.it
+                      - text: "#ecobioboutique #bodycareroutine #bodyroutine #smagliature #cremasmagliature #goldenoil"
+                  - group "Video player" [ref=e1190]:
+                    - button "Play Video" [ref=e1192] [cursor=pointer]
+                    - generic [ref=e1194]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 1:08
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "ECOBIOBOUTIQUE.IT chiara_geme Shop now" [ref=e1196] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fcreme-e-trattamenti-per-le-smagliature&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1197]:
+                      - generic [ref=e1198]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1200]:
+                          - generic [ref=e1201]: ECOBIOBOUTIQUE.IT
+                        - button "chiara_geme" [ref=e1203]:
+                          - generic [ref=e1204]: chiara_geme
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1206]:
+                        - generic [ref=e1210]: Shop now
+            - generic [ref=e1212]:
+              - generic [ref=e1214]:
+                - generic [ref=e1215]:
+                  - generic [ref=e1222]: Active
+                  - generic [ref=e1225]: "Library ID: 1351239723375278"
+                  - generic [ref=e1227]: Started running on 9 Sep 2025
+                  - generic [ref=e1229]: Platforms
+                  - generic [ref=e1253]: EU transparency
+                - button "Open Drop-down" [ref=e1260] [cursor=pointer]:
+                  - generic [ref=e1263]: Open Drop-down
+              - button "See ad details" [ref=e1266] [cursor=pointer]:
+                - generic [ref=e1270]: See ad details
+              - separator [ref=e1271]
+              - generic [ref=e1276]:
+                - generic [ref=e1278]:
+                  - img "Eco Bio Boutique" [ref=e1279]
+                  - generic [ref=e1281]:
+                    - link "Eco Bio Boutique" [ref=e1282] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1286]:
+                      - strong [ref=e1288]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1289]:
+                  - button "🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere. La delicata azione riscaldante stimola, aumentando così le sensazioni percepite." [ref=e1292]:
+                    - generic [ref=e1295]:
+                      - text: 🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere.
+                      - text: La delicata azione riscaldante stimola, aumentando così le sensazioni percepite.
+                  - link "ECOBIOBOUTIQUE.IT Gel Stimolante Intimo 👉 Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione. Shop now" [ref=e1296] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fsweet-secret-gel-stimolante-intimo-donna&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1298]:
+                      - generic [ref=e1299]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1301]:
+                          - generic [ref=e1302]: ECOBIOBOUTIQUE.IT
+                        - button "Gel Stimolante Intimo 👉" [ref=e1304]:
+                          - generic [ref=e1305]: Gel Stimolante Intimo 👉
+                        - button "Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione." [ref=e1307]:
+                          - generic [ref=e1308]: Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1310]:
+                        - generic [ref=e1314]: Shop now
+            - generic [ref=e1316]:
+              - generic [ref=e1318]:
+                - generic [ref=e1319]:
+                  - generic [ref=e1326]: Active
+                  - generic [ref=e1329]: "Library ID: 923659719869655"
+                  - generic [ref=e1331]: Started running on 21 Nov 2024
+                  - generic [ref=e1333]: Platforms
+                  - generic [ref=e1357]: EU transparency
+                - button "Open Drop-down" [ref=e1364] [cursor=pointer]:
+                  - generic [ref=e1367]: Open Drop-down
+              - button "See ad details" [ref=e1370] [cursor=pointer]:
+                - generic [ref=e1374]: See ad details
+              - separator [ref=e1375]
+              - generic [ref=e1380]:
+                - generic [ref=e1382]:
+                  - img "Eco Bio Boutique" [ref=e1383]
+                  - generic [ref=e1385]:
+                    - link "Eco Bio Boutique" [ref=e1386] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1390]:
+                      - strong [ref=e1392]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1393]:
+                  - button "🤩 Crema Volumizzante Seno, il trattamento push-up per tonificare, riempire e rimodellare il seno! ✅ Volumizza e Rimpolpa ✅ Rende il seno più turgido e pieno ✅ Idrata, nutre e conferisce compattezza Dona un'armoniosa rotondità 🍃" [ref=e1396]:
+                    - generic [ref=e1399]:
+                      - text: 🤩 Crema Volumizzante Seno, il trattamento push-up per tonificare, riempire e rimodellare il seno!
+                      - text: ✅ Volumizza e Rimpolpa
+                      - text: ✅ Rende il seno più turgido e pieno
+                      - text: ✅ Idrata, nutre e conferisce compattezza
+                      - text: Dona un'armoniosa rotondità 🍃
+                  - link "ECOBIOBOUTIQUE.IT Trattamento Riempitivo Seno 👉 Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei. Shop now" [ref=e1401] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fcrema-volumizzante-seno-tonificante-riempitiva-rimodellante&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1403]:
+                      - generic [ref=e1404]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1406]:
+                          - generic [ref=e1407]: ECOBIOBOUTIQUE.IT
+                        - button "Trattamento Riempitivo Seno 👉" [ref=e1409]:
+                          - generic [ref=e1410]: Trattamento Riempitivo Seno 👉
+                        - button "Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei." [ref=e1412]:
+                          - generic [ref=e1413]: Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1415]:
+                        - generic [ref=e1419]: Shop now
+            - generic [ref=e1421]:
+              - generic [ref=e1423]:
+                - generic [ref=e1424]:
+                  - generic [ref=e1431]: Active
+                  - generic [ref=e1434]: "Library ID: 604572018905942"
+                  - generic [ref=e1436]: Started running on 16 Dec 2024
+                  - generic [ref=e1438]: Platforms
+                  - generic [ref=e1462]: EU transparency
+                - button "Open Drop-down" [ref=e1469] [cursor=pointer]:
+                  - generic [ref=e1472]: Open Drop-down
+              - button "See ad details" [ref=e1475] [cursor=pointer]:
+                - generic [ref=e1479]: See ad details
+              - separator [ref=e1480]
+              - generic [ref=e1485]:
+                - generic [ref=e1487]:
+                  - img "Eco Bio Boutique" [ref=e1488]
+                  - generic [ref=e1490]:
+                    - link "Eco Bio Boutique" [ref=e1491] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1495]:
+                      - strong [ref=e1497]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1498]:
+                  - button "🥰 Crema Rassodante Intima, il trattamento naturale per contrastare la perdita di tono e l’invecchiamento della zona intima femminile! ✅ Rassoda e tonifica ✅ Azione Rimpolpante e Rivitalizzante ✅ Pelle giovane, morbida e profumata" [ref=e1501]:
+                    - generic [ref=e1504]:
+                      - text: 🥰 Crema Rassodante Intima, il trattamento naturale per contrastare la perdita di tono e l’invecchiamento della zona intima femminile!
+                      - text: ✅ Rassoda e tonifica
+                      - text: ✅ Azione Rimpolpante e Rivitalizzante
+                      - text: ✅ Pelle giovane, morbida e profumata
+                  - link "ECOBIOBOUTIQUE.IT Trattamento Intimo Tonificante 👉 Crema Rassodante Intima è il trattamento naturale perfetto per tonificare, contrastare la perdita di tono e l’invecchiamento della zona intima femminile. Shop now" [ref=e1505] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fcrema-rassodante-intima-tonificante-elasticizzante-rivitalizzante&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1507]:
+                      - generic [ref=e1508]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1510]:
+                          - generic [ref=e1511]: ECOBIOBOUTIQUE.IT
+                        - button "Trattamento Intimo Tonificante 👉" [ref=e1513]:
+                          - generic [ref=e1514]: Trattamento Intimo Tonificante 👉
+                        - button "Crema Rassodante Intima è il trattamento naturale perfetto per tonificare, contrastare la perdita di tono e l’invecchiamento della zona intima femminile." [ref=e1516]:
+                          - generic [ref=e1517]: Crema Rassodante Intima è il trattamento naturale perfetto per tonificare, contrastare la perdita di tono e l’invecchiamento della zona intima femminile.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1519]:
+                        - generic [ref=e1523]: Shop now
+            - generic [ref=e1525]:
+              - generic [ref=e1527]:
+                - generic [ref=e1528]:
+                  - generic [ref=e1535]: Active
+                  - generic [ref=e1538]: "Library ID: 1005520364654907"
+                  - generic [ref=e1540]: Started running on 10 Sep 2024
+                  - generic [ref=e1542]: Platforms
+                  - generic [ref=e1566]: EU transparency
+                - button "Open Drop-down" [ref=e1573] [cursor=pointer]:
+                  - generic [ref=e1576]: Open Drop-down
+              - button "See ad details" [ref=e1579] [cursor=pointer]:
+                - generic [ref=e1583]: See ad details
+              - separator [ref=e1584]
+              - generic [ref=e1589]:
+                - generic [ref=e1591]:
+                  - img "Eco Bio Boutique" [ref=e1592]
+                  - generic [ref=e1594]:
+                    - link "Eco Bio Boutique" [ref=e1595] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1599]:
+                      - strong [ref=e1601]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1602]:
+                  - button "🥰 Recensioni di Clienti felici del nostro esclusivo prodotto antibrufoli!" [ref=e1605]:
+                    - generic [ref=e1607]: 🥰 Recensioni di Clienti felici del nostro esclusivo prodotto antibrufoli!
+                  - link "ECOBIOBOUTIQUE.IT Trattamento Antibrufoli Naturale 👉 Brufostop è il trattamento antibrufoli naturale per sfiammare, ridurre fino ad eliminare, brufoli e imperfezioni in una sola notte! Grazie all'Acido Salicilico e la Vitamina PP, sfiamma, cicatrizza e previene la formazione di brufoli e imperfezioni. Non potrai farne a meno! Shop now" [ref=e1608] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fbrufostop-trattamento-antibrufoli-naturale&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1610]:
+                      - generic [ref=e1611]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1613]:
+                          - generic [ref=e1614]: ECOBIOBOUTIQUE.IT
+                        - button "Trattamento Antibrufoli Naturale 👉" [ref=e1616]:
+                          - generic [ref=e1617]: Trattamento Antibrufoli Naturale 👉
+                        - button "Brufostop è il trattamento antibrufoli naturale per sfiammare, ridurre fino ad eliminare, brufoli e imperfezioni in una sola notte! Grazie all'Acido Salicilico e la Vitamina PP, sfiamma, cicatrizza e previene la formazione di brufoli e imperfezioni. Non potrai farne a meno!" [ref=e1619]:
+                          - generic [ref=e1620]: Brufostop è il trattamento antibrufoli naturale per sfiammare, ridurre fino ad eliminare, brufoli e imperfezioni in una sola notte! Grazie all'Acido Salicilico e la Vitamina PP, sfiamma, cicatrizza e previene la formazione di brufoli e imperfezioni. Non potrai farne a meno!
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1622]:
+                        - generic [ref=e1626]: Shop now
+            - generic [ref=e1628]:
+              - generic [ref=e1630]:
+                - generic [ref=e1631]:
+                  - generic [ref=e1638]: Active
+                  - generic [ref=e1641]: "Library ID: 756719896388976"
+                  - generic [ref=e1643]: Started running on 29 May 2024
+                  - generic [ref=e1645]: Platforms
+                  - generic [ref=e1669]: This ad has multiple versions
+                  - generic [ref=e1676]: EU transparency
+                - button "Open Drop-down" [ref=e1683] [cursor=pointer]:
+                  - generic [ref=e1686]: Open Drop-down
+              - button "See ad details" [ref=e1689] [cursor=pointer]:
+                - generic [ref=e1693]: See ad details
+              - separator [ref=e1694]
+              - generic [ref=e1699]:
+                - generic [ref=e1702]:
+                  - img "Eco Bio Boutique" [ref=e1703]
+                  - generic [ref=e1705]:
+                    - link "Eco Bio Boutique" [ref=e1706] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1710]:
+                      - strong [ref=e1712]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1714]:
+                  - button "🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!" [ref=e1717]:
+                    - generic [ref=e1719]: 🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!
+                  - link "Skincare Intima 👉 Shop Now" [ref=e1720] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1722]:
+                      - generic [ref=e1723]:
+                        - generic:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e1725]:
+                          - generic [ref=e1726]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e1728]:
+                        - generic [ref=e1732]: Shop Now
+            - generic [ref=e1734]:
+              - generic [ref=e1736]:
+                - generic [ref=e1737]:
+                  - generic [ref=e1744]: Active
+                  - generic [ref=e1747]: "Library ID: 24831057843177980"
+                  - generic [ref=e1749]: Started running on 9 Sep 2025
+                  - generic [ref=e1751]: Platforms
+                  - generic [ref=e1775]: EU transparency
+                - button "Open Drop-down" [ref=e1782] [cursor=pointer]:
+                  - generic [ref=e1785]: Open Drop-down
+              - button "See ad details" [ref=e1788] [cursor=pointer]:
+                - generic [ref=e1792]: See ad details
+              - separator [ref=e1793]
+              - generic [ref=e1798]:
+                - generic [ref=e1800]:
+                  - img "Eco Bio Boutique" [ref=e1801]
+                  - generic [ref=e1803]:
+                    - link "Eco Bio Boutique" [ref=e1804] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1808]:
+                      - strong [ref=e1810]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1811]:
+                  - button "🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere. La delicata azione riscaldante stimola, aumentando così le sensazioni percepite." [ref=e1814]:
+                    - generic [ref=e1817]:
+                      - text: 🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere.
+                      - text: La delicata azione riscaldante stimola, aumentando così le sensazioni percepite.
+                  - link "ECOBIOBOUTIQUE.IT Gel Stimolante Intimo 👉 Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione. Shop now" [ref=e1818] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fsweet-secret-gel-stimolante-intimo-donna&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1820]:
+                      - generic [ref=e1821]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1823]:
+                          - generic [ref=e1824]: ECOBIOBOUTIQUE.IT
+                        - button "Gel Stimolante Intimo 👉" [ref=e1826]:
+                          - generic [ref=e1827]: Gel Stimolante Intimo 👉
+                        - button "Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione." [ref=e1829]:
+                          - generic [ref=e1830]: Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e1832]:
+                        - generic [ref=e1836]: Shop now
+            - generic [ref=e1838]:
+              - generic [ref=e1840]:
+                - generic [ref=e1841]:
+                  - generic [ref=e1848]: Active
+                  - generic [ref=e1851]: "Library ID: 546400920659405"
+                  - generic [ref=e1853]: Started running on 2 Dec 2022
+                  - generic [ref=e1855]: Platforms
+                  - generic [ref=e1879]: This ad has multiple versions
+                - button "Open Drop-down" [ref=e1886] [cursor=pointer]:
+                  - generic [ref=e1889]: Open Drop-down
+              - button "See ad details" [ref=e1892] [cursor=pointer]:
+                - generic [ref=e1896]: See ad details
+              - separator [ref=e1897]
+              - generic [ref=e1902]:
+                - generic [ref=e1905]:
+                  - img "Eco Bio Boutique" [ref=e1906]
+                  - generic [ref=e1908]:
+                    - link "Eco Bio Boutique" [ref=e1909] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e1913]:
+                      - strong [ref=e1915]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e1917]:
+                  - button "😍 Non privarti dei nostri prodotti skincare! Naturali, biologici e nickel tested. 🚚 Pagamento alla Consegna o in 3 Semplici Rate" [ref=e1920]:
+                    - generic [ref=e1923]:
+                      - text: 😍 Non privarti dei nostri prodotti skincare!
+                      - text: Naturali, biologici e nickel tested.
+                      - text: 🚚 Pagamento alla Consegna o in 3 Semplici Rate
+                  - link "ECOBIOBOUTIQUE.IT Set Viso Anti Macchie €49 Shop Now" [ref=e1924] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fset-viso-anti-macchie-per-un-incarnato-omogeneo%3Futm_content%3DFacebook_UA%26utm_source%3Dfacebook%26variant%3D43519563727064&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e1926]:
+                      - generic [ref=e1927]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e1929]:
+                          - generic [ref=e1930]: ECOBIOBOUTIQUE.IT
+                        - button "Set Viso Anti Macchie" [ref=e1932]:
+                          - generic [ref=e1933]: Set Viso Anti Macchie
+                        - button "€49" [ref=e1935]:
+                          - generic [ref=e1936]: €49
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e1938]:
+                        - generic [ref=e1942]: Shop Now
+            - generic [ref=e1944]:
+              - generic [ref=e1946]:
+                - generic [ref=e1947]:
+                  - generic [ref=e1954]: Active
+                  - generic [ref=e1957]: "Library ID: 812966717074076"
+                  - generic [ref=e1959]: Started running on 29 May 2024
+                  - generic [ref=e1961]: Platforms
+                  - generic [ref=e1985]: This ad has multiple versions
+                  - generic [ref=e1992]: EU transparency
+                - button "Open Drop-down" [ref=e1999] [cursor=pointer]:
+                  - generic [ref=e2002]: Open Drop-down
+              - button "See ad details" [ref=e2005] [cursor=pointer]:
+                - generic [ref=e2009]: See ad details
+              - separator [ref=e2010]
+              - generic [ref=e2015]:
+                - generic [ref=e2018]:
+                  - img "Eco Bio Boutique" [ref=e2019]
+                  - generic [ref=e2021]:
+                    - link "Eco Bio Boutique" [ref=e2022] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2026]:
+                      - strong [ref=e2028]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2030]:
+                  - button "🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!" [ref=e2033]:
+                    - generic [ref=e2035]: 🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!
+                  - link "Skincare Intima 👉 Shop Now" [ref=e2036] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2038]:
+                      - generic [ref=e2039]:
+                        - generic:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e2041]:
+                          - generic [ref=e2042]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e2044]:
+                        - generic [ref=e2048]: Shop Now
+            - generic [ref=e2050]:
+              - generic [ref=e2052]:
+                - generic [ref=e2053]:
+                  - generic [ref=e2060]: Active
+                  - generic [ref=e2063]: "Library ID: 701708613014272"
+                  - generic [ref=e2065]: Started running on 24 Nov 2025
+                  - generic [ref=e2067]: Platforms
+                  - generic [ref=e2096]: This ad has multiple versions
+                  - generic [ref=e2102]:
+                    - strong [ref=e2103]: 2 ads
+                    - text: use this creative and text
+                - button "Open Drop-down" [ref=e2106] [cursor=pointer]:
+                  - generic [ref=e2109]: Open Drop-down
+              - button "See summary details" [ref=e2112] [cursor=pointer]:
+                - generic [ref=e2116]: See summary details
+              - separator [ref=e2117]
+              - generic [ref=e2122]:
+                - generic [ref=e2125]:
+                  - img "Eco Bio Boutique" [ref=e2126]
+                  - generic [ref=e2128]:
+                    - link "Eco Bio Boutique" [ref=e2129] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2133]:
+                      - strong [ref=e2135]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2137]:
+                  - button "😍 Crema Intima Deodorante ai Feromoni. Fragranza dolce, romantica e seducente. Pelle morbida e idratata. Rivitalizza e illumina la zona. Ogni momento diventerà un’esperienza unica ed indimenticabile. 💋" [ref=e2140]:
+                    - generic [ref=e2143]:
+                      - text: 😍 Crema Intima Deodorante ai Feromoni. Fragranza dolce, romantica e seducente.
+                      - text: Pelle morbida e idratata. Rivitalizza e illumina la zona.
+                      - text: Ogni momento diventerà un’esperienza unica ed indimenticabile. 💋
+                  - group "Video player" [ref=e2153]:
+                    - button "Play Video" [ref=e2155] [cursor=pointer]
+                    - generic [ref=e2157]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:29
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "Crema Intima Deodorante ai Feromoni 👉 Shop Now" [ref=e2159] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fsensual-dream-crema-intima-deodorante-con-feromoni&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2160]:
+                      - generic [ref=e2161]:
+                        - generic:
+                          - button
+                        - button "Crema Intima Deodorante ai Feromoni 👉" [ref=e2163]:
+                          - generic [ref=e2164]: Crema Intima Deodorante ai Feromoni 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e2166]:
+                        - generic [ref=e2170]: Shop Now
+            - generic [ref=e2172]:
+              - generic [ref=e2174]:
+                - generic [ref=e2175]:
+                  - generic [ref=e2182]: Active
+                  - generic [ref=e2185]: "Library ID: 1574793347137961"
+                  - generic [ref=e2187]: Started running on 26 Dec 2025
+                  - generic [ref=e2189]: Platforms
+                  - generic [ref=e2208]: EU transparency
+                - button "Open Drop-down" [ref=e2215] [cursor=pointer]:
+                  - generic [ref=e2218]: Open Drop-down
+              - button "See ad details" [ref=e2221] [cursor=pointer]:
+                - generic [ref=e2225]: See ad details
+              - separator [ref=e2226]
+              - generic [ref=e2231]:
+                - generic [ref=e2233]:
+                  - img "Eco Bio Boutique" [ref=e2234]
+                  - generic [ref=e2236]:
+                    - link "Eco Bio Boutique" [ref=e2237] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2241]:
+                      - strong [ref=e2243]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2244]:
+                  - button "🤩 DeoScrub, è lo scrub ascelle ad azione detossinante, schiarente, astringente e antiodore! Regola l’eccessiva produzione di sudore, elimina gli aloni scuri e riduce i cattivi odori 🍃" [ref=e2247]:
+                    - generic [ref=e2250]:
+                      - text: 🤩 DeoScrub, è lo scrub ascelle ad azione detossinante, schiarente, astringente e antiodore!
+                      - text: Regola l’eccessiva produzione di sudore, elimina gli aloni scuri e riduce i cattivi odori 🍃
+                  - group "Video player" [ref=e2260]:
+                    - button "Play Video" [ref=e2262] [cursor=pointer]
+                    - generic [ref=e2264]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 1:03
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "ECOBIOBOUTIQUE.IT Scrub Ascelle Antiodore ✨ Shop now" [ref=e2266] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fdeoscrub-scrub-ascelle-schiarente-astringente-antiodore&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2267]:
+                      - generic [ref=e2268]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e2270]:
+                          - generic [ref=e2271]: ECOBIOBOUTIQUE.IT
+                        - button "Scrub Ascelle Antiodore ✨" [ref=e2273]:
+                          - generic [ref=e2274]: Scrub Ascelle Antiodore ✨
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e2276]:
+                        - generic [ref=e2280]: Shop now
+            - generic [ref=e2282]:
+              - generic [ref=e2284]:
+                - generic [ref=e2285]:
+                  - generic [ref=e2292]: Active
+                  - generic [ref=e2295]: "Library ID: 1255903248860124"
+                  - generic [ref=e2297]: Started running on 21 Nov 2024
+                  - generic [ref=e2299]: Platforms
+                  - generic [ref=e2323]: EU transparency
+                - button "Open Drop-down" [ref=e2330] [cursor=pointer]:
+                  - generic [ref=e2333]: Open Drop-down
+              - button "See ad details" [ref=e2336] [cursor=pointer]:
+                - generic [ref=e2340]: See ad details
+              - separator [ref=e2341]
+              - generic [ref=e2346]:
+                - generic [ref=e2348]:
+                  - img "Eco Bio Boutique" [ref=e2349]
+                  - generic [ref=e2351]:
+                    - link "Eco Bio Boutique" [ref=e2352] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2356]:
+                      - strong [ref=e2358]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2359]:
+                  - button "🤩 Crema Volumizzante Seno, il trattamento push-up per tonificare, riempire e rimodellare il seno! ✅ Volumizza e Rimpolpa ✅ Rende il seno più turgido e pieno ✅ Idrata, nutre e conferisce compattezza Dona un'armoniosa rotondità 🍃" [ref=e2362]:
+                    - generic [ref=e2365]:
+                      - text: 🤩 Crema Volumizzante Seno, il trattamento push-up per tonificare, riempire e rimodellare il seno!
+                      - text: ✅ Volumizza e Rimpolpa
+                      - text: ✅ Rende il seno più turgido e pieno
+                      - text: ✅ Idrata, nutre e conferisce compattezza
+                      - text: Dona un'armoniosa rotondità 🍃
+                  - link "ECOBIOBOUTIQUE.IT Trattamento Riempitivo Seno 👉 Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei. Shop now" [ref=e2367] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fcrema-volumizzante-seno-tonificante-riempitiva-rimodellante&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2369]:
+                      - generic [ref=e2370]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e2372]:
+                          - generic [ref=e2373]: ECOBIOBOUTIQUE.IT
+                        - button "Trattamento Riempitivo Seno 👉" [ref=e2375]:
+                          - generic [ref=e2376]: Trattamento Riempitivo Seno 👉
+                        - button "Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei." [ref=e2378]:
+                          - generic [ref=e2379]: Crema Volumizzante Seno è il trattamento push-up ideale per tonificare, riempire e rimodellare il seno. Gli attivi volumizzanti rendono il seno più turgido, pieno e voluminoso, prevenendo la rilassatezza dei tessuti cutanei.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e2381]:
+                        - generic [ref=e2385]: Shop now
+            - generic [ref=e2387]:
+              - generic [ref=e2389]:
+                - generic [ref=e2390]:
+                  - generic [ref=e2397]: Active
+                  - generic [ref=e2400]: "Library ID: 705598218458072"
+                  - generic [ref=e2402]: Started running on 31 Mar 2025
+                  - generic [ref=e2404]: Platforms
+                  - generic [ref=e2428]: EU transparency
+                - button "Open Drop-down" [ref=e2435] [cursor=pointer]:
+                  - generic [ref=e2438]: Open Drop-down
+              - button "See ad details" [ref=e2441] [cursor=pointer]:
+                - generic [ref=e2445]: See ad details
+              - separator [ref=e2446]
+              - generic [ref=e2451]:
+                - generic [ref=e2453]:
+                  - img "Eco Bio Boutique" [ref=e2454]
+                  - generic [ref=e2456]:
+                    - link "Eco Bio Boutique" [ref=e2457] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2461]:
+                      - strong [ref=e2463]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2464]:
+                  - button "🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere. La delicata azione riscaldante stimola, aumentando così le sensazioni percepite." [ref=e2467]:
+                    - generic [ref=e2470]:
+                      - text: 🥰 Sweet Secret, il gel stimolante intimo naturale che favorisce e intensifica il piacere.
+                      - text: La delicata azione riscaldante stimola, aumentando così le sensazioni percepite.
+                  - link "ECOBIOBOUTIQUE.IT Gel Stimolante Intimo 👉 Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione. Shop now" [ref=e2471] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fsweet-secret-gel-stimolante-intimo-donna&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2473]:
+                      - generic [ref=e2474]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e2476]:
+                          - generic [ref=e2477]: ECOBIOBOUTIQUE.IT
+                        - button "Gel Stimolante Intimo 👉" [ref=e2479]:
+                          - generic [ref=e2480]: Gel Stimolante Intimo 👉
+                        - button "Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione." [ref=e2482]:
+                          - generic [ref=e2483]: Sweet Secret è il gel stimolante intimo studiato appositamente per le donne, che distribuito nella zona del clitoride favorisce e intensifica il piacere e l’orgasmo, sia durante il rapporto che durante la masturbazione.
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e2485]:
+                        - generic [ref=e2489]: Shop now
+            - generic [ref=e2491]:
+              - generic [ref=e2493]:
+                - generic [ref=e2494]:
+                  - generic [ref=e2501]: Active
+                  - generic [ref=e2504]: "Library ID: 1110367656337676"
+                  - generic [ref=e2506]: Started running on 2 Dec 2022
+                  - generic [ref=e2508]: Platforms
+                  - generic [ref=e2532]: This ad has multiple versions
+                - button "Open Drop-down" [ref=e2539] [cursor=pointer]:
+                  - generic [ref=e2542]: Open Drop-down
+              - button "See ad details" [ref=e2545] [cursor=pointer]:
+                - generic [ref=e2549]: See ad details
+              - separator [ref=e2550]
+              - generic [ref=e2555]:
+                - generic [ref=e2558]:
+                  - img "Eco Bio Boutique" [ref=e2559]
+                  - generic [ref=e2561]:
+                    - link "Eco Bio Boutique" [ref=e2562] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2566]:
+                      - strong [ref=e2568]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2570]:
+                  - button "😍 Non privarti dei nostri prodotti skincare! Naturali, biologici e nickel tested. 🚚 Pagamento alla Consegna o in 3 Semplici Rate" [ref=e2573]:
+                    - generic [ref=e2576]:
+                      - text: 😍 Non privarti dei nostri prodotti skincare!
+                      - text: Naturali, biologici e nickel tested.
+                      - text: 🚚 Pagamento alla Consegna o in 3 Semplici Rate
+                  - link "ECOBIOBOUTIQUE.IT Skincare Pelle Asfittica €64 Shop Now" [ref=e2577] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fskincare-pelle-asfittica-priva-di-imperfezioni%3Futm_content%3DFacebook_UA%26utm_source%3Dfacebook%26variant%3D43519966707928&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2579]:
+                      - generic [ref=e2580]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e2582]:
+                          - generic [ref=e2583]: ECOBIOBOUTIQUE.IT
+                        - button "Skincare Pelle Asfittica" [ref=e2585]:
+                          - generic [ref=e2586]: Skincare Pelle Asfittica
+                        - button "€64" [ref=e2588]:
+                          - generic [ref=e2589]: €64
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e2591]:
+                        - generic [ref=e2595]: Shop Now
+            - generic [ref=e2597]:
+              - generic [ref=e2599]:
+                - generic [ref=e2600]:
+                  - generic [ref=e2607]: Active
+                  - generic [ref=e2610]: "Library ID: 4048509732046002"
+                  - generic [ref=e2612]: Started running on 28 Oct 2024
+                  - generic [ref=e2614]: Platforms
+                  - generic [ref=e2638]: This ad has multiple versions
+                  - generic [ref=e2645]: EU transparency
+                - button "Open Drop-down" [ref=e2652] [cursor=pointer]:
+                  - generic [ref=e2655]: Open Drop-down
+              - button "See ad details" [ref=e2658] [cursor=pointer]:
+                - generic [ref=e2662]: See ad details
+              - separator [ref=e2663]
+              - generic [ref=e2668]:
+                - generic [ref=e2671]:
+                  - img "Eco Bio Boutique" [ref=e2672]
+                  - generic [ref=e2674]:
+                    - link "Eco Bio Boutique" [ref=e2675] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2679]:
+                      - strong [ref=e2681]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2683]:
+                  - button "Diventa INFLUENCER Eco Bio Boutique! 😍 Non perdere l'occasione di provare i nostri trattamenti e di guadagnare da ogni ordine effettuato tramite i tuoi canali social! Sei pronta ad essere il nostro nuovo volto?" [ref=e2686]:
+                    - generic [ref=e2689]:
+                      - text: Diventa INFLUENCER Eco Bio Boutique! 😍
+                      - text: Non perdere l'occasione di provare i nostri trattamenti e di guadagnare da ogni ordine effettuato tramite i tuoi canali social!
+                      - text: Sei pronta ad essere il nostro nuovo volto?
+                  - link "Candidati subito come Influencer 👉 Learn More" [ref=e2690] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fpages%2Fcreators&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2692]:
+                      - generic [ref=e2693]:
+                        - generic:
+                          - button
+                        - button "Candidati subito come Influencer 👉" [ref=e2695]:
+                          - generic [ref=e2696]: Candidati subito come Influencer 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Learn More" [ref=e2698]:
+                        - generic [ref=e2702]: Learn More
+            - generic [ref=e2704]:
+              - generic [ref=e2706]:
+                - generic [ref=e2707]:
+                  - generic [ref=e2714]: Active
+                  - generic [ref=e2717]: "Library ID: 963543438889198"
+                  - generic [ref=e2719]: Started running on 29 May 2024
+                  - generic [ref=e2721]: Platforms
+                  - generic [ref=e2745]: This ad has multiple versions
+                  - generic [ref=e2752]: EU transparency
+                - button "Open Drop-down" [ref=e2759] [cursor=pointer]:
+                  - generic [ref=e2762]: Open Drop-down
+              - button "See ad details" [ref=e2765] [cursor=pointer]:
+                - generic [ref=e2769]: See ad details
+              - separator [ref=e2770]
+              - generic [ref=e2775]:
+                - generic [ref=e2778]:
+                  - img "Eco Bio Boutique" [ref=e2779]
+                  - generic [ref=e2781]:
+                    - link "Eco Bio Boutique" [ref=e2782] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2786]:
+                      - strong [ref=e2788]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2790]:
+                  - button "🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!" [ref=e2793]:
+                    - generic [ref=e2795]: 🥰 Recensioni di Clienti felici dei nostri esclusivi prodotti intimi!
+                  - link "Skincare Intima 👉 Shop Now" [ref=e2796] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2798]:
+                      - generic [ref=e2799]:
+                        - generic:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e2801]:
+                          - generic [ref=e2802]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e2804]:
+                        - generic [ref=e2808]: Shop Now
+            - generic [ref=e2810]:
+              - generic [ref=e2812]:
+                - generic [ref=e2813]:
+                  - generic [ref=e2820]: Active
+                  - generic [ref=e2823]: "Library ID: 1894037208143063"
+                  - generic [ref=e2825]: Started running on 26 Dec 2025
+                  - generic [ref=e2827]: Platforms
+                  - generic [ref=e2856]: This ad has multiple versions
+                  - generic [ref=e2862]:
+                    - strong [ref=e2863]: 2 ads
+                    - text: use this creative and text
+                - button "Open Drop-down" [ref=e2866] [cursor=pointer]:
+                  - generic [ref=e2869]: Open Drop-down
+              - button "See summary details" [ref=e2872] [cursor=pointer]:
+                - generic [ref=e2876]: See summary details
+              - separator [ref=e2877]
+              - generic [ref=e2882]:
+                - generic [ref=e2885]:
+                  - img "Eco Bio Boutique" [ref=e2886]
+                  - generic [ref=e2888]:
+                    - link "Eco Bio Boutique" [ref=e2889] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e2893]:
+                      - strong [ref=e2895]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e2897]:
+                  - button "🤩 LiftUp, il trattamento ad azione rassodante e liftante che contrasta il rilassamento cutaneo del sotto mento! Riduce il doppio mento e migliora l'aspetto del viso. Pelle più tonica e compatta. 🍃" [ref=e2900]:
+                    - generic [ref=e2903]:
+                      - text: 🤩 LiftUp, il trattamento ad azione rassodante e liftante che contrasta il rilassamento cutaneo del sotto mento!
+                      - text: Riduce il doppio mento e migliora l'aspetto del viso.
+                      - text: Pelle più tonica e compatta. 🍃
+                  - link "Gel Rassodante - Liftante Mento 👉 Shop Now" [ref=e2904] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fliftup-gel-rassodante-e-liftante-mento&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e2906]:
+                      - generic [ref=e2907]:
+                        - generic:
+                          - button
+                        - button "Gel Rassodante - Liftante Mento 👉" [ref=e2909]:
+                          - generic [ref=e2910]: Gel Rassodante - Liftante Mento 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e2912]:
+                        - generic [ref=e2916]: Shop Now
+            - generic [ref=e2918]:
+              - generic [ref=e2920]:
+                - generic [ref=e2921]:
+                  - generic [ref=e2928]: Active
+                  - generic [ref=e2931]: "Library ID: 25434606116221475"
+                  - generic [ref=e2933]: Started running on 20 Jan 2026
+                  - generic [ref=e2935]: Platforms
+                  - generic [ref=e2964]: This ad has multiple versions
+                  - generic [ref=e2970]:
+                    - strong [ref=e2971]: 2 ads
+                    - text: use this creative and text
+                - button "Open Drop-down" [ref=e2974] [cursor=pointer]:
+                  - generic [ref=e2977]: Open Drop-down
+              - button "See summary details" [ref=e2980] [cursor=pointer]:
+                - generic [ref=e2984]: See summary details
+              - separator [ref=e2985]
+              - generic [ref=e2990]:
+                - generic [ref=e2993]:
+                  - img "Eco Bio Boutique" [ref=e2994]
+                  - generic [ref=e2996]:
+                    - link "Eco Bio Boutique" [ref=e2997] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3001]:
+                      - strong [ref=e3003]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3005]:
+                  - button "🥰 Sensual Dream, l’acqua profumata ai feromoni che sorprenderà con la sua fragranza chiunque ti stia attorno! Un profumo indimenticabile da nebulizzare su collo, corpo e capelli. Elegante con toni caldi e seducenti. 💋" [ref=e3008]:
+                    - generic [ref=e3011]:
+                      - text: 🥰 Sensual Dream, l’acqua profumata ai feromoni che sorprenderà con la sua fragranza chiunque ti stia attorno!
+                      - text: Un profumo indimenticabile da nebulizzare su collo, corpo e capelli.
+                      - text: Elegante con toni caldi e seducenti. 💋
+                  - link "Acqua Profumata ai Feromoni 💄 Shop Now" [ref=e3012] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Ffragranze&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3014]:
+                      - generic [ref=e3015]:
+                        - generic:
+                          - button
+                        - button "Acqua Profumata ai Feromoni 💄" [ref=e3017]:
+                          - generic [ref=e3018]: Acqua Profumata ai Feromoni 💄
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e3020]:
+                        - generic [ref=e3024]: Shop Now
+            - generic [ref=e3026]:
+              - generic [ref=e3028]:
+                - generic [ref=e3029]:
+                  - generic [ref=e3036]: Active
+                  - generic [ref=e3039]: "Library ID: 1133725384941766"
+                  - generic [ref=e3041]: Started running on 2 Oct 2025
+                  - generic [ref=e3043]: Platforms
+                  - generic [ref=e3062]: EU transparency
+                - button "Open Drop-down" [ref=e3069] [cursor=pointer]:
+                  - generic [ref=e3072]: Open Drop-down
+              - button "See ad details" [ref=e3075] [cursor=pointer]:
+                - generic [ref=e3079]: See ad details
+              - separator [ref=e3080]
+              - generic [ref=e3085]:
+                - generic [ref=e3087]:
+                  - img "Eco Bio Boutique" [ref=e3088]
+                  - generic [ref=e3090]:
+                    - link "Eco Bio Boutique" [ref=e3091] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3095]:
+                      - strong [ref=e3097]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3098]:
+                  - 'button "Addio aloni ✨ Crema Sbiancante Intima è il trattamento ad azione schiaren e e sbiancante studiato per ridurre ed eliminare macchie, aloni e ipercromie. Per una pelle sana, idratata e un incarnato uniforme scoprila ora su 👉 ecobioboutique.it #cremasbiancanteintima #vcare #personalcare #ecobioboutique" [ref=e3101]':
+                    - generic [ref=e3104]:
+                      - text: Addio aloni ✨
+                      - text: Crema Sbiancante Intima è il trattamento ad azione schiaren e e sbiancante studiato per ridurre ed eliminare macchie, aloni e ipercromie.
+                      - text: Per una pelle sana, idratata e un incarnato uniforme scoprila ora su 👉 ecobioboutique.it
+                      - text: "#cremasbiancanteintima #vcare #personalcare #ecobioboutique"
+                  - group "Video player" [ref=e3114]:
+                    - button "Play Video" [ref=e3116] [cursor=pointer]
+                    - generic [ref=e3118]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:14
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "ECOBIOBOUTIQUE.IT Eco Bio Boutique Shop now" [ref=e3120] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3121]:
+                      - generic [ref=e3122]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e3124]:
+                          - generic [ref=e3125]: ECOBIOBOUTIQUE.IT
+                        - button "Eco Bio Boutique" [ref=e3127]:
+                          - generic [ref=e3128]: Eco Bio Boutique
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e3130]:
+                        - generic [ref=e3134]: Shop now
+            - generic [ref=e3136]:
+              - generic [ref=e3138]:
+                - generic [ref=e3139]:
+                  - generic [ref=e3146]: Active
+                  - generic [ref=e3149]: "Library ID: 554592113678564"
+                  - generic [ref=e3151]: Started running on 4 Oct 2024
+                  - generic [ref=e3153]: Platforms
+                  - generic [ref=e3177]: This ad has multiple versions
+                  - generic [ref=e3184]: EU transparency
+                - button "Open Drop-down" [ref=e3191] [cursor=pointer]:
+                  - generic [ref=e3194]: Open Drop-down
+              - button "See ad details" [ref=e3197] [cursor=pointer]:
+                - generic [ref=e3201]: See ad details
+              - separator [ref=e3202]
+              - generic [ref=e3207]:
+                - generic [ref=e3210]:
+                  - img "Eco Bio Boutique" [ref=e3211]
+                  - generic [ref=e3213]:
+                    - link "Eco Bio Boutique" [ref=e3214] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3218]:
+                      - strong [ref=e3220]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3222]:
+                  - button "🥰 Sweet Candy, il trattamento intimo lenitivo ed emolliente che previene e protegge da infezioni, pruriti e bruciori!" [ref=e3225]:
+                    - generic [ref=e3227]: 🥰 Sweet Candy, il trattamento intimo lenitivo ed emolliente che previene e protegge da infezioni, pruriti e bruciori!
+                  - group "Video player" [ref=e3237]:
+                    - button "Play Video" [ref=e3239] [cursor=pointer]
+                    - generic [ref=e3241]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:33
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "Trattamento Intimo Delicato 👉 Shop Now" [ref=e3243] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3244]:
+                      - generic [ref=e3245]:
+                        - generic:
+                          - button
+                        - button "Trattamento Intimo Delicato 👉" [ref=e3247]:
+                          - generic [ref=e3248]: Trattamento Intimo Delicato 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e3250]:
+                        - generic [ref=e3254]: Shop Now
+            - generic [ref=e3256]:
+              - generic [ref=e3258]:
+                - generic [ref=e3259]:
+                  - generic [ref=e3266]: Active
+                  - generic [ref=e3269]: "Library ID: 1767764514021870"
+                  - generic [ref=e3271]: Started running on 7 Jan 2025
+                  - generic [ref=e3273]: Platforms
+                  - generic [ref=e3297]: This ad has multiple versions
+                  - generic [ref=e3304]: EU transparency
+                - button "Open Drop-down" [ref=e3311] [cursor=pointer]:
+                  - generic [ref=e3314]: Open Drop-down
+              - button "See ad details" [ref=e3317] [cursor=pointer]:
+                - generic [ref=e3321]: See ad details
+              - separator [ref=e3322]
+              - generic [ref=e3327]:
+                - generic [ref=e3330]:
+                  - img "Eco Bio Boutique" [ref=e3331]
+                  - generic [ref=e3333]:
+                    - link "Eco Bio Boutique" [ref=e3334] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3338]:
+                      - strong [ref=e3340]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3342]:
+                  - button "🤩 ShapeUp, è il trattamento ad azione snellente, tonificante e drenante per ridurre le adiposità localizzate! ✅ Snellisce la silhouette ✅ Drena e sgonfia ✅ Riduce il grasso localizzato 🍃 Lascia la pelle turgida, compatta e tonica" [ref=e3345]:
+                    - generic [ref=e3348]:
+                      - text: 🤩 ShapeUp, è il trattamento ad azione snellente, tonificante e drenante per ridurre le adiposità localizzate!
+                      - text: ✅ Snellisce la silhouette
+                      - text: ✅ Drena e sgonfia
+                      - text: ✅ Riduce il grasso localizzato
+                      - text: 🍃 Lascia la pelle turgida, compatta e tonica
+                  - group "Video player" [ref=e3359]:
+                    - button "Play Video" [ref=e3361] [cursor=pointer]
+                    - generic [ref=e3363]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 0:32
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "Trattamento Snellente Pancia e Fianchi 👉 Shop Now" [ref=e3365] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fshapeup-gel-snellente-pancia-e-fianchi&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3366]:
+                      - generic [ref=e3367]:
+                        - generic:
+                          - button
+                        - button "Trattamento Snellente Pancia e Fianchi 👉" [ref=e3369]:
+                          - generic [ref=e3370]: Trattamento Snellente Pancia e Fianchi 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e3372]:
+                        - generic [ref=e3376]: Shop Now
+            - generic [ref=e3378]:
+              - generic [ref=e3380]:
+                - generic [ref=e3381]:
+                  - generic [ref=e3388]: Active
+                  - generic [ref=e3391]: "Library ID: 3753749938250995"
+                  - generic [ref=e3393]: Started running on 2 Oct 2025
+                  - generic [ref=e3395]: Platforms
+                  - generic [ref=e3414]: EU transparency
+                - button "Open Drop-down" [ref=e3421] [cursor=pointer]:
+                  - generic [ref=e3424]: Open Drop-down
+              - button "See ad details" [ref=e3427] [cursor=pointer]:
+                - generic [ref=e3431]: See ad details
+              - separator [ref=e3432]
+              - generic [ref=e3437]:
+                - generic [ref=e3439]:
+                  - img "Eco Bio Boutique" [ref=e3440]
+                  - generic [ref=e3442]:
+                    - link "Eco Bio Boutique" [ref=e3443] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3447]:
+                      - strong [ref=e3449]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3450]:
+                  - 'button "V tonica e giovane? Prova Crema Rassodante Intima, il trattamento naturale che tonifica e contrasta l’invecchiamento della zona intima, rendendo la pelle più elastica ✨ Perfetta per sentirti sempre al meglio. Scoprila ora su ecobioboutique.it #rassodanteintima #ecobioboutique #vcare #personalcare" [ref=e3453]':
+                    - generic [ref=e3456]:
+                      - text: V tonica e giovane?
+                      - text: Prova Crema Rassodante Intima, il trattamento naturale che tonifica e contrasta l’invecchiamento della zona intima, rendendo la pelle più elastica ✨
+                      - text: Perfetta per sentirti sempre al meglio.
+                      - text: Scoprila ora su ecobioboutique.it
+                      - text: "#rassodanteintima #ecobioboutique #vcare #personalcare"
+                  - group "Video player" [ref=e3467]:
+                    - button "Play Video" [ref=e3469] [cursor=pointer]
+                    - generic [ref=e3471]:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Play"
+                        - generic: 0:00 / 1:02
+                      - generic:
+                        - generic:
+                          - slider "Change Position"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Settings"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - button "Enter full-screen"
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - slider "Change volume"
+                          - generic:
+                            - generic:
+                              - generic:
+                                - button "Unmute":
+                                  - img
+                  - link "ECOBIOBOUTIQUE.IT Eco Bio Boutique Shop now" [ref=e3473] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fcollections%2Fself-care&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3474]:
+                      - generic [ref=e3475]:
+                        - button "ECOBIOBOUTIQUE.IT" [ref=e3477]:
+                          - generic [ref=e3478]: ECOBIOBOUTIQUE.IT
+                        - button "Eco Bio Boutique" [ref=e3480]:
+                          - generic [ref=e3481]: Eco Bio Boutique
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop now" [ref=e3483]:
+                        - generic [ref=e3487]: Shop now
+            - generic [ref=e3489]:
+              - generic [ref=e3491]:
+                - generic [ref=e3492]:
+                  - generic [ref=e3499]: Active
+                  - generic [ref=e3502]: "Library ID: 883918570995946"
+                  - generic [ref=e3504]: Started running on 26 Dec 2025
+                  - generic [ref=e3506]: Platforms
+                  - generic [ref=e3535]: This ad has multiple versions
+                  - generic [ref=e3541]:
+                    - strong [ref=e3542]: 2 ads
+                    - text: use this creative and text
+                - button "Open Drop-down" [ref=e3545] [cursor=pointer]:
+                  - generic [ref=e3548]: Open Drop-down
+              - button "See summary details" [ref=e3551] [cursor=pointer]:
+                - generic [ref=e3555]: See summary details
+              - separator [ref=e3556]
+              - generic [ref=e3561]:
+                - generic [ref=e3564]:
+                  - img "Eco Bio Boutique" [ref=e3565]
+                  - generic [ref=e3567]:
+                    - link "Eco Bio Boutique" [ref=e3568] [cursor=pointer]:
+                      - /url: https://www.facebook.com/ecobioboutiqueit/
+                    - generic [ref=e3572]:
+                      - strong [ref=e3574]: Sponsored
+                      - generic:
+                        - strong
+                - generic [ref=e3576]:
+                  - button "🤩 LiftUp, il trattamento ad azione rassodante e liftante che contrasta il rilassamento cutaneo del sotto mento! Riduce il doppio mento e migliora l'aspetto del viso. Pelle più tonica e compatta. 🍃" [ref=e3579]:
+                    - generic [ref=e3582]:
+                      - text: 🤩 LiftUp, il trattamento ad azione rassodante e liftante che contrasta il rilassamento cutaneo del sotto mento!
+                      - text: Riduce il doppio mento e migliora l'aspetto del viso.
+                      - text: Pelle più tonica e compatta. 🍃
+                  - link "Gel Rassodante - Liftante Mento 👉 Shop Now" [ref=e3583] [cursor=pointer]:
+                    - /url: https://l.facebook.com/l.php?u=https%3A%2F%2Fecobioboutique.it%2Fproducts%2Fliftup-gel-rassodante-e-liftante-mento&h=AUCcIpZSi9Oyb3oPbm3l0cxE81x7EgK0jLsFrzWlNo1_uQ0RR8nImHXDhQDTQ2hGhb5WZHs1d5EGpbEC9J6ZXrVDtMCUMuiofWett8glkjmSYmkCM0003w0IvSEpnvf-3gjfHyOsweqPyMMlSy0yRatLuqQ
+                    - generic [ref=e3585]:
+                      - generic [ref=e3586]:
+                        - generic:
+                          - button
+                        - button "Gel Rassodante - Liftante Mento 👉" [ref=e3588]:
+                          - generic [ref=e3589]: Gel Rassodante - Liftante Mento 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e3591]:
+                        - generic [ref=e3595]: Shop Now
+          - button "See more" [ref=e3596] [cursor=pointer]:
+            - generic [ref=e3597]: See more
+      - generic [ref=e3600]:
+        - generic [ref=e3608]: System status
+        - generic [ref=e3612]:
+          - list [ref=e3613]:
+            - listitem [ref=e3614]:
+              - heading "Ad Library API" [level=3] [ref=e3615]:
+                - link "Ad Library API" [ref=e3616] [cursor=pointer]:
+                  - /url: /ads/library/api/?source=archive-landing-page
+            - listitem [ref=e3617]:
+              - heading "About ads and data use" [level=3] [ref=e3618]:
+                - link "About ads and data use" [ref=e3619] [cursor=pointer]:
+                  - /url: /ads/about/?entry_product=ad_library
+            - listitem [ref=e3620]:
+              - heading "Privacy" [level=3] [ref=e3621]:
+                - link "Privacy" [ref=e3622] [cursor=pointer]:
+                  - /url: /privacy/center/?entry_point=privacy_basics_redirect
+            - listitem [ref=e3623]:
+              - heading "Terms" [level=3] [ref=e3624]:
+                - link "Terms" [ref=e3625] [cursor=pointer]:
+                  - /url: /policies/
+            - listitem [ref=e3626]:
+              - heading "Cookies" [level=3] [ref=e3627]:
+                - link "Cookies" [ref=e3628] [cursor=pointer]:
+                  - /url: /policies/cookies/
+          - heading "Meta © 2026 | English (UK)" [level=3] [ref=e3630]:
+            - text: Meta © 2026 |
+            - link "English (UK)" [ref=e3631] [cursor=pointer]:
+              - /url: /language/
+  - dialog "Ad details" [ref=e3634]:
+    - generic "Ad details" [ref=e3635]:
+      - generic [ref=e3636]:
+        - generic [ref=e3637]:
+          - heading "Ad details" [level=3] [ref=e3640]
+          - button "Close" [ref=e3643] [cursor=pointer]:
+            - generic [ref=e3646]: Close
+        - generic [ref=e3652]:
+          - generic [ref=e3655]:
+            - generic [ref=e3656]:
+              - generic [ref=e3663]: Active
+              - generic [ref=e3666]: "Library ID: 1068039901074398"
+              - generic [ref=e3668]: Started running on 3 Feb 2024
+              - generic [ref=e3670]: Platforms
+              - generic [ref=e3694]: This ad has multiple versions
+            - generic [ref=e3699]:
+              - generic [ref=e3702]:
+                - generic [ref=e3705]:
+                  - img "Eco Bio Boutique" [ref=e3706]
+                  - generic [ref=e3707]:
+                    - generic [ref=e3708]:
+                      - link "Eco Bio Boutique" [ref=e3709] [cursor=pointer]:
+                        - /url: https://www.facebook.com/ecobioboutiqueit/
+                      - generic [ref=e3713]:
+                        - strong [ref=e3715]: Sponsored
+                        - generic:
+                          - strong
+                      - generic [ref=e3718]: "Library ID: 1068039901074398"
+                    - button "Open Drop-down" [ref=e3720] [cursor=pointer]:
+                      - generic [ref=e3723]: Open Drop-down
+                - generic [ref=e3727]:
+                  - button "Siamo su @Starbeneofficial 🥰! Si parla dell'importanza della Skincare Intima e di come andrebbe trattata, anche grazie ai nostri prodotti intimi. Sweet Candy e Flower Power ❤️" [ref=e3730]:
+                    - generic [ref=e3733]:
+                      - text: Siamo su @Starbeneofficial 🥰!
+                      - text: Si parla dell'importanza della Skincare Intima e di come andrebbe trattata, anche grazie ai nostri prodotti intimi.
+                      - text: Sweet Candy e Flower Power ❤️
+                  - link "Skincare Intima 👉 Shop Now" [ref=e3734] [cursor=pointer]:
+                    - /url: https://ecobioboutique.it/collections/self-care
+                    - generic [ref=e3736]:
+                      - generic [ref=e3737]:
+                        - generic [ref=e3738]:
+                          - button
+                        - button "Skincare Intima 👉" [ref=e3740]:
+                          - generic [ref=e3741]: Skincare Intima 👉
+                        - generic:
+                          - button
+                        - generic:
+                          - button
+                      - button "Shop Now" [ref=e3743]:
+                        - generic [ref=e3747]: Shop Now
+              - generic [ref=e3748]:
+                - generic [ref=e3749]:
+                  - generic [ref=e3751]: This ad has multiple versions
+                  - generic [ref=e3756]: 1 of 2
+                - generic [ref=e3758]:
+                  - generic:
+                    - button [disabled]:
+                      - img
+                  - generic:
+                    - button [disabled]:
+                      - img
+          - generic [ref=e3769]:
+            - generic [ref=e3770]:
+              - link "Transparency by location" [ref=e3777] [cursor=pointer]:
+                - heading "Transparency by location" [level=2] [ref=e3779]
+              - link "About the advertiser" [ref=e3788] [cursor=pointer]:
+                - heading "About the advertiser" [level=2] [ref=e3790]
+              - link "Advertiser and payer" [ref=e3799] [cursor=pointer]:
+                - heading "Advertiser and payer" [level=2] [ref=e3801]
+            - heading "About ads and data use" [level=3] [ref=e3805]:
+              - link "About ads and data use" [ref=e3806] [cursor=pointer]:
+                - /url: /ads/about/?entry_product=ad_library
+        - button "Close" [active] [ref=e3809] [cursor=pointer]:
+          - generic [ref=e3813]: Close

@@ -1,0 +1,159 @@
+[    1734ms] [LOG] 
+%cStop! font-family:helvetica; font-size:20px; font-size:50px; font-weight:bold; color:red; -webkit-text-stroke:1px black; @ https://static.xx.fbcdn.net/rsrc.php/v4/yP/r/MTIZmCagunk.js:243
+[    1734ms] [LOG] 
+%cThis is a browser feature intended for developers. If someone told you to copy and paste something here to enable a Facebook feature or "hack" someone's account, it's a scam and will give them access to your Facebook account. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yP/r/MTIZmCagunk.js:243
+[    1734ms] [LOG] 
+%cSee https://www.facebook.com/selfxss for more information. font-family:helvetica; font-size:20px;  @ https://static.xx.fbcdn.net/rsrc.php/v4/yP/r/MTIZmCagunk.js:243
+[    1734ms] [LOG] 
+%c  @ https://static.xx.fbcdn.net/rsrc.php/v4/yP/r/MTIZmCagunk.js:243
+[ 7828055ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 7828156ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 7828361ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 7829166ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 8426399ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 8432801ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 8443276ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[ 8450144ms] [ERROR] Failed to load resource: net::ERR_CERT_COMMON_NAME_INVALID @ https://www.facebook.com/nw/:0
+[11774156ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[11774264ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[11774469ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[11775276ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12414465ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12543327ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12543430ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12543633ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12544437ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12550843ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[12557252ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[13602500ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[14586745ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[15775367ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[15781771ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[15841016ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[15901624ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[15948108ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[26625150ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[26625252ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[26625457ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[26626264ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[26632672ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[27565311ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[28353068ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[28353179ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[28353386ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[28354194ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[28361442ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://www.facebook.com/nw/:0
+[29890748ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[29890854ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[29891059ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[29891866ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[30295647ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[30295753ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[30295957ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[30296764ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[30304108ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://www.facebook.com/nw/:0
+[32201896ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32202001ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32202203ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32203009ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32298642ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32298747ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32298954ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32299762ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32306169ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32316949ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32317056ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32317267ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32405450ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32412799ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32412905ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32413112ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32418208ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32418313ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[32418518ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[36074818ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[36074923ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[36075127ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[36075930ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[36241904ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[37195912ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[37196019ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[37196224ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[37197032ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38184178ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38184282ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38184486ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38185290ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38259945ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38260050ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38260260ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38261066ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38267471ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[38273875ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[39215170ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47050851ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47050954ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47051158ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47051965ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47060446ms] [ERROR] Failed to load resource: net::ERR_NAME_NOT_RESOLVED @ https://www.facebook.com/nw/:0
+[47998096ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47998199ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47998405ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[47999212ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[49953646ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[49953750ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[49953955ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[49954762ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50135005ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50135108ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50135312ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50136119ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50142525ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[50292857ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[51648472ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[51648576ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[51648785ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[51649589ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68422299ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68422402ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68422610ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68423418ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68429824ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68436230ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68540565ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68540669ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68540874ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68541681ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[68548087ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[69539601ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[70514809ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[70640012ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[71487736ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[71571113ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[71577522ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[72501543ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74295523ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74301929ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74523066ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ https://www.facebook.com/nw/:0
+[74529478ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74535884ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74542291ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74548699ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74555104ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74561510ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74567916ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74574322ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74580728ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74587133ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74593538ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74599944ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74606349ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74612755ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74619161ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74625566ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74631972ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74638377ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74644784ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74651189ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74657596ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0
+[74664003ms] [ERROR] Failed to load resource: net::ERR_INTERNET_DISCONNECTED @ https://www.facebook.com/nw/:0

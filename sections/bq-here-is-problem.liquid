@@ -1,0 +1,40 @@
+{{ 'bq-here-is-problem.css' | asset_url | stylesheet_tag }}
+
+<div class="bq-hep color-scheme-1 gradient">
+  <div class="page-width">
+    <div class="bq-hep__inner">
+      <div class="bq-hep__group" data-aos="fade-up">
+        {%- if section.settings.callout_heading != blank -%}
+          <h5><strong>{{ section.settings.callout_heading }}</strong></h5>
+        {%- endif -%}
+        {%- if section.settings.body_html != blank -%}
+          {{ section.settings.body_html }}
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Qui è il problema",
+  "settings": [
+    {
+      "type": "text",
+      "id": "callout_heading",
+      "label": "Titolo callout (h5)",
+      "default": "Niente funzionava a lungo termine. Ero disperata."
+    },
+    {
+      "type": "richtext",
+      "id": "body_html",
+      "label": "Contenuto corpo"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Qui è il problema"
+    }
+  ]
+}
+{% endschema %}

@@ -503,6 +503,13 @@
         "section_padding_bottom": 20
       }
     },
+    "bq-here-is-problem-s13b": {
+      "type": "bq-here-is-problem",
+      "settings": {
+        "callout_heading": "Niente funzionava a lungo termine. Ero disperata.",
+        "body_html": "<ul><li>Una notte tardi mi ritrovai immersa nei forum online a leggere della blefaroplastica inferiore. Centinaia di prima e dopo. Costi degli interventi. Tempi di recupero. Ero pronta a spendere 8.000€ e prendermi due settimane di riposo.</li><li>Poi mi imbattei in uno studio clinico sulla terapia a luce rossa e la microcorrente per il ringiovanimento del contorno occhi. Luce rossa sviluppata con la ricerca aerospaziale. Microcorrente di grado medico. Dati reali che dimostravano la produzione di collagene, il miglioramento della circolazione e del drenaggio linfatico.</li><li>I rischi dell’intervento chirurgico. Cicatrici, asimmetria e rimpianti permanenti. Mi spaventai abbastanza da provare un’ultima cosa. Trovai la clinica più vicina e presi subito un appuntamento. <strong>E per la prima volta in 15 anni, ho davvero visto dei risultati.<\/strong><\/li><li>Dopo 3 settimane, le borse si erano ridotte. Le occhiaie erano svanite. I colleghi avevano cominciato a dirmi che avevo un aspetto diverso, più riposata.<\/li><li>Era reale. Funzionava davvero.<\/li><\/ul>"
+      }
+    },
     "bq-stats-repeat-s18": {
       "type": "bq-stats-repeat",
       "settings": {}
@@ -621,6 +628,7 @@
     "bq-founder-pt3",
     "bq-founder-pt6",
     "bq-founder-pt7",
+    "bq-here-is-problem-s13b",
     "bq-tech-specs-s16",
     "bq-buy-block-s17",
     "bq-stats-repeat-s18"

@@ -1,0 +1,17 @@
+.bq-hep {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.bq-hep .bq-hep__group ul {
+  padding-left: 0;
+}
+
+.bq-hep .bq-hep__group ul li {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.bq-hep .bq-hep__inner .bq-hep__group {
+  margin-bottom: 0px;
+}

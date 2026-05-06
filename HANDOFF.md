@@ -252,3 +252,64 @@ Five generic, all from this session. To be batched into clone-pipeline at next c
 - Read last 30 lines of `progress.txt` and the relevant `iter-*-visual.log` for any newly-blocked stories.
 - Decide: GOAL-A items (manual unblocks for §7/§13b if needed) and/or GOAL-B items (knowledge-shape redesign — item 7; Phase 0 automation script — item 8).
 - Curate 5g lessons-pending (5 entries above) into clone-pipeline at this cadence per the ralph-batch curation rule.
+## Session 2026-05-06a close
+
+**Phase A (structural CSS clone) declared complete.** All 14 stories accounted for: 12 passing, 1 passing-with-stubs (§17 buy-block), 1 deferred (§19 reviews app). Canonical theme `botanique-horizon-preview` (#195678142804) holds all section pushes after manual canonical-theme push at end-of-session.
+
+**Critical caveat:** Phase A complete = CSS structure passes ralph's visual-diff gate. The gate is **blind to** text content, image identity, section ordering, structural absences, and functional behavior. The 16 PDF findings (Botanique_VS_Our_version, in project knowledge) are largely **UNFIXED**:
+
+- ✅ Fixed: #1 §7 checkmarks (5g), #2 §7 headline weight (6a iter 3), #15 §16 body font (5e).
+- ❌ Not fixed: #3 §8 bullets / #4 §9 dashed lines z-index / #5 §9 subtitle/UGC images/bg / #6 §11 "Botanique Paris" / #7 §12 "Lumière Paris"/headline/video/trust-row / #8 §13 UGC/headline/CTA caps / #9 §14 UGC testimonial photos / #10 §14 headline color/columns/icons/bg / #11 §15 image dims / #12 §15 headline weight/bullet color/bg / #13 §15 missing "Nothing worked" sub-section / #14 §13b/§15 ordering / #16 §17 non-functional buy block.
+
+**Ralph's `passing` verdicts on §8-§15 do NOT mean those sections are correct.** They mean CSS structure matches source under the gate's masked-text-and-image comparison. Stefano's framing 2026-05-06: structural clone, copy adaptation, image generation are SEQUENTIAL phases with separate skills. We are at end-of-Phase-A; Phase B and C have not started.
+
+**What landed (6a session):**
+
+- §7 reset via `retry-blocked.sh`, ran iter 3, gate passed. Iter-3 fixes: font-weight 700→400 on .bq-ss__heading, container max-width 1200→1440, h4>p structure mirroring source, explicit 18px on .bq-ss__mechanism, removed margin-left/right:auto.
+- §13b first build (iter 1 fail, iter 3 pass). Iter-3 fixes: explicit `font-size:18px` and `color:#000` on `.bq-hep__group ul li`, explicit `padding: 0 20px` on `.bq-hep .page-width`.
+- 8 junk themes deleted from store (named "195371860308" ×7 + "195678142804" ×1 from prior sessions). 3 NEW junk themes created during 6a's pushes — also deleted. Final theme list: 3 themes (Zest live, botanique-horizon-preview, Development).
+- Manual `theme push --theme=botanique-horizon-preview --nodelete` performed twice (post-§7, post-§13b) to ensure canonical theme has working tree, since ralph's pushes routed to junk themes.
+
+**5g/6a lessons propagated to clone-pipeline:** 9 lessons committed to `~/clone-pipeline/CLAUDE.md` under heading "Lessons from Botanique session 5g/6a". LESSONS backlog: 0.
+
+## Session 2026-05-06a self-audit
+
+Five errors logged this session (some already self-flagged in 5g entry, repeating here for completeness of 6a record):
+
+1. **Bash heredoc inside `$(...)` (5g, repeated awareness).** Sandbox bash 5.x masks the bug; macOS ships bash 3.2.
+2. **Bash multi-line strings with embedded `"` (5g).** Heredoc-to-file is the only safe form.
+3. **`#` comment lines in operator-paste blocks (5g, recurrence of 5c).** Discipline failure, not knowledge gap.
+4. **A/B framing on commit message wording (5g).** Locked rule against A/B framing covers wording too, not just operational decisions.
+5. **Misclassified the 6a `theme push` blocker on first read.** When the agent reported "auth 401 + theme name collision," I initially accepted both as causal. Closer reading of the dev-server log showed the §7 iter-3 push had already succeeded BEFORE the 401 — the 401 only blocked the gate's screenshot fetch, not the push. Generic mitigation: when an agent reports two failures, look for which one fired first in time-ordered logs before accepting both as causally entangled.
+
+**Discipline regression note:** lessons 1, 2, 3 from 5g all recurred in some form in 6a. The 5g lessons existed as prose in HANDOFF/CLAUDE.md but were not propagated to clone-pipeline at 5g close (deferred). 6a's first half wrote new shell scripts and re-tripped the same lessons. The `propagate-at-batch-cadence` rule is correct in principle but failed in practice because no batch boundary fired between 5g and 6a — the gap was hours, not iterations. Strengthening: lessons that involve script-authoring failure modes propagate to clone-pipeline immediately, regardless of cadence rule. 6a's fix: lessons now in clone-pipeline as of this commit.
+
+## Lessons pending propagation
+
+**0.** All 9 lessons from this session committed to clone-pipeline in 6a-final commit. None deferred.
+
+## Next action
+
+**Stop here. Open new chat.**
+
+Next chat picks up Phase A completion work — closing the 12 unfixed PDF findings. Stefano's plan from 6a:
+
+1. **New gate phases** for content/structural issues:
+   - Forbidden-string check (catches §11/§12/§15 brand-name violations).
+   - Source-image-identity check via perceptual hash (catches §9/§13/§14/§15 UGC violations).
+   - Section-order check against source DOM order (catches §14 ordering).
+   - Structural-absence check (catches §13 missing "Nothing worked long-term" sub-block).
+   
+   All generic. All land in clone-pipeline. No paid API (Stefano explicit constraint).
+
+2. **PDF findings encoded as `must_fix` entries** in `prd.json` so the build agent reads them as instructions during Phase 3, not just as gate-phase fixes after the fact.
+
+3. **§17 buy-block reframe**: switch to Horizon native `sections/main-product.liquid` or `sections/featured-product.liquid` + visual restyle. Decided architecture in 6a chat — Horizon's commerce primitives (variant picker, add-to-cart, quantity, price re-render) are battle-tested and shouldn't be reimplemented. Loses some GemPages visual flair; gains a real, working purchase flow.
+
+4. **Re-run ralph batch** with new gates active and must_fix entries loaded. Sections that previously passed under the gate-blind-to-content regime will surface real failures and re-iterate.
+
+5. **Phase B (copy adaptation) and Phase C (image generation)** remain deferred to dedicated future chats. Each gets its own skill/agent. Cross-contamination problem (build/copy/imagery in one mega-loop) avoided by sequencing.
+
+**Knowledge-shape redesign (item 7 of 5g list)** still deferred. The 31KB CLAUDE.md is now ~38KB after the lessons append. Redesign pressure increases per session; recommend executing in a chat dedicated to it before the next major project pushes the file past readability.
+
+**Phase 0 automation script (item 8 of 5g list)** still deferred. Botanique 5f reference flow still works as the canonical procedure.

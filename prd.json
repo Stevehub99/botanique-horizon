@@ -377,7 +377,7 @@
       "priority": 13.5,
       "disposition": "BUILD",
       "status": "passing",
-      "iteration_count": 3,
+      "iteration_count": 4,
       "max_iterations": 5,
       "max_same_failure": 3,
       "source": {

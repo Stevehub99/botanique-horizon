@@ -14,23 +14,21 @@
 }
 
 .bq-ss__container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Section heading h3 — source: .number--txt h3 */
+/* Section heading h3 — source: .number--txt h3 (no font-weight override; theme parity carries 400) */
 .bq-ss__heading {
   font-size: 46px;
   text-align: center;
   color: #000;
   margin-bottom: 20px;
-  font-weight: 700;
 }
 
 .bq-ss__heading strong {
   color: #ff7e97;
-  font-weight: 700;
 }
 
 /* Subtitle — source: .number--txt .subtitle */
@@ -61,7 +59,7 @@
   margin-bottom: 10px;
 }
 
-/* Stat headline h4 — source: .number--txt .stat-box h4 */
+/* Stat headline h4 — source: .number--txt .stat-box h4 (no margin auto; text-align: center inherited) */
 .bq-ss__headline {
   color: #000;
   font-weight: 400;
@@ -69,17 +67,22 @@
   margin-top: 0;
   font-size: 18px;
   max-width: 230px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
-/* Mechanism text p — source: .number--txt .stat-box p */
+/* h4>p headline inner — source: .number--txt .stat-box h4 p */
+.bq-ss__headline p {
+  color: #000;
+  font-weight: 400;
+  font-family: var(--bq-font-sans);
+  margin: 0;
+}
+
+/* Mechanism text p — source: .number--txt .stat-box p (no margin auto; 18px desktop body size) */
 .bq-ss__mechanism {
   color: #65656d;
   margin-top: 0;
   max-width: 214px;
-  margin-left: auto;
-  margin-right: auto;
+  font-size: 18px;
 }
 
 @media (max-width: 991px) {

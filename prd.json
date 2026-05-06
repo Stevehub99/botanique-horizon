@@ -8,7 +8,7 @@
       "id": "section-07-science-stats",
       "priority": 7,
       "disposition": "BUILD",
-      "status": "passing",
+      "status": "blocked-needs-human",
       "source": {
         "anchor_classes": [
           "stats-grid",
@@ -55,7 +55,7 @@
         "stat_mechanisms_target": "single short sentence per stat explaining the mechanism (microcorrente, luce rossa, etc.); accurate to source claims"
       },
       "notes": "Verify whether §18 is a literal duplicate of §7 or a near-duplicate (different copy, same shell). If literal duplicate, §18 disposition becomes DUPLICATE-OF and references this story. Decide during inventory. BLOCKER: CSS fixes committed (font-weight:700 + buy-block checkmark centering) but push/screenshot blocked by expired Shopify CLI auth. User must: (1) run `shopify auth login` (2) run `shopify theme push --unpublished --store=a9iz0x-ip.myshopify.com` (3) restart `shopify theme dev`. After push+auth, re-run iteration to capture screenshots and mark passing.",
-      "iteration_count": 1,
+      "iteration_count": 2,
       "max_iterations": 5,
       "max_same_failure": 3,
       "section_order_position": {

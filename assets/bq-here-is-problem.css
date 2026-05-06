@@ -3,6 +3,11 @@
   padding-bottom: 20px;
 }
 
+.bq-hep .page-width {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .bq-hep .bq-hep__group ul {
   padding-left: 0;
 }
@@ -10,6 +15,8 @@
 .bq-hep .bq-hep__group ul li {
   list-style: none;
   margin-bottom: 20px;
+  font-size: 18px;
+  color: #000;
 }
 
 .bq-hep .bq-hep__inner .bq-hep__group {

@@ -314,3 +314,100 @@ Next chat picks up Phase A completion work — closing the 12 unfixed PDF findin
 
 **Phase 0 automation script (item 8 of 5g list)** still deferred. Botanique 5f reference flow still works as the canonical procedure.
 
+## Session 2026-05-07a close
+
+**Dedicated knowledge-shape redesign chat** (item 7 of 5g list, deferred at 6a close). Produced specifications, not code commits. No Botanique build work happened. Phase A→Phase B transition planning (the 6a "Next action") was NOT addressed and remains next-up.
+
+**Specifications drafted (artifacts in `~/clone-pipeline/`):**
+
+- `workflow-schema-v1.md` (350 lines) — v1 spec for documenting any workflow node. Faceted-not-MECE per-node fields: identity, sequence, data flow, conditions, execution (executor-conditional instructions), acceptance & recovery (testable acceptance check, failure modes, fallbacks, handoff contract), operational metadata (idempotency, status, last_verified_working, cost), notes escape hatch. Workflow-level header has overall_goal, success_criteria, failure_taxonomy, evolution_log. The ralph-section-build-iter is filled in as a worked example.
+
+- `cleanup-plan.md` (280 lines) — six-action plan for cleaning up project knowledge structure, plus formalized maintenance protocol. Recognizes that what's already working (HANDOFF session pattern, lessons cadence, Phase A/B/C separation, self-audit discipline) should be preserved, not redesigned. Identifies four problems: broken Claude.ai sync, inventory bloat in search index, document role overlap (partly answered by HANDOFF "Where things live now"), unmoved Phase 4 backlog of 11 generic rules in TODO.md.
+
+Both files are generic — they belong in `~/clone-pipeline/` so future clones inherit them.
+
+**GitHub MCP read access established.** Verified via direct `get_file_contents` of HANDOFF.md (full content received, SHA `56a7c4a8310fff2bed29fb984ed742a4af11665a`). The Claude.ai project knowledge sync is broken for HANDOFF.md, MANIFEST.md, LESSONS.md, SELF-AUDIT.md, PROJECT.md, and project CLAUDE.md (they don't surface in `project_knowledge_search`). MCP read bypasses this entirely. Going forward, every chat should default to MCP read on these files, not search.
+
+**GitHub MCP write access NOT established.** Spent ~10 turns debugging this. Final diagnosis:
+
+- The custom connector at `https://api.githubcopilot.com/mcp/` in Claude.ai authenticates via OAuth, not PAT.
+- The Claude.ai connector UI exposes only: URL, OAuth Client ID (optional), OAuth Client Secret (optional). There is **no Bearer-token / Authorization-header field**. The user never entered the PAT.
+- All work done on the GitHub PAT side ("Claude MCP - all repos", scoped to all repos with Contents: Read+write) was irrelevant — that PAT is not in this auth path.
+- Auth uses Anthropic's default OAuth App for `api.githubcopilot.com`, which appears to request read-only scopes for code. That's why `get_me` succeeds (returning `Stevehub99`, `public_repos: 1`), reads succeed, and writes return `403 Resource not accessible by integration`.
+- Connector remove + re-add did not change behavior. Installing the Anthropic Claude GitHub App separately also did not (different surface — that App is for Claude Code in PRs/Issues, not for chat-Claude's MCP).
+
+**Real fix paths for write access (deferred to a dedicated session):**
+
+1. **Self-hosted github-mcp-server.** Pull `ghcr.io/github/github-mcp-server` Docker image, run with `GITHUB_PERSONAL_ACCESS_TOKEN` env var, expose via Cloudflare Tunnel or ngrok, point Claude.ai's custom connector at the tunnel URL instead of `api.githubcopilot.com/mcp/`. Bypasses Anthropic's OAuth path entirely; PAT is consumed directly by the local server. ~15-20 min setup. Cleanest answer.
+
+2. **Register a custom GitHub OAuth App with write scopes** and plug Client ID/Secret into Claude.ai connector's Advanced settings. Possible but fiddly: requires knowing Claude.ai's exact OAuth callback URL, configuring App permissions, and the MCP server might not honor expanded scopes anyway.
+
+Path 1 is recommended.
+
+**`Stevehub99/clone-pipeline` does not exist on GitHub.** `get_me` reports `public_repos: 1`. The directory at `~/clone-pipeline/` is local-only, never pushed. Cross-repo MCP work (lesson propagation, workflow YAML population) requires creating the repo on GitHub first. Easy fix when wanted: `cd ~/clone-pipeline && gh repo create Stevehub99/clone-pipeline --private --source=. --remote=origin --push`.
+
+**Four Locked rules proposed for Settings → Project → Custom instructions** (only Stefano can land these — chat-Claude cannot edit project instructions):
+
+1. **Knowledge access via GitHub MCP (read).** Every chat uses `get_file_contents` on the project's repos as primary read mechanism. Claude.ai project knowledge sync is supplementary, not source of truth. If a file isn't surfacing in `project_knowledge_search`, fetch via MCP before claiming unavailable. **Stefano approved.**
+
+2. **Edits are commits, not proposals — risk-tiered, write-gated.** When MCP write is enabled: low-stakes routine edits (HANDOFF entries, MANIFEST regen, lesson propagation already classified, fixing typos) commit directly. High-stakes edits (Locked rule changes, hard-rule changes, schema bumps, anything affecting ralph behavior, code) propose-then-commit — show diff, get nod, then push. **Until MCP write is enabled (currently the case), all edits remain proposals delivered for operator git-push.** Stefano approved (refined).
+
+3. **Promote lessons proactively.** When something matches a generic-rule / project-rule / decision pattern, propose the file edit in the same turn — don't wait to be asked. If unclassified items already exist (e.g. Phase 4 backlog in TODO.md), surface them and propose moves before other work. Accepted earlier in this session.
+
+4. **Instructions are mutable.** If any existing doc, prompt, schema, or these project instructions themselves contradict what should be done, propose the edit instead of compensating in the response. Operator decides; agent does not silently work around bad rules. Applies recursively. Accepted earlier in this session.
+
+## Session 2026-05-07a self-audit
+
+Eight errors logged, in rough order of recurrence risk:
+
+1. **Repeatedly claimed I couldn't see files I hadn't tried hard enough to access.** First search for HANDOFF.md returned nothing relevant; concluded "doesn't exist or stale" without trying multiple distinctive queries or alternate access paths. Operator pushed back; on retry, GitHub MCP retrieved the full file in one call. Generic mitigation: when `project_knowledge_search` returns nothing relevant for a file the operator says exists, try (a) multiple specific queries, (b) `web_fetch` on raw GitHub URL, (c) GitHub MCP `get_file_contents` — in that order — before stating the file is unavailable.
+
+2. **Asked questions the operator could not answer that I could have answered myself.** "Does HANDOFF.md exist in working condition?" — I had bash, search tools, and (as it turned out) MCP. Generic mitigation: before asking the operator a verifiable question, list which tools could verify it; if any apply, use them first.
+
+3. **Proposed a new Locked rule ("edits are commits, not proposals") in too-aggressive form.** Direct push to main on every doc edit creates risk for changes the operator hasn't vetted. Operator asked "what do you mean," correctly. Refined to risk-tiered + write-gated version. Generic mitigation: when proposing a rule that will govern future sessions, default to the conservative form and let operator widen.
+
+4. **Wrote a 280-line cleanup plan based on partial visibility.** Action 1 ("verify document roles") existed only because I couldn't see HANDOFF.md / PROJECT.md / SELF-AUDIT.md. After GitHub MCP unlocked read, the role question was answered in HANDOFF's first section ("Where things live now"). Action 1 is now mostly stale. Generic mitigation: time-budget the unknown-resolution before plan-writing; one MCP fetch would have changed half the plan.
+
+5. **Did not register that the conversation IS item 7 of the 5g fix list (knowledge-shape redesign) until late.** The 5g HANDOFF explicitly listed it as deferred-to-dedicated-chat. Generic mitigation: at session start, check HANDOFF "Next action" / "deferred" lists; if framing matches a deferred item, name it explicitly.
+
+6. **Claimed MCP write capability based on tool descriptions alone, without testing.** `create_or_update_file` and `push_files` were loaded with working schemas, so I claimed write worked and built the "edits are commits" rule architecture around it. First actual write attempt: 403. Generic mitigation: never claim a tool-mediated capability is available based on the tool list alone. Tool list shows what the agent can call; auth scope determines whether the call succeeds. Test the smallest write before architecting around it.
+
+7. **Got the MCP auth model wrong, multiple times.** Successive bad theories: GitHub App layer between PAT and write API → Claude GitHub App install would help → PAT scope update would help → connector recreate would help. None correct. The actual model (OAuth via Anthropic's default OAuth App; PAT never used by this connector) became visible only after operator pointed out that the connector recreate didn't prompt for a token. Generic mitigation: when proposing an auth fix, first verify the auth path being used. Look at what the host's connector UI actually exposes, not what the MCP server's docs say it accepts. The host can constrain auth modes regardless of what the server supports.
+
+8. **Sent operator on multiple wrong-path tasks based on incorrect mental models.** Installing the Anthropic Claude GitHub App, updating PAT scopes (twice), reviewing screenshots of unrelated UIs, removing and re-adding the connector — all of these were operator effort that produced no progress because my model was wrong. Generic mitigation: when uncertain about an integration's actual behavior, run one diagnostic call (here: `get_me` would have shown user-scoped auth; the absence of a Bearer-token field in the connector UI screenshot would have shown OAuth) before proposing operator-side changes. Cost of one diagnostic call is far below cost of an operator-side wrong path.
+
+## Lessons pending propagation
+
+**8 entries from 7a, all generic, to be propagated to `~/clone-pipeline/CLAUDE.md`** (batched until either the repo is on GitHub or operator manually copies):
+
+1. **Search exhaustion before claiming inaccessibility.** Workflow phase: any chat where a referenced file isn't surfacing in project_knowledge_search. New criteria: try (a) multiple specific queries with distinctive content, (b) `web_fetch` on raw URL, (c) GitHub MCP `get_file_contents`, in that order, before stating the file is unavailable.
+
+2. **Don't ask operator questions that can be tool-answered.** Workflow phase: any chat where Claude is uncertain about file contents or repo state. New criteria: enumerate available tools (bash, search, MCP, web_fetch) before asking operator; if any tool can answer, use it.
+
+3. **Risk-tier rule proposals.** Workflow phase: when proposing new Locked rules. New criteria: default to conservative form; explicit risk tiers in the rule itself; let operator widen.
+
+4. **Time-budget the unknowns before writing a plan.** Workflow phase: when delivering a plan/proposal where some inputs are unknown. New criteria: list unknowns explicitly, choose time budget for resolution, attempt resolution via tools, then write the plan.
+
+5. **Recognize when the chat's framing matches a deferred item.** Workflow phase: any chat with a fresh framing. New criteria: at session start, check HANDOFF "Next action" / "deferred" lists; name the match explicitly.
+
+6. **Test capability before architecting around it.** Workflow phase: any time chat-Claude considers a new tool / MCP / API capability available. New criteria: do one smallest-possible test call before claiming the capability is usable. Tool description != auth scope. Particularly important for write operations.
+
+7. **Verify the auth path before proposing auth fixes.** Workflow phase: any time an MCP / API integration is producing unexpected errors. New criteria: look at what the host's connector UI actually exposes (screenshot it if needed) before recommending changes that assume a different auth surface. Run one diagnostic call (e.g. `get_me` for user-scoped vs. installation auth) before proposing operator-side changes. The host can constrain auth regardless of what the server's docs say.
+
+8. **One diagnostic call is cheaper than one wrong operator path.** Workflow phase: any debugging where Claude has tools available but is reasoning from documentation alone. New criteria: when uncertain about how a system actually behaves, run a diagnostic call before proposing operator-side action. The marginal cost of a tool call is essentially zero; the marginal cost of an operator round-trip on a wrong path is significant.
+
+## Next action
+
+Five items, in rough priority order. Pick from these at start of next chat:
+
+1. **Stefano: edit Settings → Project → Custom instructions, append the four Locked rules** (text in the 7a close section above). Without this, the new disciplines don't survive into the next chat. ~10 min.
+
+2. **Resume 6a's "Next action" — Phase A → Phase B transition.** New gate phases (forbidden-string check, source-image-identity perceptual hash, section-order check, structural-absence check). PDF findings encoded as `must_fix` in prd.json. §17 buy-block reframe to Horizon native. ralph re-run with new gates. This is the actual Botanique build work; everything else is meta.
+
+3. **Move the 11 Phase 4 backlog rules from TODO.md to `~/clone-pipeline/CLAUDE.md`.** Action 4 of `cleanup-plan.md`. Operator-side until clone-pipeline is on GitHub. ~30 min.
+
+4. **MCP write fix (deferred this session).** Set up self-hosted `github-mcp-server` (Docker image `ghcr.io/github/github-mcp-server`, env `GITHUB_PERSONAL_ACCESS_TOKEN`, expose via Cloudflare Tunnel), point Claude.ai connector at the tunnel URL, retest write. ~15-20 min. Worth a dedicated session.
+
+5. **Push `clone-pipeline` to GitHub.** `cd ~/clone-pipeline && gh repo create Stevehub99/clone-pipeline --private --source=. --remote=origin --push`. After this, MCP read works on clone-pipeline too, and writes (once item 4 lands) can target it. ~5 min, no dependencies.
+
+**Phase A status (unchanged from 6a):** 12 stories passing, 1 passing-with-stubs (§17), 1 deferred (§19). 12 of 16 PDF findings unfixed because ralph's gate is blind to text/image identity/section order/structural absences. Closing the PDF gap is item 2 above.

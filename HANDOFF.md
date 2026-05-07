@@ -313,3 +313,4 @@ Next chat picks up Phase A completion work — closing the 12 unfixed PDF findin
 **Knowledge-shape redesign (item 7 of 5g list)** still deferred. The 31KB CLAUDE.md is now ~38KB after the lessons append. Redesign pressure increases per session; recommend executing in a chat dedicated to it before the next major project pushes the file past readability.
 
 **Phase 0 automation script (item 8 of 5g list)** still deferred. Botanique 5f reference flow still works as the canonical procedure.
+
